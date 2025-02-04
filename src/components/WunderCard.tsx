@@ -22,7 +22,7 @@ const WunderCard = ({ title, description, image, link }: WunderCardProps) => {
         />
       </div>
       <div className="p-6">
-        <h3 className="text-2xl font-bold mb-3 text-primary">{title}</h3>
+        <h3 className="text-2xl font-bold mb-3 text-primary break-words hyphens-auto">{title}</h3>
         <p className="text-gray-600">{description}</p>
       </div>
     </Link>
