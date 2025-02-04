@@ -14,9 +14,9 @@ const Schulbauwunder = () => {
 
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sticky Navigation */}
+          {/* Sticky Navigation - mit zusätzlichem top-Abstand */}
           <div className="lg:w-1/4">
-            <div className="sticky top-4">
+            <div className="sticky top-20">
               <nav className="bg-white rounded-lg shadow-lg p-4">
                 <ul className="space-y-2">
                   <li>
@@ -105,7 +105,6 @@ const Schulbauwunder = () => {
                   <div className="border-b pb-8">
                     <h3 className="text-xl font-semibold mb-4">Baufortschritt</h3>
                     <div className="aspect-video bg-gray-100 rounded-lg mb-4">
-                      {/* Placeholder für Bilder/Videos */}
                       <div className="w-full h-full flex items-center justify-center text-gray-400">
                         Bild/Video vom Baufortschritt
                       </div>
@@ -123,7 +122,6 @@ const Schulbauwunder = () => {
               <Card className="p-8">
                 <h2 className="text-3xl font-bold mb-6">Unser Team</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {/* Team Member Example */}
                   <div className="text-center">
                     <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4" />
                     <h3 className="font-semibold">Team-Mitglied</h3>
