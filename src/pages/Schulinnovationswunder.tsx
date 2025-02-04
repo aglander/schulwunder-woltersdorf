@@ -8,14 +8,21 @@ const Schulinnovationswunder = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Sticky Header */}
       <div className="sticky top-0 z-50 bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/60">
-        <div className="container mx-auto px-4 h-16 flex items-center gap-2">
-          <ArrowLeft className="w-5 h-5 text-white" />
-          <Link to="/" className="text-white hover:text-white/80 font-semibold">
-            Schulwunder Woltersdorf
-          </Link>
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <ArrowLeft className="w-5 h-5 text-white" />
+            <Link to="/" className="text-white hover:text-white/80 font-semibold">
+              Schulwunder Woltersdorf
+            </Link>
+          </div>
+          <div className="absolute left-1/2 transform -translate-x-1/2">
+            <span className="text-white font-semibold">Schulinnovationswunder</span>
+          </div>
+          <div className="w-[200px]" /> {/* Spacer für Balance */}
         </div>
       </div>
 
+      {/* Rest of the content */}
       {/* Hero Section */}
       <div className="bg-primary text-white py-20">
         <div className="container mx-auto px-4">
