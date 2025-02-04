@@ -52,9 +52,9 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
               )}
             </Link>
           </div>
-          <div className="absolute left-1/2 transform -translate-x-1/2">
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-[300px] text-center">
             {!isH1Visible && (
-              <span lang="de" className="text-white font-semibold break-words hyphens-auto">{title}</span>
+              <span lang="de" className="text-white font-semibold whitespace-nowrap">{title}</span>
             )}
           </div>
           <div className="w-[200px]" /> {/* Spacer für Balance */}
