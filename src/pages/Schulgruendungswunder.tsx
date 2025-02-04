@@ -7,8 +7,8 @@ const Schulgruendungswunder = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEO 
-        title="Schulgründungswunder"
-        description="Entdecken Sie unsere Vision für die neue Oberschule in Woltersdorf, die 2026 eröffnet wird. Ein innovatives Bildungsprojekt für die Zukunft unserer Kinder."
+        title="Schulgründungswunder - Gemeinschaftlich Bildung gestalten"
+        description="Entdecken Sie unsere Vision für die neue Oberschule in Woltersdorf, die 2026 eröffnet wird. Ein zukunftsweisendes Bildungsprojekt für die nächste Generation."
       />
       <WunderHeader title="Schulgründungswunder">
         <p className="text-xl max-w-2xl">

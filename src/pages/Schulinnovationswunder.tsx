@@ -1,10 +1,15 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
+import SEO from "../components/SEO";
 
 const Schulinnovationswunder = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO 
+        title="Schulinnovationswunder - Gemeinschaftlich Bildung gestalten"
+        description="Sehen Sie unsere Zukunftspläne für das neue Schulgelände in Woltersdorf. Innovative Bildungskonzepte und moderne Lernumgebungen für die Schule von morgen."
+      />
       <WunderHeader title="Schulinnovationswunder">
         <p className="text-xl max-w-2xl">
           Entdecken Sie unsere innovativen Bauvorhaben und Zukunftspläne für das neue 
