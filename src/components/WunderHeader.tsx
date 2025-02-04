@@ -54,7 +54,7 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
           </div>
           <div className="absolute left-1/2 transform -translate-x-1/2">
             {!isH1Visible && (
-              <span className="text-white font-semibold">{title}</span>
+              <span lang="de" className="text-white font-semibold break-words hyphens-auto">{title}</span>
             )}
           </div>
           <div className="w-[200px]" /> {/* Spacer für Balance */}
@@ -64,7 +64,7 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
       {/* Hero Section */}
       <div className="bg-primary text-white py-20">
         <div className="container mx-auto px-4">
-          <h1 ref={h1Ref} className="text-5xl font-bold mb-6">
+          <h1 ref={h1Ref} lang="de" className="text-5xl font-bold mb-6 break-words hyphens-auto">
             {title}
           </h1>
           {children}
