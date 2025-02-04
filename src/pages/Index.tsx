@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "../components/Hero";
 import WunderCard from "../components/WunderCard";
 import Footer from "../components/Footer";
+import SEO from "../components/SEO";
 
 const Index = () => {
   const wunder = [
@@ -27,6 +28,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Gemeinschaftlich Bildung gestalten"
+        description="Entdecken Sie das Schulwunder Woltersdorf - ein gemeinschaftliches Projekt für innovative Bildung. Erfahren Sie mehr über unsere Baueinsätze, Schulgründung und Zukunftspläne."
+      />
       <Hero />
       
       <main className="flex-grow py-16 px-4 bg-gray-50">

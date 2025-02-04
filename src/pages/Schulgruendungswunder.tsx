@@ -1,10 +1,15 @@
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
+import SEO from "../components/SEO";
 
 const Schulgruendungswunder = () => {
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEO 
+        title="Schulgründungswunder"
+        description="Entdecken Sie unsere Vision für die neue Oberschule in Woltersdorf, die 2026 eröffnet wird. Ein innovatives Bildungsprojekt für die Zukunft unserer Kinder."
+      />
       <WunderHeader title="Schulgründungswunder">
         <p className="text-xl max-w-2xl">
           Entdecken Sie unsere Vision für die neue Oberschule, die 2026 eröffnet wird.
