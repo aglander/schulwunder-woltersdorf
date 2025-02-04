@@ -4,26 +4,26 @@ import { Card } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
 
 const Schulinnovationswunder = () => {
-  const [isHeroVisible, setIsHeroVisible] = useState(true);
-  const heroRef = useRef<HTMLDivElement>(null);
+  const [isH1Visible, setIsH1Visible] = useState(true);
+  const h1Ref = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsHeroVisible(entry.isIntersecting);
+        setIsH1Visible(entry.isIntersecting);
       },
       {
         threshold: 0,
       }
     );
 
-    if (heroRef.current) {
-      observer.observe(heroRef.current);
+    if (h1Ref.current) {
+      observer.observe(h1Ref.current);
     }
 
     return () => {
-      if (heroRef.current) {
-        observer.unobserve(heroRef.current);
+      if (h1Ref.current) {
+        observer.unobserve(h1Ref.current);
       }
     };
   }, []);
@@ -40,7 +40,7 @@ const Schulinnovationswunder = () => {
             </Link>
           </div>
           <div className="absolute left-1/2 transform -translate-x-1/2">
-            {!isHeroVisible && (
+            {!isH1Visible && (
               <span className="text-white font-semibold">Schulinnovationswunder</span>
             )}
           </div>
@@ -49,9 +49,11 @@ const Schulinnovationswunder = () => {
       </div>
 
       {/* Hero Section */}
-      <div ref={heroRef} className="bg-primary text-white py-20">
+      <div className="bg-primary text-white py-20">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-6">Schulinnovationswunder</h1>
+          <h1 ref={h1Ref} className="text-5xl font-bold mb-6">
+            Schulinnovationswunder
+          </h1>
           <p className="text-xl max-w-2xl">
             Entdecken Sie unsere innovativen Bauvorhaben und Zukunftspläne für das neue 
             Schulgelände der Freien Schule Woltersdorf.
