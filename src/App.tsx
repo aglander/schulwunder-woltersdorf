@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Schulbauwunder from "./pages/Schulbauwunder";
@@ -16,10 +16,9 @@ const ScrollManager = () => {
     let lastPathname = location.pathname;
     
     return () => {
-      if (lastPathname === '/' && location.pathname !== '/') {
+      if (lastPathname === '/') {
         sessionStorage.setItem('scrollPosition', window.scrollY.toString());
       }
-      lastPathname = location.pathname;
     };
   }, [location]);
 
@@ -29,7 +28,6 @@ const ScrollManager = () => {
       const savedPosition = sessionStorage.getItem('scrollPosition');
       if (savedPosition) {
         window.scrollTo(0, parseInt(savedPosition));
-        sessionStorage.removeItem('scrollPosition');
       }
     } else {
       window.scrollTo(0, 0);
