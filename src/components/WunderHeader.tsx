@@ -5,9 +5,10 @@ import { useIsMobile } from "@/hooks/use-mobile";
 
 interface WunderHeaderProps {
   title: string;
+  children?: React.ReactNode;
 }
 
-export const WunderHeader = ({ title }: WunderHeaderProps) => {
+export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
   const [isH1Visible, setIsH1Visible] = useState(true);
   const h1Ref = useRef<HTMLHeadingElement>(null);
   const isMobile = useIsMobile();
@@ -63,7 +64,7 @@ export const WunderHeader = ({ title }: WunderHeaderProps) => {
           <h1 ref={h1Ref} className="text-5xl font-bold mb-6">
             {title}
           </h1>
-          <slot />
+          {children}
         </div>
       </div>
     </>
