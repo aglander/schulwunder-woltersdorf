@@ -71,7 +71,7 @@ const Schulgruendungswunder = () => {
             {/* Description Section */}
             <section id="description" className="mb-16">
               <Card className="p-8">
-                <h2 className="text-3xl font-bold mb-6">Über das Schulgründungswunder</h2>
+                <h2 lang="de" className="text-3xl font-bold mb-6 break-words hyphens-auto">Über das Schulgründungswunder</h2>
                 <div className="prose max-w-none">
                   <p className="text-lg mb-6">
                     Mit vereinten Kräften erschaffen wir einen Ort, an dem Bildung lebendig wird. 
