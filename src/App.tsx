@@ -11,16 +11,16 @@ import Schulinnovationswunder from "./pages/Schulinnovationswunder";
 const ScrollManager = () => {
   const location = useLocation();
   
-  // Store scroll position when leaving a page
-  useLayoutEffect(() => {
-    const handleBeforeUnload = () => {
-      if (location.pathname === '/') {
+  // Store scroll position when leaving home page
+  useEffect(() => {
+    let lastPathname = location.pathname;
+    
+    return () => {
+      if (lastPathname === '/' && location.pathname !== '/') {
         sessionStorage.setItem('scrollPosition', window.scrollY.toString());
       }
+      lastPathname = location.pathname;
     };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
   }, [location]);
 
   // Restore scroll position when returning to home page
