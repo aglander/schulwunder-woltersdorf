@@ -2,10 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Schulinnovationswunder = () => {
   const [isH1Visible, setIsH1Visible] = useState(true);
   const h1Ref = useRef<HTMLHeadingElement>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -37,9 +39,11 @@ const Schulinnovationswunder = () => {
             <Link to="/" className="text-white hover:text-white/80">
               <ArrowLeft className="w-5 h-5" />
             </Link>
-            <Link to="/" className="text-white hover:text-white/80 font-semibold">
-              Schulwunder Woltersdorf
-            </Link>
+            {!isMobile && (
+              <Link to="/" className="text-white hover:text-white/80 font-semibold">
+                Schulwunder Woltersdorf
+              </Link>
+            )}
           </div>
           <div className="absolute left-1/2 transform -translate-x-1/2">
             {!isH1Visible && (
