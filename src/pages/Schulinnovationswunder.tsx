@@ -1,13 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
+import { ArrowLeft } from "lucide-react";
 
 const Schulinnovationswunder = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Sticky Header */}
       <div className="sticky top-0 z-50 bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/60">
-        <div className="container mx-auto px-4 h-16 flex items-center">
+        <div className="container mx-auto px-4 h-16 flex items-center gap-2">
+          <ArrowLeft className="w-5 h-5 text-white" />
           <Link to="/" className="text-white hover:text-white/80 font-semibold">
             Schulwunder Woltersdorf
           </Link>
