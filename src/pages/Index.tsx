@@ -1,12 +1,45 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from "react";
+import Hero from "../components/Hero";
+import WunderCard from "../components/WunderCard";
+import Footer from "../components/Footer";
 
 const Index = () => {
+  const wunder = [
+    {
+      title: "Schulbauwunder",
+      description: "Erfahren Sie mehr über unsere Baueinsätze und wie wir gemeinsam unsere neue Schule erschaffen.",
+      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+      link: "/schulbauwunder",
+    },
+    {
+      title: "Schulgründungswunder",
+      description: "Entdecken Sie unsere Vision für die neue Oberschule, die 2026 eröffnet wird.",
+      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      link: "/schulgruendungswunder",
+    },
+    {
+      title: "Schulinnovationswunder",
+      description: "Sehen Sie unsere Zukunftspläne für das neue Schulgelände.",
+      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+      link: "/schulinnovationswunder",
+    },
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <Hero />
+      
+      <main className="flex-grow py-16 px-4 bg-gray-50">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {wunder.map((w) => (
+              <WunderCard key={w.title} {...w} />
+            ))}
+          </div>
+        </div>
+      </main>
+
+      <Footer />
     </div>
   );
 };
