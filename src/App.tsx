@@ -1,18 +1,39 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Schulbauwunder from "./pages/Schulbauwunder";
 import Schulgruendungswunder from "./pages/Schulgruendungswunder";
 import Schulinnovationswunder from "./pages/Schulinnovationswunder";
 
-// Scroll to top component
-const ScrollToTop = () => {
+// Scroll management
+const ScrollManager = () => {
   const location = useLocation();
+  
+  // Store scroll position when leaving a page
+  useLayoutEffect(() => {
+    const handleBeforeUnload = () => {
+      if (location.pathname === '/') {
+        sessionStorage.setItem('scrollPosition', window.scrollY.toString());
+      }
+    };
 
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload);
+  }, [location]);
+
+  // Restore scroll position when returning to home page
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (location.pathname === '/') {
+      const savedPosition = sessionStorage.getItem('scrollPosition');
+      if (savedPosition) {
+        window.scrollTo(0, parseInt(savedPosition));
+        sessionStorage.removeItem('scrollPosition');
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, [location]);
 
   return null;
@@ -23,7 +44,7 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <BrowserRouter>
-      <ScrollToTop />
+      <ScrollManager />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/schulbauwunder" element={<Schulbauwunder />} />
