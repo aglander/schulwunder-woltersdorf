@@ -36,8 +36,8 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
 
   return (
     <>
-      {/* Sticky Header */}
-      <div className="sticky top-0 z-50 bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/60">
+      {/* Sticky Header - z-index angepasst */}
+      <div className="sticky top-0 z-30 bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/60">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link 
