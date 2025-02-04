@@ -12,16 +12,16 @@ const Schulinnovationswunder = () => {
       />
       <WunderHeader title="Schulinnovationswunder">
         <p className="text-xl max-w-2xl">
-          Entdecken Sie unsere innovativen Bauvorhaben und Zukunftspläne für das neue 
-          Schulgelände der Freien Schule Woltersdorf.
+          Entdecken Sie unsere innovativen Bauvorhaben und Zukunftspläne für das neue
+          Schulgelände in Woltersdorf.
         </p>
       </WunderHeader>
 
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sticky Navigation */}
+          {/* Sticky Navigation - mit angepasstem top-Abstand */}
           <div className="lg:w-1/4">
-            <div className="sticky top-4">
+            <div className="sticky top-20">
               <nav className="bg-white rounded-lg shadow-lg p-4">
                 <ul className="space-y-2">
                   <li>

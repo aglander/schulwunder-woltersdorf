@@ -19,7 +19,7 @@ const Schulbauwunder = () => {
 
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sticky Navigation - mit zusätzlichem top-Abstand */}
+          {/* Sticky Navigation - mit angepasstem top-Abstand */}
           <div className="lg:w-1/4">
             <div className="sticky top-20">
               <nav className="bg-white rounded-lg shadow-lg p-4">
