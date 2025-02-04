@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
 
 const Schulinnovationswunder = () => {
+  const [isHeroVisible, setIsHeroVisible] = useState(true);
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsHeroVisible(entry.isIntersecting);
+      },
+      {
+        threshold: 0,
+      }
+    );
+
+    if (heroRef.current) {
+      observer.observe(heroRef.current);
+    }
+
+    return () => {
+      if (heroRef.current) {
+        observer.unobserve(heroRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Sticky Header */}
@@ -16,15 +40,16 @@ const Schulinnovationswunder = () => {
             </Link>
           </div>
           <div className="absolute left-1/2 transform -translate-x-1/2">
-            <span className="text-white font-semibold">Schulinnovationswunder</span>
+            {!isHeroVisible && (
+              <span className="text-white font-semibold">Schulinnovationswunder</span>
+            )}
           </div>
           <div className="w-[200px]" /> {/* Spacer für Balance */}
         </div>
       </div>
 
-      {/* Rest of the content */}
       {/* Hero Section */}
-      <div className="bg-primary text-white py-20">
+      <div ref={heroRef} className="bg-primary text-white py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-5xl font-bold mb-6">Schulinnovationswunder</h1>
           <p className="text-xl max-w-2xl">
