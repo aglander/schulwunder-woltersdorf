@@ -35,10 +35,17 @@ const YouTubeFeed = () => {
       }
 
       try {
-        console.log("Starte API-Anfrage...");
+        console.log("Starte API-Anfrage mit Key:", apiKey);
         const videosResponse = await fetch(
           `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC6JPid2VWnlODcaAoYsli3g&maxResults=9&order=date&type=video&key=${apiKey}`
         );
+        
+        if (!videosResponse.ok) {
+          const errorData = await videosResponse.json();
+          console.error("API-Fehler:", errorData);
+          throw new Error(`API-Fehler: ${errorData.error?.message || 'Unbekannter Fehler'}`);
+        }
+
         const videosData = await videosResponse.json();
         console.log("API-Antwort:", videosData);
 
@@ -47,14 +54,11 @@ const YouTubeFeed = () => {
           throw new Error("Keine Videos gefunden");
         }
 
-        const formattedVideos = videosData.items.map((item: any) => {
-          console.log("Verarbeite Video-Item:", item);
-          return {
-            id: item.id.videoId,
-            title: item.snippet.title,
-            thumbnail: item.snippet.thumbnails.medium.url,
-          };
-        });
+        const formattedVideos = videosData.items.map((item: any) => ({
+          id: item.id.videoId,
+          title: item.snippet.title,
+          thumbnail: item.snippet.thumbnails.medium.url,
+        }));
 
         console.log("Formatierte Videos:", formattedVideos);
         setVideos(formattedVideos);
@@ -62,10 +66,9 @@ const YouTubeFeed = () => {
         console.error("Detaillierter Fehler:", error);
         toast({
           title: "Fehler beim Laden der Videos",
-          description: "Die Videos konnten nicht geladen werden. Bitte überprüfen Sie Ihren API Key.",
+          description: error instanceof Error ? error.message : "Die Videos konnten nicht geladen werden. Bitte überprüfen Sie Ihren API Key.",
           variant: "destructive",
         });
-        console.error("Fehler beim Laden der YouTube Videos:", error);
       } finally {
         setLoading(false);
       }
