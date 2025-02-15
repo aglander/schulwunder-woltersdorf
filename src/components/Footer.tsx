@@ -8,13 +8,13 @@ const Footer = () => {
   // Bestimme die Hover-Farbe basierend auf der aktuellen Route
   const getHoverColorClass = () => {
     if (location.pathname.includes('schulbau')) {
-      return 'hover:text-schulbau';
+      return 'hover:text-schulbau hover:underline';
     } else if (location.pathname.includes('schulgruendung')) {
-      return 'hover:text-schulgruendung';
+      return 'hover:text-schulgruendung hover:underline';
     } else if (location.pathname.includes('schulinnovation')) {
-      return 'hover:text-schulinnovation';
+      return 'hover:text-schulinnovation hover:underline';
     }
-    return 'hover:text-black'; // Schwarz für die Startseite
+    return 'hover:text-black hover:underline'; // Schwarz für die Startseite
   };
 
   const hoverClass = getHoverColorClass();
