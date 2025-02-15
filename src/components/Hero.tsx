@@ -3,7 +3,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[40vh] flex items-center justify-center bg-gradient-to-r from-[#8E9196] to-[#8E9196]/80 text-white p-8">
+    <div className="relative min-h-[40vh] flex items-center justify-center bg-gradient-to-r from-[#6B7075] to-[#6B7075]/80 text-white p-8">
       <div className="relative max-w-4xl mx-auto text-center animate-fade-up">
         <div className="relative">
           <div className="relative inline-block px-24">
