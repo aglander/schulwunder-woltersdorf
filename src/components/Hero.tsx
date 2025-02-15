@@ -16,10 +16,10 @@ const Hero = () => {
           <h1 className="relative text-4xl md:text-6xl font-bold mb-6">
             Schulwunder Woltersdorf
           </h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+            Entdecken Sie die drei Wunder unserer Schulentwicklung: Bau, Gründung und Innovation
+          </p>
         </div>
-        <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-          Entdecken Sie die drei Wunder unserer Schulentwicklung: Bau, Gründung und Innovation
-        </p>
       </div>
     </div>
   );
