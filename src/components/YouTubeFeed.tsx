@@ -28,20 +28,31 @@ const YouTubeFeed = () => {
       }
 
       try {
-        // Direkt die Playlist-Items abrufen von der Uploads-Playlist
+        console.log("Starte API-Anfrage...");
         const videosResponse = await fetch(
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UChB99GwGRLnMEkR2j2y8iQw&maxResults=9&order=date&type=video&key=${apiKey}`
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCrZtd4PEp2Y0Y_Lv4Psbj3Q&maxResults=9&order=date&type=video&key=${apiKey}`
         );
         const videosData = await videosResponse.json();
+        console.log("API-Antwort:", videosData);
 
-        const formattedVideos = videosData.items.map((item: any) => ({
-          id: item.id.videoId,
-          title: item.snippet.title,
-          thumbnail: item.snippet.thumbnails.medium.url,
-        }));
+        if (!videosData.items) {
+          console.error("Keine Items in der API-Antwort gefunden");
+          throw new Error("Keine Videos gefunden");
+        }
 
+        const formattedVideos = videosData.items.map((item: any) => {
+          console.log("Verarbeite Video-Item:", item);
+          return {
+            id: item.id.videoId,
+            title: item.snippet.title,
+            thumbnail: item.snippet.thumbnails.medium.url,
+          };
+        });
+
+        console.log("Formatierte Videos:", formattedVideos);
         setVideos(formattedVideos);
       } catch (error) {
+        console.error("Detaillierter Fehler:", error);
         toast({
           title: "Fehler beim Laden der Videos",
           description: "Die Videos konnten nicht geladen werden. Bitte überprüfen Sie Ihren API Key.",
@@ -70,30 +81,36 @@ const YouTubeFeed = () => {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-16">
       <h2 className="text-3xl font-bold text-center mb-12">Unsere YouTube Videos</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {videos.map((video) => (
-          <div key={video.id} className="group cursor-pointer">
-            <a
-              href={`https://www.youtube.com/watch?v=${video.id}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <div className="relative aspect-video overflow-hidden rounded-lg">
-                <img
-                  src={video.thumbnail}
-                  alt={video.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
-              </div>
-              <h3 className="mt-2 text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-schulbau">
-                {video.title}
-              </h3>
-            </a>
-          </div>
-        ))}
-      </div>
+      {videos.length === 0 ? (
+        <div className="text-center text-gray-600">
+          Keine Videos gefunden
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {videos.map((video) => (
+            <div key={video.id} className="group cursor-pointer">
+              <a
+                href={`https://www.youtube.com/watch?v=${video.id}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="relative aspect-video overflow-hidden rounded-lg">
+                  <img
+                    src={video.thumbnail}
+                    alt={video.title}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
+                </div>
+                <h3 className="mt-2 text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-schulbau">
+                  {video.title}
+                </h3>
+              </a>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
