@@ -1,5 +1,6 @@
+
 import React, { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
@@ -12,6 +13,19 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
   const [isH1Visible, setIsH1Visible] = useState(true);
   const h1Ref = useRef<HTMLHeadingElement>(null);
   const isMobile = useIsMobile();
+  const location = useLocation();
+
+  // Bestimme die Farbe basierend auf der aktuellen Route
+  const getBackgroundColor = () => {
+    if (location.pathname.includes('schulbau')) {
+      return 'bg-schulbau';
+    } else if (location.pathname.includes('schulgruendung')) {
+      return 'bg-schulgruendung';
+    } else if (location.pathname.includes('schulinnovation')) {
+      return 'bg-schulinnovation';
+    }
+    return 'bg-primary'; // Fallback
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -34,10 +48,12 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
     };
   }, []);
 
+  const bgColorClass = getBackgroundColor();
+
   return (
     <>
-      {/* Sticky Header - z-index angepasst */}
-      <div className="sticky top-0 z-30 bg-primary/95 backdrop-blur supports-[backdrop-filter]:bg-primary/60">
+      {/* Sticky Header */}
+      <div className={`sticky top-0 z-30 ${bgColorClass}/95 backdrop-blur supports-[backdrop-filter]:${bgColorClass}/60`}>
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link 
@@ -62,7 +78,7 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
       </div>
 
       {/* Hero Section */}
-      <div className="bg-primary text-white py-20">
+      <div className={`${bgColorClass} text-white py-20`}>
         <div className="container mx-auto px-4">
           <h1 ref={h1Ref} lang="de" className="text-5xl font-bold mb-6 break-words hyphens-auto">
             {title}
