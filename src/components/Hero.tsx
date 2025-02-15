@@ -32,7 +32,7 @@ const Hero = () => {
           <div className="relative inline-block px-24">
             {/* SVG background with dynamic dimensions */}
             <div 
-              className="absolute -inset-y-12 -inset-x-24 opacity-15 -translate-y-2"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15"
               style={{
                 width: svgWidth > 0 ? `${svgWidth}px` : '100%',
                 height: svgHeight > 0 ? `${svgHeight}px` : 'auto'
