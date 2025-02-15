@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -34,6 +35,19 @@ export default {
         },
         accent: {
           DEFAULT: "#27AE60",
+          foreground: "#FFFFFF",
+        },
+        // Neue Farbschemen für die Wunder
+        schulbau: {
+          DEFAULT: "#DB3F36",
+          foreground: "#FFFFFF",
+        },
+        schulgruendung: {
+          DEFAULT: "#3F58AB",
+          foreground: "#FFFFFF",
+        },
+        schulinnovation: {
+          DEFAULT: "#6ABA4E",
           foreground: "#FFFFFF",
         },
         destructive: {
