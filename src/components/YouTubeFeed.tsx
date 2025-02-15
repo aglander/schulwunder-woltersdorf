@@ -22,7 +22,8 @@ const YouTubeFeed = () => {
 
   useEffect(() => {
     const fetchVideos = async () => {
-      const apiKey = localStorage.getItem("youtube_api_key");
+      // First check for environment variable, then fallback to localStorage
+      const apiKey = import.meta.env.YOUTUBE || localStorage.getItem("youtube_api_key");
       
       if (!apiKey) {
         toast({
@@ -35,7 +36,7 @@ const YouTubeFeed = () => {
       }
 
       try {
-        console.log("Starte API-Anfrage mit Key:", apiKey);
+        console.log("Starte API-Anfrage...");
         const videosResponse = await fetch(
           `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC6JPid2VWnlODcaAoYsli3g&maxResults=9&order=date&type=video&key=${apiKey}`
         );
@@ -47,7 +48,7 @@ const YouTubeFeed = () => {
         }
 
         const videosData = await videosResponse.json();
-        console.log("API-Antwort:", videosData);
+        console.log("API-Antwort erhalten");
 
         if (!videosData.items) {
           console.error("Keine Items in der API-Antwort gefunden");
@@ -60,7 +61,6 @@ const YouTubeFeed = () => {
           thumbnail: item.snippet.thumbnails.medium.url,
         }));
 
-        console.log("Formatierte Videos:", formattedVideos);
         setVideos(formattedVideos);
       } catch (error) {
         console.error("Detaillierter Fehler:", error);
