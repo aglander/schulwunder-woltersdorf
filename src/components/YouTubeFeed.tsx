@@ -9,7 +9,7 @@ const YouTubeFeed = () => {
         <iframe
           width="800"
           height="450"
-          src="https://www.youtube.com/embed/?listType=user_uploads&list=freieschulewoltersdorf"
+          src="https://www.youtube.com/embed/videoseries?list=UUhB99GwGRLnMEkR2j2y8iQw"
           title="YouTube-Videos der Freien Schule Woltersdorf"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
