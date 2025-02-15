@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -25,22 +26,22 @@ const Schulbauwunder = () => {
               <nav className="bg-white rounded-lg shadow-lg p-4">
                 <ul className="space-y-2">
                   <li>
-                    <a href="#description" className="text-primary hover:underline block py-2">
+                    <a href="#description" className="text-schulbau hover:underline block py-2">
                       Beschreibung
                     </a>
                   </li>
                   <li>
-                    <a href="#updates" className="text-primary hover:underline block py-2">
+                    <a href="#updates" className="text-schulbau hover:underline block py-2">
                       Aktuelles
                     </a>
                   </li>
                   <li>
-                    <a href="#team" className="text-primary hover:underline block py-2">
+                    <a href="#team" className="text-schulbau hover:underline block py-2">
                       Team
                     </a>
                   </li>
                   <li>
-                    <a href="#supporters" className="text-primary hover:underline block py-2">
+                    <a href="#supporters" className="text-schulbau hover:underline block py-2">
                       Unterstützer
                     </a>
                   </li>
@@ -77,7 +78,7 @@ const Schulbauwunder = () => {
             {/* Description Section */}
             <section id="description" className="mb-16">
               <Card className="p-8">
-                <h2 className="text-3xl font-bold mb-6">Über das Schulbauwunder</h2>
+                <h2 className="text-3xl font-bold mb-6 text-schulbau">Über das Schulbauwunder</h2>
                 <div className="prose max-w-none">
                   <p className="text-lg mb-6">
                     Mit vereinten Kräften erschaffen wir einen Ort, an dem Bildung lebendig wird. 
@@ -90,7 +91,7 @@ const Schulbauwunder = () => {
                     Kreativität und gemeinsames Lernen sein wird.
                   </p>
                   <div className="bg-gray-50 p-6 rounded-lg mt-8">
-                    <h3 className="text-xl font-semibold mb-4">Unsere Vision</h3>
+                    <h3 className="text-xl font-semibold mb-4 text-schulbau">Unsere Vision</h3>
                     <ul className="list-disc list-inside space-y-2">
                       <li>Nachhaltige Bauweise mit natürlichen Materialien</li>
                       <li>Flexible Lernräume für moderne Pädagogik</li>
@@ -105,10 +106,10 @@ const Schulbauwunder = () => {
             {/* Updates Section */}
             <section id="updates" className="mb-16">
               <Card className="p-8">
-                <h2 className="text-3xl font-bold mb-6">Aktuelles</h2>
+                <h2 className="text-3xl font-bold mb-6 text-schulbau">Aktuelles</h2>
                 <div className="space-y-8">
                   <div className="border-b pb-8">
-                    <h3 className="text-xl font-semibold mb-4">Baufortschritt</h3>
+                    <h3 className="text-xl font-semibold mb-4 text-schulbau">Baufortschritt</h3>
                     <div className="aspect-video bg-gray-100 rounded-lg mb-4">
                       <div className="w-full h-full flex items-center justify-center text-gray-400">
                         Bild/Video vom Baufortschritt
@@ -125,7 +126,7 @@ const Schulbauwunder = () => {
             {/* Team Section */}
             <section id="team" className="mb-16">
               <Card className="p-8">
-                <h2 className="text-3xl font-bold mb-6">Unser Team</h2>
+                <h2 className="text-3xl font-bold mb-6 text-schulbau">Unser Team</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <div className="text-center">
                     <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4" />
@@ -139,7 +140,7 @@ const Schulbauwunder = () => {
             {/* Supporters Section */}
             <section id="supporters" className="mb-16">
               <Card className="p-8">
-                <h2 className="text-3xl font-bold mb-6">Unsere Unterstützer</h2>
+                <h2 className="text-3xl font-bold mb-6 text-schulbau">Unsere Unterstützer</h2>
                 <p className="mb-8">
                   Wir danken allen Sponsoren und Unterstützern, die dieses Projekt möglich machen.
                 </p>
