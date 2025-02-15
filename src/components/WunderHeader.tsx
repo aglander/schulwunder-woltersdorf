@@ -1,8 +1,5 @@
 
-import React, { useRef, useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
-import { useIsMobile } from "@/hooks/use-mobile";
+import React, { useEffect, useRef, useState } from "react";
 
 interface WunderHeaderProps {
   title: string;
@@ -10,104 +7,59 @@ interface WunderHeaderProps {
 }
 
 export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
-  const [isH1Visible, setIsH1Visible] = useState(true);
-  const h1Ref = useRef<HTMLHeadingElement>(null);
-  const isMobile = useIsMobile();
-  const location = useLocation();
-
-  const getBackgroundColor = () => {
-    if (location.pathname.includes('schulbau')) {
-      return 'bg-schulbau';
-    } else if (location.pathname.includes('schulgruendung')) {
-      return 'bg-schulgruendung';
-    } else if (location.pathname.includes('schulinnovation')) {
-      return 'bg-schulinnovation';
-    }
-    return 'bg-primary';
-  };
+  const [svgWidth, setSvgWidth] = useState<number>(0);
+  const headlineRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsH1Visible(entry.isIntersecting);
-      },
-      {
-        threshold: 0,
+    const updateSvgDimensions = () => {
+      if (headlineRef.current) {
+        // Get the width of the headline plus padding
+        const headlineWidth = headlineRef.current.offsetWidth + 192; // 192px = 6rem (px-24) * 2
+        setSvgWidth(headlineWidth);
       }
-    );
+    };
 
-    if (h1Ref.current) {
-      observer.observe(h1Ref.current);
-    }
+    updateSvgDimensions();
+    window.addEventListener('resize', updateSvgDimensions);
 
     return () => {
-      if (h1Ref.current) {
-        observer.unobserve(h1Ref.current);
-      }
+      window.removeEventListener('resize', updateSvgDimensions);
     };
   }, []);
 
-  const bgColorClass = getBackgroundColor();
+  // Calculate height based on the 4.83:1 aspect ratio
+  const svgHeight = svgWidth / 4.83;
 
   return (
-    <>
-      {/* Sticky Header */}
-      <div className="sticky top-0 z-30">
-        <div className={`${bgColorClass} backdrop-blur-sm bg-opacity-95`}>
-          <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Link 
-                to="/" 
-                className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
-              >
-                <ArrowLeft className="w-5 h-5" />
-                {!isMobile && (
-                  <span className="font-semibold">
-                    Schulwunder Woltersdorf
-                  </span>
-                )}
-              </Link>
+    <div className="relative min-h-[40vh] flex items-center justify-center bg-gradient-to-r from-[#DB3F36] to-[#DB3F36]/80 text-white p-8">
+      <div className="relative max-w-4xl mx-auto text-center animate-fade-up">
+        <div className="relative">
+          <div className="relative inline-block px-24">
+            {/* SVG background with dynamic dimensions */}
+            <div 
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-15"
+              style={{
+                width: svgWidth > 0 ? `${svgWidth}px` : '100%',
+                height: svgHeight > 0 ? `${svgHeight}px` : 'auto',
+                overflow: 'visible' // Ensure SVG is not cropped
+              }}
+            >
+              <img
+                src="/assets/swish.svg"
+                alt=""
+                className="w-full h-full object-contain"
+                aria-hidden="true"
+              />
             </div>
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-[300px] text-center">
-              {!isH1Visible && (
-                <span lang="de" className="text-white font-semibold whitespace-nowrap">{title}</span>
-              )}
-            </div>
-            <div className="w-[200px]" /> {/* Spacer für Balance */}
+            <h1 ref={headlineRef} className="relative text-4xl md:text-6xl font-bold mb-6">
+              {title}
+            </h1>
+          </div>
+          <div className="relative z-10">
+            {children}
           </div>
         </div>
       </div>
-
-      {/* Hero Section */}
-      <div className={`${bgColorClass}`}>
-        <div className="container mx-auto px-4 flex flex-col items-center text-center py-20">
-          <div className="relative flex flex-col items-center">
-            <div className="text-white">
-              <div className="relative inline-block px-24">
-                {/* Swish Effect mit noch größerem Inset für längere Titel */}
-                <div className="absolute -inset-y-12 -inset-x-24 opacity-15 -translate-y-2">
-                  <img 
-                    src="/assets/swish.svg" 
-                    alt="" 
-                    className="w-full h-full object-cover brightness-0"
-                  />
-                </div>
-                <h1 
-                  ref={h1Ref} 
-                  lang="de" 
-                  className="relative text-5xl font-bold mb-6 break-words hyphens-auto"
-                >
-                  {title}
-                </h1>
-              </div>
-              {/* Untertitel außerhalb des Swish-Containers */}
-              <div className="relative z-10 max-w-2xl mt-6">
-                {children}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
+    </div>
   );
 };
