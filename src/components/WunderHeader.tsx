@@ -15,7 +15,6 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
   const isMobile = useIsMobile();
   const location = useLocation();
 
-  // Bestimme die Farbe basierend auf der aktuellen Route
   const getBackgroundColor = () => {
     if (location.pathname.includes('schulbau')) {
       return 'bg-schulbau';
@@ -24,7 +23,7 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
     } else if (location.pathname.includes('schulinnovation')) {
       return 'bg-schulinnovation';
     }
-    return 'bg-primary'; // Fallback
+    return 'bg-primary';
   };
 
   useEffect(() => {
@@ -52,7 +51,7 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
 
   return (
     <>
-      {/* Sticky Header - now outside the colored container */}
+      {/* Sticky Header */}
       <div className="sticky top-0 z-30">
         <div className={`${bgColorClass} backdrop-blur-sm bg-opacity-95`}>
           <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -79,14 +78,30 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
         </div>
       </div>
 
-      {/* Hero Section */}
-      <div className={`${bgColorClass}`}>
-        <div className="text-white py-20">
-          <div className="container mx-auto px-4">
-            <h1 ref={h1Ref} lang="de" className="text-5xl font-bold mb-6 break-words hyphens-auto">
+      {/* Hero Section mit Swish Effect */}
+      <div className={`${bgColorClass} relative overflow-hidden`}>
+        {/* Swish Effect */}
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src="/assets/swish.svg" 
+            alt="" 
+            className="w-full h-full object-cover transform scale-150"
+          />
+        </div>
+        
+        {/* Content */}
+        <div className="relative text-white py-20">
+          <div className="container mx-auto px-4 flex flex-col items-center text-center">
+            <h1 
+              ref={h1Ref} 
+              lang="de" 
+              className="text-5xl font-bold mb-6 break-words hyphens-auto max-w-3xl"
+            >
               {title}
             </h1>
-            {children}
+            <div className="max-w-2xl">
+              {children}
+            </div>
           </div>
         </div>
       </div>
