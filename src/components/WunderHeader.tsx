@@ -83,9 +83,9 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
         <div className="container mx-auto px-4 flex flex-col items-center text-center py-20">
           <div className="relative">
             <div className="text-white">
-              <div className="relative inline-block px-12">
-                {/* Swish Effect nur direkt hinter der Überschrift */}
-                <div className="absolute -inset-y-4 -inset-x-12 opacity-15 -translate-y-2">
+              <div className="relative inline-block px-16">
+                {/* Swish Effect mit größerem Inset für längere Titel */}
+                <div className="absolute -inset-y-8 -inset-x-16 opacity-15 -translate-y-2">
                   <img 
                     src="/assets/swish.svg" 
                     alt="" 

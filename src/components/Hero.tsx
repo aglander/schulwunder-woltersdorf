@@ -6,9 +6,9 @@ const Hero = () => {
     <div className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-primary to-primary/80 text-white p-8">
       <div className="relative max-w-4xl mx-auto text-center animate-fade-up">
         <div className="relative">
-          <div className="relative inline-block px-12">
+          <div className="relative inline-block px-16">
             {/* SVG Hintergrund nur für die Überschrift */}
-            <div className="absolute -inset-y-4 -inset-x-12 opacity-15 -translate-y-2">
+            <div className="absolute -inset-y-8 -inset-x-16 opacity-15 -translate-y-2">
               <img
                 src="/assets/swish.svg"
                 alt=""
