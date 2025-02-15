@@ -28,24 +28,14 @@ const YouTubeFeed = () => {
       }
 
       try {
-        const channelResponse = await fetch(
-          `https://www.googleapis.com/youtube/v3/channels?part=contentDetails&forUsername=FreieSchuleWoltersdorf&key=${apiKey}`
-        );
-        const channelData = await channelResponse.json();
-        
-        if (!channelData.items || channelData.items.length === 0) {
-          throw new Error("Kanal nicht gefunden");
-        }
-
-        const uploadsPlaylistId = channelData.items[0].contentDetails.relatedPlaylists.uploads;
-        
+        // Direkt die Playlist-Items abrufen von der Uploads-Playlist
         const videosResponse = await fetch(
-          `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=9&playlistId=${uploadsPlaylistId}&key=${apiKey}`
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UChB99GwGRLnMEkR2j2y8iQw&maxResults=9&order=date&type=video&key=${apiKey}`
         );
         const videosData = await videosResponse.json();
 
         const formattedVideos = videosData.items.map((item: any) => ({
-          id: item.snippet.resourceId.videoId,
+          id: item.id.videoId,
           title: item.snippet.title,
           thumbnail: item.snippet.thumbnails.medium.url,
         }));
