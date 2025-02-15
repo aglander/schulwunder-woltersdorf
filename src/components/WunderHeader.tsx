@@ -83,25 +83,28 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
         <div className="container mx-auto px-4 flex flex-col items-center text-center py-20">
           <div className="relative flex flex-col items-center">
             <div className="text-white">
-              <div className="relative inline-block px-24">
-                {/* Swish Effect mit noch größerem Inset für längere Titel */}
-                <div className="absolute -inset-y-12 -inset-x-24 opacity-15 -translate-y-2">
-                  <img 
-                    src="/assets/swish.svg" 
-                    alt="" 
-                    className="w-full h-full object-cover brightness-0"
-                  />
+              <div className="relative">
+                {/* Container für den Swish-Effekt mit ausreichend Padding */}
+                <div className="relative inline-block">
+                  {/* Swish Effect mit dynamischem Padding */}
+                  <div className="absolute -inset-y-12 -left-24 -right-24 opacity-15 -translate-y-2">
+                    <img 
+                      src="/assets/swish.svg" 
+                      alt="" 
+                      className="w-full h-full object-cover brightness-0"
+                    />
+                  </div>
+                  <h1 
+                    ref={h1Ref} 
+                    lang="de" 
+                    className="relative text-5xl font-bold mb-6 break-words hyphens-auto px-24"
+                  >
+                    {title}
+                  </h1>
                 </div>
-                <h1 
-                  ref={h1Ref} 
-                  lang="de" 
-                  className="relative text-5xl font-bold mb-6 break-words hyphens-auto"
-                >
-                  {title}
-                </h1>
               </div>
               {/* Untertitel außerhalb des Swish-Containers */}
-              <div className="relative z-10 max-w-2xl mt-6">
+              <div className="relative z-10 max-w-2xl mx-auto mt-6">
                 {children}
               </div>
             </div>
