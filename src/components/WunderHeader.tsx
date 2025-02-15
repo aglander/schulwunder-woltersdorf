@@ -81,11 +81,11 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
       {/* Hero Section */}
       <div className={`${bgColorClass}`}>
         <div className="container mx-auto px-4 flex flex-col items-center text-center py-20">
-          <div className="relative">
+          <div className="relative flex flex-col items-center">
             <div className="text-white">
-              <div className="relative inline-block px-16">
-                {/* Swish Effect mit größerem Inset für längere Titel */}
-                <div className="absolute -inset-y-8 -inset-x-16 opacity-15 -translate-y-2">
+              <div className="relative inline-block px-24">
+                {/* Swish Effect mit noch größerem Inset für längere Titel */}
+                <div className="absolute -inset-y-12 -inset-x-24 opacity-15 -translate-y-2">
                   <img 
                     src="/assets/swish.svg" 
                     alt="" 
@@ -100,7 +100,8 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
                   {title}
                 </h1>
               </div>
-              <div className="max-w-2xl">
+              {/* Untertitel außerhalb des Swish-Containers */}
+              <div className="relative z-10 max-w-2xl mt-6">
                 {children}
               </div>
             </div>

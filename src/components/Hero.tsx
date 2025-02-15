@@ -6,9 +6,9 @@ const Hero = () => {
     <div className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-primary to-primary/80 text-white p-8">
       <div className="relative max-w-4xl mx-auto text-center animate-fade-up">
         <div className="relative">
-          <div className="relative inline-block px-16">
+          <div className="relative inline-block px-24">
             {/* SVG Hintergrund nur für die Überschrift */}
-            <div className="absolute -inset-y-8 -inset-x-16 opacity-15 -translate-y-2">
+            <div className="absolute -inset-y-12 -inset-x-24 opacity-15 -translate-y-2">
               <img
                 src="/assets/swish.svg"
                 alt=""
@@ -20,7 +20,8 @@ const Hero = () => {
               Schulwunder Woltersdorf
             </h1>
           </div>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
+          {/* Untertitel außerhalb des Swish-Containers */}
+          <p className="relative z-10 text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
             Entdecken Sie die drei Wunder unserer Schulentwicklung: Bau, Gründung und Innovation
           </p>
         </div>
