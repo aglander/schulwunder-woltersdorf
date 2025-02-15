@@ -1,6 +1,12 @@
 
 import React, { useEffect, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 
 interface YouTubeVideo {
   id: string;
@@ -11,6 +17,7 @@ interface YouTubeVideo {
 const YouTubeFeed = () => {
   const [videos, setVideos] = useState<YouTubeVideo[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedVideo, setSelectedVideo] = useState<YouTubeVideo | null>(null);
   const { toast } = useToast();
 
   useEffect(() => {
@@ -79,39 +86,61 @@ const YouTubeFeed = () => {
   }
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-16">
-      <h2 className="text-3xl font-bold text-center mb-12">Unsere YouTube Videos</h2>
-      {videos.length === 0 ? (
-        <div className="text-center text-gray-600">
-          Keine Videos gefunden
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {videos.map((video) => (
-            <div key={video.id} className="group cursor-pointer">
-              <a
-                href={`https://www.youtube.com/watch?v=${video.id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block"
+    <>
+      <div className="w-full max-w-7xl mx-auto px-4 py-16">
+        <h2 className="text-3xl font-bold text-center mb-12">Unsere YouTube Videos</h2>
+        {videos.length === 0 ? (
+          <div className="text-center text-gray-600">
+            Keine Videos gefunden
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {videos.map((video) => (
+              <div 
+                key={video.id} 
+                className="group cursor-pointer"
+                onClick={() => setSelectedVideo(video)}
               >
-                <div className="relative aspect-video overflow-hidden rounded-lg">
-                  <img
-                    src={video.thumbnail}
-                    alt={video.title}
-                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
+                <div className="block">
+                  <div className="relative aspect-video overflow-hidden rounded-lg">
+                    <img
+                      src={video.thumbnail}
+                      alt={video.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300" />
+                  </div>
+                  <h3 className="mt-2 text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-schulbau">
+                    {video.title}
+                  </h3>
                 </div>
-                <h3 className="mt-2 text-sm font-medium text-gray-900 line-clamp-2 group-hover:text-schulbau">
-                  {video.title}
-                </h3>
-              </a>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <Dialog open={!!selectedVideo} onOpenChange={() => setSelectedVideo(null)}>
+        <DialogContent className="max-w-4xl p-0">
+          <DialogHeader className="p-6">
+            <DialogTitle>{selectedVideo?.title}</DialogTitle>
+          </DialogHeader>
+          {selectedVideo && (
+            <div className="aspect-video w-full">
+              <iframe
+                width="100%"
+                height="100%"
+                src={`https://www.youtube.com/embed/${selectedVideo.id}?autoplay=1`}
+                title={selectedVideo.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="border-0"
+              />
             </div>
-          ))}
-        </div>
-      )}
-    </div>
+          )}
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
 
