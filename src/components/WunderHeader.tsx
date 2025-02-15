@@ -30,8 +30,20 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
   // Calculate height based on the 4.83:1 aspect ratio
   const svgHeight = svgWidth / 4.83;
 
+  // Determine the gradient based on the title
+  const getGradient = () => {
+    if (title.toLowerCase().includes('schulbauwunder')) {
+      return 'from-[#DB3F36] to-[#DB3F36]/80';
+    } else if (title.toLowerCase().includes('schulgründungswunder')) {
+      return 'from-[#3F58AB] to-[#3F58AB]/80';
+    } else if (title.toLowerCase().includes('schulinnovationswunder')) {
+      return 'from-[#6ABA4E] to-[#6ABA4E]/80';
+    }
+    return 'from-[#6B7075] to-[#6B7075]/80'; // default gradient
+  };
+
   return (
-    <div className="relative min-h-[40vh] flex items-center justify-center bg-gradient-to-r from-[#DB3F36] to-[#DB3F36]/80 text-white p-8">
+    <div className={`relative min-h-[40vh] flex items-center justify-center bg-gradient-to-r ${getGradient()} text-white p-8`}>
       <div className="absolute top-0 left-0 w-full p-4">
         <div className="container mx-auto">
           <a href="/" className="text-white hover:underline">&larr; Zurück zur Übersicht</a>
