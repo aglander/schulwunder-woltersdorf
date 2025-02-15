@@ -51,9 +51,9 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
   const bgColorClass = getBackgroundColor();
 
   return (
-    <>
+    <div className={`relative ${bgColorClass}`}>
       {/* Sticky Header */}
-      <div className={`sticky top-0 z-30 ${bgColorClass}/95 backdrop-blur supports-[backdrop-filter]:${bgColorClass}/60`}>
+      <div className="sticky top-0 z-30 backdrop-blur-sm bg-transparent">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link 
@@ -78,7 +78,7 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
       </div>
 
       {/* Hero Section */}
-      <div className={`${bgColorClass} text-white py-20`}>
+      <div className="text-white py-20">
         <div className="container mx-auto px-4">
           <h1 ref={h1Ref} lang="de" className="text-5xl font-bold mb-6 break-words hyphens-auto">
             {title}
@@ -86,6 +86,6 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
           {children}
         </div>
       </div>
-    </>
+    </div>
   );
 };
