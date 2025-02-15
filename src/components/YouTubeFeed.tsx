@@ -36,8 +36,9 @@ const YouTubeFeed = () => {
 
       try {
         console.log("Starte API-Anfrage mit Key:", apiKey);
+        // Erhöhe maxResults um Shorts zu kompensieren
         const videosResponse = await fetch(
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC6JPid2VWnlODcaAoYsli3g&maxResults=9&order=date&type=video&key=${apiKey}`
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC6JPid2VWnlODcaAoYsli3g&maxResults=20&order=date&type=video&key=${apiKey}`
         );
         
         if (!videosResponse.ok) {
@@ -54,13 +55,17 @@ const YouTubeFeed = () => {
           throw new Error("Keine Videos gefunden");
         }
 
-        const formattedVideos = videosData.items.map((item: any) => ({
-          id: item.id.videoId,
-          title: item.snippet.title,
-          thumbnail: item.snippet.thumbnails.medium.url,
-        }));
+        // Filtere Shorts anhand der Videodauer und Titel
+        const formattedVideos = videosData.items
+          .filter((item: any) => !item.snippet.title.toLowerCase().includes('#shorts'))
+          .map((item: any) => ({
+            id: item.id.videoId,
+            title: item.snippet.title,
+            thumbnail: item.snippet.thumbnails.medium.url,
+          }))
+          .slice(0, 9); // Nimm nur die ersten 9 Videos
 
-        console.log("Formatierte Videos:", formattedVideos);
+        console.log("Formatierte Videos (ohne Shorts):", formattedVideos);
         setVideos(formattedVideos);
       } catch (error) {
         console.error("Detaillierter Fehler:", error);
