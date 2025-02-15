@@ -14,11 +14,38 @@ interface YouTubeVideo {
   thumbnail: string;
 }
 
+interface CachedData {
+  videos: YouTubeVideo[];
+  timestamp: number;
+}
+
+const CACHE_KEY = 'youtube_videos_cache';
+const ONE_DAY_MS = 24 * 60 * 60 * 1000; // 24 Stunden in Millisekunden
+
 const YouTubeFeed = () => {
   const [videos, setVideos] = useState<YouTubeVideo[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedVideo, setSelectedVideo] = useState<YouTubeVideo | null>(null);
   const { toast } = useToast();
+
+  const getCachedVideos = (): CachedData | null => {
+    const cached = localStorage.getItem(CACHE_KEY);
+    if (!cached) return null;
+    return JSON.parse(cached);
+  };
+
+  const setCachedVideos = (videos: YouTubeVideo[]) => {
+    const cacheData: CachedData = {
+      videos,
+      timestamp: Date.now(),
+    };
+    localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData));
+  };
+
+  const isCacheValid = (cache: CachedData): boolean => {
+    const now = Date.now();
+    return now - cache.timestamp < ONE_DAY_MS;
+  };
 
   useEffect(() => {
     const fetchVideos = async () => {
@@ -34,8 +61,17 @@ const YouTubeFeed = () => {
         return;
       }
 
+      // Prüfe zuerst den Cache
+      const cachedData = getCachedVideos();
+      if (cachedData && isCacheValid(cachedData)) {
+        console.log("Lade Videos aus dem Cache...");
+        setVideos(cachedData.videos);
+        setLoading(false);
+        return;
+      }
+
       try {
-        console.log("Starte API-Anfrage...");
+        console.log("Cache abgelaufen oder nicht vorhanden, starte API-Anfrage...");
         const videosResponse = await fetch(
           `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC6JPid2VWnlODcaAoYsli3g&maxResults=9&order=date&type=video&key=${apiKey}`
         );
@@ -47,17 +83,15 @@ const YouTubeFeed = () => {
           throw new Error("Keine Videos gefunden");
         }
 
-        const formattedVideos = videosData.items.map((item: any) => {
-          console.log("Verarbeite Video-Item:", item);
-          return {
-            id: item.id.videoId,
-            title: item.snippet.title,
-            thumbnail: item.snippet.thumbnails.medium.url,
-          };
-        });
+        const formattedVideos = videosData.items.map((item: any) => ({
+          id: item.id.videoId,
+          title: item.snippet.title,
+          thumbnail: item.snippet.thumbnails.medium.url,
+        }));
 
         console.log("Formatierte Videos:", formattedVideos);
         setVideos(formattedVideos);
+        setCachedVideos(formattedVideos); // Speichere die neuen Videos im Cache
       } catch (error) {
         console.error("Detaillierter Fehler:", error);
         toast({
