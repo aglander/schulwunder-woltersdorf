@@ -11,6 +11,7 @@ interface WunderHeaderProps {
 
 export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
   const [isH1Visible, setIsH1Visible] = useState(true);
+  const [svgWidth, setSvgWidth] = useState<number>(0);
   const h1Ref = useRef<HTMLHeadingElement>(null);
   const isMobile = useIsMobile();
   const location = useLocation();
@@ -27,6 +28,14 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
   };
 
   useEffect(() => {
+    const updateSvgDimensions = () => {
+      if (h1Ref.current) {
+        // Get the width of the headline plus padding
+        const headlineWidth = h1Ref.current.offsetWidth + 192; // 192px = 6rem (px-24) * 2
+        setSvgWidth(headlineWidth);
+      }
+    };
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsH1Visible(entry.isIntersecting);
@@ -38,16 +47,21 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
 
     if (h1Ref.current) {
       observer.observe(h1Ref.current);
+      updateSvgDimensions();
     }
+
+    window.addEventListener('resize', updateSvgDimensions);
 
     return () => {
       if (h1Ref.current) {
         observer.unobserve(h1Ref.current);
       }
+      window.removeEventListener('resize', updateSvgDimensions);
     };
   }, []);
 
   const bgColorClass = getBackgroundColor();
+  const svgHeight = svgWidth / 4.83; // Calculate height based on aspect ratio
 
   return (
     <>
@@ -84,12 +98,22 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
           <div className="relative flex flex-col items-center">
             <div className="text-white">
               <div className="relative inline-block px-24">
-                {/* Swish Effect mit noch größerem Inset für längere Titel */}
-                <div className="absolute -inset-y-12 -inset-x-24 opacity-15 -translate-y-2">
+                {/* Swish Effect with dynamic sizing */}
+                <div 
+                  className="absolute -inset-y-12 opacity-15"
+                  style={{
+                    width: svgWidth > 0 ? `${svgWidth}px` : '100%',
+                    height: svgHeight > 0 ? `${svgHeight}px` : 'auto',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    overflow: 'visible'
+                  }}
+                >
                   <img 
                     src="/assets/swish.svg" 
                     alt="" 
-                    className="w-full h-full object-cover brightness-0"
+                    className="w-full h-full object-contain brightness-0"
+                    aria-hidden="true"
                   />
                 </div>
                 <h1 
@@ -100,7 +124,7 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
                   {title}
                 </h1>
               </div>
-              {/* Untertitel außerhalb des Swish-Containers */}
+              {/* Subtitle outside of Swish container */}
               <div className="relative z-10 max-w-2xl mt-6">
                 {children}
               </div>
