@@ -51,41 +51,45 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
   const bgColorClass = getBackgroundColor();
 
   return (
-    <div className={`relative ${bgColorClass}`}>
-      {/* Sticky Header */}
-      <div className="sticky top-0 z-30 backdrop-blur-sm bg-transparent">
-        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Link 
-              to="/" 
-              className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
-            >
-              <ArrowLeft className="w-5 h-5" />
-              {!isMobile && (
-                <span className="font-semibold">
-                  Schulwunder Woltersdorf
-                </span>
+    <>
+      {/* Sticky Header - now outside the colored container */}
+      <div className="sticky top-0 z-30">
+        <div className={`${bgColorClass} backdrop-blur-sm bg-opacity-95`}>
+          <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <Link 
+                to="/" 
+                className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
+              >
+                <ArrowLeft className="w-5 h-5" />
+                {!isMobile && (
+                  <span className="font-semibold">
+                    Schulwunder Woltersdorf
+                  </span>
+                )}
+              </Link>
+            </div>
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-[300px] text-center">
+              {!isH1Visible && (
+                <span lang="de" className="text-white font-semibold whitespace-nowrap">{title}</span>
               )}
-            </Link>
+            </div>
+            <div className="w-[200px]" /> {/* Spacer für Balance */}
           </div>
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-[300px] text-center">
-            {!isH1Visible && (
-              <span lang="de" className="text-white font-semibold whitespace-nowrap">{title}</span>
-            )}
-          </div>
-          <div className="w-[200px]" /> {/* Spacer für Balance */}
         </div>
       </div>
 
       {/* Hero Section */}
-      <div className="text-white py-20">
-        <div className="container mx-auto px-4">
-          <h1 ref={h1Ref} lang="de" className="text-5xl font-bold mb-6 break-words hyphens-auto">
-            {title}
-          </h1>
-          {children}
+      <div className={`${bgColorClass}`}>
+        <div className="text-white py-20">
+          <div className="container mx-auto px-4">
+            <h1 ref={h1Ref} lang="de" className="text-5xl font-bold mb-6 break-words hyphens-auto">
+              {title}
+            </h1>
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
