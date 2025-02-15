@@ -1,12 +1,12 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
+import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 
 const Schulgruendungswunder = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 flex flex-col">
       <SEO 
         title="Schulgründungswunder - Gemeinschaftlich Bildung gestalten"
         description="Entdecken Sie unsere Vision für die neue Oberschule in Woltersdorf, die 2026 eröffnet wird. Ein zukunftsweisendes Bildungsprojekt für die nächste Generation."
@@ -17,9 +17,8 @@ const Schulgruendungswunder = () => {
         </p>
       </WunderHeader>
 
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 flex-grow">
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sticky Navigation - mit angepasstem top-Abstand */}
           <div className="lg:w-1/4">
             <div className="sticky top-20">
               <nav className="bg-white rounded-lg shadow-lg p-4">
@@ -46,7 +45,6 @@ const Schulgruendungswunder = () => {
                   </li>
                 </ul>
 
-                {/* Project Status */}
                 <div className="mt-8 pt-8 border-t">
                   <h3 className="font-semibold mb-4">Projektstatus</h3>
                   <div className="space-y-4 text-sm">
@@ -72,9 +70,7 @@ const Schulgruendungswunder = () => {
             </div>
           </div>
 
-          {/* Main Content */}
           <div className="lg:w-3/4">
-            {/* Description Section */}
             <section id="description" className="mb-16">
               <Card className="p-8">
                 <h2 lang="de" className="text-3xl font-bold mb-6 text-schulgruendung break-words hyphens-auto">Über das Schulgründungswunder</h2>
@@ -102,7 +98,6 @@ const Schulgruendungswunder = () => {
               </Card>
             </section>
 
-            {/* Updates Section */}
             <section id="updates" className="mb-16">
               <Card className="p-8">
                 <h2 className="text-3xl font-bold mb-6 text-schulgruendung">Aktuelles</h2>
@@ -122,7 +117,6 @@ const Schulgruendungswunder = () => {
               </Card>
             </section>
 
-            {/* Team Section */}
             <section id="team" className="mb-16">
               <Card className="p-8">
                 <h2 className="text-3xl font-bold mb-6 text-schulgruendung">Unser Team</h2>
@@ -136,7 +130,6 @@ const Schulgruendungswunder = () => {
               </Card>
             </section>
 
-            {/* Supporters Section */}
             <section id="supporters" className="mb-16">
               <Card className="p-8">
                 <h2 className="text-3xl font-bold mb-6 text-schulgruendung">Unsere Unterstützer</h2>
@@ -162,6 +155,8 @@ const Schulgruendungswunder = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };
