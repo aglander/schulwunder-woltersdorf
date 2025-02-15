@@ -2,6 +2,7 @@
 import React from "react";
 import Hero from "../components/Hero";
 import WunderCard from "../components/WunderCard";
+import InstagramFeed from "../components/InstagramFeed";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 
@@ -56,6 +57,8 @@ const Index = () => {
             ))}
           </div>
         </div>
+        
+        <InstagramFeed />
       </main>
 
       <Footer />
