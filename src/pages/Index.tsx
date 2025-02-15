@@ -3,6 +3,7 @@ import React from "react";
 import Hero from "../components/Hero";
 import WunderCard from "../components/WunderCard";
 import InstagramFeed from "../components/InstagramFeed";
+import YouTubeFeed from "../components/YouTubeFeed";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 
@@ -59,6 +60,7 @@ const Index = () => {
         </div>
         
         <InstagramFeed />
+        <YouTubeFeed />
       </main>
 
       <Footer />
