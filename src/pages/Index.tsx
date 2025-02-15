@@ -1,3 +1,4 @@
+
 import React from "react";
 import Hero from "../components/Hero";
 import WunderCard from "../components/WunderCard";
@@ -11,18 +12,21 @@ const Index = () => {
       description: "Erfahren Sie mehr über unsere Baueinsätze und wie wir gemeinsam unsere neue Schule erschaffen.",
       image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
       link: "/schulbauwunder",
+      color: "schulbau"
     },
     {
       title: "Schulgründungswunder",
       description: "Entdecken Sie unsere Vision für die neue Oberschule, die 2026 eröffnet wird.",
       image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
       link: "/schulgruendungswunder",
+      color: "schulgruendung"
     },
     {
       title: "Schulinnovationswunder",
       description: "Sehen Sie unsere Zukunftspläne für das neue Schulgelände.",
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
       link: "/schulinnovationswunder",
+      color: "schulinnovation"
     },
   ];
 
