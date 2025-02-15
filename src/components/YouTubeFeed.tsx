@@ -30,7 +30,7 @@ const YouTubeFeed = () => {
       try {
         console.log("Starte API-Anfrage...");
         const videosResponse = await fetch(
-          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC4yV0IswhMmUVqGlaGUpijQ&maxResults=9&order=date&type=video&key=${apiKey}`
+          `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UC6JPid2VWnlODcaAoYsli3g&maxResults=9&order=date&type=video&key=${apiKey}`
         );
         const videosData = await videosResponse.json();
         console.log("API-Antwort:", videosData);
