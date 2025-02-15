@@ -32,6 +32,11 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
 
   return (
     <div className="relative min-h-[40vh] flex items-center justify-center bg-gradient-to-r from-[#DB3F36] to-[#DB3F36]/80 text-white p-8">
+      <div className="absolute top-0 left-0 w-full p-4">
+        <div className="container mx-auto">
+          <a href="/" className="text-white hover:underline">&larr; Zurück zur Übersicht</a>
+        </div>
+      </div>
       <div className="relative max-w-4xl mx-auto text-center animate-fade-up">
         <div className="relative">
           <div className="relative inline-block px-24">
@@ -47,7 +52,7 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
               <img
                 src="/assets/swish.svg"
                 alt=""
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain invert" // Added invert to make the SVG black
                 aria-hidden="true"
               />
             </div>
