@@ -1,11 +1,11 @@
 
 import React from "react";
 import { useLocation } from "react-router-dom";
+import ApiKeyDialog from "./ApiKeyDialog";
 
 const Footer = () => {
   const location = useLocation();
   
-  // Bestimme die Hover-Farbe basierend auf der aktuellen Route
   const getHoverColorClass = () => {
     if (location.pathname.includes('schulbau')) {
       return 'hover:text-schulbau hover:underline';
@@ -14,7 +14,7 @@ const Footer = () => {
     } else if (location.pathname.includes('schulinnovation')) {
       return 'hover:text-schulinnovation hover:underline';
     }
-    return 'hover:text-black hover:underline'; // Schwarz für die Startseite
+    return 'hover:text-black hover:underline';
   };
 
   const hoverClass = getHoverColorClass();
@@ -34,6 +34,7 @@ const Footer = () => {
               <li><a href="/kontakt" className={`text-gray-600 transition-colors ${hoverClass}`}>Kontakt</a></li>
               <li><a href="/impressum" className={`text-gray-600 transition-colors ${hoverClass}`}>Impressum</a></li>
               <li><a href="/datenschutz" className={`text-gray-600 transition-colors ${hoverClass}`}>Datenschutz</a></li>
+              <li><ApiKeyDialog /></li>
             </ul>
           </div>
           <div>
