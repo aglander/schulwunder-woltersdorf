@@ -9,8 +9,8 @@ const Hero = () => {
           <div className="relative">
             {/* Container für den Swish-Effekt */}
             <div className="relative inline-block">
-              {/* Swish Effect mit dynamischem Padding */}
-              <div className="absolute -inset-y-12 -left-24 -right-24 opacity-15 -translate-y-2">
+              {/* Swish Effect mit vergrößertem Padding */}
+              <div className="absolute -inset-y-16 -left-32 -right-32 opacity-15 -translate-y-2">
                 <img
                   src="/assets/swish.svg"
                   alt=""
@@ -18,7 +18,7 @@ const Hero = () => {
                   aria-hidden="true"
                 />
               </div>
-              <h1 className="relative text-4xl md:text-6xl font-bold mb-6 px-24">
+              <h1 className="relative text-4xl md:text-6xl font-bold mb-6 px-32">
                 Schulwunder Woltersdorf
               </h1>
             </div>

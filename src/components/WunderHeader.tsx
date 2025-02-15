@@ -86,8 +86,8 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
               <div className="relative">
                 {/* Container für den Swish-Effekt mit ausreichend Padding */}
                 <div className="relative inline-block">
-                  {/* Swish Effect mit dynamischem Padding */}
-                  <div className="absolute -inset-y-12 -left-24 -right-24 opacity-15 -translate-y-2">
+                  {/* Swish Effect mit vergrößertem Padding */}
+                  <div className="absolute -inset-y-16 -left-32 -right-32 opacity-15 -translate-y-2">
                     <img 
                       src="/assets/swish.svg" 
                       alt="" 
@@ -97,7 +97,7 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
                   <h1 
                     ref={h1Ref} 
                     lang="de" 
-                    className="relative text-5xl font-bold mb-6 break-words hyphens-auto px-24"
+                    className="relative text-5xl font-bold mb-6 break-words hyphens-auto px-32"
                   >
                     {title}
                   </h1>
