@@ -111,24 +111,24 @@ const InstagramFeed = () => {
       </div>
 
       <Dialog open={!!selectedPost} onOpenChange={() => setSelectedPost(null)}>
-        <DialogContent className="max-w-4xl p-0">
+        <DialogContent className="max-w-4xl w-[98vw] h-[98vh] max-h-[98vh] p-0 overflow-y-auto">
           <DialogHeader className="p-6">
             <DialogTitle>Instagram Post</DialogTitle>
           </DialogHeader>
           {selectedPost && (
             <div className="p-6 pt-0">
-              <div className="relative aspect-square overflow-hidden rounded-lg mb-4">
+              <div className="relative max-h-[60vh] overflow-hidden rounded-lg mb-4">
                 {selectedPost.media_type === 'VIDEO' ? (
                   <video
                     src={selectedPost.media_url}
                     controls
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 ) : (
                   <img
                     src={selectedPost.media_url}
                     alt={selectedPost.caption || 'Instagram post'}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 )}
               </div>
