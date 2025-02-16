@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { getInstagramToken } from "@/utils/instagramToken";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import {
   Dialog,
   DialogContent,
@@ -117,19 +118,25 @@ const InstagramFeed = () => {
           </DialogHeader>
           {selectedPost && (
             <div className="p-6 pt-0">
-              <div className="relative max-h-[60vh] overflow-hidden rounded-lg mb-4">
+              <div className="relative rounded-lg mb-4 flex items-center justify-center">
                 {selectedPost.media_type === 'VIDEO' ? (
-                  <video
-                    src={selectedPost.media_url}
-                    controls
-                    className="w-full h-full object-contain"
-                  />
+                  <div className="w-full max-h-[70vh] flex items-center justify-center">
+                    <video
+                      src={selectedPost.media_url}
+                      controls
+                      className="max-w-full max-h-[70vh] h-auto"
+                      style={{ width: 'auto', height: 'auto' }}
+                    />
+                  </div>
                 ) : (
-                  <img
-                    src={selectedPost.media_url}
-                    alt={selectedPost.caption || 'Instagram post'}
-                    className="w-full h-full object-contain"
-                  />
+                  <div className="w-full max-h-[70vh] flex items-center justify-center">
+                    <img
+                      src={selectedPost.media_url}
+                      alt={selectedPost.caption || 'Instagram post'}
+                      className="max-w-full max-h-[70vh] h-auto"
+                      style={{ width: 'auto', height: 'auto' }}
+                    />
+                  </div>
                 )}
               </div>
               {selectedPost.caption && (
