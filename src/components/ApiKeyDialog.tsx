@@ -12,19 +12,28 @@ import { useToast } from "@/hooks/use-toast";
 
 const ApiKeyDialog = () => {
   const [youtubeKey, setYoutubeKey] = useState("");
-  const [instagramKey, setInstagramKey] = useState("");
+  const [instagramToken, setInstagramToken] = useState("");
   const { toast } = useToast();
 
   useEffect(() => {
     const savedYoutubeKey = localStorage.getItem("youtube_api_key");
-    const savedInstagramKey = localStorage.getItem("instagram_api_key");
+    const savedInstagramToken = localStorage.getItem("instagram_token");
     if (savedYoutubeKey) setYoutubeKey(savedYoutubeKey);
-    if (savedInstagramKey) setInstagramKey(savedInstagramKey);
+    if (savedInstagramToken) setInstagramToken(savedInstagramToken);
   }, []);
 
   const handleSave = () => {
+    // Save YouTube key
     localStorage.setItem("youtube_api_key", youtubeKey);
-    localStorage.setItem("instagram_api_key", instagramKey);
+    
+    // Save Instagram token with expiration date (60 days from now)
+    if (instagramToken) {
+      localStorage.setItem("instagram_token", instagramToken);
+      const expirationDate = new Date();
+      expirationDate.setDate(expirationDate.getDate() + 59); // 59 days to refresh one day early
+      localStorage.setItem("instagram_token_expiration", expirationDate.toISOString());
+    }
+
     toast({
       title: "API Keys gespeichert",
       description: "Die API-Keys wurden erfolgreich gespeichert.",
@@ -57,17 +66,20 @@ const ApiKeyDialog = () => {
             />
           </div>
           <div className="grid gap-2">
-            <label htmlFor="instagram-key" className="text-sm font-medium">
-              Instagram API Key
+            <label htmlFor="instagram-token" className="text-sm font-medium">
+              Instagram Access Token
             </label>
             <input
-              id="instagram-key"
+              id="instagram-token"
               type="password"
-              value={instagramKey}
-              onChange={(e) => setInstagramKey(e.target.value)}
+              value={instagramToken}
+              onChange={(e) => setInstagramToken(e.target.value)}
               className="w-full px-3 py-2 border rounded-md"
-              placeholder="Instagram API Key eingeben"
+              placeholder="Instagram Access Token eingeben"
             />
+            <p className="text-xs text-gray-500">
+              Der Instagram Token wird automatisch alle 60 Tage erneuert.
+            </p>
           </div>
         </div>
         <div className="flex justify-end">
