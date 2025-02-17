@@ -1,9 +1,9 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
-import unterstuetzerImage from "../assets/unterstuetzer.png";
 
 const Schulbauwunder = () => {
   return (
@@ -140,7 +140,7 @@ const Schulbauwunder = () => {
                 </p>
                 <div className="w-full">
                   <img 
-                    src={unterstuetzerImage} 
+                    src="/assets/unterstuetzer.png" 
                     alt="Unsere Unterstützer und Partner" 
                     className="w-full rounded-lg"
                   />
