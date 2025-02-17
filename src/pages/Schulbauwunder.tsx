@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
+import unterstuetzerImage from "../assets/unterstuetzer.png";
 
 const Schulbauwunder = () => {
   return (
@@ -79,7 +80,7 @@ const Schulbauwunder = () => {
                   <p className="text-lg mb-6">
                     Mit vereinten Kräften erschaffen wir einen Ort, an dem Bildung lebendig wird. 
                     Unser Schulbauwunder ist mehr als nur ein Bauprojekt - es ist die Geschichte 
-                    einer Gemeinschaft, die zusammenkommt, um etwas Außergewöhnliches zu schaffen.
+                    einer Gemeinschaft, die zusammenkommt, um etwas Außergöhnliches zu schaffen.
                   </p>
                   <p className="mb-6">
                     In Woltersdorf entsteht Schritt für Schritt unsere neue Schule. Ein Ort, 
@@ -137,19 +138,12 @@ const Schulbauwunder = () => {
                 <p className="mb-8">
                   Wir danken allen Sponsoren und Unterstützern, die dieses Projekt möglich machen.
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
-                    Logo
-                  </div>
-                  <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
-                    Logo
-                  </div>
-                  <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
-                    Logo
-                  </div>
-                  <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
-                    Logo
-                  </div>
+                <div className="w-full">
+                  <img 
+                    src={unterstuetzerImage} 
+                    alt="Unsere Unterstützer und Partner" 
+                    className="w-full rounded-lg"
+                  />
                 </div>
               </Card>
             </section>
