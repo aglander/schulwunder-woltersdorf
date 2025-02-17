@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -125,8 +124,18 @@ const Schulbauwunder = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <div className="text-center">
                     <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4" />
-                    <h3 className="font-semibold">Team-Mitglied</h3>
-                    <p className="text-sm text-gray-600">Position</p>
+                    <h3 className="font-semibold">Johannes Wilk</h3>
+                    <p className="text-sm text-gray-600">Organisation</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4" />
+                    <h3 className="font-semibold">Philip Preuß</h3>
+                    <p className="text-sm text-gray-600">Social Media</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4" />
+                    <h3 className="font-semibold">Johann Schindler</h3>
+                    <p className="text-sm text-gray-600">Praktische Ausführung</p>
                   </div>
                 </div>
               </Card>
