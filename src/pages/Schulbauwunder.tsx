@@ -4,6 +4,7 @@ import { WunderHeader } from "@/components/WunderHeader";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { supporters } from "../data/supporters";
+import { EventCalendar } from "../components/EventCalendar";
 
 const Schulbauwunder = () => {
   return (
@@ -100,23 +101,8 @@ const Schulbauwunder = () => {
               </Card>
             </section>
 
-            <section id="updates" className="mb-16">
-              <Card className="p-8">
-                <h2 className="text-3xl font-bold mb-6 text-schulbau">Aktuelles</h2>
-                <div className="space-y-8">
-                  <div className="border-b pb-8">
-                    <h3 className="text-xl font-semibold mb-4 text-schulbau">Baufortschritt</h3>
-                    <div className="aspect-video bg-gray-100 rounded-lg mb-4">
-                      <div className="w-full h-full flex items-center justify-center text-gray-400">
-                        Bild/Video vom Baufortschritt
-                      </div>
-                    </div>
-                    <p className="text-gray-600">
-                      Aktuelle Bilder und Updates von unseren Baufortschritten werden hier erscheinen.
-                    </p>
-                  </div>
-                </div>
-              </Card>
+            <section id="events" className="mb-16">
+              <EventCalendar />
             </section>
 
             <section id="team" className="mb-16">
