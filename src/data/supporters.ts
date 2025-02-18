@@ -22,6 +22,11 @@ export const supporters: Supporter[] = [
     url: "https://g.co/kgs/GBNgQmE"
   },
   {
+    filename: "goelling-goetzelmann.png",
+    title: "Gölling & Götzelmann",
+    url: "#"
+  },
+  {
     filename: "graf-recycling-baustoffe.png",
     title: "Graf Baustoffe GmbH",
     url: "https://www.grafbaustoffe.de/"
@@ -42,6 +47,11 @@ export const supporters: Supporter[] = [
     url: "https://www.hkl-baumaschinen.de/"
   },
   {
+    filename: "johann-schnindler.png",
+    title: "Johann Schindler",
+    url: "#"
+  },
+  {
     filename: "lpe.png",
     title: "LPE Versicherungs- & Finanzmakler",
     url: "https://www.lpe.de/"
@@ -52,8 +62,18 @@ export const supporters: Supporter[] = [
     url: "http://mls-online.de/"
   },
   {
+    filename: "mobau.png",
+    title: "Mobau",
+    url: "#"
+  },
+  {
     filename: "muenker.png",
     title: "Münker Metallprofile GmbH",
     url: "https://www.muenker.com/"
+  },
+  {
+    filename: "philipp-preuss-photographie.png",
+    title: "Philipp Preuß Photographie",
+    url: "#"
   }
 ];
