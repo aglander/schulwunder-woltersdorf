@@ -8,52 +8,52 @@ export interface Supporter {
 export const supporters: Supporter[] = [
   {
     filename: "atw.png",
-    title: "ATW",
-    url: "#"
+    title: "ATW Management GmbH",
+    url: "https://www.atw-management.de/"
   },
   {
     filename: "berding-beton.png",
     title: "Berding Beton",
-    url: "#"
+    url: "https://www.berdingbeton.de/"
   },
   {
     filename: "blumen-anders.png",
     title: "Blumen Anders",
-    url: "#"
+    url: "https://g.co/kgs/GBNgQmE"
   },
   {
     filename: "graf-recycling-baustoffe.png",
-    title: "Graf Recycling Baustoffe",
-    url: "#"
+    title: "Graf Baustoffe GmbH",
+    url: "https://www.grafbaustoffe.de/"
   },
   {
     filename: "gregs-pizza.png",
     title: "Gregs Pizza",
-    url: "#"
+    url: "https://www.gregspizza.de/"
   },
   {
     filename: "heizung-und-sanitaer-woltersdorf.png",
-    title: "Heizung und Sanitär Woltersdorf",
-    url: "#"
+    title: "Heizung und Sanitär Woltersdorf e.G.",
+    url: "https://www.hsweg.de/"
   },
   {
     filename: "hkl.png",
-    title: "HKL",
-    url: "#"
+    title: "HKL Baumaschinen",
+    url: "https://www.hkl-baumaschinen.de/"
   },
   {
     filename: "lpe.png",
-    title: "LPE",
-    url: "#"
+    title: "LPE Versicherungs- & Finanzmakler",
+    url: "https://www.lpe.de/"
   },
   {
     filename: "mls.png",
-    title: "MLS",
-    url: "#"
+    title: "Mobil Logistik Service",
+    url: "http://mls-online.de/"
   },
   {
     filename: "muenker.png",
-    title: "Münker",
-    url: "#"
+    title: "Münker Metallprofile GmbH",
+    url: "https://www.muenker.com/"
   }
 ];
