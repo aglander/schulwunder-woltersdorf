@@ -23,8 +23,8 @@ export const supporters: Supporter[] = [
   },
   {
     filename: "goelling-goetzelmann.png",
-    title: "Gölling & Götzelmann",
-    url: "#"
+    title: "Gölling Götzelmann Architekten",
+    url: "https://www.ggai.de/"
   },
   {
     filename: "graf-recycling-baustoffe.png",
@@ -48,8 +48,8 @@ export const supporters: Supporter[] = [
   },
   {
     filename: "johann-schnindler.png",
-    title: "Johann Schindler",
-    url: "#"
+    title: "Johann Schindler Garten- und Landschaftsbau",
+    url: "https://schindler-garten.de/"
   },
   {
     filename: "lpe.png",
@@ -63,8 +63,8 @@ export const supporters: Supporter[] = [
   },
   {
     filename: "mobau.png",
-    title: "Mobau",
-    url: "#"
+    title: "Mobau Baustoff Union",
+    url: "https://www.bun-neuenhagen.de/"
   },
   {
     filename: "muenker.png",
@@ -74,6 +74,6 @@ export const supporters: Supporter[] = [
   {
     filename: "philipp-preuss-photographie.png",
     title: "Philipp Preuß Photographie",
-    url: "#"
+    url: "http://philippreuss.de/"
   }
 ];
