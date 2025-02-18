@@ -148,7 +148,7 @@ const Schulbauwunder = () => {
                 <p className="mb-8">
                   Wir danken allen Sponsoren und Unterstützern, die dieses Projekt möglich machen.
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
                   {supporters.map((supporter) => (
                     <a
                       key={supporter.filename}
