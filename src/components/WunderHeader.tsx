@@ -107,7 +107,7 @@ export const WunderHeader = ({ title, children, imageSrc }: WunderHeaderProps) =
               <div className="relative inline-block px-24">
                 {/* Swish Effect with dynamic sizing */}
                 <div 
-                  className="absolute -inset-y-12"
+                  className="absolute -inset-y-12 opacity-80"
                   style={{
                     width: svgWidth > 0 ? `${svgWidth}px` : '100%',
                     height: svgHeight > 0 ? `${svgHeight}px` : 'auto',
