@@ -71,12 +71,12 @@ export const WunderHeader = ({ title, children, imageSrc }: WunderHeaderProps) =
 
   return (
     <>
-      {/* Sticky Header - Moved outside the relative container */}
+      {/* Sticky Header */}
       <div className="fixed top-0 left-0 right-0 z-30">
         <div 
           className="backdrop-blur-sm border-b border-black/20"
           style={{
-            background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.2) 100%)'
+            background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)'
           }}
         >
           <div className="container mx-auto px-4 h-16 flex items-center justify-between">
