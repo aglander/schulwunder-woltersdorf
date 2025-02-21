@@ -31,8 +31,7 @@ export const WunderHeader = ({ title, children, imageSrc }: WunderHeaderProps) =
   useEffect(() => {
     const updateSvgDimensions = () => {
       if (h1Ref.current) {
-        // Get the width of the headline plus padding
-        const headlineWidth = h1Ref.current.offsetWidth + 192; // 192px = 6rem (px-24) * 2
+        const headlineWidth = h1Ref.current.offsetWidth + 192;
         setSvgWidth(headlineWidth);
       }
     };
@@ -71,41 +70,45 @@ export const WunderHeader = ({ title, children, imageSrc }: WunderHeaderProps) =
   } : {};
 
   return (
-    <>
-      {/* Sticky Header */}
-      <div className="sticky top-0 z-30">
-        <div 
-          className="backdrop-blur-sm border-b border-black/20"
-          style={{
-            background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.2) 100%)'
-          }}
-        >
-          <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Link 
-                to="/" 
-                className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
-              >
-                <ArrowLeft className="w-5 h-5" />
-                {!isMobile && (
-                  <span className="font-semibold">
-                    Schulwunder Woltersdorf
-                  </span>
+    <div className="relative">
+      {/* Background Container */}
+      <div className={`${bgColorClass} absolute inset-0 min-h-[400px]`} style={headerStyle} />
+      
+      {/* Content Container */}
+      <div className="relative">
+        {/* Sticky Header */}
+        <div className="sticky top-0 z-30">
+          <div 
+            className="backdrop-blur-sm border-b border-black/20"
+            style={{
+              background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.2) 100%)'
+            }}
+          >
+            <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Link 
+                  to="/" 
+                  className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
+                >
+                  <ArrowLeft className="w-5 h-5" />
+                  {!isMobile && (
+                    <span className="font-semibold">
+                      Schulwunder Woltersdorf
+                    </span>
+                  )}
+                </Link>
+              </div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 w-[300px] text-center">
+                {!isH1Visible && (
+                  <span lang="de" className="text-white font-semibold whitespace-nowrap">{title}</span>
                 )}
-              </Link>
+              </div>
+              <div className="w-[200px]" /> {/* Spacer für Balance */}
             </div>
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-[300px] text-center">
-              {!isH1Visible && (
-                <span lang="de" className="text-white font-semibold whitespace-nowrap">{title}</span>
-              )}
-            </div>
-            <div className="w-[200px]" /> {/* Spacer für Balance */}
           </div>
         </div>
-      </div>
 
-      {/* Hero Section */}
-      <div className={`${bgColorClass}`} style={headerStyle}>
+        {/* Hero Content */}
         <div className="container mx-auto px-4 flex flex-col items-center text-center py-20">
           <div className="relative flex flex-col items-center">
             <div className="text-white">
@@ -147,6 +150,6 @@ export const WunderHeader = ({ title, children, imageSrc }: WunderHeaderProps) =
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
