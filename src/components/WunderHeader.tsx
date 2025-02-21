@@ -62,7 +62,7 @@ export const WunderHeader = ({ title, children, imageSrc }: WunderHeaderProps) =
   }, []);
 
   const bgColorClass = getBackgroundColor();
-  const svgHeight = svgWidth / 4.83; // Calculate height based on aspect ratio
+  const svgHeight = svgWidth / 4.83;
 
   const headerStyle = imageSrc ? {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageSrc})`,
@@ -74,7 +74,12 @@ export const WunderHeader = ({ title, children, imageSrc }: WunderHeaderProps) =
     <>
       {/* Sticky Header */}
       <div className="sticky top-0 z-30">
-        <div className={`${bgColorClass} backdrop-blur-sm bg-opacity-95`}>
+        <div 
+          className="backdrop-blur-sm border-b border-black/20"
+          style={{
+            background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.2) 100%)'
+          }}
+        >
           <div className="container mx-auto px-4 h-16 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Link 
