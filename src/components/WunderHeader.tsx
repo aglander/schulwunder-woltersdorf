@@ -7,9 +7,10 @@ import { useIsMobile } from "@/hooks/use-mobile";
 interface WunderHeaderProps {
   title: string;
   children?: React.ReactNode;
+  imageSrc?: string;
 }
 
-export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
+export const WunderHeader = ({ title, children, imageSrc }: WunderHeaderProps) => {
   const [isH1Visible, setIsH1Visible] = useState(true);
   const [svgWidth, setSvgWidth] = useState<number>(0);
   const h1Ref = useRef<HTMLHeadingElement>(null);
@@ -63,6 +64,12 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
   const bgColorClass = getBackgroundColor();
   const svgHeight = svgWidth / 4.83; // Calculate height based on aspect ratio
 
+  const headerStyle = imageSrc ? {
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageSrc})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  } : {};
+
   return (
     <>
       {/* Sticky Header */}
@@ -93,7 +100,7 @@ export const WunderHeader = ({ title, children }: WunderHeaderProps) => {
       </div>
 
       {/* Hero Section */}
-      <div className={`${bgColorClass}`}>
+      <div className={`${bgColorClass}`} style={headerStyle}>
         <div className="container mx-auto px-4 flex flex-col items-center text-center py-20">
           <div className="relative flex flex-col items-center">
             <div className="text-white">
