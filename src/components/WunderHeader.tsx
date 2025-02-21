@@ -65,7 +65,7 @@ export const WunderHeader = ({ title, children, imageSrc }: WunderHeaderProps) =
 
   const headerStyle = imageSrc ? {
     backgroundImage: location.pathname.includes('schulbau') 
-      ? `linear-gradient(to bottom, rgba(219, 63, 54, 0), rgba(219, 63, 54, 0.85)), url(${imageSrc})`
+      ? `linear-gradient(to bottom, rgba(219, 63, 54, 0), rgba(219, 63, 54, 0.35)), url(${imageSrc})`
       : `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageSrc})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
