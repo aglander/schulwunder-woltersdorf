@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -13,7 +14,10 @@ const Schulbauwunder = () => {
         title="Schulbauwunder - Gemeinschaftlich Bildung gestalten"
         description="Erfahren Sie mehr über unsere Baueinsätze und wie wir gemeinsam unsere neue Schule erschaffen. Ein innovatives Bildungsprojekt in Woltersdorf."
       />
-      <WunderHeader title="Schulbauwunder">
+      <WunderHeader 
+        title="Schulbauwunder"
+        imageSrc="/assets/schulbauwunder-hero.jpg"
+      >
         <p className="text-xl max-w-2xl">
           Gemeinsam erschaffen wir einen neuen Ort des Lernens. Erfahren Sie mehr über unsere 
           Baueinsätze und wie wir mit vereinten Kräften unsere neue Schule bauen.
