@@ -119,7 +119,8 @@ export const WunderHeader = ({ title, children, imageSrc }: WunderHeaderProps) =
                   <img 
                     src="/assets/swish.svg" 
                     alt="" 
-                    className="w-full h-full object-contain brightness-0"
+                    className={`w-full h-full object-contain ${location.pathname.includes('schulbau') ? 'filter-red' : 'brightness-0'}`}
+                    style={location.pathname.includes('schulbau') ? { filter: 'brightness(0) saturate(100%) invert(27%) sepia(91%) saturate(2760%) hue-rotate(343deg) brightness(85%) contrast(95%)' } : {}}
                     aria-hidden="true"
                   />
                 </div>
