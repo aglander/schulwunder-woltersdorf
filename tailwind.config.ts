@@ -37,7 +37,6 @@ export default {
           DEFAULT: "#27AE60",
           foreground: "#FFFFFF",
         },
-        // Neue Farbschemen für die Wunder
         schulbau: {
           DEFAULT: "#DB3F36",
           foreground: "#FFFFFF",
@@ -80,6 +79,9 @@ export default {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+      },
+      fontFamily: {
+        'architects': ['Architects Daughter', 'cursive'],
       },
     },
   },
