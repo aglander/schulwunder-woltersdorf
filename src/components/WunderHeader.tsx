@@ -77,7 +77,7 @@ export const WunderHeader = ({
       };
     } else if (location.pathname.includes('schulgruendung')) {
       return {
-        filter: 'brightness(0) saturate(100%) invert(67%) sepia(72%) saturate(4558%) hue-rotate(165deg) brightness(97%) contrast(101%)'
+        filter: 'brightness(0) saturate(100%) invert(35%) sepia(13%) saturate(1966%) hue-rotate(197deg) brightness(94%) contrast(87%)'
       };
     }
     return {};
