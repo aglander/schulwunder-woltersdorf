@@ -15,7 +15,7 @@ const Schulbauwunder = () => {
         description="Erfahren Sie mehr über unsere Baueinsätze und wie wir gemeinsam unsere neue Schule erschaffen. Ein innovatives Bildungsprojekt in Woltersdorf."
       />
       <WunderHeader 
-        title="#schulbauwunder"
+        title="Schulbauwunder"
         imageSrc="/assets/schulbauwunder-hero.jpg"
       >
         <p className="text-xl max-w-2xl">
