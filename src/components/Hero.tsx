@@ -45,7 +45,7 @@ const Hero = () => {
                 aria-hidden="true"
               />
             </div>
-            <h1 ref={headlineRef} className="relative text-4xl md:text-6xl font-bold mb-6">
+            <h1 ref={headlineRef} className="relative text-4xl md:text-6xl font-bold mb-6 font-architects">
               Schulwunder Woltersdorf
             </h1>
           </div>
