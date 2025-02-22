@@ -45,7 +45,14 @@ const Hero = () => {
                 aria-hidden="true"
               />
             </div>
-            <h1 ref={headlineRef} className="relative text-4xl md:text-6xl font-bold mb-6 font-indie">
+            <h1 
+              ref={headlineRef} 
+              className="relative text-4xl md:text-6xl font-bold mb-6 font-indie"
+              style={{
+                fontFamily: "'Indie Flower', cursive",
+                fontDisplay: 'swap'
+              }}
+            >
               Schulwunder Woltersdorf
             </h1>
           </div>
