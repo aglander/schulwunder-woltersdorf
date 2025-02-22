@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -80,6 +79,9 @@ export default {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+      },
+      fontFamily: {
+        'stone': ['Stone Hand', 'cursive'],
       },
     },
   },

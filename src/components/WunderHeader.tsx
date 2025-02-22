@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -64,14 +63,15 @@ export const WunderHeader = ({ title, children, imageSrc }: WunderHeaderProps) =
   const svgHeight = svgWidth / 4.83;
 
   const headerStyle = imageSrc ? {
-    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageSrc})`,
+    backgroundImage: location.pathname.includes('schulbau') 
+      ? `linear-gradient(to bottom, rgba(219, 63, 54, 0), rgba(219, 63, 54, 0.35)), url(${imageSrc})`
+      : `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageSrc})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   } : {};
 
   return (
     <>
-      {/* Sticky Header */}
       <div className="fixed top-0 left-0 right-0 z-30">
         <div 
           className="backdrop-blur-sm border-b border-black/20"
@@ -103,19 +103,14 @@ export const WunderHeader = ({ title, children, imageSrc }: WunderHeaderProps) =
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="relative pt-16"> {/* Added padding-top to account for fixed header */}
-        {/* Background Container */}
+      <div className="relative pt-16">
         <div className={`${bgColorClass} absolute inset-0 min-h-[400px]`} style={headerStyle} />
         
-        {/* Content Container */}
         <div className="relative">
-          {/* Hero Content */}
           <div className="container mx-auto px-4 flex flex-col items-center text-center py-20">
             <div className="relative flex flex-col items-center">
               <div className="text-white">
                 <div className="relative inline-block px-24">
-                  {/* Swish Effect with dynamic sizing */}
                   <div 
                     className="absolute opacity-80"
                     style={{
@@ -139,12 +134,11 @@ export const WunderHeader = ({ title, children, imageSrc }: WunderHeaderProps) =
                   <h1 
                     ref={h1Ref} 
                     lang="de" 
-                    className="relative text-5xl font-bold mb-6 break-words hyphens-auto"
+                    className="relative text-5xl font-bold mb-6 break-words hyphens-auto font-stone"
                   >
                     {title}
                   </h1>
                 </div>
-                {/* Subtitle outside of Swish container */}
                 <div className="relative z-10 max-w-2xl mt-6">
                   {children}
                 </div>
