@@ -81,7 +81,7 @@ export default {
         },
       },
       fontFamily: {
-        'stone': ['Stone Handwriting Pro', 'cursive'],
+        'stone': ['Architects Daughter', 'cursive'],
       },
     },
   },
