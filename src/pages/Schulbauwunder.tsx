@@ -9,7 +9,7 @@ import { EventCalendar } from "../components/EventCalendar";
 
 const Schulbauwunder = () => {
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-gray-50 flex flex-col font-['Barlow_Semi_Condensed']">
       <SEO 
         title="Schulbauwunder - Gemeinschaftlich Bildung gestalten"
         description="Erfahren Sie mehr über unsere Baueinsätze und wie wir gemeinsam unsere neue Schule erschaffen. Ein innovatives Bildungsprojekt in Woltersdorf."
