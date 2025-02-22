@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -36,7 +37,6 @@ export default {
           DEFAULT: "#27AE60",
           foreground: "#FFFFFF",
         },
-        // Neue Farbschemen für die Wunder
         schulbau: {
           DEFAULT: "#DB3F36",
           foreground: "#FFFFFF",
@@ -81,7 +81,7 @@ export default {
         },
       },
       fontFamily: {
-        'stone': ['Stone Hand', 'cursive'],
+        'stone': ['Stone Handwriting Pro', 'cursive'],
       },
     },
   },
