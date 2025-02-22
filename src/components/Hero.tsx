@@ -49,8 +49,7 @@ const Hero = () => {
               ref={headlineRef} 
               className="relative text-4xl md:text-6xl font-bold mb-6 font-indie"
               style={{
-                fontFamily: "'Indie Flower', cursive",
-                fontDisplay: 'swap'
+                fontFamily: "'Indie Flower', cursive"
               }}
             >
               Schulwunder Woltersdorf
