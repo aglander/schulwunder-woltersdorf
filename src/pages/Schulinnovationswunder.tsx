@@ -11,12 +11,8 @@ const Schulinnovationswunder = () => {
         title="Schulinnovationswunder - Gemeinschaftlich Bildung gestalten"
         description="Sehen Sie unsere Zukunftspläne für das neue Schulgelände in Woltersdorf. Innovative Bildungskonzepte und moderne Lernumgebungen für die Schule von morgen."
       />
-      <WunderHeader title="Schulinnovationswunder">
-        <p className="text-xl max-w-2xl">
-          Entdecken Sie unsere innovativen Bauvorhaben und Zukunftspläne für das neue
-          Schulgelände in Woltersdorf.
-        </p>
-      </WunderHeader>
+      <WunderHeader title="Schulinnovationswunder" subTitle="Entdecken Sie unsere innovativen Bauvorhaben und Zukunftspläne für das neue
+          Schulgelände in Woltersdorf."/>
 
       <div className="container mx-auto px-4 py-8 flex-grow">
         <div className="flex flex-col lg:flex-row gap-8">
