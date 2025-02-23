@@ -64,12 +64,13 @@ const Index = () => {
                 "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
             }}
           >
-            <div className="mx-[30px] h-16 flex items-center justify-between">
-              <div className="w-[200px]" />
-              <span className="font-semibold text-white">
-                Schulwunder Woltersdorf
-              </span>
-              <div className="w-[200px] flex justify-end">
+            <div className="flex items-center justify-between h-16">
+              <div className="ml-[150px]">
+                <span className="font-semibold text-white">
+                  Schulwunder Woltersdorf
+                </span>
+              </div>
+              <div className="mr-[30px]">
                 <Button 
                   variant="secondary" 
                   className="bg-white text-black hover:bg-white/90"
