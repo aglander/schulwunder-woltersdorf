@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -17,6 +16,7 @@ export const WunderHeader = ({
 }: WunderHeaderProps) => {
   const [isH1Visible, setIsH1Visible] = useState(true);
   const [svgWidth, setSvgWidth] = useState<number>(0);
+  const [svgOffset, setSvgOffset] = useState<number>(0);
   const h1Ref = useRef<HTMLHeadingElement>(null);
   const isMobile = useIsMobile();
   const location = useLocation();
@@ -46,8 +46,11 @@ export const WunderHeader = ({
   useEffect(() => {
     const updateSvgDimensions = () => {
       if (h1Ref.current) {
-        const headlineWidth = h1Ref.current.offsetWidth + 192;
+        const headlineWidth = h1Ref.current.offsetWidth + 150;
+        const headlineHeight = h1Ref.current.offsetHeight;
+        const svgHeight = headlineWidth / 4.83;
         setSvgWidth(headlineWidth);
+        setSvgOffset((svgHeight - headlineHeight) / 2);
       }
     };
 
@@ -126,10 +129,7 @@ export const WunderHeader = ({
 
       {/* Main Content */}
       <div className="relative pt-16">
-        <div
-          className={`${bgColorClass} absolute inset-0 min-h-[300px]`}
-          style={headerStyle}
-        />
+        <div className={`absolute inset-0 min-h-[300px]`} style={headerStyle} />
 
         <div className="relative">
           <div className="container mx-auto px-4 flex flex-col items-center text-center py-20 min-h-[300px]">
@@ -144,8 +144,7 @@ export const WunderHeader = ({
                       left: "50%",
                       transform: "translateX(-50%)",
                       overflow: "visible",
-                      top: "-35px",
-                      bottom: "-35px",
+                      top: `-${svgOffset}px`,
                     }}
                   >
                     <img
@@ -159,9 +158,6 @@ export const WunderHeader = ({
                     ref={h1Ref}
                     lang="de"
                     className="relative text-5xl font-bold mb-6 break-words hyphens-auto font-indie"
-                    style={{
-                      fontFamily: "'Indie Flower', cursive",
-                    }}
                   >
                     {title}
                   </h1>
@@ -177,4 +173,3 @@ export const WunderHeader = ({
     </>
   );
 };
-

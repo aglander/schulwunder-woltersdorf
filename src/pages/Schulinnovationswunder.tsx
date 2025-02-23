@@ -7,12 +7,16 @@ import SEO from "../components/SEO";
 const Schulinnovationswunder = () => {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <SEO 
+      <SEO
         title="Schulinnovationswunder - Gemeinschaftlich Bildung gestalten"
         description="Sehen Sie unsere Zukunftspläne für das neue Schulgelände in Woltersdorf. Innovative Bildungskonzepte und moderne Lernumgebungen für die Schule von morgen."
       />
-      <WunderHeader title="Schulinnovationswunder" subTitle="Entdecken Sie unsere innovativen Bauvorhaben und Zukunftspläne für das neue
-          Schulgelände in Woltersdorf."/>
+      <WunderHeader
+        title="#schulinnovationswunder"
+        imageSrc="/assets/schulinnovationswunder-hero.png"
+        subTitle="Entdecken Sie unsere innovativen Bauvorhaben und Zukunftspläne für das neue
+          Schulgelände in Woltersdorf."
+      />
 
       <div className="container mx-auto px-4 py-8 flex-grow">
         <div className="flex flex-col lg:flex-row gap-8">
@@ -21,22 +25,34 @@ const Schulinnovationswunder = () => {
               <nav className="bg-white rounded-lg shadow-lg p-4">
                 <ul className="space-y-2">
                   <li>
-                    <a href="#description" className="text-schulinnovation hover:underline block py-2">
+                    <a
+                      href="#description"
+                      className="text-schulinnovation hover:underline block py-2"
+                    >
                       Beschreibung
                     </a>
                   </li>
                   <li>
-                    <a href="#updates" className="text-schulinnovation hover:underline block py-2">
+                    <a
+                      href="#updates"
+                      className="text-schulinnovation hover:underline block py-2"
+                    >
                       Aktuelles
                     </a>
                   </li>
                   <li>
-                    <a href="#team" className="text-schulinnovation hover:underline block py-2">
+                    <a
+                      href="#team"
+                      className="text-schulinnovation hover:underline block py-2"
+                    >
                       Team
                     </a>
                   </li>
                   <li>
-                    <a href="#supporters" className="text-schulinnovation hover:underline block py-2">
+                    <a
+                      href="#supporters"
+                      className="text-schulinnovation hover:underline block py-2"
+                    >
                       Unterstützer
                     </a>
                   </li>
@@ -70,19 +86,24 @@ const Schulinnovationswunder = () => {
           <div className="lg:w-3/4">
             <section id="description" className="mb-16">
               <Card className="p-8">
-                <h2 className="text-3xl font-bold mb-6 text-schulinnovation">Über das Schulinnovationswunder</h2>
+                <h2 className="text-3xl font-bold mb-6 text-schulinnovation">
+                  Über das Schulinnovationswunder
+                </h2>
                 <div className="prose max-w-none">
                   <p className="text-lg mb-6">
-                    Auf unserem neuen Schulgelände gibt es noch viel Raum für innovative 
-                    Ideen und zukunftsweisende Projekte. Hier entstehen die Bildungsräume 
-                    von morgen.
+                    Auf unserem neuen Schulgelände gibt es noch viel Raum für
+                    innovative Ideen und zukunftsweisende Projekte. Hier
+                    entstehen die Bildungsräume von morgen.
                   </p>
                   <p className="mb-6">
-                    Mit dem Schulinnovationswunder schaffen wir Platz für neue Lernformen, 
-                    nachhaltige Technologien und gemeinschaftliche Begegnungsräume.
+                    Mit dem Schulinnovationswunder schaffen wir Platz für neue
+                    Lernformen, nachhaltige Technologien und gemeinschaftliche
+                    Begegnungsräume.
                   </p>
                   <div className="bg-gray-50 p-6 rounded-lg mt-8">
-                    <h3 className="text-xl font-semibold mb-4 text-schulinnovation">Unsere Innovationen</h3>
+                    <h3 className="text-xl font-semibold mb-4 text-schulinnovation">
+                      Unsere Innovationen
+                    </h3>
                     <ul className="list-disc list-inside space-y-2">
                       <li>Moderne Lernwerkstätten</li>
                       <li>Nachhaltige Energiekonzepte</li>
@@ -96,17 +117,22 @@ const Schulinnovationswunder = () => {
 
             <section id="updates" className="mb-16">
               <Card className="p-8">
-                <h2 className="text-3xl font-bold mb-6 text-schulinnovation">Aktuelles</h2>
+                <h2 className="text-3xl font-bold mb-6 text-schulinnovation">
+                  Aktuelles
+                </h2>
                 <div className="space-y-8">
                   <div className="border-b pb-8">
-                    <h3 className="text-xl font-semibold mb-4 text-schulinnovation">Innovationsfortschritt</h3>
+                    <h3 className="text-xl font-semibold mb-4 text-schulinnovation">
+                      Innovationsfortschritt
+                    </h3>
                     <div className="aspect-video bg-gray-100 rounded-lg mb-4">
                       <div className="w-full h-full flex items-center justify-center text-gray-400">
                         Bild/Video von Innovationsprojekten
                       </div>
                     </div>
                     <p className="text-gray-600">
-                      Aktuelle Informationen zu unseren Innovationsprojekten werden hier erscheinen.
+                      Aktuelle Informationen zu unseren Innovationsprojekten
+                      werden hier erscheinen.
                     </p>
                   </div>
                 </div>
@@ -115,7 +141,9 @@ const Schulinnovationswunder = () => {
 
             <section id="team" className="mb-16">
               <Card className="p-8">
-                <h2 className="text-3xl font-bold mb-6 text-schulinnovation">Unser Team</h2>
+                <h2 className="text-3xl font-bold mb-6 text-schulinnovation">
+                  Unser Team
+                </h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   <div className="text-center">
                     <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4" />
@@ -128,10 +156,12 @@ const Schulinnovationswunder = () => {
 
             <section id="supporters" className="mb-16">
               <Card className="p-8">
-                <h2 className="text-3xl font-bold mb-6 text-schulinnovation">Unsere Unterstützer</h2>
+                <h2 className="text-3xl font-bold mb-6 text-schulinnovation">
+                  Unsere Unterstützer
+                </h2>
                 <p className="mb-8">
-                  Wir danken allen Unterstützern, die uns bei der Realisierung unserer 
-                  innovativen Projekte zur Seite stehen.
+                  Wir danken allen Unterstützern, die uns bei der Realisierung
+                  unserer innovativen Projekte zur Seite stehen.
                 </p>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
