@@ -141,7 +141,7 @@ export const WunderHeader = ({
           <div className="container mx-auto px-4 flex flex-col items-center text-center py-20 min-h-[300px]">
             <div className="relative flex flex-col items-center">
               <div className="text-white">
-                <div className="relative inline-block px-24">
+                <div className="relative inline-block px-0">
                   <div
                     className="absolute opacity-80"
                     style={{
