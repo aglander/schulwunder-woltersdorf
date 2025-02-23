@@ -26,7 +26,7 @@ const Hero = () => {
   return (
     <div className="relative min-h-[40vh] flex items-center justify-center text-white p-8">
       <div 
-        className="absolute inset-0 z-0"
+        className="absolute inset-0 z-[1]"
         style={{
           background: 'linear-gradient(to right, rgba(107, 112, 117, 0.9), rgba(107, 112, 117, 0.7))'
         }}
@@ -34,11 +34,13 @@ const Hero = () => {
       <img
         src="/assets/hero-bg.jpg"
         alt=""
-        className="absolute inset-0 w-full h-full object-cover -z-10"
+        className="absolute inset-0 w-full h-full object-cover z-0"
         loading="eager"
         fetchPriority="high"
+        decoding="async"
+        sizes="100vw"
       />
-      <div className="relative max-w-4xl mx-auto text-center animate-fade-up z-10">
+      <div className="relative max-w-4xl mx-auto text-center animate-fade-up z-[2]">
         <div className="relative">
           <div className="relative inline-block px-24">
             <div 
