@@ -61,7 +61,7 @@ const Index = () => {
             className="backdrop-blur-sm border-b border-black/20"
             style={{
               background:
-                "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
+                "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.25) 100%)",
             }}
           >
             <div className="flex items-center justify-between h-16">
@@ -100,7 +100,7 @@ const Index = () => {
             className="backdrop-blur-sm border-t border-black/20 h-full"
             style={{
               background:
-                "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
+                "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.25) 100%)",
             }}
           >
             <div className="container mx-auto px-4 h-full flex items-center justify-between gap-4">
