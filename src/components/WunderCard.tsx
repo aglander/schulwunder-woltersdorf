@@ -16,24 +16,24 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
   const getGradientClass = () => {
     switch (color) {
       case "schulbau":
-        return "from-schulbau to-schulbau/80";
+        return "from-schulbau/60 to-schulbau/40";
       case "schulgruendung":
-        return "from-schulgruendung to-schulgruendung/80";
+        return "from-schulgruendung/60 to-schulgruendung/40";
       case "schulinnovation":
-        return "from-schulinnovation to-schulinnovation/80";
+        return "from-schulinnovation/60 to-schulinnovation/40";
       default:
-        return "from-primary to-primary/80";
+        return "from-primary/60 to-primary/40";
     }
   };
 
   const getSwishFilter = () => {
     switch (color) {
       case "schulbau":
-        return "filter-schulbau";
+        return "filter-schulbau opacity-60";
       case "schulgruendung":
-        return "filter-schulgruendung";
+        return "filter-schulgruendung opacity-60";
       case "schulinnovation":
-        return "filter-schulinnovation";
+        return "filter-schulinnovation opacity-60";
       default:
         return "";
     }
@@ -51,7 +51,7 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
           className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
         />
       </div>
-      <div className={`absolute inset-0 bg-gradient-to-br from-black to-black/80 group-hover:${getGradientClass()} opacity-90 transition-all duration-500`} />
+      <div className={`absolute inset-0 bg-gradient-to-br from-black/70 to-black/60 group-hover:${getGradientClass()} opacity-90 transition-all duration-500`} />
       <div className="relative h-full flex flex-col items-center justify-center text-center p-6 text-white">
         <div className="relative inline-block mb-8">
           <div
