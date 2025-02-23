@@ -44,7 +44,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-neutral-900">
+    <div className="min-h-screen bg-neutral-800">
       {!isMobile && (
         <div className="fixed top-0 left-[30px] z-[60] w-[100px] bg-white/95 shadow-lg" style={{
           clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)'
