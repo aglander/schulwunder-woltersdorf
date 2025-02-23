@@ -1,3 +1,4 @@
+
 import React from "react";
 import WunderCard from "../components/WunderCard";
 
@@ -39,13 +40,30 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen h-screen flex flex-col md:flex-row">
-      {wunder.map((w) => (
-        <div key={w.title} className="flex-1">
-          <WunderCard {...w} />
+    <>
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <div
+          className="backdrop-blur-sm border-b border-black/20"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
+          }}
+        >
+          <div className="container mx-auto px-4 h-16 flex items-center justify-center">
+            <span className="font-semibold text-white">
+              Schulwunder Woltersdorf
+            </span>
+          </div>
         </div>
-      ))}
-    </div>
+      </div>
+      <div className="min-h-screen h-screen flex flex-col md:flex-row pt-16">
+        {wunder.map((w) => (
+          <div key={w.title} className="flex-1">
+            <WunderCard {...w} />
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
