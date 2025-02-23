@@ -111,8 +111,8 @@ const Index = () => {
                   rel="noopener noreferrer" 
                   className="absolute bottom-2 left-0 bg-white/95 shadow-lg w-[90px]"
                   style={{
-                    clipPath: 'polygon(0% 11%, 100% 5%, 100% 100%, 0% 100%)',
-                    transform: 'translateY(20%)'
+                    clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 95%, 100% 89%)',
+                    transform: 'translateY(50%)'
                   }}
                 >
                   <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto p-2" />
