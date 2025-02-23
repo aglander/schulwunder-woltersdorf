@@ -92,7 +92,7 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
             <img
               src="/assets/swish.svg"
               alt=""
-              className={`w-full h-full object-contain filter opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${getSwishFilter()}`}
+              className={`w-full h-full object-contain filter ${getSwishFilter()}`}
               aria-hidden="true"
             />
           </div>
