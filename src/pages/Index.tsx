@@ -46,7 +46,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-black">
       {!isMobile && (
-        <div className="fixed top-0 left-6 z-[60] w-[100px] bg-white/95 shadow-lg" style={{
+        <div className="fixed top-0 left-[30px] z-[60] w-[100px] bg-white/95 shadow-lg" style={{
           clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)'
         }}>
           <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer">
@@ -64,12 +64,12 @@ const Index = () => {
                 "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
             }}
           >
-            <div className="container mx-auto h-16 flex items-center justify-between">
+            <div className="mx-[30px] h-16 flex items-center justify-between">
               <div className="w-[200px]" />
               <span className="font-semibold text-white">
                 Schulwunder Woltersdorf
               </span>
-              <div className="w-[200px] flex justify-end pr-6">
+              <div className="w-[200px] flex justify-end">
                 <Button 
                   variant="secondary" 
                   className="bg-white text-black hover:bg-white/90"
