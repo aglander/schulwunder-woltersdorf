@@ -82,14 +82,22 @@ const Index = () => {
       </div>
 
       {isMobile && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white p-4 border-t border-gray-200">
-          <Button 
-            variant="secondary" 
-            className="w-full bg-white text-black hover:bg-white/90 border border-black/20"
-            onClick={() => window.open('https://betterplace.org/de/projects/126303', '_blank')}
-          >
-            Jetzt spenden
-          </Button>
+        <div 
+          className="fixed bottom-0 left-0 right-0 backdrop-blur-sm border-t border-black/20"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
+          }}
+        >
+          <div className="p-4">
+            <Button 
+              variant="secondary" 
+              className="w-full bg-white text-black hover:bg-white/90"
+              onClick={() => window.open('https://betterplace.org/de/projects/126303', '_blank')}
+            >
+              Jetzt spenden
+            </Button>
+          </div>
         </div>
       )}
     </>
