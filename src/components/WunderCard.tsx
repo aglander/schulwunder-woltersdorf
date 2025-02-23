@@ -16,24 +16,24 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
   const getGradientClass = () => {
     switch (color) {
       case "schulbau":
-        return "from-schulbau/20 to-schulbau/10";
+        return "from-schulbau/70 to-schulbau/50";
       case "schulgruendung":
-        return "from-schulgruendung/20 to-schulgruendung/10";
+        return "from-schulgruendung/70 to-schulgruendung/50";
       case "schulinnovation":
-        return "from-schulinnovation/20 to-schulinnovation/10";
+        return "from-schulinnovation/70 to-schulinnovation/50";
       default:
-        return "from-primary/20 to-primary/10";
+        return "from-primary/70 to-primary/50";
     }
   };
 
   const getSwishFilter = () => {
     switch (color) {
       case "schulbau":
-        return "filter-schulbau opacity-30";
+        return "filter-schulbau opacity-70";
       case "schulgruendung":
-        return "filter-schulgruendung opacity-30";
+        return "filter-schulgruendung opacity-70";
       case "schulinnovation":
-        return "filter-schulinnovation opacity-30";
+        return "filter-schulinnovation opacity-70";
       default:
         return "";
     }
