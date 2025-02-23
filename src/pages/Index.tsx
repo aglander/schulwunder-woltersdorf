@@ -73,31 +73,23 @@ const Index = () => {
         </div>
       )}
       
-      <div className={`min-h-screen flex flex-col md:flex-row space-y-0 ${isMobile ? 'mb-16' : ''}`}>
-        {wunder.map((w, index) => (
-          <div key={w.title} className={`flex-1 ${index > 0 ? '-mt-[1px] md:-mt-0 md:-ml-[1px]' : ''}`}>
+      <div className="min-h-screen h-screen flex flex-col md:flex-row">
+        {wunder.map((w) => (
+          <div key={w.title} className="flex-1">
             <WunderCard {...w} />
           </div>
         ))}
       </div>
 
       {isMobile && (
-        <div 
-          className="fixed bottom-0 left-0 right-0 backdrop-blur-sm border-t border-black/20"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
-          }}
-        >
-          <div className="p-4">
-            <Button 
-              variant="secondary" 
-              className="w-full bg-white text-black hover:bg-white/90"
-              onClick={() => window.open('https://betterplace.org/de/projects/126303', '_blank')}
-            >
-              Jetzt spenden
-            </Button>
-          </div>
+        <div className="fixed bottom-0 left-0 right-0 bg-white p-4 border-t border-gray-200">
+          <Button 
+            variant="secondary" 
+            className="w-full bg-white text-black hover:bg-white/90 border border-black/20"
+            onClick={() => window.open('https://betterplace.org/de/projects/126303', '_blank')}
+          >
+            Jetzt spenden
+          </Button>
         </div>
       )}
     </>
