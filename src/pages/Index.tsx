@@ -111,7 +111,7 @@ const Index = () => {
                   rel="noopener noreferrer" 
                   className="absolute bottom-2 left-0 bg-white/95 shadow-lg w-[90px]"
                   style={{
-                    clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 95%, 100% 89%)',
+                    clipPath: 'polygon(0 6%, 100% 0%, 100% 100%, 0% 100%)',
                     transform: 'translateY(50%)'
                   }}
                 >
