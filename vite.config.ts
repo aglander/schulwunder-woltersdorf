@@ -1,3 +1,4 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
@@ -36,24 +37,35 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Aktiviere SSG (Static Site Generation)
+    // Enable SSG (Static Site Generation)
     ssrBuildEnabled: true,
-    // Optimiere Build-Größe
+    // Optimize build size
     minify: 'terser',
-    // Reduziere Chunk-Größe
+    // Reduce chunk size
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
         },
+        assetFileNames: (assetInfo) => {
+          // Add hash to asset filenames for better caching
+          let extType = assetInfo.name.split('.').at(1);
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+            extType = 'img';
+          }
+          return `assets/${extType}/[name]-[hash][extname]`;
+        },
       },
     },
-    // Aktiviere aggressive Code-Optimierung
+    // Enable aggressive code optimization
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
       },
     },
+    // Configure asset optimization
+    assetsInclude: ['**/*.{png,jpg,jpeg,gif,svg,webp}'],
+    assetsInlineLimit: 4096, // Inline assets smaller than 4kb as base64
   },
 }));
