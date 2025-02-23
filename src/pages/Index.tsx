@@ -45,13 +45,15 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      <div className="fixed top-0 left-4 z-[60] w-[100px] bg-white/95 shadow-lg" style={{
-        clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)'
-      }}>
-        <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer">
-          <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto p-2" />
-        </a>
-      </div>
+      {!isMobile && (
+        <div className="fixed top-0 left-4 z-[60] w-[100px] bg-white/95 shadow-lg" style={{
+          clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)'
+        }}>
+          <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer">
+            <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto p-2" />
+          </a>
+        </div>
+      )}
 
       {!isMobile && (
         <div className="fixed top-0 left-0 right-0 z-50">
@@ -100,10 +102,14 @@ const Index = () => {
                 "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
             }}
           >
-            <div className="container mx-auto px-4 h-16 flex items-center">
+            <div className="container mx-auto px-4 h-16 flex items-center justify-between gap-4">
+              <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer" className="flex-shrink-0">
+                <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="h-12 w-auto" />
+              </a>
               <Button 
                 variant="secondary" 
-                className="w-full bg-white text-black hover:bg-white/90"
+                size="sm"
+                className="bg-white text-black hover:bg-white/90"
                 onClick={() => window.open('https://betterplace.org/de/projects/126303', '_blank')}
               >
                 Jetzt spenden
