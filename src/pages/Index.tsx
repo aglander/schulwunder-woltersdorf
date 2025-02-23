@@ -45,49 +45,50 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-neutral-800">
-      <div className="max-w-[1700px] mx-auto relative">
-        {!isMobile && (
-          <div className="absolute top-0 left-[30px] z-[60] w-[100px] bg-white/95 shadow-lg" style={{
-            clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)'
-          }}>
-            <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer">
-              <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto p-2" />
-            </a>
-          </div>
-        )}
-
-        {!isMobile && (
-          <div className="fixed top-0 left-0 right-0 z-50">
-            <div
-              className="backdrop-blur-sm border-b border-black/20"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.25) 100%)",
-              }}
-            >
-              <div className="max-w-[1700px] mx-auto">
-                <div className="flex items-center justify-between h-16">
-                  <div className="ml-[150px]">
-                    <span className="font-semibold text-white">
-                      Schulwunder Woltersdorf
-                    </span>
-                  </div>
-                  <div className="mr-[30px]">
-                    <Button 
-                      variant="secondary" 
-                      className="bg-white text-black hover:bg-white/90"
-                      onClick={() => window.open('https://betterplace.org/de/projects/126303', '_blank')}
-                    >
-                      Jetzt spenden
-                    </Button>
+      <div className="fixed top-0 left-0 right-0 z-50">
+        <div className="mx-auto relative">
+          <div className="max-w-[1700px] mx-auto relative">
+            {!isMobile && (
+              <>
+                <div className="absolute top-0 left-[30px] z-[60] w-[100px] bg-white/95 shadow-lg" style={{
+                  clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)'
+                }}>
+                  <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto p-2" />
+                  </a>
+                </div>
+                <div
+                  className="backdrop-blur-sm border-b border-black/20"
+                  style={{
+                    background:
+                      "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.25) 100%)",
+                  }}
+                >
+                  <div className="flex items-center justify-between h-16">
+                    <div className="ml-[150px]">
+                      <span className="font-semibold text-white">
+                        Schulwunder Woltersdorf
+                      </span>
+                    </div>
+                    <div className="mr-[30px]">
+                      <Button 
+                        variant="secondary" 
+                        className="bg-white text-black hover:bg-white/90"
+                        onClick={() => window.open('https://betterplace.org/de/projects/126303', '_blank')}
+                      >
+                        Jetzt spenden
+                      </Button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </>
+            )}
           </div>
-        )}
-        
-        <div className={`${isMobile ? 'h-[calc(100dvh-64px)] flex flex-col' : 'min-h-screen h-screen flex flex-col md:flex-row'} max-w-[1700px] mx-auto`}>
+        </div>
+      </div>
+
+      <div className="max-w-[1700px] mx-auto relative pt-16">
+        <div className={`${isMobile ? 'h-[calc(100dvh-64px)] flex flex-col' : 'min-h-screen h-screen flex flex-col md:flex-row'}`}>
           {wunder.map((w) => (
             <div key={w.title} className={`${isMobile ? 'h-1/3' : 'flex-1'}`}>
               <WunderCard {...w} />
