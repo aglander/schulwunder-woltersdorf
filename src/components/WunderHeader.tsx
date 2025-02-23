@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -81,14 +82,6 @@ export const WunderHeader = ({
   const bgColorClass = getBackgroundColor();
   const svgHeight = svgWidth / 4.83;
 
-  const headerStyle = imageSrc
-    ? {
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${imageSrc})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }
-    : {};
-
   return (
     <>
       {/* Sticky Header */}
@@ -129,7 +122,19 @@ export const WunderHeader = ({
 
       {/* Main Content */}
       <div className="relative pt-16">
-        <div className={`absolute inset-0 min-h-[300px]`} style={headerStyle} />
+        <div className="absolute inset-0 min-h-[300px]">
+          {imageSrc && (
+            <>
+              <div className="absolute inset-0 bg-black/50 z-10" />
+              <img
+                src={imageSrc}
+                alt=""
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            </>
+          )}
+        </div>
 
         <div className="relative">
           <div className="container mx-auto px-4 flex flex-col items-center text-center py-20 min-h-[300px]">
