@@ -56,7 +56,7 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <div className="min-h-screen h-screen flex flex-col md:flex-row pt-16">
+      <div className="min-h-screen h-screen flex flex-col md:flex-row">
         {wunder.map((w) => (
           <div key={w.title} className="flex-1">
             <WunderCard {...w} />
