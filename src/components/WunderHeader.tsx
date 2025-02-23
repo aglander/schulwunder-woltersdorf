@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -149,7 +150,7 @@ export const WunderHeader = ({
                       height: svgHeight > 0 ? `${svgHeight}px` : "auto",
                       left: "50%",
                       transform: "translateX(-50%)",
-                      overflow: "visible",
+                      overflow: "hidden",
                       top: `-${svgOffset}px`,
                     }}
                   >
