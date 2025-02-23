@@ -46,7 +46,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-black">
       <div className="fixed top-0 left-4 z-[60] w-[100px] bg-white/95 shadow-lg" style={{
-        clipPath: 'polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%)'
+        clipPath: 'polygon(0 0, 100% 0, 100% 70%, 30% 100%, 0 85%)'
       }}>
         <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer">
           <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto p-2" />
