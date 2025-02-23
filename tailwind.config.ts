@@ -9,6 +9,11 @@ export default {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
+  safelist: [
+    'filter-schulbau',
+    'filter-schulgruendung',
+    'filter-schulinnovation'
+  ],
   prefix: "",
   theme: {
     container: {
