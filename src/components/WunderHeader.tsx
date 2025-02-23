@@ -139,8 +139,8 @@ export const WunderHeader = ({
         </div>
 
         <div className="relative z-[2]">
-          <div className="container mx-auto px-4 flex flex-col items-center text-center py-20 min-h-[300px]">
-            <div className="relative flex flex-col items-center overflow-hidden">
+          <div className="container mx-auto px-4 flex flex-col items-center text-center py-20 min-h-[300px] overflow-hidden">
+            <div className="relative flex flex-col items-center">
               <div className="text-white">
                 <div className="relative inline-block">
                   <div
