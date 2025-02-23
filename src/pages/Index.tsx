@@ -47,7 +47,10 @@ const Index = () => {
     <div className="min-h-screen bg-neutral-800 h-screen overflow-hidden">
       <div className="fixed top-0 left-0 right-0 z-50">
         <div className="mx-auto relative">
-          <div className="w-full max-w-[1700px] 3xl:mx-[10%] mx-auto relative shadow-[35px_0_35px_-25px_rgba(0,0,0,0.5),-35px_0_35px_-25px_rgba(0,0,0,0.5)]">
+          <div 
+            className="w-full mx-auto relative shadow-[35px_0_35px_-25px_rgba(0,0,0,0.5),-35px_0_35px_-25px_rgba(0,0,0,0.5)]"
+            style={{ maxWidth: 'clamp(0px, min(1700px, 80%), 1700px)' }}
+          >
             {!isMobile && (
               <>
                 <div className="absolute top-0 left-[30px] z-[60] w-[100px] bg-white/95 shadow-lg" style={{
@@ -87,7 +90,10 @@ const Index = () => {
         </div>
       </div>
 
-      <div className="w-full max-w-[1700px] 3xl:mx-[10%] mx-auto relative h-screen shadow-[35px_0_35px_-25px_rgba(0,0,0,0.5),-35px_0_35px_-25px_rgba(0,0,0,0.5)]">
+      <div 
+        className="w-full mx-auto relative h-screen shadow-[35px_0_35px_-25px_rgba(0,0,0,0.5),-35px_0_35px_-25px_rgba(0,0,0,0.5)]"
+        style={{ maxWidth: 'clamp(0px, min(1700px, 80%), 1700px)' }}
+      >
         <div className={`${isMobile ? 'h-[calc(100dvh-64px)]' : 'h-screen'} flex ${isMobile ? 'flex-col' : 'flex-row'}`}>
           {wunder.map((w) => (
             <div key={w.title} className={`${isMobile ? 'h-1/3' : 'flex-1'}`}>
@@ -107,7 +113,10 @@ const Index = () => {
                   "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.25) 100%)",
               }}
             >
-              <div className="w-full max-w-[1700px] 3xl:mx-[10%] mx-auto shadow-[35px_0_35px_-25px_rgba(0,0,0,0.5),-35px_0_35px_-25px_rgba(0,0,0,0.5)]">
+              <div 
+                className="w-full mx-auto shadow-[35px_0_35px_-25px_rgba(0,0,0,0.5),-35px_0_35px_-25px_rgba(0,0,0,0.5)]"
+                style={{ maxWidth: 'clamp(0px, min(1700px, 80%), 1700px)' }}
+              >
                 <div className="container mx-auto px-4 h-full flex items-center justify-between gap-4">
                   <div className="relative">
                     <a 
