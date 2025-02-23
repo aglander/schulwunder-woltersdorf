@@ -84,9 +84,9 @@ const Index = () => {
         </div>
       )}
       
-      <div className={`min-h-screen h-screen flex flex-col md:flex-row ${isMobile ? 'h-[calc(100vh-64px)]' : ''}`}>
+      <div className={`${isMobile ? 'h-[calc(100dvh-64px)] flex flex-col' : 'min-h-screen h-screen flex flex-col md:flex-row'}`}>
         {wunder.map((w) => (
-          <div key={w.title} className="flex-1">
+          <div key={w.title} className={`${isMobile ? 'h-1/3' : 'flex-1'}`}>
             <WunderCard {...w} />
           </div>
         ))}
@@ -94,16 +94,16 @@ const Index = () => {
 
       {isMobile && (
         <div 
-          className="fixed bottom-0 left-0 right-0 z-50"
+          className="fixed bottom-0 left-0 right-0 z-50 h-16"
         >
           <div
-            className="backdrop-blur-sm border-t border-black/20"
+            className="backdrop-blur-sm border-t border-black/20 h-full"
             style={{
               background:
                 "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
             }}
           >
-            <div className="container mx-auto px-4 h-16 flex items-center justify-between gap-4">
+            <div className="container mx-auto px-4 h-full flex items-center justify-between gap-4">
               <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 bg-white/95 rounded p-2">
                 <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="h-8 w-auto" />
               </a>
