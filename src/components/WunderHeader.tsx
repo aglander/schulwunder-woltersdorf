@@ -140,9 +140,9 @@ export const WunderHeader = ({
 
         <div className="relative z-[2]">
           <div className="container mx-auto px-4 flex flex-col items-center text-center py-20 min-h-[300px]">
-            <div className="relative flex flex-col items-center">
+            <div className="relative flex flex-col items-center overflow-hidden">
               <div className="text-white">
-                <div className="relative inline-block px-0">
+                <div className="relative inline-block">
                   <div
                     className="absolute opacity-80"
                     style={{
@@ -152,6 +152,7 @@ export const WunderHeader = ({
                       transform: "translateX(-50%)",
                       overflow: "hidden",
                       top: `-${svgOffset}px`,
+                      pointerEvents: "none"
                     }}
                   >
                     <img
