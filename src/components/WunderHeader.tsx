@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -131,7 +132,7 @@ export const WunderHeader = ({
         />
 
         <div className="relative">
-          <div className="container mx-auto px-4 flex flex-col items-center text-center py-20">
+          <div className="container mx-auto px-4 flex flex-col items-center text-center py-20 min-h-[400px]">
             <div className="relative flex flex-col items-center">
               <div className="text-white">
                 <div className="relative inline-block px-24">
@@ -176,3 +177,4 @@ export const WunderHeader = ({
     </>
   );
 };
+
