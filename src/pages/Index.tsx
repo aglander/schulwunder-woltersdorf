@@ -46,7 +46,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-black">
       <div className="fixed top-4 left-4 z-[60] w-[120px] bg-white/95 rounded-lg shadow-lg p-2">
-        <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto" />
+        <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto" />
+        </a>
       </div>
 
       {!isMobile && (
