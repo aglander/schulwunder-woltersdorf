@@ -24,6 +24,9 @@ export default {
       },
     },
     extend: {
+      screens: {
+        '3xl': '1700px',
+      },
       fontFamily: {
         'barlow': ['Barlow Semi Condensed', 'sans-serif'],
         'indie': ['Indie Flower', 'cursive'],
