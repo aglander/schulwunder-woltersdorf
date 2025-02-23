@@ -22,21 +22,21 @@ const Index = () => {
     {
       title: "Schulbauwunder",
       description: "Erfahren Sie mehr über unsere Baueinsätze und wie wir gemeinsam unsere neue Schule erschaffen.",
-      image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
+      image: "/assets/schulbauwunder-hero.jpg",
       link: "/schulbauwunder",
       color: "schulbau" as WunderColor
     },
     {
       title: "Schulgründungswunder",
       description: "Entdecken Sie unsere Vision für die neue Oberschule, die 2026 eröffnet wird.",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      image: "/assets/schulgruendungswunder-hero.jpg",
       link: "/schulgruendungswunder",
       color: "schulgruendung" as WunderColor
     },
     {
       title: "Schulinnovationswunder",
       description: "Sehen Sie unsere Zukunftspläne für das neue Schulgelände.",
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+      image: "/assets/schulinnovationswunder-hero.png",
       link: "/schulinnovationswunder",
       color: "schulinnovation" as WunderColor
     },
