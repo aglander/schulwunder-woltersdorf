@@ -44,7 +44,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-neutral-800">
+    <div className="min-h-screen bg-neutral-800 h-screen overflow-hidden">
       <div className="fixed top-0 left-0 right-0 z-50">
         <div className="mx-auto relative">
           <div className="max-w-[1700px] mx-auto relative shadow-[20px_0_20px_-20px_rgba(0,0,0,0.3),-20px_0_20px_-20px_rgba(0,0,0,0.3)]">
@@ -87,8 +87,8 @@ const Index = () => {
         </div>
       </div>
 
-      <div className="max-w-[1700px] mx-auto relative pt-16 shadow-[20px_0_20px_-20px_rgba(0,0,0,0.3),-20px_0_20px_-20px_rgba(0,0,0,0.3)]">
-        <div className={`${isMobile ? 'h-[calc(100dvh-64px)] flex flex-col' : 'min-h-screen h-screen flex flex-col md:flex-row'}`}>
+      <div className="max-w-[1700px] mx-auto relative h-screen shadow-[20px_0_20px_-20px_rgba(0,0,0,0.3),-20px_0_20px_-20px_rgba(0,0,0,0.3)]">
+        <div className={`${isMobile ? 'h-[calc(100dvh-64px)]' : 'h-screen'} flex ${isMobile ? 'flex-col' : 'flex-row'}`}>
           {wunder.map((w) => (
             <div key={w.title} className={`${isMobile ? 'h-1/3' : 'flex-1'}`}>
               <WunderCard {...w} />
