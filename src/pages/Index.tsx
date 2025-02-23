@@ -96,7 +96,7 @@ const Index = () => {
           className="fixed bottom-0 left-0 right-0 z-50"
         >
           <div
-            className="backdrop-blur-sm border-t border-black/20"
+            className="backdrop-blur-sm border-t border-black/20 rounded-t-2xl"
             style={{
               background:
                 "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
