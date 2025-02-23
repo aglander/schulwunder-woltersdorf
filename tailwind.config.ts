@@ -19,6 +19,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'barlow': ['Barlow Semi Condensed', 'sans-serif'],
+        'indie': ['Indie Flower', 'cursive'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -79,9 +83,6 @@ export default {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
-      },
-      fontFamily: {
-        'indie': ['Indie Flower', 'cursive'],
       },
     },
   },
