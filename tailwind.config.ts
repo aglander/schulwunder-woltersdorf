@@ -75,11 +75,6 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      filter: {
-        schulbau: "brightness(0) saturate(100%) invert(42%) sepia(50%) saturate(6288%) hue-rotate(342deg) brightness(90%) contrast(90%)",
-        schulgruendung: "brightness(0) saturate(100%) invert(34%) sepia(11%) saturate(4605%) hue-rotate(196deg) brightness(92%) contrast(88%)",
-        schulinnovation: "brightness(0) saturate(100%) invert(67%) sepia(15%) saturate(1387%) hue-rotate(60deg) brightness(91%) contrast(100%)",
-      },
       animation: {
         "fade-up": "fadeUp 0.5s ease-out forwards",
         "fade-in": "fadeIn 0.5s ease-out forwards",
@@ -96,5 +91,21 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function({ addUtilities }) {
+      const newUtilities = {
+        '.filter-schulbau': {
+          filter: "brightness(0) saturate(100%) invert(42%) sepia(50%) saturate(6288%) hue-rotate(342deg) brightness(90%) contrast(90%)"
+        },
+        '.filter-schulgruendung': {
+          filter: "brightness(0) saturate(100%) invert(34%) sepia(11%) saturate(4605%) hue-rotate(196deg) brightness(92%) contrast(88%)"
+        },
+        '.filter-schulinnovation': {
+          filter: "brightness(0) saturate(100%) invert(67%) sepia(15%) saturate(1387%) hue-rotate(60deg) brightness(91%) contrast(100%)"
+        }
+      }
+      addUtilities(newUtilities)
+    }
+  ],
 } satisfies Config;
