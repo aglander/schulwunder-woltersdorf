@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 
 interface WunderCardProps {
@@ -48,10 +48,10 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
+          className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
         />
       </div>
-      <div className={`absolute inset-0 bg-gradient-to-br from-black to-black/80 group-hover:${getGradientClass()} opacity-90 transition-all duration-300`} />
+      <div className={`absolute inset-0 bg-gradient-to-br from-black to-black/80 group-hover:${getGradientClass()} opacity-90 transition-all duration-500`} />
       <div className="relative h-full flex flex-col items-center justify-center text-center p-6 text-white">
         <div className="relative inline-block mb-8">
           <div
