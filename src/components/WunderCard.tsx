@@ -33,10 +33,10 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover grayscale transition-all duration-300 group-hover:grayscale-0"
         />
       </div>
-      <div className={`absolute inset-0 bg-gradient-to-br ${getGradientClass()} opacity-90 transition-opacity group-hover:opacity-100`} />
+      <div className={`absolute inset-0 bg-gradient-to-br from-black to-black/80 group-hover:${getGradientClass()} opacity-90 transition-all duration-300`} />
       <div className="relative h-full flex flex-col items-center justify-center text-center p-6 text-white">
         <h2 lang="de" className="text-3xl md:text-4xl font-bold mb-4 break-words hyphens-auto">
           {title}
