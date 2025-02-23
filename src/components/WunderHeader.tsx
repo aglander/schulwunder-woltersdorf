@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -29,6 +30,17 @@ export const WunderHeader = ({
       return "bg-schulinnovation";
     }
     return "bg-primary";
+  };
+
+  const getSwishFilter = () => {
+    if (location.pathname.includes("schulbau")) {
+      return "filter-schulbau";
+    } else if (location.pathname.includes("schulgruendung")) {
+      return "filter-schulgruendung";
+    } else if (location.pathname.includes("schulinnovation")) {
+      return "filter-schulinnovation";
+    }
+    return "";
   };
 
   useEffect(() => {
@@ -139,7 +151,7 @@ export const WunderHeader = ({
                     <img
                       src="/assets/swish.svg"
                       alt=""
-                      className={`w-full h-full object-contain filter-schulbau`}
+                      className={`w-full h-full object-contain ${getSwishFilter()}`}
                       aria-hidden="true"
                     />
                   </div>
@@ -165,3 +177,4 @@ export const WunderHeader = ({
     </>
   );
 };
+
