@@ -73,9 +73,9 @@ const Index = () => {
         </div>
       )}
       
-      <div className={`min-h-screen flex flex-col md:flex-row ${isMobile ? 'mb-16' : ''}`}>
-        {wunder.map((w) => (
-          <div key={w.title} className="flex-1 [&:not(:first-child)]:-ml-[1px]">
+      <div className={`min-h-screen flex flex-col md:flex-row space-y-0 ${isMobile ? 'mb-16' : ''}`}>
+        {wunder.map((w, index) => (
+          <div key={w.title} className={`flex-1 ${index > 0 ? '-mt-[1px] md:-mt-0 md:-ml-[1px]' : ''}`}>
             <WunderCard {...w} />
           </div>
         ))}
