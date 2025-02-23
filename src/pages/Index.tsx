@@ -73,7 +73,7 @@ const Index = () => {
         </div>
       )}
       
-      <div className="min-h-screen h-screen flex flex-col md:flex-row">
+      <div className={`min-h-screen h-screen flex flex-col md:flex-row ${isMobile ? 'pb-24' : ''}`}>
         {wunder.map((w) => (
           <div key={w.title} className="flex-1">
             <WunderCard {...w} />
