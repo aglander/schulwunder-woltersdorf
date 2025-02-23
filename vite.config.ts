@@ -49,8 +49,11 @@ export default defineConfig(({ mode }) => ({
         },
         assetFileNames: (assetInfo) => {
           // Add hash to asset filenames for better caching
-          let extType = assetInfo.name.split('.').at(1);
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+          const name = assetInfo.name || '';
+          const ext = name.split('.').pop() || '';
+          let extType = ext;
+          
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
             extType = 'img';
           }
           return `assets/${extType}/[name]-[hash][extname]`;
