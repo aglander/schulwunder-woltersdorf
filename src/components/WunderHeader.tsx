@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -42,6 +41,17 @@ export const WunderHeader = ({
       return "filter-schulinnovation";
     }
     return "";
+  };
+
+  const getHyphenatedTitle = () => {
+    if (location.pathname.includes("schulgruendung")) {
+      return "Schul&shy;gründungs&shy;wunder";
+    } else if (location.pathname.includes("schulbau")) {
+      return "Schul&shy;bau&shy;wunder";
+    } else if (location.pathname.includes("schulinnovation")) {
+      return "Schul&shy;innovations&shy;wunder";
+    }
+    return title;
   };
 
   useEffect(() => {
@@ -110,9 +120,8 @@ export const WunderHeader = ({
                 <span
                   lang="de"
                   className="text-white font-semibold whitespace-nowrap"
-                >
-                  {title}
-                </span>
+                  dangerouslySetInnerHTML={{ __html: getHyphenatedTitle() }}
+                />
               )}
             </div>
             <div className="w-[200px]" />
@@ -166,8 +175,8 @@ export const WunderHeader = ({
                     ref={h1Ref}
                     lang="de"
                     className="relative text-5xl font-bold mb-6 break-words hyphens-auto font-indie"
+                    dangerouslySetInnerHTML={{ __html: getHyphenatedTitle() }}
                   >
-                    {title}
                   </h1>
                 </div>
                 <div className="relative z-10 max-w-2xl mt-6">
