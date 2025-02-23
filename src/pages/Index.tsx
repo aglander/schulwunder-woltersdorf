@@ -47,7 +47,7 @@ const Index = () => {
     <div className="min-h-screen bg-neutral-800">
       <div className="fixed top-0 left-0 right-0 z-50">
         <div className="mx-auto relative">
-          <div className="max-w-[1700px] mx-auto relative">
+          <div className="max-w-[1700px] mx-auto relative shadow-[20px_0_20px_-20px_rgba(0,0,0,0.3),-20px_0_20px_-20px_rgba(0,0,0,0.3)]">
             {!isMobile && (
               <>
                 <div className="absolute top-0 left-[30px] z-[60] w-[100px] bg-white/95 shadow-lg" style={{
@@ -87,7 +87,7 @@ const Index = () => {
         </div>
       </div>
 
-      <div className="max-w-[1700px] mx-auto relative pt-16">
+      <div className="max-w-[1700px] mx-auto relative pt-16 shadow-[20px_0_20px_-20px_rgba(0,0,0,0.3),-20px_0_20px_-20px_rgba(0,0,0,0.3)]">
         <div className={`${isMobile ? 'h-[calc(100dvh-64px)] flex flex-col' : 'min-h-screen h-screen flex flex-col md:flex-row'}`}>
           {wunder.map((w) => (
             <div key={w.title} className={`${isMobile ? 'h-1/3' : 'flex-1'}`}>
@@ -107,7 +107,7 @@ const Index = () => {
                   "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.25) 100%)",
               }}
             >
-              <div className="max-w-[1700px] mx-auto">
+              <div className="max-w-[1700px] mx-auto shadow-[20px_0_20px_-20px_rgba(0,0,0,0.3),-20px_0_20px_-20px_rgba(0,0,0,0.3)]">
                 <div className="container mx-auto px-4 h-full flex items-center justify-between gap-4">
                   <div className="relative">
                     <a 
