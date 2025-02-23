@@ -76,7 +76,7 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
       </div>
       <div className={`absolute inset-0 bg-gradient-to-br from-black to-black/80 group-hover:${getGradientClass()} opacity-90 transition-all duration-300`} />
       <div className="relative h-full flex flex-col items-center justify-center text-center p-6 text-white">
-        <div className="relative inline-block">
+        <div className="relative inline-block mb-8">
           <div
             className="absolute opacity-80"
             style={{
