@@ -11,28 +11,7 @@ interface WunderCardProps {
 }
 
 const WunderCard = ({ title, description, image, link, color }: WunderCardProps) => {
-  const [svgWidth, setSvgWidth] = useState<number>(0);
-  const [svgOffset, setSvgOffset] = useState<number>(0);
   const h2Ref = useRef<HTMLHeadingElement>(null);
-
-  useEffect(() => {
-    const updateSvgDimensions = () => {
-      if (h2Ref.current) {
-        const headlineWidth = h2Ref.current.offsetWidth + 150;
-        const headlineHeight = h2Ref.current.offsetHeight;
-        const svgHeight = headlineWidth / 4.83;
-        setSvgWidth(headlineWidth);
-        setSvgOffset((svgHeight - headlineHeight) / 2);
-      }
-    };
-
-    updateSvgDimensions();
-    window.addEventListener("resize", updateSvgDimensions);
-
-    return () => {
-      window.removeEventListener("resize", updateSvgDimensions);
-    };
-  }, []);
 
   const getGradientClass = () => {
     switch (color) {
@@ -60,8 +39,6 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
     }
   };
 
-  const svgHeight = svgWidth / 4.83;
-
   return (
     <Link 
       to={link}
@@ -80,12 +57,12 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
           <div
             className="absolute opacity-80"
             style={{
-              width: svgWidth > 0 ? `${svgWidth}px` : "100%",
-              height: svgHeight > 0 ? `${svgHeight}px` : "auto",
+              width: "400px",
+              height: "83px",
               left: "50%",
               transform: "translateX(-50%)",
+              top: "-20px",
               overflow: "hidden",
-              top: `-${svgOffset}px`,
               pointerEvents: "none"
             }}
           >
