@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -151,7 +150,7 @@ export const WunderHeader = ({
                     <img
                       src="/assets/swish.svg"
                       alt=""
-                      className={`w-full h-full object-contain ${getSwishFilter()}`}
+                      className={`w-full h-full object-contain filter ${getSwishFilter()}`}
                       aria-hidden="true"
                     />
                   </div>
@@ -177,4 +176,3 @@ export const WunderHeader = ({
     </>
   );
 };
-
