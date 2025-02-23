@@ -103,8 +103,8 @@ const Index = () => {
             }}
           >
             <div className="container mx-auto px-4 h-16 flex items-center justify-between gap-4">
-              <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer" className="flex-shrink-0">
-                <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="h-12 w-auto" />
+              <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 bg-white/95 rounded p-2">
+                <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="h-8 w-auto" />
               </a>
               <Button 
                 variant="secondary" 
