@@ -43,17 +43,6 @@ export const WunderHeader = ({
     return "";
   };
 
-  const getHyphenatedTitle = () => {
-    if (location.pathname.includes("schulgruendung")) {
-      return "Schul&shy;gründungs&shy;wunder";
-    } else if (location.pathname.includes("schulbau")) {
-      return "Schul&shy;bau&shy;wunder";
-    } else if (location.pathname.includes("schulinnovation")) {
-      return "Schul&shy;innovations&shy;wunder";
-    }
-    return title;
-  };
-
   useEffect(() => {
     const updateSvgDimensions = () => {
       if (h1Ref.current) {
@@ -120,8 +109,9 @@ export const WunderHeader = ({
                 <span
                   lang="de"
                   className="text-white font-semibold whitespace-nowrap"
-                  dangerouslySetInnerHTML={{ __html: getHyphenatedTitle() }}
-                />
+                >
+                  {title}
+                </span>
               )}
             </div>
             <div className="w-[200px]" />
@@ -161,7 +151,7 @@ export const WunderHeader = ({
                       transform: "translateX(-50%)",
                       overflow: "hidden",
                       top: `-${svgOffset}px`,
-                      pointerEvents: "none"
+                      pointerEvents: "none",
                     }}
                   >
                     <img
@@ -175,8 +165,8 @@ export const WunderHeader = ({
                     ref={h1Ref}
                     lang="de"
                     className="relative text-5xl font-bold mb-6 break-words hyphens-auto font-indie"
-                    dangerouslySetInnerHTML={{ __html: getHyphenatedTitle() }}
                   >
+                    {title}
                   </h1>
                 </div>
                 <div className="relative z-10 max-w-2xl mt-6">

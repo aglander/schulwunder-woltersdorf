@@ -1,4 +1,3 @@
-
 import React from "react";
 import WunderCard from "../components/WunderCard";
 
@@ -15,25 +14,27 @@ interface Wunder {
 const Index = () => {
   const wunder: Wunder[] = [
     {
-      title: "Schulbauwunder",
-      description: "Erfahren Sie mehr über unsere Baueinsätze und wie wir gemeinsam unsere neue Schule erschaffen.",
+      title: "#schulbauwunder",
+      description:
+        "Erfahren Sie mehr über unsere Baueinsätze und wie wir gemeinsam unsere neue Schule erschaffen.",
       image: "/assets/schulbauwunder-hero.jpg",
       link: "/schulbauwunder",
-      color: "schulbau" as WunderColor
+      color: "schulbau" as WunderColor,
     },
     {
-      title: "Schulgründungswunder",
-      description: "Entdecken Sie unsere Vision für die neue Oberschule, die 2026 eröffnet wird.",
+      title: "#schulgründungswunder",
+      description:
+        "Entdecken Sie unsere Vision für die neue Oberschule, die 2026 eröffnet wird.",
       image: "/assets/schulgruendungswunder-hero.jpg",
       link: "/schulgruendungswunder",
-      color: "schulgruendung" as WunderColor
+      color: "schulgruendung" as WunderColor,
     },
     {
-      title: "Schulinnovationswunder",
+      title: "#schulinnovationswunder",
       description: "Sehen Sie unsere Zukunftspläne für das neue Schulgelände.",
       image: "/assets/schulinnovationswunder-hero.png",
       link: "/schulinnovationswunder",
-      color: "schulinnovation" as WunderColor
+      color: "schulinnovation" as WunderColor,
     },
   ];
 
