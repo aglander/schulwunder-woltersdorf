@@ -1,6 +1,7 @@
 
 import React from "react";
 import WunderCard from "../components/WunderCard";
+import { Button } from "@/components/ui/button";
 
 type WunderColor = "schulbau" | "schulgruendung" | "schulinnovation";
 
@@ -49,10 +50,20 @@ const Index = () => {
               "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
           }}
         >
-          <div className="container mx-auto px-4 h-16 flex items-center justify-center">
+          <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+            <div className="w-[200px]" /> {/* Spacer für Balance */}
             <span className="font-semibold text-white">
               Schulwunder Woltersdorf
             </span>
+            <div className="w-[200px] flex justify-end">
+              <Button 
+                variant="secondary" 
+                className="bg-white text-black hover:bg-white/90"
+                onClick={() => window.open('https://betterplace.org/de/projects/126303', '_blank')}
+              >
+                Jetzt spenden
+              </Button>
+            </div>
           </div>
         </div>
       </div>
