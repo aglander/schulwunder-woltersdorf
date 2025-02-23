@@ -45,6 +45,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-black">
+      <div className="fixed top-4 left-4 z-[60] w-[120px]">
+        <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto" />
+      </div>
+
       {!isMobile && (
         <div className="fixed top-0 left-0 right-0 z-50">
           <div
