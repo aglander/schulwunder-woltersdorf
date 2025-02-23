@@ -11,36 +11,36 @@ interface WunderCardProps {
 }
 
 const WunderCard = ({ title, description, image, link, color }: WunderCardProps) => {
-  const getBgColor = () => {
+  const getGradientClass = () => {
     switch (color) {
       case "schulbau":
-        return "bg-schulbau";
+        return "from-schulbau to-schulbau/80";
       case "schulgruendung":
-        return "bg-schulgruendung";
+        return "from-schulgruendung to-schulgruendung/80";
       case "schulinnovation":
-        return "bg-schulinnovation";
+        return "from-schulinnovation to-schulinnovation/80";
       default:
-        return "bg-primary";
+        return "from-primary to-primary/80";
     }
   };
 
   return (
-    <Link
+    <Link 
       to={link}
-      className="group block overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+      className="group block rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl"
     >
-      <div className="relative">
-        <div className="aspect-w-16 aspect-h-9">
-          <img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
-        </div>
-        <div className={`${getBgColor()} p-6 text-white`}>
-          <h2 className="text-2xl font-bold mb-2">{title}</h2>
-          <p className="text-white/90">{description}</p>
-        </div>
+      <div className="aspect-video overflow-hidden relative">
+        {/* Overlay mit dem entsprechenden Farbverlauf */}
+        <div className={`absolute inset-0 bg-gradient-to-br ${getGradientClass()} opacity-90 transition-opacity group-hover:opacity-100`} />
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="p-6 bg-white">
+        <h3 lang="de" className={`text-2xl font-bold mb-3 text-${color} break-words hyphens-auto`}>{title}</h3>
+        <p className="text-gray-600">{description}</p>
       </div>
     </Link>
   );
