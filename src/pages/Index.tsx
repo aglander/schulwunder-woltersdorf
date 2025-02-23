@@ -19,20 +19,20 @@ const Index = () => {
 
   const wunder: Wunder[] = [
     {
-      title: "#schulbauwunder",
-      description:
-        "Erfahren Sie mehr über unsere Baueinsätze und wie wir gemeinsam unsere neue Schule erschaffen.",
-      image: "/assets/schulbauwunder-hero.jpg",
-      link: "/schulbauwunder",
-      color: "schulbau" as WunderColor,
-    },
-    {
       title: "#schulgründungswunder",
       description:
         "Entdecken Sie unsere Vision für die neue Oberschule, die 2026 eröffnet wird.",
       image: "/assets/schulgruendungswunder-hero.jpg",
       link: "/schulgruendungswunder",
       color: "schulgruendung" as WunderColor,
+    },
+    {
+      title: "#schulbauwunder",
+      description:
+        "Erfahren Sie mehr über unsere Baueinsätze und wie wir gemeinsam unsere neue Schule erschaffen.",
+      image: "/assets/schulbauwunder-hero.jpg",
+      link: "/schulbauwunder",
+      color: "schulbau" as WunderColor,
     },
     {
       title: "#schulinnovationswunder",
