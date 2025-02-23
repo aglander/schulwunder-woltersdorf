@@ -104,13 +104,24 @@ const Index = () => {
             }}
           >
             <div className="container mx-auto px-4 h-full flex items-center justify-between gap-4">
-              <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 bg-white/95 rounded p-2">
-                <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="h-8 w-auto" />
-              </a>
+              <div className="relative">
+                <a 
+                  href="https://www.freie-schule-woltersdorf.de" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="absolute bottom-2 left-0 bg-white/95 shadow-lg w-[90px]"
+                  style={{
+                    clipPath: 'polygon(0% 11%, 100% 5%, 100% 100%, 0% 100%)',
+                    transform: 'translateY(20%)'
+                  }}
+                >
+                  <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto p-2" />
+                </a>
+              </div>
               <Button 
                 variant="secondary" 
                 size="sm"
-                className="bg-white text-black hover:bg-white/90"
+                className="bg-white text-black hover:bg-white/90 ml-[100px]"
                 onClick={() => window.open('https://betterplace.org/de/projects/126303', '_blank')}
               >
                 Jetzt spenden
