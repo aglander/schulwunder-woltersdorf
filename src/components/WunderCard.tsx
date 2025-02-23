@@ -16,11 +16,11 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
   const getGradientClass = () => {
     switch (color) {
       case "schulbau":
-        return "from-schulbau/90 to-schulbau/70";
+        return "from-schulbau to-schulbau/80";
       case "schulgruendung":
-        return "from-schulgruendung/90 to-schulgruendung/70";
+        return "from-schulgruendung to-schulgruendung/80";
       case "schulinnovation":
-        return "from-schulinnovation/90 to-schulinnovation/70";
+        return "from-schulinnovation to-schulinnovation/80";
       default:
         return "from-primary to-primary/80";
     }
@@ -51,8 +51,8 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
           className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
         />
       </div>
-      <div className={`absolute inset-0 bg-gradient-to-br from-white/95 to-white/90 group-hover:${getGradientClass()} opacity-90 transition-all duration-500`} />
-      <div className="relative h-full flex flex-col items-center justify-center text-center p-6 text-black group-hover:text-white">
+      <div className={`absolute inset-0 bg-gradient-to-br from-black to-black/80 group-hover:${getGradientClass()} opacity-90 transition-all duration-500`} />
+      <div className="relative h-full flex flex-col items-center justify-center text-center p-6 text-white">
         <div className="relative inline-block mb-8">
           <div
             className="absolute opacity-80"
@@ -69,7 +69,7 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
             <img
               src="/assets/swish.svg"
               alt=""
-              className={`w-full h-full object-contain filter ${getSwishFilter()} group-hover:opacity-100 opacity-70`}
+              className={`w-full h-full object-contain filter ${getSwishFilter()}`}
               aria-hidden="true"
             />
           </div>
