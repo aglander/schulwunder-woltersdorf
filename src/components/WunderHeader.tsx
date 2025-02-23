@@ -127,12 +127,12 @@ export const WunderHeader = ({
       {/* Main Content */}
       <div className="relative pt-16">
         <div
-          className={`${bgColorClass} absolute inset-0 min-h-[400px]`}
+          className={`${bgColorClass} absolute inset-0 min-h-[300px]`}
           style={headerStyle}
         />
 
         <div className="relative">
-          <div className="container mx-auto px-4 flex flex-col items-center text-center py-20 min-h-[400px]">
+          <div className="container mx-auto px-4 flex flex-col items-center text-center py-20 min-h-[300px]">
             <div className="relative flex flex-col items-center">
               <div className="text-white">
                 <div className="relative inline-block px-24">
