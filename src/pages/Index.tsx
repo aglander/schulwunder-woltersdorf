@@ -56,7 +56,7 @@ const Index = () => {
             }}
           >
             <div className="max-w-7xl mx-auto relative">
-              <div className="absolute left-0 top-0 z-[60] w-[100px] bg-white/95 shadow-lg" style={{
+              <div className="absolute left-[30px] top-0 z-[60] w-[100px] bg-white/95 shadow-lg" style={{
                 clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)'
               }}>
                 <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer">
