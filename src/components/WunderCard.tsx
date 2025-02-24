@@ -42,7 +42,7 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
   return (
     <Link 
       to={link}
-      className="group block w-full h-full relative overflow-hidden"
+      className="group block w-full h-full relative overflow-hidden shadow-[inset_-12px_0_8px_-10px_rgba(0,0,0,0.3),inset_12px_0_8px_-10px_rgba(0,0,0,0.3)]"
     >
       <div className="absolute inset-0">
         <img
