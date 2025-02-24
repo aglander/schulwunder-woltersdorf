@@ -56,7 +56,7 @@ const Index = () => {
             }}
           >
             <div className="container mx-auto relative px-4">
-              <div className="absolute left-0 top-0 z-[60] w-[100px] bg-white/95 shadow-lg" style={{
+              <div className="absolute left-[30px] top-0 z-[60] w-[100px] bg-white/95 shadow-lg" style={{
                 clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)'
               }}>
                 <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer">
@@ -64,7 +64,7 @@ const Index = () => {
                 </a>
               </div>
               <div className="flex items-center justify-between h-16">
-                <div className="ml-[120px]">
+                <div className="ml-[150px]">
                   <span className="font-semibold text-white">
                     Schulwunder Woltersdorf
                   </span>
