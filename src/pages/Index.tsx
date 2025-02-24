@@ -47,16 +47,6 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-neutral-800">
       {!isMobile && (
-        <div className="fixed top-0 left-[30px] z-[60] w-[100px] bg-white/95 shadow-lg" style={{
-          clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)'
-        }}>
-          <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer">
-            <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto p-2" />
-          </a>
-        </div>
-      )}
-
-      {!isMobile && (
         <div className="fixed top-0 left-0 right-0 z-50">
           <div
             className="backdrop-blur-sm border-b border-black/20"
@@ -65,7 +55,14 @@ const Index = () => {
                 "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.25) 100%)",
             }}
           >
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto relative">
+              <div className="absolute left-0 top-0 z-[60] w-[100px] bg-white/95 shadow-lg" style={{
+                clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)'
+              }}>
+                <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer">
+                  <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto p-2" />
+                </a>
+              </div>
               <div className="flex items-center justify-between h-16">
                 <div className="ml-[150px]">
                   <span className="font-semibold text-white">
