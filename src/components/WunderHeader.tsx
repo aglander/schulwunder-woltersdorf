@@ -3,6 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Button } from "./ui/button";
 
 interface WunderHeaderProps {
   title: string;
@@ -115,7 +116,13 @@ export const WunderHeader = ({
                 </span>
               )}
             </div>
-            <div className="w-[200px]" />
+            <div className="flex items-center gap-4">
+              <Link to="/spenden">
+                <Button variant="outline" className="text-white border-white hover:text-white/80 hover:border-white/80">
+                  Spenden
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
