@@ -52,38 +52,38 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
         />
       </div>
       <div className={`absolute inset-0 bg-gradient-to-br from-black/80 to-black/70 group-hover:${getGradientClass()} opacity-90 transition-all duration-500`} />
-      <div className="relative h-full flex flex-col items-center justify-center text-center p-6 text-white">
-        <div className="flex flex-col items-center justify-center h-full">
-          <div className="relative mb-8">
-            <div
-              className="absolute opacity-80"
-              style={{
-                width: "400px",
-                height: "83px",
-                left: "50%",
-                transform: "translateX(-50%)",
-                top: "-20px",
-                overflow: "hidden",
-                pointerEvents: "none"
-              }}
-            >
-              <img
-                src="/assets/swish.svg"
-                alt=""
-                className={`w-full h-full object-contain filter ${getSwishFilter()}`}
-                aria-hidden="true"
-              />
-            </div>
-            <h2 
-              ref={h2Ref}
-              lang="de" 
-              className="text-3xl md:text-4xl font-bold mb-4 break-words hyphens-auto font-indie relative"
-            >
-              {title}
-            </h2>
+      <div className="relative h-full flex flex-col items-center text-center p-6 text-white">
+        <div className="flex-1" />
+        <div className="relative mb-8">
+          <div
+            className="absolute opacity-80"
+            style={{
+              width: "400px",
+              height: "83px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              top: "-20px",
+              overflow: "hidden",
+              pointerEvents: "none"
+            }}
+          >
+            <img
+              src="/assets/swish.svg"
+              alt=""
+              className={`w-full h-full object-contain filter ${getSwishFilter()}`}
+              aria-hidden="true"
+            />
           </div>
-          <p className="text-lg md:text-xl max-w-md">{description}</p>
+          <h2 
+            ref={h2Ref}
+            lang="de" 
+            className="text-3xl md:text-4xl font-bold mb-4 break-words hyphens-auto font-indie relative"
+          >
+            {title}
+          </h2>
         </div>
+        <p className="text-lg md:text-xl max-w-md h-[84px]">{description}</p>
+        <div className="flex-1" />
       </div>
     </Link>
   );
