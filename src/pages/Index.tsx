@@ -55,7 +55,7 @@ const Index = () => {
                 "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.25) 100%)",
             }}
           >
-            <div className="max-w-7xl mx-auto relative">
+            <div className="container mx-auto relative">
               <div className="absolute left-[30px] top-0 z-[60] w-[100px] bg-white/95 shadow-lg" style={{
                 clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)'
               }}>
@@ -85,7 +85,7 @@ const Index = () => {
         </div>
       )}
       
-      <div className="max-w-7xl mx-auto">
+      <div className="container mx-auto">
         <div className={`${isMobile ? 'h-[calc(100dvh-64px)] flex flex-col' : 'min-h-screen h-screen flex flex-col md:flex-row'}`}>
           {wunder.map((w) => (
             <div key={w.title} className={`${isMobile ? 'h-1/3' : 'flex-1'}`}>

@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -94,7 +93,7 @@ export const WunderHeader = ({
               "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
           }}
         >
-          <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+          <div className="container mx-auto px-4 h-16 flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Link
                 to="/"
@@ -191,4 +190,3 @@ export const WunderHeader = ({
     </>
   );
 };
-
