@@ -55,7 +55,7 @@ const Index = () => {
                 "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.25) 100%)",
             }}
           >
-            <div className="container mx-auto relative">
+            <div className="container mx-auto relative px-4">
               <div className="absolute left-[30px] top-0 z-[60] w-[100px] bg-white/95 shadow-lg" style={{
                 clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)'
               }}>

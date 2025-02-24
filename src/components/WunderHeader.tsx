@@ -94,7 +94,7 @@ export const WunderHeader = ({
           }}
         >
           <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-            <div className="flex items-center gap-2">
+            <div className="ml-[30px]">
               <Link
                 to="/"
                 className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
@@ -115,7 +115,7 @@ export const WunderHeader = ({
                 </span>
               )}
             </div>
-            <div className="flex items-center gap-4">
+            <div className="mr-[30px]">
               <Link to="/spenden">
                 <Button 
                   variant="secondary" 
