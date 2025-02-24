@@ -40,13 +40,14 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
                       </Link>
                     </div>
                     <div className="mr-[30px]">
-                      <Button 
-                        variant="secondary" 
-                        className="bg-white text-black hover:bg-white/90"
-                        onClick={() => window.open('https://betterplace.org/de/projects/126303', '_blank')}
-                      >
-                        Jetzt spenden
-                      </Button>
+                      <Link to="/spenden">
+                        <Button 
+                          variant="secondary" 
+                          className="bg-white text-black hover:bg-white/90"
+                        >
+                          Jetzt spenden
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </div>

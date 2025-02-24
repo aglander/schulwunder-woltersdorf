@@ -3,6 +3,7 @@ import React from "react";
 import WunderCard from "../components/WunderCard";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "../hooks/use-mobile";
+import { Link } from "react-router-dom";
 
 type WunderColor = "schulbau" | "schulgruendung" | "schulinnovation";
 
@@ -71,13 +72,14 @@ const Index = () => {
                 </span>
               </div>
               <div className="mr-[30px]">
-                <Button 
-                  variant="secondary" 
-                  className="bg-white text-black hover:bg-white/90"
-                  onClick={() => window.open('https://betterplace.org/de/projects/126303', '_blank')}
-                >
-                  Jetzt spenden
-                </Button>
+                <Link to="/spenden">
+                  <Button 
+                    variant="secondary" 
+                    className="bg-white text-black hover:bg-white/90"
+                  >
+                    Jetzt spenden
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -118,14 +120,15 @@ const Index = () => {
                   <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto p-2" />
                 </a>
               </div>
-              <Button 
-                variant="secondary" 
-                size="sm"
-                className="bg-white text-black hover:bg-white/90 ml-[100px]"
-                onClick={() => window.open('https://betterplace.org/de/projects/126303', '_blank')}
-              >
-                Jetzt spenden
-              </Button>
+              <Link to="/spenden" className="ml-[100px]">
+                <Button 
+                  variant="secondary" 
+                  size="sm"
+                  className="bg-white text-black hover:bg-white/90"
+                >
+                  Jetzt spenden
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
