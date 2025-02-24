@@ -65,33 +65,37 @@ const Index = () => {
                 "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.25) 100%)",
             }}
           >
-            <div className="flex items-center justify-between h-16">
-              <div className="ml-[150px]">
-                <span className="font-semibold text-white">
-                  Schulwunder Woltersdorf
-                </span>
-              </div>
-              <div className="mr-[30px]">
-                <Link to="/spenden">
-                  <Button 
-                    variant="secondary" 
-                    className="bg-white text-black hover:bg-white/90"
-                  >
-                    Jetzt spenden
-                  </Button>
-                </Link>
+            <div className="max-w-7xl mx-auto">
+              <div className="flex items-center justify-between h-16">
+                <div className="ml-[150px]">
+                  <span className="font-semibold text-white">
+                    Schulwunder Woltersdorf
+                  </span>
+                </div>
+                <div className="mr-[30px]">
+                  <Link to="/spenden">
+                    <Button 
+                      variant="secondary" 
+                      className="bg-white text-black hover:bg-white/90"
+                    >
+                      Jetzt spenden
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
       )}
       
-      <div className={`${isMobile ? 'h-[calc(100dvh-64px)] flex flex-col' : 'min-h-screen h-screen flex flex-col md:flex-row'}`}>
-        {wunder.map((w) => (
-          <div key={w.title} className={`${isMobile ? 'h-1/3' : 'flex-1'}`}>
-            <WunderCard {...w} />
-          </div>
-        ))}
+      <div className="max-w-7xl mx-auto">
+        <div className={`${isMobile ? 'h-[calc(100dvh-64px)] flex flex-col' : 'min-h-screen h-screen flex flex-col md:flex-row'}`}>
+          {wunder.map((w) => (
+            <div key={w.title} className={`${isMobile ? 'h-1/3' : 'flex-1'}`}>
+              <WunderCard {...w} />
+            </div>
+          ))}
+        </div>
       </div>
 
       {isMobile && (
