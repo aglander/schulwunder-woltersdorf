@@ -85,13 +85,15 @@ const Index = () => {
         </div>
       )}
       
-      <div className="container mx-auto">
-        <div className={`${isMobile ? 'h-[calc(100dvh-64px)] flex flex-col' : 'min-h-screen h-screen flex flex-col md:flex-row'}`}>
-          {wunder.map((w) => (
-            <div key={w.title} className={`${isMobile ? 'h-1/3' : 'flex-1'}`}>
-              <WunderCard {...w} />
-            </div>
-          ))}
+      <div className="container mx-auto relative">
+        <div className="w-full max-w-[1700px] mx-auto relative shadow-[35px_0_35px_-25px_rgba(0,0,0,0.5),-35px_0_35px_-25px_rgba(0,0,0,0.5)]">
+          <div className={`${isMobile ? 'h-[calc(100dvh-64px)] flex flex-col' : 'min-h-screen h-screen flex flex-col md:flex-row'}`}>
+            {wunder.map((w) => (
+              <div key={w.title} className={`${isMobile ? 'h-1/3' : 'flex-1'}`}>
+                <WunderCard {...w} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
