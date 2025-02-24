@@ -38,7 +38,7 @@ const Donation = () => {
 
           <div className="my-8 text-center">
             <Button 
-              variant="primary"
+              variant="default"
               size="lg"
               className="inline-flex items-center gap-2"
               onClick={() => window.open('https://betterplace.org/de/projects/126303', '_blank')}
