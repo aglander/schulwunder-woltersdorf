@@ -118,8 +118,11 @@ export const WunderHeader = ({
             </div>
             <div className="flex items-center gap-4">
               <Link to="/spenden">
-                <Button variant="outline" className="text-white border-white hover:text-white/80 hover:border-white/80">
-                  Spenden
+                <Button 
+                  variant="secondary" 
+                  className="bg-white text-black hover:bg-white/90"
+                >
+                  Jetzt spenden
                 </Button>
               </Link>
             </div>
