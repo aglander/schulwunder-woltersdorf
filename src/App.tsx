@@ -6,12 +6,11 @@ import NotFound from "./pages/NotFound";
 import Schulbauwunder from "./pages/Schulbauwunder";
 import Schulgruendungswunder from "./pages/Schulgruendungswunder";
 import Schulinnovationswunder from "./pages/Schulinnovationswunder";
+import Donation from "./pages/Donation";
 
-// Scroll management
 const ScrollManager = () => {
   const location = useLocation();
   
-  // Store scroll position when leaving home page
   useEffect(() => {
     let lastPathname = location.pathname;
     
@@ -22,7 +21,6 @@ const ScrollManager = () => {
     };
   }, [location]);
 
-  // Restore scroll position when returning to home page
   useEffect(() => {
     if (location.pathname === '/') {
       const savedPosition = sessionStorage.getItem('scrollPosition');
@@ -48,6 +46,7 @@ const App = () => (
         <Route path="/schulbauwunder" element={<Schulbauwunder />} />
         <Route path="/schulgruendungswunder" element={<Schulgruendungswunder />} />
         <Route path="/schulinnovationswunder" element={<Schulinnovationswunder />} />
+        <Route path="/spenden" element={<Donation />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
