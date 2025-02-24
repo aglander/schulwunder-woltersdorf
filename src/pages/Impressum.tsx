@@ -11,7 +11,7 @@ const Impressum = () => {
         description="Impressum der Freien Schule Woltersdorf - Rechtliche Informationen und Kontaktdaten."
       />
       <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-8">Impressum</h1>
+        <h1 className="text-4xl font-bold mb-8 text-center">Impressum</h1>
         <div className="max-w-3xl mx-auto prose prose-lg">
           <h2>Angaben gemäß § 5 TMG</h2>
           <p>
