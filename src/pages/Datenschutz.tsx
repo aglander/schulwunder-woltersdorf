@@ -11,7 +11,7 @@ const Datenschutz = () => {
         description="Datenschutzerklärung der Freien Schule Woltersdorf - Informationen zum Umgang mit Ihren Daten."
       />
       <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-8">Datenschutzerklärung</h1>
+        <h1 className="text-4xl font-bold mb-8 text-center">Datenschutzerklärung</h1>
         <div className="max-w-3xl mx-auto prose prose-lg">
           <h2>1. Datenschutz auf einen Blick</h2>
           <h3>Allgemeine Hinweise</h3>
