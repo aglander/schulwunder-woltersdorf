@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -157,11 +158,26 @@ const Schulgruendungswunder = () => {
               <h2 className="text-3xl font-bold mb-6 text-schulgruendung">
                 Unser Team
               </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                 <div className="text-center">
                   <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4" />
-                  <h3 className="font-semibold">Team-Mitglied</h3>
-                  <p className="text-sm text-gray-600">Position</p>
+                  <h3 className="font-semibold text-lg">Johannes Wilk</h3>
+                  <p className="text-gray-600">Organisation</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4" />
+                  <h3 className="font-semibold text-lg">Dr. Cathérine Grote</h3>
+                  <p className="text-gray-600">Pädagogik</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4" />
+                  <h3 className="font-semibold text-lg">Ludwig Gölling</h3>
+                  <p className="text-gray-600">Bau und Infrastruktur</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4" />
+                  <h3 className="font-semibold text-lg">Susann Tröger</h3>
+                  <p className="text-gray-600">Personalplanung</p>
                 </div>
               </div>
             </Card>
