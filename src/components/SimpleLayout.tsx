@@ -53,13 +53,13 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
                         <ArrowLeft 
                           className="w-5 h-5" 
                           style={{ 
-                            filter: 'drop-shadow(0px -1px 0px rgba(255,255,255,0.2)) drop-shadow(0px 1px 1px rgba(0,0,0,0.3))' 
+                            filter: 'drop-shadow(0px 1px 0px rgba(0,0,0,0.3)) drop-shadow(0px -1px 1px rgba(255,255,255,0.2))' 
                           }} 
                         />
                         <span 
                           className="font-semibold"
                           style={{ 
-                            textShadow: '0px -1px 0px rgba(255,255,255,0.2), 0px 1px 1px rgba(0,0,0,0.3)' 
+                            textShadow: '0px 1px 0px rgba(0,0,0,0.3), 0px -1px 1px rgba(255,255,255,0.2)' 
                           }}
                         >
                           Schulwunder Woltersdorf
