@@ -26,18 +26,20 @@ const WunderLayout: React.FC<WunderLayoutProps> = ({ children }) => {
                 >
                     <div className="container mx-auto px-4">
                         <div className="flex items-center justify-between h-16">
-                            <a 
-                                href="https://www.freie-schule-woltersdorf.de" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="w-[80px]"
-                            >
-                                <img 
-                                    src="/assets/FSW_Logo.png" 
-                                    alt="FSW Logo" 
-                                    className="w-full h-auto"
-                                />
-                            </a>
+                            <div className="bg-white/90 rounded-md p-2">
+                                <a 
+                                    href="https://www.freie-schule-woltersdorf.de" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="w-[80px] block"
+                                >
+                                    <img 
+                                        src="/assets/FSW_Logo.png" 
+                                        alt="FSW Logo" 
+                                        className="w-full h-auto"
+                                    />
+                                </a>
+                            </div>
                             <Link to="/spenden">
                                 <Button 
                                     variant="secondary"
