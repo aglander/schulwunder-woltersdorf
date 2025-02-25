@@ -45,7 +45,7 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-neutral-800 relative">
+    <div className="min-h-screen bg-neutral-800 relative overflow-hidden">
       {!isMobile && (
         <div className="fixed top-0 left-0 right-0 z-50">
           <div
@@ -101,12 +101,12 @@ const Index = () => {
           <div
             className={`${
               isMobile
-                ? "h-[calc(100dvh-80px)] flex flex-col gap-2"
+                ? "h-[calc(100dvh-74px)] flex flex-col gap-2"
                 : "min-h-screen h-screen flex flex-col md:flex-row"
             }`}
           >
             {wunder.map((w) => (
-              <div key={w.title} className={`${isMobile ? "h-[calc((100dvh-80px-4px)/3)] shadow-[0_35px_35px_-25px_rgba(0,0,0,0.5)]" : "flex-1"}`}>
+              <div key={w.title} className={`${isMobile ? "h-[calc((100dvh-74px-4px)/3)] shadow-[0_35px_35px_-25px_rgba(0,0,0,0.5)]" : "flex-1"}`}>
                 <WunderCard {...w} />
               </div>
             ))}
