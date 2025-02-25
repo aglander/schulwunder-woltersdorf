@@ -112,9 +112,14 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Decorative illustration */}
+          {/* Decorative illustrations */}
           {!isMobile && (
             <div className="absolute inset-0 overflow-visible pointer-events-none z-[45]">
+              <img
+                src="/assets/illustrations/illustration-lightbulb.svg"
+                alt=""
+                className="absolute top-[30%] right-[58%] w-32 h-32 opacity-70 brightness-[10]"
+              />
               <img
                 src="/assets/illustrations/illustration-paper-airplane.svg"
                 alt=""
