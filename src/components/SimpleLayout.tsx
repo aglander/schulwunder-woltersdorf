@@ -20,17 +20,15 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
           <>
             <div className="container mx-auto">
               <div className="w-full max-w-[1700px] mx-auto relative">
-                <div className="absolute top-0 left-[30px] z-[60] w-[100px] shadow-lg">
-                  <div 
-                    className="bg-white w-full" 
-                    style={{
-                      clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)',
-                    }}
-                  >
-                    <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer">
-                      <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto p-2" />
-                    </a>
-                  </div>
+                <div 
+                  className="absolute top-0 left-[30px] z-[60] w-[100px] bg-white" 
+                  style={{
+                    clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)',
+                  }}
+                >
+                  <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer">
+                    <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto p-2" />
+                  </a>
                 </div>
               </div>
             </div>
