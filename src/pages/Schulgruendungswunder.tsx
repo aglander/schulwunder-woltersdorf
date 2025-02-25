@@ -101,14 +101,20 @@ const Schulgruendungswunder = () => {
                   <h3 className="text-xl font-semibold mb-4 text-schulgruendung">
                     Unsere Vision
                   </h3>
-                  <ul className="list-disc list-inside space-y-2">
-                    <li>Nachhaltige Bauweise mit natürlichen Materialien</li>
-                    <li>Flexible Lernräume für moderne Pädagogik</li>
-                    <li>Gemeinschaftsflächen für Begegnung und Austausch</li>
-                    <li>
-                      Naturnahe Außengestaltung mit Lern- und Spielbereichen
-                    </li>
-                  </ul>
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-semibold mb-2">Elterninitiative</h4>
+                      <p>Diese Schule wird von Eltern für Eltern geplant, organisiert und entwickelt. Wir glauben fest daran, dass wir gemeinsam Großes erreichen können.</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">Reformpädagogik</h4>
+                      <p>Unser pädagogischer Ansatz legt den Schwerpunkt auf die individuellen Bedürfnisse und Potenziale der Schülerinnen und Schüler. Wir fördern selbstständiges Lernen, Kreativität und soziale Verantwortung.</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">Gemeinschaft</h4>
+                      <p>In unserer Schule steht die Gemeinschaft im Mittelpunkt. Eltern, Lehrende und Schülerinnen und Schüler arbeiten Hand in Hand, um eine unterstützende und inspirierende Lernumgebung zu schaffen.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </Card>
