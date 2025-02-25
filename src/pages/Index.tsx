@@ -1,3 +1,4 @@
+
 import React from "react";
 import WunderCard from "../components/WunderCard";
 import { Button } from "@/components/ui/button";
@@ -100,12 +101,12 @@ const Index = () => {
           <div
             className={`${
               isMobile
-                ? "h-[calc(100dvh-64px)] flex flex-col"
+                ? "min-h-[calc(100dvh-64px)] flex flex-col gap-4"
                 : "min-h-screen h-screen flex flex-col md:flex-row"
             }`}
           >
             {wunder.map((w) => (
-              <div key={w.title} className={`${isMobile ? "h-1/3" : "flex-1"}`}>
+              <div key={w.title} className={`${isMobile ? "h-[calc(33.33vh-16px)]" : "flex-1"}`}>
                 <WunderCard {...w} />
               </div>
             ))}
