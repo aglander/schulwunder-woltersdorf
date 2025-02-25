@@ -1,4 +1,3 @@
-
 import React from "react";
 import WunderCard from "../components/WunderCard";
 import { Button } from "@/components/ui/button";
@@ -118,12 +117,12 @@ const Index = () => {
               <img
                 src="/assets/illustrations/illustration-lightbulb.svg"
                 alt=""
-                className="absolute top-[10%] right-[65%] w-32 h-32 opacity-70 brightness-[10]"
+                className="absolute top-[15%] right-[62%] w-32 h-32 opacity-70 brightness-[10]"
               />
               <img
                 src="/assets/illustrations/illustration-paper-airplane.svg"
                 alt=""
-                className="absolute top-[70%] right-[25%] w-32 h-32 opacity-70 brightness-[10]"
+                className="absolute top-[70%] right-[27%] w-48 h-48 opacity-70 brightness-[10]"
               />
             </div>
           )}
