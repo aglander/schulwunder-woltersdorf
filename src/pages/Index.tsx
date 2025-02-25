@@ -1,4 +1,3 @@
-
 import React from "react";
 import WunderCard from "../components/WunderCard";
 import { Button } from "@/components/ui/button";
@@ -58,7 +57,7 @@ const Index = () => {
           >
             <div className="container mx-auto relative px-4">
               <div
-                className="absolute ml-[30px] top-0 z-[60] w-[100px] bg-white/95 shadow-lg"
+                className="absolute ml-[30px] top-0 z-[60] w-[100px] bg-white/90"
                 style={{
                   clipPath: "polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)",
                 }}
@@ -97,8 +96,14 @@ const Index = () => {
         </div>
       )}
 
-      <div className={`container mx-auto ${isMobile ? 'px-2 pt-2' : ''}`}>
-        <div className={`w-full max-w-[1700px] mx-auto relative ${!isMobile ? 'shadow-[35px_0_35px_-25px_rgba(0,0,0,0.5),-35px_0_35px_-25px_rgba(0,0,0,0.5)]' : ''}`}>
+      <div className={`container mx-auto ${isMobile ? "px-2 pt-2" : ""}`}>
+        <div
+          className={`w-full max-w-[1700px] mx-auto relative ${
+            !isMobile
+              ? "shadow-[35px_0_35px_-25px_rgba(0,0,0,0.5),-35px_0_35px_-25px_rgba(0,0,0,0.5)]"
+              : ""
+          }`}
+        >
           <div
             className={`${
               isMobile
@@ -107,7 +112,14 @@ const Index = () => {
             }`}
           >
             {wunder.map((w) => (
-              <div key={w.title} className={`${isMobile ? "h-[calc((100dvh-74px-4px)/3)] shadow-[0_35px_35px_-25px_rgba(0,0,0,0.5)]" : "flex-1"}`}>
+              <div
+                key={w.title}
+                className={`${
+                  isMobile
+                    ? "h-[calc((100dvh-74px-4px)/3)] shadow-[0_35px_35px_-25px_rgba(0,0,0,0.5)]"
+                    : "flex-1"
+                }`}
+              >
                 <WunderCard {...w} />
               </div>
             ))}
