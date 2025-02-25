@@ -8,10 +8,16 @@ export interface Supporter {
 
 export const supporters: Supporter[] = [
   {
+    filename: "agfs.png",
+    title: "Arbeitsgemeinschaft Freier Schulen im Land Brandenburg e.V.",
+    url: "https://agfs-brb.org/",
+    tags: ["schulgruendungswunder"]
+  },
+  {
     filename: "atw.png",
     title: "ATW Management GmbH",
     url: "https://www.atw-management.de/",
-    tags: ["schulbauwunder", "schulinnovationswunder"]
+    tags: ["schulbauwunder"]
   },
   {
     filename: "berding-beton.png",
@@ -26,10 +32,16 @@ export const supporters: Supporter[] = [
     tags: ["schulbauwunder"]
   },
   {
+    filename: "bfas.png",
+    title: "Bundesverband der Freien Alternativschulen",
+    url: "https://www.freie-alternativschulen.de/",
+    tags: ["schulgruendungswunder"]
+  },
+  {
     filename: "goelling-goetzelmann.png",
     title: "Gölling Götzelmann Architekten",
     url: "https://www.ggai.de/",
-    tags: ["schulbauwunder", "schulgruendungswunder"]
+    tags: ["schulbauwunder"]
   },
   {
     filename: "graf-recycling-baustoffe.png",
@@ -41,7 +53,7 @@ export const supporters: Supporter[] = [
     filename: "gregs-pizza.png",
     title: "Gregs Pizza",
     url: "https://www.gregspizza.de/",
-    tags: ["schulgruendungswunder"]
+    tags: ["schulbauwunder"]
   },
   {
     filename: "heizung-und-sanitaer-woltersdorf.png",
@@ -59,13 +71,13 @@ export const supporters: Supporter[] = [
     filename: "johann-schnindler.png",
     title: "Johann Schindler Garten- und Landschaftsbau",
     url: "https://schindler-garten.de/",
-    tags: ["schulbauwunder", "schulgruendungswunder"]
+    tags: ["schulbauwunder"]
   },
   {
     filename: "lpe.png",
     title: "LPE Versicherungs- & Finanzmakler",
     url: "https://www.lpe.de/",
-    tags: ["schulinnovationswunder", "schulgruendungswunder"]
+    tags: ["schulbauwunder"]
   },
   {
     filename: "mls.png",
@@ -89,6 +101,6 @@ export const supporters: Supporter[] = [
     filename: "philipp-preuss-photographie.png",
     title: "Philipp Preuß Photographie",
     url: "http://philippreuss.de/",
-    tags: ["schulgruendungswunder", "schulinnovationswunder"]
+    tags: ["schulbauwunder"]
   }
 ];

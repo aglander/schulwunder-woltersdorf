@@ -10,8 +10,8 @@ import WunderLayout from "@/components/WunderLayout";
 import { SupporterSection } from "@/components/SupporterSection";
 
 const Schulbauwunder = () => {
-  const bauwunderSupporters = supporters.filter(supporter => 
-    supporter.tags.includes('schulbauwunder')
+  const bauwunderSupporters = supporters.filter((supporter) =>
+    supporter.tags.includes("schulbauwunder")
   );
 
   return (
@@ -128,7 +128,9 @@ const Schulbauwunder = () => {
           </section>
 
           <section id="events" className="mb-16">
-            <EventCalendar />
+            <Card className="p-8">
+              <EventCalendar />
+            </Card>
           </section>
 
           <section id="team" className="mb-16">
@@ -156,7 +158,7 @@ const Schulbauwunder = () => {
             </Card>
           </section>
 
-          <SupporterSection 
+          <SupporterSection
             supporters={bauwunderSupporters}
             textColor="text-schulbau"
           />

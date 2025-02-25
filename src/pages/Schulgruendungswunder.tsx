@@ -10,8 +10,8 @@ import { supporters } from "../data/supporters";
 import { SupporterSection } from "@/components/SupporterSection";
 
 const Schulgruendungswunder = () => {
-  const gruendungswunderSupporters = supporters.filter(supporter => 
-    supporter.tags.includes('schulgruendungswunder')
+  const gruendungswunderSupporters = supporters.filter((supporter) =>
+    supporter.tags.includes("schulgruendungswunder")
   );
 
   return (
@@ -97,11 +97,17 @@ const Schulgruendungswunder = () => {
                 lang="de"
                 className="text-3xl font-bold mb-6 text-schulgruendung break-words hyphens-auto"
               >
-                Von Eltern für Eltern: Die neue Oberschule der Freien Schule Woltersdorf
+                Von Eltern für Eltern: Die neue Oberschule der Freien Schule
+                Woltersdorf
               </h2>
               <div className="prose max-w-none">
                 <p className="text-lg mb-6">
-                  Wir, die Eltern der Freien Schule Woltersdorf, haben uns zusammengetan, um eine Oberschule zu gründen, die auf den Prinzipien der Reformpädagogik basiert. Unser Ziel ist es, eine Schule zu schaffen, die im Schuljahr 2026/2027 ihre Türen öffnet und unseren Kindern eine innovative und ganzheitliche Bildung bietet.
+                  Wir, die Eltern der Freien Schule Woltersdorf, haben uns
+                  zusammengetan, um eine Oberschule zu gründen, die auf den
+                  Prinzipien der Reformpädagogik basiert. Unser Ziel ist es,
+                  eine Schule zu schaffen, die im Schuljahr 2026/2027 ihre Türen
+                  öffnet und unseren Kindern eine innovative und ganzheitliche
+                  Bildung bietet.
                 </p>
 
                 <div className="bg-gray-50 p-6 rounded-lg mt-8">
@@ -111,15 +117,29 @@ const Schulgruendungswunder = () => {
                   <div className="space-y-6">
                     <div>
                       <h4 className="font-semibold mb-2">Elterninitiative</h4>
-                      <p>Diese Schule wird von Eltern für Eltern geplant, organisiert und entwickelt. Wir glauben fest daran, dass wir gemeinsam Großes erreichen können.</p>
+                      <p>
+                        Diese Schule wird von Eltern für Eltern geplant,
+                        organisiert und entwickelt. Wir glauben fest daran, dass
+                        wir gemeinsam Großes erreichen können.
+                      </p>
                     </div>
                     <div>
                       <h4 className="font-semibold mb-2">Reformpädagogik</h4>
-                      <p>Unser pädagogischer Ansatz legt den Schwerpunkt auf die individuellen Bedürfnisse und Potenziale der Schülerinnen und Schüler. Wir fördern selbstständiges Lernen, Kreativität und soziale Verantwortung.</p>
+                      <p>
+                        Unser pädagogischer Ansatz legt den Schwerpunkt auf die
+                        individuellen Bedürfnisse und Potenziale der
+                        Schülerinnen und Schüler. Wir fördern selbstständiges
+                        Lernen, Kreativität und soziale Verantwortung.
+                      </p>
                     </div>
                     <div>
                       <h4 className="font-semibold mb-2">Gemeinschaft</h4>
-                      <p>In unserer Schule steht die Gemeinschaft im Mittelpunkt. Eltern, Lehrende und Schülerinnen und Schüler arbeiten Hand in Hand, um eine unterstützende und inspirierende Lernumgebung zu schaffen.</p>
+                      <p>
+                        In unserer Schule steht die Gemeinschaft im Mittelpunkt.
+                        Eltern, Lehrende und Schülerinnen und Schüler arbeiten
+                        Hand in Hand, um eine unterstützende und inspirierende
+                        Lernumgebung zu schaffen.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -130,32 +150,55 @@ const Schulgruendungswunder = () => {
                   </h3>
                   <div className="space-y-6">
                     <div>
-                      <h4 className="font-semibold mb-2">Konzepte entwickeln</h4>
-                      <p>Wir arbeiten an der Erstellung verschiedener pädagogischer und organisatorischer Konzepte, die die Grundlage unserer Schule bilden.</p>
+                      <h4 className="font-semibold mb-2">
+                        Konzepte entwickeln
+                      </h4>
+                      <p>
+                        Wir arbeiten an der Erstellung verschiedener
+                        pädagogischer und organisatorischer Konzepte, die die
+                        Grundlage unserer Schule bilden.
+                      </p>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-2">Infrastruktur planen</h4>
-                      <p>Die Planung und Gestaltung der schulischen Infrastruktur ist ein wesentlicher Bestandteil unseres Projekts.</p>
+                      <h4 className="font-semibold mb-2">
+                        Infrastruktur planen
+                      </h4>
+                      <p>
+                        Die Planung und Gestaltung der schulischen Infrastruktur
+                        ist ein wesentlicher Bestandteil unseres Projekts.
+                      </p>
                     </div>
                     <div>
                       <h4 className="font-semibold mb-2">Personalplanung</h4>
-                      <p>Wir sind auf der Suche nach engagierten Lehrkräften und Mitarbeitenden, die unsere Vision teilen und mit uns gemeinsam die Schule aufbauen möchten.</p>
+                      <p>
+                        Wir sind auf der Suche nach engagierten Lehrkräften und
+                        Mitarbeitenden, die unsere Vision teilen und mit uns
+                        gemeinsam die Schule aufbauen möchten.
+                      </p>
                     </div>
                   </div>
                 </div>
 
                 <div className="mt-8 text-lg">
-                  <p>Gemeinsam glauben wir fest daran, dass wir dieses Wunder vollbringen können. Mit Leidenschaft, Engagement und der Unterstützung unserer Gemeinschaft werden wir eine Schule schaffen, die unseren Kindern die bestmögliche Bildung bietet.</p>
+                  <p>
+                    Gemeinsam glauben wir fest daran, dass wir dieses Wunder
+                    vollbringen können. Mit Leidenschaft, Engagement und der
+                    Unterstützung unserer Gemeinschaft werden wir eine Schule
+                    schaffen, die unseren Kindern die bestmögliche Bildung
+                    bietet.
+                  </p>
                 </div>
               </div>
             </Card>
           </section>
 
           <section id="updates" className="mb-16">
-            <h2 className="text-3xl font-bold mb-6 text-schulgruendung">
-              Kommende Termine
-            </h2>
-            <EventCalendar />
+            <Card className="p-8">
+              <h2 className="text-3xl font-bold mb-6 text-schulgruendung">
+                Kommende Termine
+              </h2>
+              <EventCalendar />
+            </Card>
           </section>
 
           <section id="team" className="mb-16">
@@ -166,29 +209,37 @@ const Schulgruendungswunder = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="text-center">
                   <div className="w-24 h-24 lg:w-28 lg:h-28 bg-gray-200 rounded-full mx-auto mb-3" />
-                  <h3 className="font-semibold text-base lg:text-lg">Johannes Wilk</h3>
+                  <h3 className="font-semibold text-base lg:text-lg">
+                    Johannes Wilk
+                  </h3>
                   <p className="text-gray-600 text-sm">Organisation</p>
                 </div>
                 <div className="text-center">
                   <div className="w-24 h-24 lg:w-28 lg:h-28 bg-gray-200 rounded-full mx-auto mb-3" />
-                  <h3 className="font-semibold text-base lg:text-lg">Dr. Cathérine Grote</h3>
+                  <h3 className="font-semibold text-base lg:text-lg">
+                    Dr. Cathérine Grote
+                  </h3>
                   <p className="text-gray-600 text-sm">Pädagogik</p>
                 </div>
                 <div className="text-center">
                   <div className="w-24 h-24 lg:w-28 lg:h-28 bg-gray-200 rounded-full mx-auto mb-3" />
-                  <h3 className="font-semibold text-base lg:text-lg">Ludwig Gölling</h3>
+                  <h3 className="font-semibold text-base lg:text-lg">
+                    Ludwig Gölling
+                  </h3>
                   <p className="text-gray-600 text-sm">Bau und Infrastruktur</p>
                 </div>
                 <div className="text-center">
                   <div className="w-24 h-24 lg:w-28 lg:h-28 bg-gray-200 rounded-full mx-auto mb-3" />
-                  <h3 className="font-semibold text-base lg:text-lg">Susann Tröger</h3>
+                  <h3 className="font-semibold text-base lg:text-lg">
+                    Susann Tröger
+                  </h3>
                   <p className="text-gray-600 text-sm">Personalplanung</p>
                 </div>
               </div>
             </Card>
           </section>
 
-          <SupporterSection 
+          <SupporterSection
             supporters={gruendungswunderSupporters}
             textColor="text-schulgruendung"
             description="Wir danken allen Sponsoren und Unterstützern, die dieses Projekt möglich machen."
