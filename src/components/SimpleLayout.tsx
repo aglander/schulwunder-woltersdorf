@@ -16,10 +16,10 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <div className="fixed top-0 left-0 right-0 z-50">
-        <div className="container mx-auto">
-          <div className="w-full max-w-[1700px] mx-auto relative">
-            {!isMobile && (
-              <>
+        {!isMobile && (
+          <>
+            <div className="container mx-auto">
+              <div className="w-full max-w-[1700px] mx-auto relative">
                 <div className="absolute top-0 left-[30px] z-[60] w-[100px] bg-white/95 shadow-lg" style={{
                   clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)'
                 }}>
@@ -27,12 +27,16 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
                     <img src="/assets/FSW_Logo.png" alt="FSW Logo" className="w-full h-auto p-2" />
                   </a>
                 </div>
-                <div
-                  className="backdrop-blur-sm border-b border-black/20"
-                  style={{
-                    background: "linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.35) 100%)"
-                  }}
-                >
+              </div>
+            </div>
+            <div
+              className="backdrop-blur-sm border-b border-black/20 w-full"
+              style={{
+                background: "linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.35) 100%)"
+              }}
+            >
+              <div className="container mx-auto">
+                <div className="w-full max-w-[1700px] mx-auto">
                   <div className="flex items-center justify-between h-16">
                     <div className="ml-[150px] flex items-center gap-2">
                       <Link to="/" className="flex items-center gap-2 text-white hover:text-white/90 transition-colors">
@@ -54,10 +58,10 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
                     </div>
                   </div>
                 </div>
-              </>
-            )}
-          </div>
-        </div>
+              </div>
+            </div>
+          </>
+        )}
       </div>
 
       <main className="flex-1 pt-16">
