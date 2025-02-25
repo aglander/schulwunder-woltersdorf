@@ -30,7 +30,7 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
                 <div
                   className="backdrop-blur-sm border-b border-black/20"
                   style={{
-                    background: "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.25) 100%)"
+                    background: "linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.35) 100%)"
                   }}
                 >
                   <div className="flex items-center justify-between h-16">
