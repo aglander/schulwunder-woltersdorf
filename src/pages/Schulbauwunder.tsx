@@ -160,7 +160,7 @@ const Schulbauwunder = () => {
                 Wir danken allen Sponsoren und Unterstützern, die dieses Projekt
                 möglich machen.
               </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8">
                 {supporters.map((supporter) => (
                   <a
                     key={supporter.filename}
@@ -173,7 +173,7 @@ const Schulbauwunder = () => {
                     <img
                       src={`/assets/support/${supporter.filename}`}
                       alt={supporter.title}
-                      className="w-full h-auto object-contain"
+                      className="w-full h-[100px] object-contain"
                     />
                   </a>
                 ))}
