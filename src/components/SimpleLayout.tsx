@@ -28,11 +28,14 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
                   </a>
                 </div>
                 <div
-                  className="backdrop-blur-sm bg-white border-b border-black/20"
+                  className="backdrop-blur-sm border-b border-black/20"
+                  style={{
+                    background: "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.25) 100%)"
+                  }}
                 >
                   <div className="flex items-center justify-between h-16">
                     <div className="ml-[150px] flex items-center gap-2">
-                      <Link to="/" className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
+                      <Link to="/" className="flex items-center gap-2 text-white hover:text-white/90 transition-colors">
                         <ArrowLeft className="w-5 h-5" />
                         <span className="font-semibold">
                           Schulwunder Woltersdorf
