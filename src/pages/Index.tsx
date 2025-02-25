@@ -1,3 +1,4 @@
+
 import React from "react";
 import WunderCard from "../components/WunderCard";
 import { Button } from "@/components/ui/button";
@@ -112,11 +113,11 @@ const Index = () => {
           </div>
 
           {/* Decorative illustration */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none z-[45]">
+          <div className="absolute inset-0 overflow-visible pointer-events-none z-[45]">
             <img
               src="/assets/illustrations/illustration-paper-airplane.svg"
               alt=""
-              className="absolute top-20 right-8 w-16 h-16 opacity-50"
+              className="absolute top-[60%] right-[33%] w-32 h-32 opacity-70 brightness-[10]"
             />
           </div>
         </div>
