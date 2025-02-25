@@ -165,7 +165,7 @@ const Schulbauwunder = () => {
                   <a
                     key={supporter.filename}
                     href={supporter.url}
-                    className="block hover:opacity-80 transition-opacity"
+                    className="block transition-all duration-300"
                     title={supporter.title}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -173,7 +173,7 @@ const Schulbauwunder = () => {
                     <img
                       src={`/assets/support/${supporter.filename}`}
                       alt={supporter.title}
-                      className="w-full h-[100px] object-contain"
+                      className="w-full h-[100px] object-contain grayscale hover:grayscale-0 transition-all duration-300"
                     />
                   </a>
                 ))}
