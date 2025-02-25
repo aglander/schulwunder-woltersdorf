@@ -1,4 +1,3 @@
-
 import React from "react";
 import WunderCard from "../components/WunderCard";
 import { Button } from "@/components/ui/button";
@@ -112,37 +111,12 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Decorative illustrations */}
+          {/* Decorative illustration */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none z-[45]">
             <img
-              src="/assets/illustrations/illustration-lightbulb.svg"
+              src="/assets/illustrations/illustration-paper-airplane.svg"
               alt=""
               className="absolute top-20 right-8 w-16 h-16 opacity-50"
-            />
-            <img
-              src="/assets/illustrations/illustration-puzzle.svg"
-              alt=""
-              className="absolute top-40 left-8 w-16 h-16 opacity-50"
-            />
-            <img
-              src="/assets/illustrations/illustration-book.svg"
-              alt=""
-              className="absolute bottom-20 left-12 w-16 h-16 opacity-50"
-            />
-            <img
-              src="/assets/illustrations/illustration-globus.svg"
-              alt=""
-              className="absolute bottom-40 right-12 w-16 h-16 opacity-50"
-            />
-            <img
-              src="/assets/illustrations/illustration-fussball.svg"
-              alt=""
-              className="absolute top-1/2 left-8 w-16 h-16 opacity-50"
-            />
-            <img
-              src="/assets/illustrations/illustration-music.svg"
-              alt=""
-              className="absolute top-1/3 right-8 w-16 h-16 opacity-50"
             />
           </div>
         </div>
