@@ -45,38 +45,40 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-neutral-800">
+    <div className="min-h-screen bg-neutral-800 relative">
       {/* Decorative illustrations */}
-      <img
-        src="/assets/illustrations/illustration-lightbulb.svg"
-        alt=""
-        className="absolute top-20 right-8 w-16 h-16 opacity-30 pointer-events-none"
-      />
-      <img
-        src="/assets/illustrations/illustration-puzzle.svg"
-        alt=""
-        className="absolute top-40 left-8 w-16 h-16 opacity-30 pointer-events-none"
-      />
-      <img
-        src="/assets/illustrations/illustration-book.svg"
-        alt=""
-        className="absolute bottom-20 left-12 w-16 h-16 opacity-30 pointer-events-none"
-      />
-      <img
-        src="/assets/illustrations/illustration-globus.svg"
-        alt=""
-        className="absolute bottom-40 right-12 w-16 h-16 opacity-30 pointer-events-none"
-      />
-      <img
-        src="/assets/illustrations/illustration-fussball.svg"
-        alt=""
-        className="absolute top-1/2 left-8 w-16 h-16 opacity-30 pointer-events-none"
-      />
-      <img
-        src="/assets/illustrations/illustration-music.svg"
-        alt=""
-        className="absolute top-1/3 right-8 w-16 h-16 opacity-30 pointer-events-none"
-      />
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-10">
+        <img
+          src="/assets/illustrations/illustration-lightbulb.svg"
+          alt=""
+          className="absolute top-20 right-8 w-16 h-16 opacity-50"
+        />
+        <img
+          src="/assets/illustrations/illustration-puzzle.svg"
+          alt=""
+          className="absolute top-40 left-8 w-16 h-16 opacity-50"
+        />
+        <img
+          src="/assets/illustrations/illustration-book.svg"
+          alt=""
+          className="absolute bottom-20 left-12 w-16 h-16 opacity-50"
+        />
+        <img
+          src="/assets/illustrations/illustration-globus.svg"
+          alt=""
+          className="absolute bottom-40 right-12 w-16 h-16 opacity-50"
+        />
+        <img
+          src="/assets/illustrations/illustration-fussball.svg"
+          alt=""
+          className="absolute top-1/2 left-8 w-16 h-16 opacity-50"
+        />
+        <img
+          src="/assets/illustrations/illustration-music.svg"
+          alt=""
+          className="absolute top-1/3 right-8 w-16 h-16 opacity-50"
+        />
+      </div>
 
       {!isMobile && (
         <div className="fixed top-0 left-0 right-0 z-50">
@@ -128,7 +130,7 @@ const Index = () => {
         </div>
       )}
 
-      <div className="container mx-auto relative">
+      <div className="container mx-auto relative z-20">
         <div className="w-full max-w-[1700px] mx-auto relative shadow-[35px_0_35px_-25px_rgba(0,0,0,0.5),-35px_0_35px_-25px_rgba(0,0,0,0.5)]">
           <div
             className={`${
