@@ -1,10 +1,10 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
 import { supporters } from "../data/supporters";
+import { SupporterSection } from "@/components/SupporterSection";
 
 const Schulinnovationswunder = () => {
   const innovationswunderSupporters = supporters.filter(supporter => 
@@ -160,35 +160,11 @@ const Schulinnovationswunder = () => {
               </Card>
             </section>
 
-            <section id="supporters" className="mb-16">
-              <Card className="p-8">
-                <h2 className="text-3xl font-bold mb-6 text-schulinnovation">
-                  Unsere Unterstützer
-                </h2>
-                <p className="mb-8">
-                  Wir danken allen Unterstützern, die uns bei der Realisierung
-                  unserer innovativen Projekte zur Seite stehen.
-                </p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8">
-                  {innovationswunderSupporters.map((supporter) => (
-                    <a
-                      key={supporter.filename}
-                      href={supporter.url}
-                      className="block transition-all duration-300"
-                      title={supporter.title}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        src={`/assets/support/${supporter.filename}`}
-                        alt={supporter.title}
-                        className="w-full h-[100px] object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                      />
-                    </a>
-                  ))}
-                </div>
-              </Card>
-            </section>
+            <SupporterSection 
+              supporters={innovationswunderSupporters}
+              textColor="text-schulinnovation"
+              description="Wir danken allen Unterstützern, die uns bei der Realisierung unserer innovativen Projekte zur Seite stehen."
+            />
           </div>
         </div>
       </div>

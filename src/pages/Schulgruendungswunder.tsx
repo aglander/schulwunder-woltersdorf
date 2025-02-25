@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -8,6 +7,7 @@ import WunderLayout from "@/components/WunderLayout";
 import WunderContent from "@/components/WunderContent";
 import { EventCalendar } from "../components/EventCalendar";
 import { supporters } from "../data/supporters";
+import { SupporterSection } from "@/components/SupporterSection";
 
 const Schulgruendungswunder = () => {
   const gruendungswunderSupporters = supporters.filter(supporter => 
@@ -188,35 +188,11 @@ const Schulgruendungswunder = () => {
             </Card>
           </section>
 
-          <section id="supporters" className="mb-16">
-            <Card className="p-8">
-              <h2 className="text-3xl font-bold mb-6 text-schulgruendung">
-                Unsere Unterstützer
-              </h2>
-              <p className="mb-8">
-                Wir danken allen Sponsoren und Unterstützern, die dieses Projekt
-                möglich machen.
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8">
-                {gruendungswunderSupporters.map((supporter) => (
-                  <a
-                    key={supporter.filename}
-                    href={supporter.url}
-                    className="block transition-all duration-300"
-                    title={supporter.title}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={`/assets/support/${supporter.filename}`}
-                      alt={supporter.title}
-                      className="w-full h-[100px] object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                    />
-                  </a>
-                ))}
-              </div>
-            </Card>
-          </section>
+          <SupporterSection 
+            supporters={gruendungswunderSupporters}
+            textColor="text-schulgruendung"
+            description="Wir danken allen Sponsoren und Unterstützern, die dieses Projekt möglich machen."
+          />
         </div>
       </WunderContent>
 

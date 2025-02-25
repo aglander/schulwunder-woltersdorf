@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -8,6 +7,7 @@ import { supporters } from "../data/supporters";
 import { EventCalendar } from "../components/EventCalendar";
 import WunderContent from "@/components/WunderContent";
 import WunderLayout from "@/components/WunderLayout";
+import { SupporterSection } from "@/components/SupporterSection";
 
 const Schulbauwunder = () => {
   const bauwunderSupporters = supporters.filter(supporter => 
@@ -156,35 +156,10 @@ const Schulbauwunder = () => {
             </Card>
           </section>
 
-          <section id="supporters" className="mb-16">
-            <Card className="p-8">
-              <h2 className="text-3xl font-bold mb-6 text-schulbau">
-                Unsere Unterstützer
-              </h2>
-              <p className="mb-8">
-                Wir danken allen Sponsoren und Unterstützern, die dieses Projekt
-                möglich machen.
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8">
-                {bauwunderSupporters.map((supporter) => (
-                  <a
-                    key={supporter.filename}
-                    href={supporter.url}
-                    className="block transition-all duration-300"
-                    title={supporter.title}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={`/assets/support/${supporter.filename}`}
-                      alt={supporter.title}
-                      className="w-full h-[100px] object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                    />
-                  </a>
-                ))}
-              </div>
-            </Card>
-          </section>
+          <SupporterSection 
+            supporters={bauwunderSupporters}
+            textColor="text-schulbau"
+          />
         </div>
       </WunderContent>
 
