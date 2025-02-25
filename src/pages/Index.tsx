@@ -1,3 +1,4 @@
+
 import React from "react";
 import WunderCard from "../components/WunderCard";
 import { Button } from "@/components/ui/button";
@@ -45,6 +46,38 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-neutral-800">
+      {/* Decorative illustrations */}
+      <img
+        src="/assets/illustrations/illustration-lightbulb.svg"
+        alt=""
+        className="absolute top-20 right-8 w-16 h-16 opacity-30 pointer-events-none"
+      />
+      <img
+        src="/assets/illustrations/illustration-puzzle.svg"
+        alt=""
+        className="absolute top-40 left-8 w-16 h-16 opacity-30 pointer-events-none"
+      />
+      <img
+        src="/assets/illustrations/illustration-book.svg"
+        alt=""
+        className="absolute bottom-20 left-12 w-16 h-16 opacity-30 pointer-events-none"
+      />
+      <img
+        src="/assets/illustrations/illustration-globus.svg"
+        alt=""
+        className="absolute bottom-40 right-12 w-16 h-16 opacity-30 pointer-events-none"
+      />
+      <img
+        src="/assets/illustrations/illustration-fussball.svg"
+        alt=""
+        className="absolute top-1/2 left-8 w-16 h-16 opacity-30 pointer-events-none"
+      />
+      <img
+        src="/assets/illustrations/illustration-music.svg"
+        alt=""
+        className="absolute top-1/3 right-8 w-16 h-16 opacity-30 pointer-events-none"
+      />
+
       {!isMobile && (
         <div className="fixed top-0 left-0 right-0 z-50">
           <div
