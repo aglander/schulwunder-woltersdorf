@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -147,15 +146,10 @@ const Schulgruendungswunder = () => {
           </section>
 
           <section id="updates" className="mb-16">
-            <Card className="p-8">
-              <h2 className="text-3xl font-bold mb-6 text-schulgruendung">
-                Kommende Termine
-              </h2>
-              <div className="space-y-4">
-                {/* Die EventCalendar Komponente wird automatisch die text-schulgruendung Farbe verwenden */}
-                <EventCalendar />
-              </div>
-            </Card>
+            <h2 className="text-3xl font-bold mb-6 text-schulgruendung">
+              Kommende Termine
+            </h2>
+            <EventCalendar />
           </section>
 
           <section id="team" className="mb-16">
