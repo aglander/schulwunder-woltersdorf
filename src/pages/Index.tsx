@@ -96,17 +96,17 @@ const Index = () => {
         </div>
       )}
 
-      <div className={`container mx-auto ${isMobile ? 'px-4' : ''}`}>
+      <div className={`container mx-auto ${isMobile ? 'px-4 pt-4 pb-20' : ''}`}>
         <div className={`w-full max-w-[1700px] mx-auto relative ${!isMobile ? 'shadow-[35px_0_35px_-25px_rgba(0,0,0,0.5),-35px_0_35px_-25px_rgba(0,0,0,0.5)]' : ''}`}>
           <div
             className={`${
               isMobile
-                ? "min-h-[calc(100dvh-64px)] flex flex-col gap-4"
+                ? "min-h-[calc(100dvh-80px)] flex flex-col gap-4"
                 : "min-h-screen h-screen flex flex-col md:flex-row"
             }`}
           >
             {wunder.map((w) => (
-              <div key={w.title} className={`${isMobile ? "h-[calc(33.33vh-16px)] shadow-[0_35px_35px_-25px_rgba(0,0,0,0.5)]" : "flex-1"}`}>
+              <div key={w.title} className={`${isMobile ? "h-[calc(33.33vh-32px)] shadow-[0_35px_35px_-25px_rgba(0,0,0,0.5)]" : "flex-1"}`}>
                 <WunderCard {...w} />
               </div>
             ))}
