@@ -90,21 +90,13 @@ const Schulgruendungswunder = () => {
                 lang="de"
                 className="text-3xl font-bold mb-6 text-schulgruendung break-words hyphens-auto"
               >
-                Über das Schulgründungswunder
+                Von Eltern für Eltern: Die neue Oberschule der Freien Schule Woltersdorf
               </h2>
               <div className="prose max-w-none">
                 <p className="text-lg mb-6">
-                  Mit vereinten Kräften erschaffen wir einen Ort, an dem Bildung
-                  lebendig wird. Unser Schulgründungswunder ist mehr als nur ein
-                  Bauprojekt - es ist die Geschichte einer Gemeinschaft, die
-                  zusammenkommt, um etwas Außergewöhnliches zu schaffen.
+                  Wir, die Eltern der Freien Schule Woltersdorf, haben uns zusammengetan, um eine Oberschule zu gründen, die auf den Prinzipien der Reformpädagogik basiert. Unser Ziel ist es, eine Schule zu schaffen, die im Schuljahr 2026/2027 ihre Türen öffnet und unseren Kindern eine innovative und ganzheitliche Bildung bietet.
                 </p>
-                <p className="mb-6">
-                  In Woltersdorf entsteht Schritt für Schritt unsere neue
-                  Schule. Ein Ort, der nicht nur Klassenräume bietet, sondern
-                  ein lebendiger Raum für Entwicklung, Kreativität und
-                  gemeinsames Lernen sein wird.
-                </p>
+
                 <div className="bg-gray-50 p-6 rounded-lg mt-8">
                   <h3 className="text-xl font-semibold mb-4 text-schulgruendung">
                     Unsere Vision
