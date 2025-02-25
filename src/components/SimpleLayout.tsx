@@ -62,7 +62,7 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
 
       <main className="flex-1 pt-16">
         <div className="container mx-auto">
-          <div className="w-full max-w-[1700px] mx-auto relative bg-white">
+          <div className="w-full max-w-[1700px] mx-auto relative">
             {children}
           </div>
         </div>
