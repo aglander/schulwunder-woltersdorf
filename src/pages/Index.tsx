@@ -4,6 +4,7 @@ import WunderCard from "../components/WunderCard";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "../hooks/use-mobile";
 import { Link } from "react-router-dom";
+import BottomBar from "@/components/BottomBar";
 
 type WunderColor = "schulbau" | "schulgruendung" | "schulinnovation";
 
@@ -130,47 +131,7 @@ const Index = () => {
         </div>
       </div>
 
-      {isMobile && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 h-16">
-          <div
-            className="backdrop-blur-sm border-t border-black/20 h-full"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.25) 100%)",
-            }}
-          >
-            <div className="container mx-auto px-4 h-full flex items-center justify-between gap-4">
-              <div className="relative">
-                <a
-                  href="https://www.freie-schule-woltersdorf.de"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute bottom-2 left-0 bg-white/95 shadow-lg w-[90px]"
-                  style={{
-                    clipPath: "polygon(0 6%, 100% 0%, 100% 100%, 0% 100%)",
-                    transform: "translateY(50%)",
-                  }}
-                >
-                  <img
-                    src="/assets/FSW_Logo.png"
-                    alt="FSW Logo"
-                    className="w-full h-auto p-2"
-                  />
-                </a>
-              </div>
-              <Link to="/spenden" className="ml-[100px]">
-                <Button
-                  variant="secondary"
-                  size="sm"
-                  className="bg-white text-black hover:bg-white/90"
-                >
-                  Jetzt spenden
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
+      <BottomBar />
     </div>
   );
 };
