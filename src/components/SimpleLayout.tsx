@@ -72,6 +72,34 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
             </div>
           </>
         )}
+        {isMobile && (
+          <div
+            className="backdrop-blur-sm border-b border-black/20 w-full"
+            style={{
+              background: "linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.35) 100%)"
+            }}
+          >
+            <div className="container mx-auto px-4">
+              <div className="flex items-center justify-between h-16">
+                <Link to="/" className="flex items-center gap-2 text-white hover:text-white/90 transition-colors">
+                  <ArrowLeft className="w-5 h-5" />
+                  <span className="font-semibold">
+                    Zurück
+                  </span>
+                </Link>
+                <Link to="/spenden">
+                  <Button 
+                    variant="secondary"
+                    size="sm" 
+                    className="bg-white text-black hover:bg-white/90"
+                  >
+                    Jetzt spenden
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       <main className="flex-1 pt-16">
