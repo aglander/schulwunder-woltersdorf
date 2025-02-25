@@ -16,7 +16,7 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <div className="fixed top-0 left-0 right-0 z-50">
-        <div className="container mx-auto">
+        <div className="mx-auto relative">
           <div className="w-full max-w-[1700px] mx-auto relative shadow-[35px_0_35px_-25px_rgba(0,0,0,0.5),-35px_0_35px_-25px_rgba(0,0,0,0.5)]">
             {!isMobile && (
               <>
@@ -58,11 +58,7 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
       </div>
 
       <main className="flex-1 pt-16">
-        <div className="container mx-auto">
-          <div className="w-full max-w-[1700px] mx-auto relative shadow-[35px_0_35px_-25px_rgba(0,0,0,0.5),-35px_0_35px_-25px_rgba(0,0,0,0.5)]">
-            {children}
-          </div>
-        </div>
+        {children}
       </main>
 
       <Footer />
