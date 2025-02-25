@@ -24,6 +24,9 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
                   className="absolute top-0 left-[30px] z-[60] w-[100px] bg-white" 
                   style={{
                     clipPath: 'polygon(0% 0%, 100% 0%, 100% 89%, 0% 95%)',
+                    borderTop: '1px solid #e5e5e5',
+                    borderLeft: '1px solid #e5e5e5',
+                    borderRight: '1px solid #e5e5e5'
                   }}
                 >
                   <a href="https://www.freie-schule-woltersdorf.de" target="_blank" rel="noopener noreferrer">
