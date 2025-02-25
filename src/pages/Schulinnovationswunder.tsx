@@ -1,10 +1,16 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
 import Footer from "../components/Footer";
 import SEO from "../components/SEO";
+import { supporters } from "../data/supporters";
 
 const Schulinnovationswunder = () => {
+  const innovationswunderSupporters = supporters.filter(supporter => 
+    supporter.tags.includes('schulinnovationswunder')
+  );
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <SEO
@@ -163,19 +169,23 @@ const Schulinnovationswunder = () => {
                   Wir danken allen Unterstützern, die uns bei der Realisierung
                   unserer innovativen Projekte zur Seite stehen.
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
-                    Logo
-                  </div>
-                  <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
-                    Logo
-                  </div>
-                  <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
-                    Logo
-                  </div>
-                  <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
-                    Logo
-                  </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8">
+                  {innovationswunderSupporters.map((supporter) => (
+                    <a
+                      key={supporter.filename}
+                      href={supporter.url}
+                      className="block transition-all duration-300"
+                      title={supporter.title}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={`/assets/support/${supporter.filename}`}
+                        alt={supporter.title}
+                        className="w-full h-[100px] object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                      />
+                    </a>
+                  ))}
                 </div>
               </Card>
             </section>

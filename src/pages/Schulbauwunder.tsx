@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -9,6 +10,10 @@ import WunderContent from "@/components/WunderContent";
 import WunderLayout from "@/components/WunderLayout";
 
 const Schulbauwunder = () => {
+  const bauwunderSupporters = supporters.filter(supporter => 
+    supporter.tags.includes('schulbauwunder')
+  );
+
   return (
     <WunderLayout>
       <SEO
@@ -161,7 +166,7 @@ const Schulbauwunder = () => {
                 möglich machen.
               </p>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8">
-                {supporters.map((supporter) => (
+                {bauwunderSupporters.map((supporter) => (
                   <a
                     key={supporter.filename}
                     href={supporter.url}

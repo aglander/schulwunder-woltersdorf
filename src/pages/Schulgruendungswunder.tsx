@@ -7,8 +7,13 @@ import SEO from "../components/SEO";
 import WunderLayout from "@/components/WunderLayout";
 import WunderContent from "@/components/WunderContent";
 import { EventCalendar } from "../components/EventCalendar";
+import { supporters } from "../data/supporters";
 
 const Schulgruendungswunder = () => {
+  const gruendungswunderSupporters = supporters.filter(supporter => 
+    supporter.tags.includes('schulgruendungswunder')
+  );
+
   return (
     <WunderLayout>
       <SEO
@@ -192,19 +197,23 @@ const Schulgruendungswunder = () => {
                 Wir danken allen Sponsoren und Unterstützern, die dieses Projekt
                 möglich machen.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
-                  Logo
-                </div>
-                <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
-                  Logo
-                </div>
-                <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
-                  Logo
-                </div>
-                <div className="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
-                  Logo
-                </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8">
+                {gruendungswunderSupporters.map((supporter) => (
+                  <a
+                    key={supporter.filename}
+                    href={supporter.url}
+                    className="block transition-all duration-300"
+                    title={supporter.title}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={`/assets/support/${supporter.filename}`}
+                      alt={supporter.title}
+                      className="w-full h-[100px] object-contain grayscale hover:grayscale-0 transition-all duration-300"
+                    />
+                  </a>
+                ))}
               </div>
             </Card>
           </section>
