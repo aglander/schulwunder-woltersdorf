@@ -117,7 +117,7 @@ const Index = () => {
             <img
               src="/assets/illustrations/illustration-paper-airplane.svg"
               alt=""
-              className="absolute top-[60%] right-[33%] w-32 h-32 opacity-70 brightness-[10]"
+              className="absolute top-[70%] right-[25%] w-32 h-32 opacity-70 brightness-[10]"
             />
           </div>
         </div>
