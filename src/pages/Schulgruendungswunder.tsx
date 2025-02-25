@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -136,10 +135,10 @@ const Schulgruendungswunder = () => {
                       <p>Wir sind auf der Suche nach engagierten Lehrkräften und Mitarbeitenden, die unsere Vision teilen und mit uns gemeinsam die Schule aufbauen möchten.</p>
                     </div>
                   </div>
+                </div>
 
-                  <div className="mt-8 text-lg">
-                    <p>Gemeinsam glauben wir fest daran, dass wir dieses Wunder vollbringen können. Mit Leidenschaft, Engagement und der Unterstützung unserer Gemeinschaft werden wir eine Schule schaffen, die unseren Kindern die bestmögliche Bildung bietet.</p>
-                  </div>
+                <div className="mt-8 text-lg">
+                  <p>Gemeinsam glauben wir fest daran, dass wir dieses Wunder vollbringen können. Mit Leidenschaft, Engagement und der Unterstützung unserer Gemeinschaft werden wir eine Schule schaffen, die unseren Kindern die bestmögliche Bildung bietet.</p>
                 </div>
               </div>
             </Card>
