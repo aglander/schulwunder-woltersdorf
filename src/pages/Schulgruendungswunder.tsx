@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -114,6 +115,30 @@ const Schulgruendungswunder = () => {
                       <h4 className="font-semibold mb-2">Gemeinschaft</h4>
                       <p>In unserer Schule steht die Gemeinschaft im Mittelpunkt. Eltern, Lehrende und Schülerinnen und Schüler arbeiten Hand in Hand, um eine unterstützende und inspirierende Lernumgebung zu schaffen.</p>
                     </div>
+                  </div>
+                </div>
+
+                <div className="bg-gray-50 p-6 rounded-lg mt-8">
+                  <h3 className="text-xl font-semibold mb-4 text-schulgruendung">
+                    Unsere Aufgaben
+                  </h3>
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="font-semibold mb-2">Konzepte entwickeln</h4>
+                      <p>Wir arbeiten an der Erstellung verschiedener pädagogischer und organisatorischer Konzepte, die die Grundlage unserer Schule bilden.</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">Infrastruktur planen</h4>
+                      <p>Die Planung und Gestaltung der schulischen Infrastruktur ist ein wesentlicher Bestandteil unseres Projekts.</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-2">Personalplanung</h4>
+                      <p>Wir sind auf der Suche nach engagierten Lehrkräften und Mitarbeitenden, die unsere Vision teilen und mit uns gemeinsam die Schule aufbauen möchten.</p>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 text-lg">
+                    <p>Gemeinsam glauben wir fest daran, dass wir dieses Wunder vollbringen können. Mit Leidenschaft, Engagement und der Unterstützung unserer Gemeinschaft werden wir eine Schule schaffen, die unseren Kindern die bestmögliche Bildung bietet.</p>
                   </div>
                 </div>
               </div>
