@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
@@ -115,16 +116,18 @@ export const WunderHeader = ({
                 </span>
               )}
             </div>
-            <div className="mr-[30px]">
-              <Link to="/spenden">
-                <Button 
-                  variant="secondary" 
-                  className="bg-white text-black hover:bg-white/90"
-                >
-                  Jetzt spenden
-                </Button>
-              </Link>
-            </div>
+            {!isMobile && (
+              <div className="mr-[30px]">
+                <Link to="/spenden">
+                  <Button 
+                    variant="secondary" 
+                    className="bg-white text-black hover:bg-white/90"
+                  >
+                    Jetzt spenden
+                  </Button>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>
