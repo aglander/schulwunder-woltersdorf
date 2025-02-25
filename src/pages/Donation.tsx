@@ -9,11 +9,34 @@ const Donation = () => {
     const script = document.createElement('script');
     script.type = 'text/javascript';
     script.src = 'https://secure.fundraisingbox.com/app/paymentJS?hash=mfet3z2o7m5igvxp';
+    script.async = true; // Make script loading async
+    script.crossOrigin = "anonymous"; // Add CORS header
+    
+    // Add error handling
+    script.onerror = (error) => {
+      console.error('Error loading FundraisingBox script:', error);
+    };
+
+    // Add load handler
+    script.onload = () => {
+      console.log('FundraisingBox script loaded successfully');
+    };
+
+    // Ensure the container exists
+    const container = document.getElementById('fundraisingbox-form');
+    if (!container) {
+      console.error('FundraisingBox container not found');
+      return;
+    }
+
     document.body.appendChild(script);
 
     // Cleanup on unmount
     return () => {
-      document.body.removeChild(script);
+      const existingScript = document.querySelector(`script[src="${script.src}"]`);
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
     };
   }, []);
 
