@@ -1,7 +1,6 @@
 
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import { useIsMobile } from "../hooks/use-mobile";
 
 interface WunderCardProps {
   title: string;
@@ -13,13 +12,8 @@ interface WunderCardProps {
 
 const WunderCard = ({ title, description, image, link, color }: WunderCardProps) => {
   const h2Ref = useRef<HTMLHeadingElement>(null);
-  const isMobile = useIsMobile();
 
   const getGradientClass = () => {
-    if (isMobile) {
-      return "from-black/80 to-black/70";
-    }
-    
     switch (color) {
       case "schulbau":
         return "from-schulbau/70 to-schulbau/50";
@@ -33,10 +27,6 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
   };
 
   const getSwishFilter = () => {
-    if (isMobile) {
-      return "brightness-[10] opacity-70";
-    }
-    
     switch (color) {
       case "schulbau":
         return "filter-schulbau opacity-70";
@@ -44,19 +34,6 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
         return "filter-schulgruendung opacity-70";
       case "schulinnovation":
         return "filter-schulinnovation opacity-70";
-      default:
-        return "";
-    }
-  };
-
-  const getHoverGradientClass = () => {
-    switch (color) {
-      case "schulbau":
-        return "group-hover:from-schulbau/70 group-hover:to-schulbau/50";
-      case "schulgruendung":
-        return "group-hover:from-schulgruendung/70 group-hover:to-schulgruendung/50";
-      case "schulinnovation":
-        return "group-hover:from-schulinnovation/70 group-hover:to-schulinnovation/50";
       default:
         return "";
     }
@@ -71,10 +48,10 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
         <img
           src={image}
           alt={title}
-          className={`w-full h-full object-cover ${isMobile ? "grayscale" : ""} transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105`}
+          className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
         />
       </div>
-      <div className={`absolute inset-0 bg-gradient-to-br ${getGradientClass()} ${getHoverGradientClass()} opacity-90 transition-all duration-500`} />
+      <div className={`absolute inset-0 bg-gradient-to-br from-black/80 to-black/70 group-hover:${getGradientClass()} opacity-90 transition-all duration-500`} />
       <div className="relative h-full flex flex-col items-center text-center p-6 text-white">
         <div className="flex-1" />
         <div className="relative mb-8">
