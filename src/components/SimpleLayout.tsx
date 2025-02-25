@@ -50,18 +50,8 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
                   <div className="flex items-center justify-between h-16">
                     <div className="ml-[150px] flex items-center gap-2">
                       <Link to="/" className="flex items-center gap-2 text-white hover:text-white/90 transition-colors">
-                        <ArrowLeft 
-                          className="w-5 h-5" 
-                          style={{ 
-                            filter: 'drop-shadow(0px 1px 0px rgba(0,0,0,0.3)) drop-shadow(0px -1px 1px rgba(255,255,255,0.2))' 
-                          }} 
-                        />
-                        <span 
-                          className="font-semibold"
-                          style={{ 
-                            textShadow: '0px 1px 0px rgba(0,0,0,0.3), 0px -1px 1px rgba(255,255,255,0.2)' 
-                          }}
-                        >
+                        <ArrowLeft className="w-5 h-5" />
+                        <span className="font-semibold">
                           Schulwunder Woltersdorf
                         </span>
                       </Link>
