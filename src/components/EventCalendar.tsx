@@ -3,7 +3,6 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { format } from 'date-fns';
 import { de } from 'date-fns/locale';
-import { Card } from './ui/card';
 
 interface Event {
   summary: string;
@@ -52,41 +51,38 @@ export const EventCalendar: React.FC = () => {
   });
 
   if (isLoading) {
-    return <div className="text-center p-4">Lade Termine...</div>;
+    return <div className="text-center">Lade Termine...</div>;
   }
 
   if (error) {
-    return <div className="text-red-500 p-4">Fehler beim Laden der Termine</div>;
+    return <div className="text-red-500">Fehler beim Laden der Termine</div>;
   }
 
   return (
-    <Card className="p-6">
-      <h3 className="text-2xl font-bold mb-4 text-schulbau">Kommende Termine</h3>
-      <div className="space-y-4">
-        {events.map((event, index) => (
-          <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
-            <div className="flex flex-col space-y-2">
-              <h4 className="font-semibold text-lg">{event.summary}</h4>
-              <div className="text-sm text-gray-600">
-                <time>
-                  {format(event.start, 'EEEE, d. MMMM yyyy', { locale: de })}
-                </time>
-                <div>
-                  {format(event.start, 'HH:mm')} - {format(event.end, 'HH:mm')} Uhr
-                </div>
+    <div className="space-y-4">
+      {events.map((event, index) => (
+        <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
+          <div className="flex flex-col space-y-2">
+            <h4 className="font-semibold text-lg">{event.summary}</h4>
+            <div className="text-sm text-gray-600">
+              <time>
+                {format(event.start, 'EEEE, d. MMMM yyyy', { locale: de })}
+              </time>
+              <div>
+                {format(event.start, 'HH:mm')} - {format(event.end, 'HH:mm')} Uhr
               </div>
-              {event.location && (
-                <div className="text-sm text-gray-600">
-                  📍 {event.location}
-                </div>
-              )}
-              {event.description && (
-                <p className="text-sm mt-2">{event.description}</p>
-              )}
             </div>
+            {event.location && (
+              <div className="text-sm text-gray-600">
+                📍 {event.location}
+              </div>
+            )}
+            {event.description && (
+              <p className="text-sm mt-2">{event.description}</p>
+            )}
           </div>
-        ))}
-      </div>
-    </Card>
+        </div>
+      ))}
+    </div>
   );
 };
