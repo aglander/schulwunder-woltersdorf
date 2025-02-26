@@ -23,7 +23,7 @@ const Donation = () => {
           <Card className="my-8 p-6 bg-white">
             <iframe 
               src="/donation-form.html"
-              className="w-full min-h-[1200px] border-0"
+              className="w-full min-h-[1600px] border-0"
               title="Spendenformular"
             />
           </Card>
