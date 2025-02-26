@@ -137,7 +137,7 @@ const Schulinnovationswunder = () => {
 
                   <IllustrationBox
                     title="Unsere Arbeitsgruppe"
-                    illustration="/assets/illustrations/illustration-paper-airplane.svg"
+                    illustration="/assets/illustrations/illustration-check.svg"
                     illustrationColor="filter-schulinnovation"
                     className="mt-8"
                   >
