@@ -93,18 +93,13 @@ const Schulinnovationswunder = () => {
             <section id="description" className="mb-16">
               <Card className="p-8">
                 <h2 className="text-3xl font-bold mb-6 text-schulinnovation">
-                  Über das Schulinnovationswunder
+                  Entwicklung unseres Grundstücks: Ein Mehrwert für Woltersdorf
                 </h2>
                 <div className="prose max-w-none">
                   <p className="text-lg mb-6">
-                    Auf unserem neuen Schulgelände gibt es noch viel Raum für
-                    innovative Ideen und zukunftsweisende Projekte. Hier
-                    entstehen die Bildungsräume von morgen.
-                  </p>
-                  <p className="mb-6">
-                    Mit dem Schulinnovationswunder schaffen wir Platz für neue
-                    Lernformen, nachhaltige Technologien und gemeinschaftliche
-                    Begegnungsräume.
+                    Die Freie Schule Woltersdorf verfügt über ein ca. 10.000 m² großes Grundstück, 
+                    das derzeit ungenutzt ist. Anstatt es zu verkaufen, haben wir uns entschieden, 
+                    dieses Grundstück zu entwickeln und damit einen Mehrwert für unsere Gemeinde zu schaffen.
                   </p>
                   <div className="bg-gray-50 p-6 rounded-lg mt-8">
                     <h3 className="text-xl font-semibold mb-4 text-schulinnovation">
