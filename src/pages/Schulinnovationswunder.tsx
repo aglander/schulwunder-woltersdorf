@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -155,7 +156,8 @@ const Schulinnovationswunder = () => {
                       <div>
                         <h4 className="font-semibold mb-2">Netzwerk und Unterstützung</h4>
                         <p>
-                          Wir suchen nach
+                          Wir suchen nach Partnern und Unterstützern, die unsere Vision teilen und 
+                          uns bei der Umsetzung helfen können.
                         </p>
                       </div>
                     </div>
