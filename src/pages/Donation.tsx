@@ -1,10 +1,23 @@
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SimpleLayout from "@/components/SimpleLayout";
 import SEO from "@/components/SEO";
 import { Card } from "@/components/ui/card";
 
 const Donation = () => {
+  const [iframeHeight, setIframeHeight] = useState(1600);
+
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (event.data?.type === 'setHeight') {
+        setIframeHeight(event.data.height);
+      }
+    };
+
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
+
   return (
     <SimpleLayout>
       <SEO 
@@ -23,7 +36,8 @@ const Donation = () => {
           <Card className="my-8 p-6 bg-white">
             <iframe 
               src="/donation-form.html"
-              className="w-full min-h-[1600px] border-0"
+              style={{ height: `${iframeHeight}px` }}
+              className="w-full border-0"
               title="Spendenformular"
             />
           </Card>

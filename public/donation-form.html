@@ -9,6 +9,21 @@
 <body style="margin: 0; padding: 0;">
     <div id="fbIframeDiv"></div>
     <script type="text/javascript" src="https://secure.fundraisingbox.com/app/paymentJS?hash=mfet3z2o7m5igvxp"></script>
+    <script>
+        // Funktion zum Senden der Höhe an das Eltern-Fenster
+        function sendHeight() {
+            const height = document.body.scrollHeight;
+            window.parent.postMessage({ type: 'setHeight', height }, '*');
+        }
+
+        // Warte bis das Formular geladen ist
+        window.addEventListener('load', () => {
+            // Initialer Check
+            sendHeight();
+            // Regelmäßiger Check für Änderungen
+            setInterval(sendHeight, 500);
+        });
+    </script>
     <noscript>Bitte Javascript aktivieren</noscript>
     <a target="_blank" href="https://www.fundraisingbox.com/?utm_source=donation_form" style="display: block; text-align: center; margin-top: 16px;">
         <img style="border: 0;" src="https://secure.fundraisingbox.com/images/FundraisingBox-Logo-Widget.png" alt="FundraisingBox Logo" />
