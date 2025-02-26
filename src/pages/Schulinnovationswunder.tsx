@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -162,6 +161,12 @@ const Schulinnovationswunder = () => {
                       </div>
                     </div>
                   </div>
+
+                  <p className="text-lg mt-8">
+                    Gemeinsam glauben wir fest daran, dass wir dieses Projekt erfolgreich realisieren können. 
+                    Mit vereinten Kräften und der Unterstützung unserer Gemeinschaft werden wir das Grundstück 
+                    zu einem wertvollen Teil von Woltersdorf machen.
+                  </p>
                 </div>
               </Card>
             </section>
