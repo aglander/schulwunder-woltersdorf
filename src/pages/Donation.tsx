@@ -2,6 +2,7 @@
 import React from "react";
 import SimpleLayout from "@/components/SimpleLayout";
 import SEO from "@/components/SEO";
+import { Card } from "@/components/ui/card";
 
 const Donation = () => {
   return (
@@ -19,13 +20,13 @@ const Donation = () => {
             zukunftsorientierten Bildung verwirklichen können.
           </p>
 
-          <div className="my-8">
+          <Card className="my-8 p-6 bg-white">
             <iframe 
               src="/donation-form.html"
-              className="w-full min-h-[800px] border-0"
+              className="w-full min-h-[1200px] border-0"
               title="Spendenformular"
             />
-          </div>
+          </Card>
         </div>
       </div>
     </SimpleLayout>
