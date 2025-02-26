@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -10,10 +9,16 @@ import { EventCalendar } from "../components/EventCalendar";
 import { supporters } from "../data/supporters";
 import { SupporterSection } from "@/components/SupporterSection";
 import { IllustrationBox } from "@/components/IllustrationBox";
+import { team } from "../data/team";
+import { TeamSection } from "@/components/TeamSection";
 
 const Schulgruendungswunder = () => {
   const gruendungswunderSupporters = supporters.filter((supporter) =>
     supporter.tags.includes("schulgruendungswunder")
+  );
+
+  const gruendungswunderTeam = team.filter((member) =>
+    member.tags.includes("schulgruendungswunder")
   );
 
   return (
@@ -23,7 +28,7 @@ const Schulgruendungswunder = () => {
         description="Entdecken Sie unsere Vision für die neue Oberschule in Woltersdorf, die 2026 eröffnet wird. Ein zukunftsweisendes Bildungsprojekt für die nächste Generation."
       />
       <WunderHeader
-        title="#schulgründungswunder"
+        title="#schulgruendungswunder"
         imageSrc="/assets/schulgruendungswunder-hero.jpg"
         subTitle="Entdecken Sie unsere Vision für die neue Oberschule, die 2026 eröffnet wird."
       />
@@ -203,43 +208,10 @@ const Schulgruendungswunder = () => {
             </Card>
           </section>
 
-          <section id="team" className="mb-16">
-            <Card className="p-8">
-              <h2 className="text-3xl font-bold mb-6 text-schulgruendung">
-                Unser Team
-              </h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="w-24 h-24 lg:w-28 lg:h-28 bg-gray-200 rounded-full mx-auto mb-3" />
-                  <h3 className="font-semibold text-base lg:text-lg">
-                    Johannes Wilk
-                  </h3>
-                  <p className="text-gray-600 text-sm">Organisation</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-24 h-24 lg:w-28 lg:h-28 bg-gray-200 rounded-full mx-auto mb-3" />
-                  <h3 className="font-semibold text-base lg:text-lg">
-                    Dr. Cathérine Grote
-                  </h3>
-                  <p className="text-gray-600 text-sm">Pädagogik</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-24 h-24 lg:w-28 lg:h-28 bg-gray-200 rounded-full mx-auto mb-3" />
-                  <h3 className="font-semibold text-base lg:text-lg">
-                    Ludwig Gölling
-                  </h3>
-                  <p className="text-gray-600 text-sm">Bau und Infrastruktur</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-24 h-24 lg:w-28 lg:h-28 bg-gray-200 rounded-full mx-auto mb-3" />
-                  <h3 className="font-semibold text-base lg:text-lg">
-                    Susann Tröger
-                  </h3>
-                  <p className="text-gray-600 text-sm">Personalplanung</p>
-                </div>
-              </div>
-            </Card>
-          </section>
+          <TeamSection 
+            members={gruendungswunderTeam}
+            textColor="text-schulgruendung"
+          />
 
           <SupporterSection
             supporters={gruendungswunderSupporters}
