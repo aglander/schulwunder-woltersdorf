@@ -8,6 +8,7 @@ import { SupporterSection } from "@/components/SupporterSection";
 import { IllustrationBox } from "@/components/IllustrationBox";
 import { team } from "../data/team";
 import { TeamSection } from "@/components/TeamSection";
+import { EventCalendar } from "@/components/EventCalendar";
 
 const Schulinnovationswunder = () => {
   const innovationswunderSupporters = supporters.filter(supporter => 
@@ -181,24 +182,9 @@ const Schulinnovationswunder = () => {
             <section id="updates" className="mb-16">
               <Card className="p-8">
                 <h2 className="text-3xl font-bold mb-6 text-schulinnovation">
-                  Aktuelles
+                  Termine
                 </h2>
-                <div className="space-y-8">
-                  <div className="border-b pb-8">
-                    <h3 className="text-xl font-semibold mb-4 text-schulinnovation">
-                      Innovationsfortschritt
-                    </h3>
-                    <div className="aspect-video bg-gray-100 rounded-lg mb-4">
-                      <div className="w-full h-full flex items-center justify-center text-gray-400">
-                        Bild/Video von Innovationsprojekten
-                      </div>
-                    </div>
-                    <p className="text-gray-600">
-                      Aktuelle Informationen zu unseren Innovationsprojekten
-                      werden hier erscheinen.
-                    </p>
-                  </div>
-                </div>
+                <EventCalendar />
               </Card>
             </section>
 
