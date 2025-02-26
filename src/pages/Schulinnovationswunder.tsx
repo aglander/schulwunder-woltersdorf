@@ -102,33 +102,42 @@ const Schulinnovationswunder = () => {
                     dieses Grundstück zu entwickeln und damit einen Mehrwert für unsere Gemeinde zu schaffen.
                   </p>
 
-                  <div className="bg-gray-50 p-6 rounded-lg mb-8">
-                    <h3 className="text-xl font-semibold mb-4 text-schulinnovation">
-                      Unsere Vision
-                    </h3>
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-semibold mb-2">Nachhaltige Entwicklung</h4>
-                        <p>
-                          Wir möchten das Grundstück so entwickeln, dass es langfristig einen 
-                          positiven Beitrag für Woltersdorf leistet.
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Gemeinschaftsprojekt</h4>
-                        <p>
-                          Eine Arbeitsgruppe, bestehend aus Eltern der Schule, lokalen Politikern 
-                          und regionalen Unternehmern, prüft die Machbarkeit und mögliche Unterstützer 
-                          für dieses Projekt.
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-2">Ertrag für die Schule</h4>
-                        <p>
-                          Unser Ziel ist es, mit diesem Grundstück den höchstmöglichen Ertrag für 
-                          die Freie Schule zu erwirtschaften, um unsere Bildungsangebote weiter zu 
-                          verbessern.
-                        </p>
+                  <div className="bg-[#F2FCE2] p-6 rounded-lg mb-8 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 opacity-20">
+                      <img 
+                        src="/assets/illustrations/illustration-lightbulb.svg" 
+                        alt=""
+                        className="w-full h-full filter-schulinnovation"
+                      />
+                    </div>
+                    <div className="relative z-10">
+                      <h3 className="text-xl font-semibold mb-4 text-schulinnovation">
+                        Unsere Vision
+                      </h3>
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-semibold mb-2">Nachhaltige Entwicklung</h4>
+                          <p>
+                            Wir möchten das Grundstück so entwickeln, dass es langfristig einen 
+                            positiven Beitrag für Woltersdorf leistet.
+                          </p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-2">Gemeinschaftsprojekt</h4>
+                          <p>
+                            Eine Arbeitsgruppe, bestehend aus Eltern der Schule, lokalen Politikern 
+                            und regionalen Unternehmern, prüft die Machbarkeit und mögliche Unterstützer 
+                            für dieses Projekt.
+                          </p>
+                        </div>
+                        <div>
+                          <h4 className="font-semibold mb-2">Ertrag für die Schule</h4>
+                          <p>
+                            Unser Ziel ist es, mit diesem Grundstück den höchstmöglichen Ertrag für 
+                            die Freie Schule zu erwirtschaften, um unsere Bildungsangebote weiter zu 
+                            verbessern.
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
