@@ -30,5 +30,23 @@ export const team: TeamMember[] = [
     name: "Susann Tröger",
     desc: "Personalplanung",
     tags: ["schulgruendungswunder"]
+  },
+  {
+    filename: "",
+    name: "Johannes Wilk",
+    desc: "Organisation",
+    tags: ["schulbauwunder"]
+  },
+  {
+    filename: "",
+    name: "Philip Preuß",
+    desc: "Social Media",
+    tags: ["schulbauwunder"]
+  },
+  {
+    filename: "",
+    name: "Johann Schindler",
+    desc: "Praktische Ausführung",
+    tags: ["schulbauwunder"]
   }
 ];

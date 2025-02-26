@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -10,10 +9,16 @@ import WunderContent from "@/components/WunderContent";
 import WunderLayout from "@/components/WunderLayout";
 import { SupporterSection } from "@/components/SupporterSection";
 import { IllustrationBox } from "@/components/IllustrationBox";
+import { team } from "../data/team";
+import { TeamSection } from "@/components/TeamSection";
 
 const Schulbauwunder = () => {
   const bauwunderSupporters = supporters.filter((supporter) =>
     supporter.tags.includes("schulbauwunder")
+  );
+
+  const bauwunderTeam = team.filter((member) =>
+    member.tags.includes("schulbauwunder")
   );
 
   return (
@@ -144,30 +149,10 @@ const Schulbauwunder = () => {
             </Card>
           </section>
 
-          <section id="team" className="mb-16">
-            <Card className="p-8">
-              <h2 className="text-3xl font-bold mb-6 text-schulbau">
-                Unser Team
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4" />
-                  <h3 className="font-semibold">Johannes Wilk</h3>
-                  <p className="text-sm text-gray-600">Organisation</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4" />
-                  <h3 className="font-semibold">Philip Preuß</h3>
-                  <p className="text-sm text-gray-600">Social Media</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4" />
-                  <h3 className="font-semibold">Johann Schindler</h3>
-                  <p className="text-sm text-gray-600">Praktische Ausführung</p>
-                </div>
-              </div>
-            </Card>
-          </section>
+          <TeamSection 
+            members={bauwunderTeam}
+            textColor="text-schulbau"
+          />
 
           <SupporterSection
             supporters={bauwunderSupporters}
