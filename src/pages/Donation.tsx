@@ -1,44 +1,49 @@
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import SimpleLayout from "@/components/SimpleLayout";
 import SEO from "@/components/SEO";
 
 const Donation = () => {
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
   useEffect(() => {
     const loadFundraisingBox = () => {
-      // Create and append the script
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = '/fundraisingbox/app/paymentJS?hash=mfet3z2o7m5igvxp';
-      script.async = false; // Changed to synchronous loading
-      script.defer = true; // Add defer attribute
-      script.crossOrigin = "anonymous";
-      
-      script.onerror = (error) => {
-        console.error('Error loading FundraisingBox script:', error);
-      };
+      if (!iframeRef.current) return;
 
-      script.onload = () => {
-        console.log('FundraisingBox script loaded successfully');
-      };
+      // Set iframe content
+      const iframeContent = `
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8">
+            <script type="text/javascript" src="/fundraisingbox/app/paymentJS?hash=mfet3z2o7m5igvxp" defer></script>
+          </head>
+          <body style="margin:0; padding:0;">
+            <div id="fundraisingbox-form"></div>
+          </body>
+        </html>
+      `;
 
-      // Create a new document write to ensure the form is properly initialized
-      document.write('<div id="fundraisingbox-form"></div>');
-      document.body.appendChild(script);
+      const iframe = iframeRef.current;
+      const iframeDocument = iframe.contentWindow?.document;
+      if (iframeDocument) {
+        iframeDocument.open();
+        iframeDocument.write(iframeContent);
+        iframeDocument.close();
+      }
     };
 
-    // Wait for DOMContentLoaded event if document is not already loaded
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', loadFundraisingBox);
-    } else {
-      loadFundraisingBox();
-    }
+    loadFundraisingBox();
 
     return () => {
-      document.removeEventListener('DOMContentLoaded', loadFundraisingBox);
-      const existingScript = document.querySelector(`script[src="/fundraisingbox/app/paymentJS?hash=mfet3z2o7m5igvxp"]`);
-      if (existingScript) {
-        document.body.removeChild(existingScript);
+      if (iframeRef.current) {
+        const iframe = iframeRef.current;
+        const iframeDocument = iframe.contentWindow?.document;
+        if (iframeDocument) {
+          iframeDocument.open();
+          iframeDocument.write('');
+          iframeDocument.close();
+        }
       }
     };
   }, []);
@@ -60,6 +65,12 @@ const Donation = () => {
 
           <div className="my-8">
             <noscript>Bitte Javascript aktivieren</noscript>
+            <iframe
+              ref={iframeRef}
+              title="Fundraisingbox Spendenformular"
+              className="w-full min-h-[800px] border-0"
+              sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+            />
             <a 
               target="_blank" 
               href="https://www.fundraisingbox.com/?utm_source=donation_form"
