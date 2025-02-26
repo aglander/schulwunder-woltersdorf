@@ -135,9 +135,9 @@ const Schulgruendungswunder = () => {
                     <h4 className="font-semibold mb-2">Reformpädagogik</h4>
                     <p>
                       Unser pädagogischer Ansatz legt den Schwerpunkt auf die
-                      individuellen Bedürfnisse und Potenziale der
-                      Schülerinnen und Schüler. Wir fördern selbstständiges
-                      Lernen, Kreativität und soziale Verantwortung.
+                      individuellen Bedürfnisse und Potenziale der Schülerinnen
+                      und Schüler. Wir fördern selbstständiges Lernen,
+                      Kreativität und soziale Verantwortung.
                     </p>
                   </div>
                   <div>
@@ -158,19 +158,15 @@ const Schulgruendungswunder = () => {
                   className="mt-8"
                 >
                   <div>
-                    <h4 className="font-semibold mb-2">
-                      Konzepte entwickeln
-                    </h4>
+                    <h4 className="font-semibold mb-2">Konzepte entwickeln</h4>
                     <p>
-                      Wir arbeiten an der Erstellung verschiedener
-                      pädagogischer und organisatorischer Konzepte, die die
-                      Grundlage unserer Schule bilden.
+                      Wir arbeiten an der Erstellung verschiedener pädagogischer
+                      und organisatorischer Konzepte, die die Grundlage unserer
+                      Schule bilden.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-2">
-                      Infrastruktur planen
-                    </h4>
+                    <h4 className="font-semibold mb-2">Infrastruktur planen</h4>
                     <p>
                       Die Planung und Gestaltung der schulischen Infrastruktur
                       ist ein wesentlicher Bestandteil unseres Projekts.
@@ -208,7 +204,7 @@ const Schulgruendungswunder = () => {
             </Card>
           </section>
 
-          <TeamSection 
+          <TeamSection
             members={gruendungswunderTeam}
             textColor="text-schulgruendung"
           />
@@ -216,7 +212,6 @@ const Schulgruendungswunder = () => {
           <SupporterSection
             supporters={gruendungswunderSupporters}
             textColor="text-schulgruendung"
-            description="Wir danken allen Sponsoren und Unterstützern, die dieses Projekt möglich machen."
           />
         </div>
       </WunderContent>
