@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -8,6 +9,7 @@ import { EventCalendar } from "../components/EventCalendar";
 import WunderContent from "@/components/WunderContent";
 import WunderLayout from "@/components/WunderLayout";
 import { SupporterSection } from "@/components/SupporterSection";
+import { IllustrationBox } from "@/components/IllustrationBox";
 
 const Schulbauwunder = () => {
   const bauwunderSupporters = supporters.filter((supporter) =>
@@ -110,19 +112,28 @@ const Schulbauwunder = () => {
                   ein lebendiger Raum für Entwicklung, Kreativität und
                   gemeinsames Lernen sein wird.
                 </p>
-                <div className="bg-gray-50 p-6 rounded-lg mt-8">
-                  <h3 className="text-xl font-semibold mb-4 text-schulbau">
-                    Unsere Vision
-                  </h3>
-                  <ul className="list-disc list-inside space-y-2">
-                    <li>Nachhaltige Bauweise mit natürlichen Materialien</li>
-                    <li>Flexible Lernräume für moderne Pädagogik</li>
-                    <li>Gemeinschaftsflächen für Begegnung und Austausch</li>
-                    <li>
-                      Naturnahe Außengestaltung mit Lern- und Spielbereichen
+
+                <IllustrationBox
+                  title="Unsere Vision"
+                  illustration="/assets/illustrations/illustration-lightbulb.svg"
+                  illustrationColor="filter-schulbau"
+                  className="mb-8"
+                >
+                  <ul className="list-none space-y-2">
+                    <li className="flex items-start gap-2">
+                      <span className="font-semibold">Nachhaltige Bauweise</span> mit natürlichen Materialien
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-semibold">Flexible Lernräume</span> für moderne Pädagogik
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-semibold">Gemeinschaftsflächen</span> für Begegnung und Austausch
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="font-semibold">Naturnahe Außengestaltung</span> mit Lern- und Spielbereichen
                     </li>
                   </ul>
-                </div>
+                </IllustrationBox>
               </div>
             </Card>
           </section>
