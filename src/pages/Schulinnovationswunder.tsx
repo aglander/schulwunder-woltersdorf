@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -136,14 +135,30 @@ const Schulinnovationswunder = () => {
 
                   <div className="bg-gray-50 p-6 rounded-lg mt-8">
                     <h3 className="text-xl font-semibold mb-4 text-schulinnovation">
-                      Unsere Innovationen
+                      Unsere Arbeitsgruppe
                     </h3>
-                    <ul className="list-disc list-inside space-y-2">
-                      <li>Moderne Lernwerkstätten</li>
-                      <li>Nachhaltige Energiekonzepte</li>
-                      <li>Digitale Lernumgebungen</li>
-                      <li>Naturnahe Außenräume</li>
-                    </ul>
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="font-semibold mb-2">Vielfältige Expertise</h4>
+                        <p>
+                          Die Arbeitsgruppe setzt sich aus engagierten Eltern, Vertretern der lokalen 
+                          Politik und regionalen Unternehmern zusammen.
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-2">Machbarkeitsstudien</h4>
+                        <p>
+                          Wir prüfen verschiedene Nutzungsmöglichkeiten und entwickeln Konzepte, 
+                          die sowohl wirtschaftlich als auch ökologisch sinnvoll sind.
+                        </p>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold mb-2">Netzwerk und Unterstützung</h4>
+                        <p>
+                          Wir suchen nach
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Card>
