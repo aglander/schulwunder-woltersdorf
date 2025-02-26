@@ -23,13 +23,8 @@ const Donation = () => {
 
           <div className="my-8">
             <noscript>Bitte Javascript aktivieren</noscript>
-            <iframe
-              ref={iframeRef}
-              title="Fundraisingbox Spendenformular"
-              className="w-full min-h-[800px] border-0"
-              src="/fundraisingbox/app/paymentJS?hash=mfet3z2o7m5igvxp"
-              sandbox="allow-scripts allow-forms allow-popups"
-            />
+            <div id="fbIframeDiv"></div>
+            <script type="text/javascript" src="/fundraisingbox/app/paymentJS?hash=mfet3z2o7m5igvxp"></script>
             <a 
               target="_blank" 
               href="https://www.fundraisingbox.com/?utm_source=donation_form"
