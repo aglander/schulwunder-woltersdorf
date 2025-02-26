@@ -48,5 +48,17 @@ export const team: TeamMember[] = [
     name: "Johann Schindler",
     desc: "Praktische Ausführung",
     tags: ["schulbauwunder"]
+  },
+  {
+    filename: "",
+    name: "Johannes Wilk",
+    desc: "Organisation",
+    tags: ["schulinnovationswunder"]
+  },
+  {
+    filename: "",
+    name: "Ludwig Gölling",
+    desc: "Bau und Infrastruktur",
+    tags: ["schulinnovationswunder"]
   }
 ];

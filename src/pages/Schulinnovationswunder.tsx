@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -7,10 +6,16 @@ import SEO from "../components/SEO";
 import { supporters } from "../data/supporters";
 import { SupporterSection } from "@/components/SupporterSection";
 import { IllustrationBox } from "@/components/IllustrationBox";
+import { team } from "../data/team";
+import { TeamSection } from "@/components/TeamSection";
 
 const Schulinnovationswunder = () => {
   const innovationswunderSupporters = supporters.filter(supporter => 
     supporter.tags.includes('schulinnovationswunder')
+  );
+
+  const innovationswunderTeam = team.filter(member => 
+    member.tags.includes('schulinnovationswunder')
   );
 
   return (
@@ -197,20 +202,10 @@ const Schulinnovationswunder = () => {
               </Card>
             </section>
 
-            <section id="team" className="mb-16">
-              <Card className="p-8">
-                <h2 className="text-3xl font-bold mb-6 text-schulinnovation">
-                  Unser Team
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <div className="text-center">
-                    <div className="w-32 h-32 bg-gray-200 rounded-full mx-auto mb-4" />
-                    <h3 className="font-semibold">Team-Mitglied</h3>
-                    <p className="text-sm text-gray-600">Position</p>
-                  </div>
-                </div>
-              </Card>
-            </section>
+            <TeamSection 
+              members={innovationswunderTeam}
+              textColor="text-schulinnovation"
+            />
 
             <SupporterSection 
               supporters={innovationswunderSupporters}
