@@ -102,8 +102,8 @@ const Schulinnovationswunder = () => {
                     dieses Grundstück zu entwickeln und damit einen Mehrwert für unsere Gemeinde zu schaffen.
                   </p>
 
-                  <div className="bg-[#F2FCE2] p-6 rounded-lg mb-8 relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-32 h-32 opacity-20">
+                  <div className="bg-gray-50 p-8 rounded-lg mb-8 relative overflow-hidden">
+                    <div className="absolute top-4 right-4 w-32 h-32 opacity-20">
                       <img 
                         src="/assets/illustrations/illustration-lightbulb.svg" 
                         alt=""
