@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -196,7 +197,7 @@ const Schulinnovationswunder = () => {
             <SupporterSection 
               supporters={innovationswunderSupporters}
               textColor="text-schulinnovation"
-              description="Wir danken allen Unterstützern, die uns bei der Realisierung unserer innovativen Projekte zur Seite stehen."
+              description=""
             />
           </div>
         </div>
