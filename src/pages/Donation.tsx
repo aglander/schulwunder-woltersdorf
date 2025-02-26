@@ -1,11 +1,9 @@
 
-import React, { useRef } from "react";
+import React from "react";
 import SimpleLayout from "@/components/SimpleLayout";
 import SEO from "@/components/SEO";
 
 const Donation = () => {
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-
   return (
     <SimpleLayout>
       <SEO 
@@ -22,9 +20,9 @@ const Donation = () => {
           </p>
 
           <div className="my-8">
-            <noscript>Bitte Javascript aktivieren</noscript>
             <div id="fbIframeDiv"></div>
-            <script type="text/javascript" src="/fundraisingbox/app/paymentJS?hash=mfet3z2o7m5igvxp"></script>
+            <script type="text/javascript" src="https://secure.fundraisingbox.com/app/paymentJS?hash=mfet3z2o7m5igvxp"></script>
+            <noscript>Bitte Javascript aktivieren</noscript>
             <a 
               target="_blank" 
               href="https://www.fundraisingbox.com/?utm_source=donation_form"
