@@ -1,52 +1,10 @@
 
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import SimpleLayout from "@/components/SimpleLayout";
 import SEO from "@/components/SEO";
 
 const Donation = () => {
   const iframeRef = useRef<HTMLIFrameElement>(null);
-
-  useEffect(() => {
-    const loadFundraisingBox = () => {
-      if (!iframeRef.current) return;
-
-      // Set iframe content
-      const iframeContent = `
-        <!DOCTYPE html>
-        <html>
-          <head>
-            <meta charset="utf-8">
-            <script type="text/javascript" src="/fundraisingbox/app/paymentJS?hash=mfet3z2o7m5igvxp" defer></script>
-          </head>
-          <body style="margin:0; padding:0;">
-            <div id="fundraisingbox-form"></div>
-          </body>
-        </html>
-      `;
-
-      const iframe = iframeRef.current;
-      const iframeDocument = iframe.contentWindow?.document;
-      if (iframeDocument) {
-        iframeDocument.open();
-        iframeDocument.write(iframeContent);
-        iframeDocument.close();
-      }
-    };
-
-    loadFundraisingBox();
-
-    return () => {
-      if (iframeRef.current) {
-        const iframe = iframeRef.current;
-        const iframeDocument = iframe.contentWindow?.document;
-        if (iframeDocument) {
-          iframeDocument.open();
-          iframeDocument.write('');
-          iframeDocument.close();
-        }
-      }
-    };
-  }, []);
 
   return (
     <SimpleLayout>
@@ -69,7 +27,8 @@ const Donation = () => {
               ref={iframeRef}
               title="Fundraisingbox Spendenformular"
               className="w-full min-h-[800px] border-0"
-              sandbox="allow-scripts allow-forms allow-same-origin allow-popups allow-popups-to-escape-sandbox"
+              src="/fundraisingbox/app/paymentJS?hash=mfet3z2o7m5igvxp"
+              sandbox="allow-scripts allow-forms allow-popups"
             />
             <a 
               target="_blank" 
