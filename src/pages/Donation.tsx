@@ -5,32 +5,38 @@ import SEO from "@/components/SEO";
 
 const Donation = () => {
   useEffect(() => {
-    // Create and append the script
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    // Use the proxied URL instead of direct Fundraisingbox URL
-    script.src = '/fundraisingbox/app/paymentJS?hash=mfet3z2o7m5igvxp';
-    script.async = true;
-    script.crossOrigin = "anonymous";
-    
-    script.onerror = (error) => {
-      console.error('Error loading FundraisingBox script:', error);
+    const loadFundraisingBox = () => {
+      // Create and append the script
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = '/fundraisingbox/app/paymentJS?hash=mfet3z2o7m5igvxp';
+      script.async = false; // Changed to synchronous loading
+      script.defer = true; // Add defer attribute
+      script.crossOrigin = "anonymous";
+      
+      script.onerror = (error) => {
+        console.error('Error loading FundraisingBox script:', error);
+      };
+
+      script.onload = () => {
+        console.log('FundraisingBox script loaded successfully');
+      };
+
+      // Create a new document write to ensure the form is properly initialized
+      document.write('<div id="fundraisingbox-form"></div>');
+      document.body.appendChild(script);
     };
 
-    script.onload = () => {
-      console.log('FundraisingBox script loaded successfully');
-    };
-
-    const container = document.getElementById('fundraisingbox-form');
-    if (!container) {
-      console.error('FundraisingBox container not found');
-      return;
+    // Wait for DOMContentLoaded event if document is not already loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', loadFundraisingBox);
+    } else {
+      loadFundraisingBox();
     }
 
-    document.body.appendChild(script);
-
     return () => {
-      const existingScript = document.querySelector(`script[src="${script.src}"]`);
+      document.removeEventListener('DOMContentLoaded', loadFundraisingBox);
+      const existingScript = document.querySelector(`script[src="/fundraisingbox/app/paymentJS?hash=mfet3z2o7m5igvxp"]`);
       if (existingScript) {
         document.body.removeChild(existingScript);
       }
@@ -54,12 +60,11 @@ const Donation = () => {
 
           <div className="my-8">
             <noscript>Bitte Javascript aktivieren</noscript>
-            <div id="fundraisingbox-form" className="mb-4"></div>
             <a 
               target="_blank" 
               href="https://www.fundraisingbox.com/?utm_source=donation_form"
               rel="noopener noreferrer"
-              className="block text-center"
+              className="block text-center mt-4"
             >
               <img 
                 style={{ border: 0 }}
