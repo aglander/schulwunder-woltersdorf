@@ -11,31 +11,25 @@ export const team: TeamMember[] = [
     filename: "johannes-wilk.jpeg",
     name: "Johannes Wilk",
     desc: "Organisation",
-    tags: ["schulgruendungswunder"]
+    tags: ["schulgruendungswunder", "schulinnovationswunder", "schulbauwunder"]
   },
   {
-    filename: "catherine-grote.jpeg",
+    filename: "",
     name: "Dr. Cathérine Grote",
     desc: "Pädagogik",
     tags: ["schulgruendungswunder"]
   },
   {
-    filename: "ludwig-goelling.jpeg",
+    filename: "",
     name: "Ludwig Gölling",
     desc: "Bau und Infrastruktur",
     tags: ["schulgruendungswunder"]
   },
   {
-    filename: "susann-troeger.jpeg",
+    filename: "",
     name: "Susann Tröger",
     desc: "Personalplanung",
     tags: ["schulgruendungswunder"]
-  },
-  {
-    filename: "",
-    name: "Johannes Wilk",
-    desc: "Organisation",
-    tags: ["schulbauwunder"]
   },
   {
     filename: "",
@@ -48,12 +42,6 @@ export const team: TeamMember[] = [
     name: "Johann Schindler",
     desc: "Praktische Ausführung",
     tags: ["schulbauwunder"]
-  },
-  {
-    filename: "",
-    name: "Johannes Wilk",
-    desc: "Organisation",
-    tags: ["schulinnovationswunder"]
   },
   {
     filename: "",
