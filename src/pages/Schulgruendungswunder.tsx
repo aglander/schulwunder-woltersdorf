@@ -148,7 +148,7 @@ const Schulgruendungswunder = () => {
 
                 <IllustrationBox
                   title="Unsere Aufgaben"
-                  illustration="/assets/illustrations/illustration-paper-airplane.svg"
+                  illustration="/assets/illustrations/illustration-check.svg"
                   illustrationColor="filter-schulgruendung"
                   className="mt-8"
                 >
