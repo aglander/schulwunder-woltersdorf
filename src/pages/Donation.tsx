@@ -20,22 +20,11 @@ const Donation = () => {
           </p>
 
           <div className="my-8">
-            <div id="fbIframeDiv"></div>
-            <script type="text/javascript" src="https://secure.fundraisingbox.com/app/paymentJS?hash=mfet3z2o7m5igvxp"></script>
-            <noscript>Bitte Javascript aktivieren</noscript>
-            <a 
-              target="_blank" 
-              href="https://www.fundraisingbox.com/?utm_source=donation_form"
-              rel="noopener noreferrer"
-              className="block text-center mt-4"
-            >
-              <img 
-                style={{ border: 0 }}
-                src="https://secure.fundraisingbox.com/images/FundraisingBox-Logo-Widget.png" 
-                alt="FundraisingBox Logo" 
-                className="mx-auto"
-              />
-            </a>
+            <iframe 
+              src="/donation-form.html"
+              className="w-full min-h-[800px] border-0"
+              title="Spendenformular"
+            />
           </div>
         </div>
       </div>
