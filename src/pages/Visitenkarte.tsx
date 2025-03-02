@@ -11,6 +11,15 @@ const Visitenkarte = () => {
       />
       
       <div className="w-[8.5cm] h-[5.5cm] border border-gray-200 shadow-sm bg-white flex flex-col items-center justify-center p-4 print:border-none print:shadow-none">
+        {/* Johannes Wilk photo above the swish */}
+        <div className="mb-2">
+          <img 
+            src="/assets/team/johannes-wilk.jpeg" 
+            alt="Johannes Wilk" 
+            className="w-16 h-16 rounded-full object-cover object-center border-2 border-schulgruendung"
+          />
+        </div>
+        
         <div className="w-full relative mb-2">
           {/* Using the shared swish.svg from assets */}
           <div className="w-full">
