@@ -24,7 +24,7 @@ const Visitenkarte = () => {
           
           {/* Name positioned on top of the Swish logo */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <h1 className="text-xl font-bold text-white font-barlow">Johannes Wilk</h1>
+            <h1 className="text-xl font-bold text-white font-indie">Johannes Wilk</h1>
           </div>
         </div>
         
