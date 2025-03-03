@@ -42,13 +42,15 @@ const Instagram = () => {
   const { data: posts, isLoading, error } = useQuery({
     queryKey: ["instagram-posts"],
     queryFn: fetchInstagramPosts,
-    onError: (error) => {
-      console.error("Error fetching Instagram posts:", error);
-      toast({
-        title: "Fehler",
-        description: "Die Instagram Posts konnten nicht geladen werden.",
-        variant: "destructive",
-      });
+    meta: {
+      onError: (error: Error) => {
+        console.error("Error fetching Instagram posts:", error);
+        toast({
+          title: "Fehler",
+          description: "Die Instagram Posts konnten nicht geladen werden.",
+          variant: "destructive",
+        });
+      },
     },
   });
 
