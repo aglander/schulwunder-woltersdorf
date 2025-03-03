@@ -1,19 +1,14 @@
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Index from "./pages/Index";
-import Schulgruendungswunder from "./pages/Schulgruendungswunder";
+import NotFound from "./pages/NotFound";
 import Schulbauwunder from "./pages/Schulbauwunder";
+import Schulgruendungswunder from "./pages/Schulgruendungswunder";
 import Schulinnovationswunder from "./pages/Schulinnovationswunder";
+import Donation from "./pages/Donation";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
-import NotFound from "./pages/NotFound";
-import Donation from "./pages/Donation";
-import Visitenkarte from "./pages/Visitenkarte";
-import VisitenkarteSG from "./pages/VisitenkarteSG";
-import VisitenkarteSB from "./pages/VisitenkarteSB";
-import VisitenkarteSI from "./pages/VisitenkarteSI";
 
 const ScrollManager = () => {
   const location = useLocation();
@@ -56,10 +51,6 @@ const App = () => (
         <Route path="/spenden" element={<Donation />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
-        <Route path="/visitenkarte" element={<Visitenkarte />} />
-        <Route path="/visitenkarte-sg" element={<VisitenkarteSG />} />
-        <Route path="/visitenkarte-sb" element={<VisitenkarteSB />} />
-        <Route path="/visitenkarte-si" element={<VisitenkarteSI />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
