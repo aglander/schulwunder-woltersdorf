@@ -1,3 +1,4 @@
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
@@ -10,6 +11,9 @@ import Datenschutz from "./pages/Datenschutz";
 import NotFound from "./pages/NotFound";
 import Donation from "./pages/Donation";
 import Visitenkarte from "./pages/Visitenkarte";
+import VisitenkarteSG from "./pages/VisitenkarteSG";
+import VisitenkarteSB from "./pages/VisitenkarteSB";
+import VisitenkarteSI from "./pages/VisitenkarteSI";
 
 const ScrollManager = () => {
   const location = useLocation();
@@ -53,6 +57,9 @@ const App = () => (
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
         <Route path="/visitenkarte" element={<Visitenkarte />} />
+        <Route path="/visitenkarte-sg" element={<VisitenkarteSG />} />
+        <Route path="/visitenkarte-sb" element={<VisitenkarteSB />} />
+        <Route path="/visitenkarte-si" element={<VisitenkarteSI />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
