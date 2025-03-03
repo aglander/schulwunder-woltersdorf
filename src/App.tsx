@@ -1,3 +1,4 @@
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
@@ -9,6 +10,7 @@ import Schulinnovationswunder from "./pages/Schulinnovationswunder";
 import Donation from "./pages/Donation";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
+import Instagram from "./pages/Instagram";
 
 const ScrollManager = () => {
   const location = useLocation();
@@ -51,6 +53,7 @@ const App = () => (
         <Route path="/spenden" element={<Donation />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
+        <Route path="/instagram" element={<Instagram />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
