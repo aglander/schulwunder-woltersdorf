@@ -54,12 +54,10 @@ const Visitenkarte = () => {
           </div>
           
           {/* Title positioned on top of the Swish logo */}
-          <div className="absolute inset-0 top-4 flex items-start justify-center">
-            <h2 className="text-2xl font-bold text-white font-indie">Schulgründungswunder</h2>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <h2 className="text-2xl font-bold text-white font-indie">#schulgründungswunder</h2>
           </div>
         </div>
-        
-        <p className="text-sm text-gray-700 mt-1 font-barlow">#schulgründungswunder</p>
       </div>
       
       {/* Schulbauwunder business card */}
@@ -75,12 +73,10 @@ const Visitenkarte = () => {
           </div>
           
           {/* Title positioned on top of the Swish logo */}
-          <div className="absolute inset-0 top-4 flex items-start justify-center">
-            <h2 className="text-2xl font-bold text-white font-indie">Schulbauwunder</h2>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <h2 className="text-2xl font-bold text-white font-indie">#schulbauwunder</h2>
           </div>
         </div>
-        
-        <p className="text-sm text-gray-700 mt-1 font-barlow">#schulbauwunder</p>
       </div>
       
       {/* Schulinnovationswunder business card */}
@@ -96,12 +92,10 @@ const Visitenkarte = () => {
           </div>
           
           {/* Title positioned on top of the Swish logo */}
-          <div className="absolute inset-0 top-4 flex items-start justify-center">
-            <h2 className="text-2xl font-bold text-white font-indie">Schulinnovationswunder</h2>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <h2 className="text-2xl font-bold text-white font-indie">#schulinnovationswunder</h2>
           </div>
         </div>
-        
-        <p className="text-sm text-gray-700 mt-1 font-barlow">#schulinnovationswunder</p>
       </div>
     </div>
   );
