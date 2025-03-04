@@ -13,13 +13,19 @@ import { useToast } from "@/hooks/use-toast";
 const ApiKeyDialog = () => {
   const [youtubeKey, setYoutubeKey] = useState("");
   const [instagramToken, setInstagramToken] = useState("");
+  const [usingEnvInstagramToken, setUsingEnvInstagramToken] = useState(false);
   const { toast } = useToast();
 
   useEffect(() => {
     const savedYoutubeKey = localStorage.getItem("youtube_api_key");
     const savedInstagramToken = localStorage.getItem("instagram_token");
+    const envInstagramToken = import.meta.env.VITE_INSTAGRAM_TOKEN;
+    
     if (savedYoutubeKey) setYoutubeKey(savedYoutubeKey);
     if (savedInstagramToken) setInstagramToken(savedInstagramToken);
+    
+    // Check if we're using the environment variable
+    setUsingEnvInstagramToken(!!envInstagramToken);
   }, []);
 
   const handleSave = () => {
@@ -69,17 +75,32 @@ const ApiKeyDialog = () => {
             <label htmlFor="instagram-token" className="text-sm font-medium">
               Instagram Access Token
             </label>
-            <input
-              id="instagram-token"
-              type="password"
-              value={instagramToken}
-              onChange={(e) => setInstagramToken(e.target.value)}
-              className="w-full px-3 py-2 border rounded-md"
-              placeholder="Instagram Access Token eingeben"
-            />
-            <p className="text-xs text-gray-500">
-              Der Instagram Token wird automatisch alle 60 Tage erneuert.
-            </p>
+            {usingEnvInstagramToken ? (
+              <div className="text-sm p-2 bg-green-50 text-green-800 rounded-md">
+                Der Instagram Token wird aktuell aus den Umgebungsvariablen geladen.
+                <p className="text-xs mt-1">
+                  Hinweis: Ein hier eingegebener Token wird nur als Fallback verwendet.
+                </p>
+              </div>
+            ) : (
+              <>
+                <input
+                  id="instagram-token"
+                  type="password"
+                  value={instagramToken}
+                  onChange={(e) => setInstagramToken(e.target.value)}
+                  className="w-full px-3 py-2 border rounded-md"
+                  placeholder="Instagram Access Token eingeben"
+                />
+                <p className="text-xs text-gray-500">
+                  Der Instagram Token wird automatisch alle 60 Tage erneuert.
+                </p>
+                <p className="text-xs text-gray-500 mt-1">
+                  Hinweis: Für Produktionsumgebungen kann der Token auch als VITE_INSTAGRAM_TOKEN
+                  in den Netlify Build-Umgebungsvariablen hinterlegt werden.
+                </p>
+              </>
+            )}
           </div>
         </div>
         <div className="flex justify-end">
