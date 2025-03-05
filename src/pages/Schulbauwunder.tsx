@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -13,6 +12,7 @@ import { IllustrationBox } from "@/components/IllustrationBox";
 import { team } from "../data/team";
 import { TeamSection } from "@/components/TeamSection";
 import WunderSideNav from "@/components/WunderSideNav";
+import { InstagramSection } from "@/components/InstagramSection";
 
 const Schulbauwunder = () => {
   const bauwunderSupporters = supporters.filter((supporter) =>
@@ -78,16 +78,26 @@ const Schulbauwunder = () => {
                 >
                   <ul className="list-none space-y-2">
                     <li className="flex items-start gap-2">
-                      <span className="font-semibold">Nachhaltige Bauweise</span> mit natürlichen Materialien
+                      <span className="font-semibold">
+                        Nachhaltige Bauweise
+                      </span>{" "}
+                      mit natürlichen Materialien
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="font-semibold">Flexible Lernräume</span> für moderne Pädagogik
+                      <span className="font-semibold">Flexible Lernräume</span>{" "}
+                      für moderne Pädagogik
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="font-semibold">Gemeinschaftsflächen</span> für Begegnung und Austausch
+                      <span className="font-semibold">
+                        Gemeinschaftsflächen
+                      </span>{" "}
+                      für Begegnung und Austausch
                     </li>
                     <li className="flex items-start gap-2">
-                      <span className="font-semibold">Naturnahe Außengestaltung</span> mit Lern- und Spielbereichen
+                      <span className="font-semibold">
+                        Naturnahe Außengestaltung
+                      </span>{" "}
+                      mit Lern- und Spielbereichen
                     </li>
                   </ul>
                 </IllustrationBox>
@@ -95,16 +105,15 @@ const Schulbauwunder = () => {
             </Card>
           </section>
 
+          <InstagramSection textColor="text-schulbau" />
+
           <section id="events" className="mb-16">
             <Card className="p-8">
               <EventCalendar />
             </Card>
           </section>
 
-          <TeamSection 
-            members={bauwunderTeam}
-            textColor="text-schulbau"
-          />
+          <TeamSection members={bauwunderTeam} textColor="text-schulbau" />
 
           <SupporterSection
             supporters={bauwunderSupporters}

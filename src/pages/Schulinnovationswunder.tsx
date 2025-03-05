@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -11,14 +10,15 @@ import { team } from "../data/team";
 import { TeamSection } from "@/components/TeamSection";
 import { EventCalendar } from "@/components/EventCalendar";
 import WunderSideNav from "@/components/WunderSideNav";
+import { InstagramSection } from "@/components/InstagramSection";
 
 const Schulinnovationswunder = () => {
-  const innovationswunderSupporters = supporters.filter(supporter => 
-    supporter.tags.includes('schulinnovationswunder')
+  const innovationswunderSupporters = supporters.filter((supporter) =>
+    supporter.tags.includes("schulinnovationswunder")
   );
 
-  const innovationswunderTeam = team.filter(member => 
-    member.tags.includes('schulinnovationswunder')
+  const innovationswunderTeam = team.filter((member) =>
+    member.tags.includes("schulinnovationswunder")
   );
 
   const navLinks = [
@@ -45,7 +45,10 @@ const Schulinnovationswunder = () => {
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-1/4">
             <div className="sticky top-20">
-              <WunderSideNav navLinks={navLinks} textColorClass="text-schulinnovation" />
+              <WunderSideNav
+                navLinks={navLinks}
+                textColorClass="text-schulinnovation"
+              />
             </div>
           </div>
 
@@ -57,9 +60,11 @@ const Schulinnovationswunder = () => {
                 </h2>
                 <div className="prose max-w-none">
                   <p className="text-lg mb-6">
-                    Die Freie Schule Woltersdorf verfügt über ein ca. 10.000 m² großes Grundstück, 
-                    das derzeit ungenutzt ist. Anstatt es zu verkaufen, haben wir uns entschieden, 
-                    dieses Grundstück zu entwickeln und damit einen Mehrwert für unsere Gemeinde zu schaffen.
+                    Die Freie Schule Woltersdorf verfügt über ein ca. 10.000 m²
+                    großes Grundstück, das derzeit ungenutzt ist. Anstatt es zu
+                    verkaufen, haben wir uns entschieden, dieses Grundstück zu
+                    entwickeln und damit einen Mehrwert für unsere Gemeinde zu
+                    schaffen.
                   </p>
 
                   <IllustrationBox
@@ -69,25 +74,34 @@ const Schulinnovationswunder = () => {
                     className="mb-8"
                   >
                     <div>
-                      <h4 className="font-semibold mb-2">Nachhaltige Entwicklung</h4>
+                      <h4 className="font-semibold mb-2">
+                        Nachhaltige Entwicklung
+                      </h4>
                       <p>
-                        Wir möchten das Grundstück so entwickeln, dass es langfristig einen 
-                        positiven Beitrag für Woltersdorf leistet.
+                        Wir möchten das Grundstück so entwickeln, dass es
+                        langfristig einen positiven Beitrag für Woltersdorf
+                        leistet.
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-2">Gemeinschaftsprojekt</h4>
+                      <h4 className="font-semibold mb-2">
+                        Gemeinschaftsprojekt
+                      </h4>
                       <p>
-                        Eine Arbeitsgruppe, bestehend aus Eltern der Schule, lokalen Politikern 
-                        und regionalen Unternehmern, prüft die Machbarkeit und mögliche Unterstützer 
-                        für dieses Projekt.
+                        Eine Arbeitsgruppe, bestehend aus Eltern der Schule,
+                        lokalen Politikern und regionalen Unternehmern, prüft
+                        die Machbarkeit und mögliche Unterstützer für dieses
+                        Projekt.
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-2">Ertrag für die Schule</h4>
+                      <h4 className="font-semibold mb-2">
+                        Ertrag für die Schule
+                      </h4>
                       <p>
-                        Unser Ziel ist es, mit diesem Grundstück den höchstmöglichen Ertrag für 
-                        die Freie Schule zu erwirtschaften, um unsere Bildungsangebote weiter zu 
+                        Unser Ziel ist es, mit diesem Grundstück den
+                        höchstmöglichen Ertrag für die Freie Schule zu
+                        erwirtschaften, um unsere Bildungsangebote weiter zu
                         verbessern.
                       </p>
                     </div>
@@ -100,36 +114,47 @@ const Schulinnovationswunder = () => {
                     className="mt-8"
                   >
                     <div>
-                      <h4 className="font-semibold mb-2">Vielfältige Expertise</h4>
+                      <h4 className="font-semibold mb-2">
+                        Vielfältige Expertise
+                      </h4>
                       <p>
-                        Die Arbeitsgruppe setzt sich aus engagierten Eltern, Vertretern der lokalen 
-                        Politik und regionalen Unternehmern zusammen.
+                        Die Arbeitsgruppe setzt sich aus engagierten Eltern,
+                        Vertretern der lokalen Politik und regionalen
+                        Unternehmern zusammen.
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-2">Machbarkeitsstudien</h4>
+                      <h4 className="font-semibold mb-2">
+                        Machbarkeitsstudien
+                      </h4>
                       <p>
-                        Wir prüfen verschiedene Nutzungsmöglichkeiten und entwickeln Konzepte, 
-                        die sowohl wirtschaftlich als auch ökologisch sinnvoll sind.
+                        Wir prüfen verschiedene Nutzungsmöglichkeiten und
+                        entwickeln Konzepte, die sowohl wirtschaftlich als auch
+                        ökologisch sinnvoll sind.
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-2">Netzwerk und Unterstützung</h4>
+                      <h4 className="font-semibold mb-2">
+                        Netzwerk und Unterstützung
+                      </h4>
                       <p>
-                        Wir suchen nach Partnern und Unterstützern, die unsere Vision teilen und 
-                        uns bei der Umsetzung helfen können.
+                        Wir suchen nach Partnern und Unterstützern, die unsere
+                        Vision teilen und uns bei der Umsetzung helfen können.
                       </p>
                     </div>
                   </IllustrationBox>
 
                   <p className="text-lg mt-8">
-                    Gemeinsam glauben wir fest daran, dass wir dieses Projekt erfolgreich realisieren können. 
-                    Mit vereinten Kräften und der Unterstützung unserer Gemeinschaft werden wir das Grundstück 
-                    zu einem wertvollen Teil von Woltersdorf machen.
+                    Gemeinsam glauben wir fest daran, dass wir dieses Projekt
+                    erfolgreich realisieren können. Mit vereinten Kräften und
+                    der Unterstützung unserer Gemeinschaft werden wir das
+                    Grundstück zu einem wertvollen Teil von Woltersdorf machen.
                   </p>
                 </div>
               </Card>
             </section>
+
+            <InstagramSection textColor="text-schulinnovation" />
 
             <section id="updates" className="mb-16">
               <Card className="p-8">
@@ -140,12 +165,12 @@ const Schulinnovationswunder = () => {
               </Card>
             </section>
 
-            <TeamSection 
+            <TeamSection
               members={innovationswunderTeam}
               textColor="text-schulinnovation"
             />
 
-            <SupporterSection 
+            <SupporterSection
               supporters={innovationswunderSupporters}
               textColor="text-schulinnovation"
               description=""

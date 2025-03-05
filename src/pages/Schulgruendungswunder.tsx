@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -12,7 +11,7 @@ import { SupporterSection } from "@/components/SupporterSection";
 import { IllustrationBox } from "@/components/IllustrationBox";
 import { team } from "../data/team";
 import { TeamSection } from "@/components/TeamSection";
-import { InstagramCarousel } from "@/components/InstagramCarousel";
+import { InstagramSection } from "@/components/InstagramSection";
 import WunderSideNav from "@/components/WunderSideNav";
 
 const Schulgruendungswunder = () => {
@@ -47,7 +46,10 @@ const Schulgruendungswunder = () => {
       <WunderContent>
         <div className="lg:w-1/4">
           <div className="sticky top-20">
-            <WunderSideNav navLinks={navLinks} textColorClass="text-schulgruendung" />
+            <WunderSideNav
+              navLinks={navLinks}
+              textColorClass="text-schulgruendung"
+            />
           </div>
         </div>
 
@@ -149,9 +151,7 @@ const Schulgruendungswunder = () => {
             </Card>
           </section>
 
-          <section id="instagram" className="mb-16">
-            <InstagramCarousel textColor="text-schulgruendung" />
-          </section>
+          <InstagramSection textColor="text-schulgruendung" />
 
           <section id="updates" className="mb-16">
             <Card className="p-8">
