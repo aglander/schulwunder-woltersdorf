@@ -1,7 +1,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Instagram, Youtube } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "./ui/button";
 
@@ -117,7 +117,15 @@ export const WunderHeader = ({
               )}
             </div>
             {!isMobile && (
-              <div className="mr-[30px]">
+              <div className="mr-[30px] flex items-center gap-4">
+                <div className="flex gap-3">
+                  <a href="https://www.instagram.com/freieschule_woltersdorf/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <Instagram size={24} color="white" />
+                  </a>
+                  <a href="https://www.youtube.com/@freieschule_woltersdorf" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <Youtube size={24} color="white" />
+                  </a>
+                </div>
                 <Link to="/spenden">
                   <Button 
                     variant="secondary" 

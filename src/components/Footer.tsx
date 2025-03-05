@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Instagram, Youtube } from "lucide-react";
 
 const Footer = () => {
   const location = useLocation();
@@ -38,8 +39,14 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Folgen Sie uns</h4>
             <div className="flex space-x-4">
-              <a href="#" className={`text-gray-600 transition-colors ${hoverClass}`}>Instagram</a>
-              <a href="#" className={`text-gray-600 transition-colors ${hoverClass}`}>YouTube</a>
+              <a href="https://www.instagram.com/freieschule_woltersdorf/" target="_blank" rel="noopener noreferrer" className={`text-gray-600 transition-colors ${hoverClass} flex items-center gap-2`}>
+                <Instagram size={20} />
+                <span>Instagram</span>
+              </a>
+              <a href="https://www.youtube.com/@freieschule_woltersdorf" target="_blank" rel="noopener noreferrer" className={`text-gray-600 transition-colors ${hoverClass} flex items-center gap-2`}>
+                <Youtube size={20} />
+                <span>YouTube</span>
+              </a>
             </div>
           </div>
         </div>
