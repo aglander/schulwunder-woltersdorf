@@ -12,6 +12,7 @@ import { IllustrationBox } from "@/components/IllustrationBox";
 import { team } from "../data/team";
 import { TeamSection } from "@/components/TeamSection";
 import { InstagramCarousel } from "@/components/InstagramCarousel";
+import WunderSideNav from "@/components/WunderSideNav";
 
 const Schulgruendungswunder = () => {
   const gruendungswunderSupporters = supporters.filter((supporter) =>
@@ -21,6 +22,14 @@ const Schulgruendungswunder = () => {
   const gruendungswunderTeam = team.filter((member) =>
     member.tags.includes("schulgruendungswunder")
   );
+
+  const navLinks = [
+    { href: "#description", label: "Beschreibung" },
+    { href: "#updates", label: "Aktuelles" },
+    { href: "#instagram", label: "Instagram" },
+    { href: "#team", label: "Team" },
+    { href: "#supporters", label: "Unterstützer" },
+  ];
 
   return (
     <WunderLayout>
@@ -37,72 +46,29 @@ const Schulgruendungswunder = () => {
       <WunderContent>
         <div className="lg:w-1/4">
           <div className="sticky top-20">
-            <nav className="bg-white rounded-lg shadow-lg p-4">
-              <ul className="space-y-2">
-                <li>
-                  <a
-                    href="#description"
-                    className="text-schulgruendung hover:underline block py-2"
-                  >
-                    Beschreibung
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#updates"
-                    className="text-schulgruendung hover:underline block py-2"
-                  >
-                    Aktuelles
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#instagram"
-                    className="text-schulgruendung hover:underline block py-2"
-                  >
-                    Instagram
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#team"
-                    className="text-schulgruendung hover:underline block py-2"
-                  >
-                    Team
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="#supporters"
-                    className="text-schulgruendung hover:underline block py-2"
-                  >
-                    Unterstützer
-                  </a>
-                </li>
-              </ul>
+            <WunderSideNav navLinks={navLinks} textColorClass="text-schulgruendung" />
 
-              <div className="mt-8 pt-8 border-t">
-                <h3 className="font-semibold mb-4">Projektstatus</h3>
-                <div className="space-y-4 text-sm">
-                  <div>
-                    <p className="font-medium">Standort</p>
-                    <p className="text-gray-600">Woltersdorf</p>
-                  </div>
-                  <div>
-                    <p className="font-medium">Bauphase</p>
-                    <p className="text-gray-600">In Entwicklung</p>
-                  </div>
-                  <div>
-                    <p className="font-medium">Nächste Schritte</p>
-                    <ul className="list-disc list-inside text-gray-600">
-                      <li>Planung der nächsten Bauphase</li>
-                      <li>Koordination der Helfer</li>
-                      <li>Materialbeschaffung</li>
-                    </ul>
-                  </div>
+            <div className="mt-8 pt-8 border-t">
+              <h3 className="font-semibold mb-4">Projektstatus</h3>
+              <div className="space-y-4 text-sm">
+                <div>
+                  <p className="font-medium">Standort</p>
+                  <p className="text-gray-600">Woltersdorf</p>
+                </div>
+                <div>
+                  <p className="font-medium">Bauphase</p>
+                  <p className="text-gray-600">In Entwicklung</p>
+                </div>
+                <div>
+                  <p className="font-medium">Nächste Schritte</p>
+                  <ul className="list-disc list-inside text-gray-600">
+                    <li>Planung der nächsten Bauphase</li>
+                    <li>Koordination der Helfer</li>
+                    <li>Materialbeschaffung</li>
+                  </ul>
                 </div>
               </div>
-            </nav>
+            </div>
           </div>
         </div>
 

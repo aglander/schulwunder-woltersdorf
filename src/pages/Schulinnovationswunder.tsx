@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -10,6 +9,7 @@ import { IllustrationBox } from "@/components/IllustrationBox";
 import { team } from "../data/team";
 import { TeamSection } from "@/components/TeamSection";
 import { EventCalendar } from "@/components/EventCalendar";
+import WunderSideNav from "@/components/WunderSideNav";
 
 const Schulinnovationswunder = () => {
   const innovationswunderSupporters = supporters.filter(supporter => 
@@ -19,6 +19,13 @@ const Schulinnovationswunder = () => {
   const innovationswunderTeam = team.filter(member => 
     member.tags.includes('schulinnovationswunder')
   );
+
+  const navLinks = [
+    { href: "#description", label: "Beschreibung" },
+    { href: "#updates", label: "Aktuelles" },
+    { href: "#team", label: "Team" },
+    { href: "#supporters", label: "Unterstützer" },
+  ];
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -37,64 +44,29 @@ const Schulinnovationswunder = () => {
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-1/4">
             <div className="sticky top-20">
-              <nav className="bg-white rounded-lg shadow-lg p-4">
-                <ul className="space-y-2">
-                  <li>
-                    <a
-                      href="#description"
-                      className="text-schulinnovation hover:underline block py-2"
-                    >
-                      Beschreibung
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#updates"
-                      className="text-schulinnovation hover:underline block py-2"
-                    >
-                      Aktuelles
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#team"
-                      className="text-schulinnovation hover:underline block py-2"
-                    >
-                      Team
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="#supporters"
-                      className="text-schulinnovation hover:underline block py-2"
-                    >
-                      Unterstützer
-                    </a>
-                  </li>
-                </ul>
+              <WunderSideNav navLinks={navLinks} textColorClass="text-schulinnovation" />
 
-                <div className="mt-8 pt-8 border-t">
-                  <h3 className="font-semibold mb-4">Projektstatus</h3>
-                  <div className="space-y-4 text-sm">
-                    <div>
-                      <p className="font-medium">Standort</p>
-                      <p className="text-gray-600">Woltersdorf</p>
-                    </div>
-                    <div>
-                      <p className="font-medium">Status</p>
-                      <p className="text-gray-600">Konzeptphase</p>
-                    </div>
-                    <div>
-                      <p className="font-medium">Nächste Schritte</p>
-                      <ul className="list-disc list-inside text-gray-600">
-                        <li>Ideensammlung</li>
-                        <li>Machbarkeitsstudien</li>
-                        <li>Konzeptentwicklung</li>
-                      </ul>
-                    </div>
+              <div className="mt-8 pt-8 border-t">
+                <h3 className="font-semibold mb-4">Projektstatus</h3>
+                <div className="space-y-4 text-sm">
+                  <div>
+                    <p className="font-medium">Standort</p>
+                    <p className="text-gray-600">Woltersdorf</p>
+                  </div>
+                  <div>
+                    <p className="font-medium">Status</p>
+                    <p className="text-gray-600">Konzeptphase</p>
+                  </div>
+                  <div>
+                    <p className="font-medium">Nächste Schritte</p>
+                    <ul className="list-disc list-inside text-gray-600">
+                      <li>Ideensammlung</li>
+                      <li>Machbarkeitsstudien</li>
+                      <li>Konzeptentwicklung</li>
+                    </ul>
                   </div>
                 </div>
-              </nav>
+              </div>
             </div>
           </div>
 
