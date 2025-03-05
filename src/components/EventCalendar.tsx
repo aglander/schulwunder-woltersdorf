@@ -3,50 +3,29 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { format } from 'date-fns';
 import { de } from 'date-fns/locale';
+import { Event, events as allEvents } from '../data/events';
 
-interface Event {
-  summary: string;
-  description?: string;
-  start: Date;
-  end: Date;
-  location?: string;
+interface EventCalendarProps {
+  filterTag?: 'schulgruendungswunder' | 'schulbauwunder' | 'schulinnovationswunder';
 }
 
-async function fetchCalendarEvents(): Promise<Event[]> {
-  try {
-    const response = await fetch('URL_TO_YOUR_ICAL_FILE.ics');
-    const icalData = await response.text();
-    
-    // Hier würde das Parsing der iCal-Daten erfolgen
-    // Beispiel-Implementation mit simulierten Daten
-    const demoEvents: Event[] = [
-      {
-        summary: "Baueinsatz",
-        description: "Gemeinsamer Baueinsatz am Schulgebäude",
-        start: new Date(2024, 3, 15, 9, 0),
-        end: new Date(2024, 3, 15, 16, 0),
-        location: "Schulgelände Woltersdorf"
-      },
-      {
-        summary: "Planungstreffen",
-        description: "Besprechung der nächsten Bauphase",
-        start: new Date(2024, 3, 20, 18, 0),
-        end: new Date(2024, 3, 20, 20, 0),
-        location: "Online"
-      }
-    ];
-    
-    return demoEvents;
-  } catch (error) {
-    console.error('Fehler beim Laden der Kalenderdaten:', error);
-    return [];
-  }
+async function fetchCalendarEvents(filterTag?: string): Promise<Event[]> {
+  // Simuliere einen API-Aufruf mit verzögerter Rückgabe
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const filteredEvents = filterTag
+        ? allEvents.filter(event => event.tags.includes(filterTag as any))
+        : allEvents;
+      
+      resolve(filteredEvents);
+    }, 300);
+  });
 }
 
-export const EventCalendar: React.FC = () => {
+export const EventCalendar: React.FC<EventCalendarProps> = ({ filterTag }) => {
   const { data: events = [], isLoading, error } = useQuery({
-    queryKey: ['calendar-events'],
-    queryFn: fetchCalendarEvents,
+    queryKey: ['calendar-events', filterTag],
+    queryFn: () => fetchCalendarEvents(filterTag),
     refetchInterval: 1000 * 60 * 15, // Alle 15 Minuten aktualisieren
   });
 
@@ -60,6 +39,12 @@ export const EventCalendar: React.FC = () => {
 
   return (
     <div className="space-y-4">
+      {events.length === 0 && (
+        <div className="text-center text-gray-500 py-4">
+          Keine Termine gefunden
+        </div>
+      )}
+      
       {events.map((event, index) => (
         <div key={index} className="border-b border-gray-200 pb-4 last:border-0">
           <div className="flex flex-col space-y-2">

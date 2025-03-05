@@ -161,7 +161,7 @@ const Schulinnovationswunder = () => {
                 <h2 className="text-3xl font-bold mb-6 text-schulinnovation">
                   Termine
                 </h2>
-                <EventCalendar />
+                <EventCalendar filterTag="schulinnovationswunder" />
               </Card>
             </section>
 

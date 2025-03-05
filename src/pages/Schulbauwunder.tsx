@@ -109,7 +109,10 @@ const Schulbauwunder = () => {
 
           <section id="events" className="mb-16">
             <Card className="p-8">
-              <EventCalendar />
+              <h2 className="text-3xl font-bold mb-6 text-schulbau">
+                Kommende Termine
+              </h2>
+              <EventCalendar filterTag="schulbauwunder" />
             </Card>
           </section>
 
