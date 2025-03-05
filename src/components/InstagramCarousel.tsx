@@ -49,13 +49,9 @@ export const InstagramCarousel: React.FC<InstagramCarouselProps> = ({
     meta: {
       onError: (error: Error) => {
         console.error("Error fetching Instagram posts:", error);
-        const errorMessage = error.message === "Instagram token not found" 
-          ? "Bitte Instagram Access Token in den API-Einstellungen hinterlegen." 
-          : "Die Instagram Posts konnten nicht geladen werden.";
-        
         toast({
           title: "Fehler",
-          description: errorMessage,
+          description: "Die Instagram Posts konnten nicht geladen werden.",
           variant: "destructive",
         });
       },
@@ -76,9 +72,7 @@ export const InstagramCarousel: React.FC<InstagramCarouselProps> = ({
       
       {error && (
         <div className="text-center text-red-500 p-4 border border-red-300 rounded-md">
-          {(error as Error).message === "Instagram token not found" 
-            ? "Kein Instagram-Token gefunden. Bitte in den API-Einstellungen hinterlegen." 
-            : "Fehler beim Laden der Instagram-Beiträge. Bitte versuchen Sie es später erneut."}
+          Fehler beim Laden der Instagram-Beiträge. Bitte versuchen Sie es später erneut.
         </div>
       )}
       

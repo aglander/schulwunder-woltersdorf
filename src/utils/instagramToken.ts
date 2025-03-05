@@ -32,16 +32,6 @@ export const refreshInstagramToken = async (currentToken: string) => {
 };
 
 export const getInstagramToken = async (): Promise<string | null> => {
-  // First, check if token is available in environment variables (Netlify build config)
-  const envToken = import.meta.env.VITE_INSTAGRAM_TOKEN;
-  
-  if (envToken) {
-    console.log('Using Instagram token from environment variables');
-    return envToken;
-  }
-  
-  // Fallback to localStorage
-  console.log('Fallback to localStorage for Instagram token');
   const token = localStorage.getItem('instagram_token');
   const expirationDate = localStorage.getItem('instagram_token_expiration');
   

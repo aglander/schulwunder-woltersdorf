@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import ApiKeyDialog from "./ApiKeyDialog";
 
 const Footer = () => {
   const location = useLocation();
@@ -33,6 +34,7 @@ const Footer = () => {
               <li><Link to="/kontakt" className={`text-gray-600 transition-colors ${hoverClass}`}>Kontakt</Link></li>
               <li><Link to="/impressum" className={`text-gray-600 transition-colors ${hoverClass}`}>Impressum</Link></li>
               <li><Link to="/datenschutz" className={`text-gray-600 transition-colors ${hoverClass}`}>Datenschutz</Link></li>
+              <li><ApiKeyDialog /></li>
             </ul>
           </div>
           <div>
