@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { WunderHeader } from "@/components/WunderHeader";
@@ -46,28 +47,6 @@ const Schulbauwunder = () => {
         <div className="lg:w-1/4">
           <div className="sticky top-20">
             <WunderSideNav navLinks={navLinks} textColorClass="text-schulbau" />
-
-            <div className="mt-8 pt-8 border-t">
-              <h3 className="font-semibold mb-4">Projektstatus</h3>
-              <div className="space-y-4 text-sm">
-                <div>
-                  <p className="font-medium">Standort</p>
-                  <p className="text-gray-600">Woltersdorf</p>
-                </div>
-                <div>
-                  <p className="font-medium">Bauphase</p>
-                  <p className="text-gray-600">In Entwicklung</p>
-                </div>
-                <div>
-                  <p className="font-medium">Nächste Schritte</p>
-                  <ul className="list-disc list-inside text-gray-600">
-                    <li>Planung der nächsten Bauphase</li>
-                    <li>Koordination der Helfer</li>
-                    <li>Materialbeschaffung</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
