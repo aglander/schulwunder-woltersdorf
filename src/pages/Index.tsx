@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useIsMobile } from "../hooks/use-mobile";
 import { Link } from "react-router-dom";
 import BottomBar from "@/components/BottomBar";
-import { Instagram, Youtube } from "lucide-react";
+import { Youtube, Instagram } from "lucide-react";
 
 type WunderColor = "schulbau" | "schulgruendung" | "schulinnovation";
 
@@ -84,11 +84,11 @@ const Index = () => {
                 </div>
                 <div className="mr-[30px] flex items-center gap-4">
                   <div className="flex gap-3">
-                    <a href="https://www.instagram.com/freieschule_woltersdorf/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                      <Instagram size={24} color="white" />
-                    </a>
                     <a href="https://www.youtube.com/@freieschule_woltersdorf" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                       <Youtube size={24} color="white" />
+                    </a>
+                    <a href="https://www.instagram.com/freieschule_woltersdorf/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                      <Instagram size={24} color="white" />
                     </a>
                   </div>
                   <Link to="/spenden">

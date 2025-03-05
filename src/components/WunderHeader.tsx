@@ -1,7 +1,6 @@
-
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ArrowLeft, Instagram, Youtube } from "lucide-react";
+import { ArrowLeft, Youtube, Instagram } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "./ui/button";
 
@@ -85,7 +84,6 @@ export const WunderHeader = ({
 
   return (
     <>
-      {/* Sticky Header */}
       <div className="fixed top-0 left-0 right-0 z-50">
         <div
           className="backdrop-blur-sm border-b border-black/20"
@@ -119,11 +117,11 @@ export const WunderHeader = ({
             {!isMobile && (
               <div className="mr-[30px] flex items-center gap-4">
                 <div className="flex gap-3">
-                  <a href="https://www.instagram.com/freieschule_woltersdorf/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <Instagram size={24} color="white" />
-                  </a>
                   <a href="https://www.youtube.com/@freieschule_woltersdorf" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                     <Youtube size={24} color="white" />
+                  </a>
+                  <a href="https://www.instagram.com/freieschule_woltersdorf/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <Instagram size={24} color="white" />
                   </a>
                 </div>
                 <Link to="/spenden">
@@ -140,7 +138,6 @@ export const WunderHeader = ({
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="relative pt-16">
         <div className="absolute inset-0 min-h-[300px]">
           {imageSrc && (

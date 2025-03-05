@@ -3,7 +3,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
-import { Instagram, Youtube } from "lucide-react";
+import { Youtube, Instagram } from "lucide-react";
 
 const BottomBar = () => {
   const isMobile = useIsMobile();
@@ -50,11 +50,11 @@ const BottomBar = () => {
             </div>
             <div className="flex items-center gap-3">
               <div className="flex gap-2">
-                <a href="https://www.instagram.com/freieschule_woltersdorf/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                  <Instagram size={22} color="white" />
-                </a>
                 <a href="https://www.youtube.com/@freieschule_woltersdorf" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                   <Youtube size={22} color="white" />
+                </a>
+                <a href="https://www.instagram.com/freieschule_woltersdorf/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <Instagram size={22} color="white" />
                 </a>
               </div>
               <Link to="/spenden">
