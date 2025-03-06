@@ -25,7 +25,7 @@ const Index = () => {
       title: "#schulgründungswunder",
       description:
         "Entdecken Sie unsere Vision für die neue Oberschule, die 2026 eröffnet wird.",
-      image: "/assets/schulgruendungswunder-hero.jpg",
+      image: "/assets/schulgruendungswunder-hero.jpg?w=300;500;700&format=webp;avif;jpg&as=picture",
       link: "/schulgruendungswunder",
       color: "schulgruendung" as WunderColor,
     },
@@ -33,14 +33,14 @@ const Index = () => {
       title: "#schulbauwunder",
       description:
         "Erfahren Sie mehr über unsere Baueinsätze und wie wir gemeinsam unsere neue Schule erschaffen.",
-      image: "/assets/schulbauwunder-hero.jpg",
+      image: "/assets/schulbauwunder-hero.jpg?w=300;500;700&format=webp;avif;jpg&as=picture",
       link: "/schulbauwunder",
       color: "schulbau" as WunderColor,
     },
     {
       title: "#schulinnovationswunder",
       description: "Sehen Sie unsere Zukunftspläne für das neue Schulgelände.",
-      image: "/assets/schulinnovationswunder-hero.png",
+      image: "/assets/schulinnovationswunder-hero.png?w=300;500;700&format=webp;avif;jpg&as=picture",
       link: "/schulinnovationswunder",
       color: "schulinnovation" as WunderColor,
     },
@@ -70,7 +70,7 @@ const Index = () => {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="/assets/FSW_Logo.png"
+                    src="/assets/FSW_Logo.png?w=300;500;700&format=webp;avif;jpg&as=picture"
                     alt="FSW Logo"
                     className="w-full h-auto p-2"
                   />

@@ -41,7 +41,7 @@ const BottomBar = () => {
                   rel="noopener noreferrer"
                 >
                   <img
-                    src="/assets/FSW_Logo.png"
+                    src="/assets/FSW_Logo.png?w=300;500;700&format=webp;avif;jpg&as=picture"
                     alt="FSW Logo"
                     className="w-full h-auto p-2"
                   />

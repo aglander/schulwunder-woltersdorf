@@ -4,6 +4,8 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 import type { Connect } from 'vite';
 import webfontDownload from 'vite-plugin-webfont-dl';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
+import { imagetools } from 'vite-imagetools'
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -30,6 +32,21 @@ export default defineConfig(({ mode }) => ({
     react(),
     mode === 'development' && componentTagger(),
     webfontDownload(), // Include the webfontDownload plugin
+    ViteImageOptimizer({
+      png: {
+        // https://sharp.pixelplumbing.com/api-output#png
+        quality: 80,
+      },
+      jpeg: {
+        // https://sharp.pixelplumbing.com/api-output#jpeg
+        quality: 80,
+      },
+      jpg: {
+        // https://sharp.pixelplumbing.com/api-output#jpeg
+        quality: 80,
+      },
+    }),
+    imagetools(),
   ].filter(Boolean),
   resolve: {
     alias: {

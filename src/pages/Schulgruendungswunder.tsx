@@ -39,7 +39,7 @@ const Schulgruendungswunder = () => {
       />
       <WunderHeader
         title="#schulgruendungswunder"
-        imageSrc="/assets/schulgruendungswunder-hero.jpg"
+        imageSrc="/assets/schulgruendungswunder-hero.jpg?w=300;500;700&format=webp;avif;jpg&as=picture"
         subTitle="Entdecken Sie unsere Vision für die neue Oberschule, die 2026 eröffnet wird."
       />
 
