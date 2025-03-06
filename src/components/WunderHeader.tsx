@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Youtube, Instagram } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "./ui/button";
-import { getLoadingStrategy, getImageDimensions } from "@/utils/imageOptimizer";
+import { getLoadingStrategy } from "@/utils/imageOptimizer";
 
 interface WunderHeaderProps {
   title: string;
