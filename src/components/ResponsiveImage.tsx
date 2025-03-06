@@ -27,14 +27,16 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({ imageUrl, alt = "", c
   }
 
   // 📌 `srcSet` aus den geladenen Größen generieren
-  const srcSet = Object.entries(image.sources || {})
+  const srcSetEntries = Object.entries(image.sources || {})
     .flatMap(([format, srcSet]) =>
       srcSet
         .split(", ")
-        .map((src) => ({ src: src.split(" ")[0], width: src.split(" ")[1] }))
+        .map((src) => ({ src: src.split(" ")[0], width: parseInt(src.split(" ")[1]) }))
     )
-    .sort((a, b) => parseInt(a.width) - parseInt(b.width)) // Nach Größe sortieren
-    .map((img) => `${img.src} ${img.width}`);
+    .sort((a, b) => a.width - b.width); // Nach Größe sortieren
+
+  const srcSet = srcSetEntries.map((img) => `${img.src} ${img.width}w`);
+  const smallestImage = srcSetEntries[0]?.src || image.img.src;
 
   return (
     <picture>
@@ -43,9 +45,9 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({ imageUrl, alt = "", c
           <source key={format} srcSet={srcSet} type={`image/${format}`} />
         ))}
       <img
-        src={image.img.src}
+        src={smallestImage}
         srcSet={srcSet.join(", ")}
-        sizes={sizes || "(max-width: 600px) 300px, (max-width: 1024px) 700px, 1600px"}
+        sizes={sizes || "(max-width: 600px) 300px, (max-width: 1024px) 700px, 100vw"}
         alt={alt}
         width={image.img.w}
         height={image.img.h}
