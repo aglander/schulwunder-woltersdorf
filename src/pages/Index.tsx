@@ -20,6 +20,7 @@ interface Wunder {
 
 const Index = () => {
   const isMobile = useIsMobile();
+  const heroLoadingStrategy = getLoadingStrategy(true);
 
   // Preload critical images on component mount
   useEffect(() => {

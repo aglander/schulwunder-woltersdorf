@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Youtube, Instagram } from "lucide-react";
@@ -83,12 +82,7 @@ export const WunderHeader = ({
 
   const bgColorClass = getBackgroundColor();
   const svgHeight = svgWidth / 4.83;
-  const imageDimensions = imageSrc ? getImageDimensions(imageSrc) : { width: 1920, height: 1080 };
-  const loadingStrategy = imageSrc ? getLoadingStrategy(imageSrc, true) : {
-    loading: "lazy" as const,
-    decoding: "async" as const,
-    fetchPriority: "auto" as const
-  };
+  const loadingStrategy = getLoadingStrategy(imageSrc ? true : false);
 
   return (
     <>
@@ -155,8 +149,8 @@ export const WunderHeader = ({
                 src={imageSrc}
                 alt=""
                 className="w-full h-full object-cover z-0"
-                width={imageDimensions.width}
-                height={imageDimensions.height}
+                width={1920}
+                height={1080}
                 loading={loadingStrategy.loading}
                 decoding={loadingStrategy.decoding}
                 fetchPriority={loadingStrategy.fetchPriority}

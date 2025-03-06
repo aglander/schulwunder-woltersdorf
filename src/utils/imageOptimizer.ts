@@ -3,22 +3,16 @@
  * Utility to optimize images and prepare them for optimal loading
  */
 
-// Mapping of image paths to their dimensions for proper sizing
-export const imageDimensions: Record<string, { width: number, height: number }> = {
-  "/assets/schulbauwunder-hero.jpg": { width: 1920, height: 1080 },
-  "/assets/schulgruendungswunder-hero.jpg": { width: 1920, height: 1080 },
-  "/assets/schulinnovationswunder-hero.png": { width: 1920, height: 1080 },
-  // Add more images as needed
-};
-
+// Define types for image loading attributes
 type LoadingType = "eager" | "lazy";
 type DecodingType = "sync" | "async" | "auto";
 type FetchPriorityType = "auto" | "high" | "low";
 
 /**
  * Generate appropriate loading strategy based on image importance
+ * @param isLCP - Is this a Largest Contentful Paint element
  */
-export const getLoadingStrategy = (imagePath: string, isLCP: boolean = false) => {
+export const getLoadingStrategy = (isLCP: boolean = false) => {
   return {
     loading: (isLCP ? "eager" : "lazy") as LoadingType,
     decoding: (isLCP ? "sync" : "async") as DecodingType,
@@ -27,8 +21,13 @@ export const getLoadingStrategy = (imagePath: string, isLCP: boolean = false) =>
 };
 
 /**
- * Get image dimensions if available
+ * This function creates default dimensions for images when exact dimensions are not known
+ * @param aspectRatio - Optional aspect ratio to use (width/height), defaults to 16/9
  */
-export const getImageDimensions = (imagePath: string) => {
-  return imageDimensions[imagePath] || { width: 800, height: 600 };
+export const getDefaultDimensions = (aspectRatio: number = 16/9) => {
+  const defaultWidth = 1200;
+  return {
+    width: defaultWidth,
+    height: Math.round(defaultWidth / aspectRatio)
+  };
 };
