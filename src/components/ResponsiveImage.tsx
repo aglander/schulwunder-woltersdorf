@@ -72,7 +72,6 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
       })}
       <img
         src={filteredSrcSet[0]?.src || image.img.src} // Smallest image fallback
-        loading="lazy"
         decoding="async"
         alt={alt}
         className={`max-w-full h-auto ${className}`}
