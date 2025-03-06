@@ -13,13 +13,22 @@
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/png" href="/assets/FSW_logo-32x32.png" />
     
+    <!-- Critical CSS inline (placeholder for build process) -->
+    <style id="critical-css"></style>
+    
+    <!-- DNS Prefetch and resource hints -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <!-- Preload critical assets -->
     <link rel="preload" href="/assets/schulbauwunder-hero.jpg" as="image" fetchpriority="high" />
     <link rel="preload" href="/assets/swish.svg" as="image" />
+    <link rel="preload" href="/assets/FSW_Logo.png" as="image" fetchpriority="high" />
     
-    <!-- Optimize font loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Indie+Flower&display=swap" as="style" />
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&family=Indie+Flower&display=swap" rel="stylesheet">
   </head>
 

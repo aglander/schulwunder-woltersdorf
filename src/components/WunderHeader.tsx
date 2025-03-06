@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Youtube, Instagram } from "lucide-react";
@@ -22,7 +23,9 @@ export const WunderHeader = ({
   const h1Ref = useRef<HTMLHeadingElement>(null);
   const isMobile = useIsMobile();
   const location = useLocation();
+  const loadingStrategy = getLoadingStrategy(!!imageSrc);
 
+  // Determine the current section to set appropriate colors
   const getBackgroundColor = () => {
     if (location.pathname.includes("schulbau")) {
       return "bg-schulbau";
@@ -45,6 +48,7 @@ export const WunderHeader = ({
     return "";
   };
 
+  // Calculate dimensions for the SVG swish
   useEffect(() => {
     const updateSvgDimensions = () => {
       if (h1Ref.current) {
@@ -56,6 +60,7 @@ export const WunderHeader = ({
       }
     };
 
+    // Set up intersection observer to track h1 visibility
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsH1Visible(entry.isIntersecting);
@@ -70,19 +75,32 @@ export const WunderHeader = ({
       updateSvgDimensions();
     }
 
-    window.addEventListener("resize", updateSvgDimensions);
+    // Optimize layout shifts by updating dimensions on resize
+    const debouncedResize = debounce(updateSvgDimensions, 100);
+    window.addEventListener("resize", debouncedResize);
 
     return () => {
       if (h1Ref.current) {
         observer.unobserve(h1Ref.current);
       }
-      window.removeEventListener("resize", updateSvgDimensions);
+      window.removeEventListener("resize", debouncedResize);
     };
   }, []);
 
+  // Simple debounce function to limit resize calculations
+  function debounce(fn: Function, ms: number) {
+    let timer: ReturnType<typeof setTimeout>;
+    return () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        timer = null as any;
+        fn.apply(this, arguments);
+      }, ms);
+    };
+  }
+
   const bgColorClass = getBackgroundColor();
   const svgHeight = svgWidth / 4.83;
-  const loadingStrategy = getLoadingStrategy(imageSrc ? true : false);
 
   return (
     <>

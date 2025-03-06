@@ -22,17 +22,7 @@ const Index = () => {
   const isMobile = useIsMobile();
   const heroLoadingStrategy = getLoadingStrategy(true);
 
-  // Preload critical images on component mount
-  useEffect(() => {
-    const preloadImage = (src: string) => {
-      const img = new Image();
-      img.src = src;
-    };
-    
-    // Preload the most critical image (LCP candidate)
-    preloadImage("/assets/schulbauwunder-hero.jpg");
-  }, []);
-
+  // Define the wunder cards data
   const wunder: Wunder[] = [
     {
       title: "#schulgründungswunder",
@@ -58,6 +48,36 @@ const Index = () => {
       color: "schulinnovation" as WunderColor,
     },
   ];
+
+  // Preload critical images on component mount
+  useEffect(() => {
+    // LCP image should be preloaded
+    if (!document.querySelector('link[rel="preload"][href*="schulbauwunder-hero.jpg"]')) {
+      const preloadLink = document.createElement('link');
+      preloadLink.rel = 'preload';
+      preloadLink.href = '/assets/schulbauwunder-hero.jpg';
+      preloadLink.as = 'image';
+      preloadLink.fetchPriority = 'high';
+      document.head.appendChild(preloadLink);
+    }
+
+    // Improve performance by reducing layout shifts
+    const preconnectToOrigins = () => {
+      const origins = ['https://fonts.googleapis.com', 'https://fonts.gstatic.com'];
+      
+      origins.forEach(origin => {
+        if (!document.querySelector(`link[rel="preconnect"][href="${origin}"]`)) {
+          const link = document.createElement('link');
+          link.rel = 'preconnect';
+          link.href = origin;
+          link.crossOrigin = 'anonymous';
+          document.head.appendChild(link);
+        }
+      });
+    };
+    
+    preconnectToOrigins();
+  }, []);
 
   return (
     <div className="min-h-screen bg-neutral-800 relative overflow-hidden">
@@ -152,7 +172,7 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Decorative illustrations */}
+          {/* Decorative illustrations - lazy load these */}
           {!isMobile && (
             <div className="absolute inset-0 overflow-visible pointer-events-none z-[45]">
               <img

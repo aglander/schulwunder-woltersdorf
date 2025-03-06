@@ -1,3 +1,4 @@
+
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { getLoadingStrategy } from "@/utils/imageOptimizer";
@@ -55,7 +56,8 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
           height={1080}
           loading={loadingStrategy.loading}
           decoding={loadingStrategy.decoding}
-          fetchPriority={loadingStrategy.fetchPriority}
+          fetchPriority={isLCP ? "high" : "auto"}
+          sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
       <div className={`absolute inset-0 bg-gradient-to-br from-black/80 to-black/70 group-hover:${getGradientClass()} opacity-90 transition-all duration-500`} />

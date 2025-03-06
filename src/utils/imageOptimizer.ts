@@ -4,9 +4,9 @@
  */
 
 // Define types for image loading attributes
-type LoadingType = "eager" | "lazy";
-type DecodingType = "sync" | "async" | "auto";
-type FetchPriorityType = "auto" | "high" | "low";
+export type LoadingType = "eager" | "lazy";
+export type DecodingType = "sync" | "async" | "auto";
+export type FetchPriorityType = "auto" | "high" | "low";
 
 /**
  * Generate appropriate loading strategy based on image importance
@@ -30,4 +30,22 @@ export const getDefaultDimensions = (aspectRatio: number = 16/9) => {
     width: defaultWidth,
     height: Math.round(defaultWidth / aspectRatio)
   };
+};
+
+/**
+ * Get srcset string for responsive images
+ * @param src - Base image source
+ */
+export const getResponsiveSrcSet = (src: string) => {
+  if (!src) return undefined;
+  
+  // Extract file extension
+  const lastDot = src.lastIndexOf('.');
+  const extension = lastDot > 0 ? src.substring(lastDot) : '';
+  const basePath = lastDot > 0 ? src.substring(0, lastDot) : src;
+  
+  // Create srcset for different widths
+  return `${basePath}-480${extension} 480w, 
+          ${basePath}-800${extension} 800w, 
+          ${src} 1920w`;
 };
