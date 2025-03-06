@@ -38,7 +38,7 @@ const Schulbauwunder = () => {
       />
       <WunderHeader
         title="#schulbauwunder"
-        imageSrc="/assets/schulbauwunder-hero.jpg?w=300;500;700&format=webp;avif;jpg&as=picture"
+        imageSrc="assets/schulbauwunder-hero.jpg"
         subTitle="Gemeinsam erschaffen wir einen neuen Ort des Lernens. Erfahren Sie mehr über unsere 
           Baueinsätze und wie wir mit vereinten Kräften unsere neue Schule bauen."
       />

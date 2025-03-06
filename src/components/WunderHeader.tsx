@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Youtube, Instagram } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "./ui/button";
+import ResponsiveImage from "./ResponsiveImage";
 
 interface WunderHeaderProps {
   title: string;
@@ -117,16 +118,26 @@ export const WunderHeader = ({
             {!isMobile && (
               <div className="mr-[30px] flex items-center gap-4">
                 <div className="flex gap-3">
-                  <a href="https://www.youtube.com/@freieschule_woltersdorf" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                  <a
+                    href="https://www.youtube.com/@freieschule_woltersdorf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                  >
                     <Youtube size={24} color="white" />
                   </a>
-                  <a href="https://www.instagram.com/freieschule_woltersdorf/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <a
+                    href="https://www.instagram.com/freieschule_woltersdorf/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                  >
                     <Instagram size={24} color="white" />
                   </a>
                 </div>
                 <Link to="/spenden">
-                  <Button 
-                    variant="secondary" 
+                  <Button
+                    variant="secondary"
                     className="bg-white text-black hover:bg-white/90"
                   >
                     Jetzt spenden
@@ -143,13 +154,9 @@ export const WunderHeader = ({
           {imageSrc && (
             <>
               <div className="absolute inset-0 bg-black/50 z-[1]" />
-              <img
-                src={imageSrc}
-                alt=""
+              <ResponsiveImage
+                imageUrl={imageSrc}
                 className="w-full h-full object-cover z-0"
-                loading="eager"
-                decoding="async"
-                sizes="100vw"
               />
             </>
           )}

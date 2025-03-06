@@ -36,7 +36,7 @@ const Schulinnovationswunder = () => {
       />
       <WunderHeader
         title="#schulinnovationswunder"
-        imageSrc="/assets/schulinnovationswunder-hero.png?w=300;500;700&format=webp;avif;jpg&as=picture"
+        imageSrc="assets/schulinnovationswunder-hero.png"
         subTitle="Entdecken Sie unsere innovativen Bauvorhaben und Zukunftspläne für das neue
           Schulgelände in Woltersdorf."
       />
