@@ -49,6 +49,11 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
           src={image}
           alt={title}
           className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
+          width="800"
+          height="600"
+          loading={color === "schulbau" ? "eager" : "lazy"}
+          decoding={color === "schulbau" ? "sync" : "async"}
+          fetchpriority={color === "schulbau" ? "high" : "auto"}
         />
       </div>
       <div className={`absolute inset-0 bg-gradient-to-br from-black/80 to-black/70 group-hover:${getGradientClass()} opacity-90 transition-all duration-500`} />
@@ -72,6 +77,9 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
               alt=""
               className={`w-full h-full object-contain filter ${getSwishFilter()}`}
               aria-hidden="true"
+              width="400"
+              height="83"
+              loading="lazy"
             />
           </div>
           <h2 

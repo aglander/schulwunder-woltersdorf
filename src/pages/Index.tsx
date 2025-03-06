@@ -1,11 +1,12 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import WunderCard from "../components/WunderCard";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "../hooks/use-mobile";
 import { Link } from "react-router-dom";
 import BottomBar from "@/components/BottomBar";
 import { Youtube, Instagram } from "lucide-react";
+import { getLoadingStrategy } from "@/utils/imageOptimizer";
 
 type WunderColor = "schulbau" | "schulgruendung" | "schulinnovation";
 
@@ -19,6 +20,17 @@ interface Wunder {
 
 const Index = () => {
   const isMobile = useIsMobile();
+
+  // Preload critical images on component mount
+  useEffect(() => {
+    const preloadImage = (src: string) => {
+      const img = new Image();
+      img.src = src;
+    };
+    
+    // Preload the most critical image (LCP candidate)
+    preloadImage("/assets/schulbauwunder-hero.jpg");
+  }, []);
 
   const wunder: Wunder[] = [
     {
@@ -73,6 +85,9 @@ const Index = () => {
                     src="/assets/FSW_Logo.png"
                     alt="FSW Logo"
                     className="w-full h-auto p-2"
+                    width="100"
+                    height="100"
+                    loading="eager"
                   />
                 </a>
               </div>
@@ -142,11 +157,17 @@ const Index = () => {
                 src="/assets/illustrations/illustration-lightbulb.svg"
                 alt=""
                 className="absolute top-[15%] right-[62%] w-32 h-32 opacity-70 brightness-[10]"
+                width="128"
+                height="128"
+                loading="lazy"
               />
               <img
                 src="/assets/illustrations/illustration-paper-airplane.svg"
                 alt=""
                 className="absolute top-[70%] right-[27%] w-48 h-48 opacity-70 brightness-[10]"
+                width="192"
+                height="192"
+                loading="lazy"
               />
             </div>
           )}

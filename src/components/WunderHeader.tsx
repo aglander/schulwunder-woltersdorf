@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Youtube, Instagram } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "./ui/button";
+import { getLoadingStrategy, getImageDimensions } from "@/utils/imageOptimizer";
 
 interface WunderHeaderProps {
   title: string;
@@ -81,6 +82,8 @@ export const WunderHeader = ({
 
   const bgColorClass = getBackgroundColor();
   const svgHeight = svgWidth / 4.83;
+  const imageDimensions = imageSrc ? getImageDimensions(imageSrc) : { width: 1920, height: 1080 };
+  const loadingStrategy = getLoadingStrategy(imageSrc || '', true);
 
   return (
     <>
@@ -147,8 +150,9 @@ export const WunderHeader = ({
                 src={imageSrc}
                 alt=""
                 className="w-full h-full object-cover z-0"
-                loading="eager"
-                decoding="async"
+                width={imageDimensions.width}
+                height={imageDimensions.height}
+                {...loadingStrategy}
                 sizes="100vw"
               />
             </>
@@ -177,6 +181,9 @@ export const WunderHeader = ({
                       alt=""
                       className={`w-full h-full object-contain filter ${getSwishFilter()}`}
                       aria-hidden="true"
+                      width="400"
+                      height="83"
+                      loading="lazy"
                     />
                   </div>
                   <h1
