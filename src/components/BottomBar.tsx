@@ -42,7 +42,7 @@ const BottomBar = () => {
                   rel="noopener noreferrer"
                 >
                   <ResponsiveImage
-                    imageUrl="/assets/FSW_Logo.png"
+                    imageUrl="assets/FSW_Logo.png"
                     alt="FSW Logo"
                     className="w-full h-auto p-2"
                   />
