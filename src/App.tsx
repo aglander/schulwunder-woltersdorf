@@ -1,7 +1,8 @@
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import PiwikPro from '@piwikpro/react-piwik-pro';
+import { PageViews } from '@piwikpro/react-piwik-pro';
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Schulbauwunder from "./pages/Schulbauwunder";
@@ -17,7 +18,7 @@ const ScrollManager = () => {
   
   useEffect(() => {
     // Track page view on route change
-    PiwikPro.trackPageView();
+    PageViews.trackPageView();
     
     let lastPathname = location.pathname;
     
