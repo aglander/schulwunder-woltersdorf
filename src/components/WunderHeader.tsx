@@ -1,10 +1,8 @@
-
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Youtube, Instagram } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Button } from "./ui/button";
-import { getLoadingStrategy } from "@/utils/imageOptimizer";
 
 interface WunderHeaderProps {
   title: string;
@@ -23,9 +21,7 @@ export const WunderHeader = ({
   const h1Ref = useRef<HTMLHeadingElement>(null);
   const isMobile = useIsMobile();
   const location = useLocation();
-  const loadingStrategy = getLoadingStrategy(!!imageSrc);
 
-  // Determine the current section to set appropriate colors
   const getBackgroundColor = () => {
     if (location.pathname.includes("schulbau")) {
       return "bg-schulbau";
@@ -48,7 +44,6 @@ export const WunderHeader = ({
     return "";
   };
 
-  // Calculate dimensions for the SVG swish
   useEffect(() => {
     const updateSvgDimensions = () => {
       if (h1Ref.current) {
@@ -60,7 +55,6 @@ export const WunderHeader = ({
       }
     };
 
-    // Set up intersection observer to track h1 visibility
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsH1Visible(entry.isIntersecting);
@@ -75,29 +69,15 @@ export const WunderHeader = ({
       updateSvgDimensions();
     }
 
-    // Optimize layout shifts by updating dimensions on resize
-    const debouncedResize = debounce(updateSvgDimensions, 100);
-    window.addEventListener("resize", debouncedResize);
+    window.addEventListener("resize", updateSvgDimensions);
 
     return () => {
       if (h1Ref.current) {
         observer.unobserve(h1Ref.current);
       }
-      window.removeEventListener("resize", debouncedResize);
+      window.removeEventListener("resize", updateSvgDimensions);
     };
   }, []);
-
-  // Simple debounce function to limit resize calculations
-  function debounce(fn: Function, ms: number) {
-    let timer: ReturnType<typeof setTimeout>;
-    return () => {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        timer = null as any;
-        fn.apply(this, arguments);
-      }, ms);
-    };
-  }
 
   const bgColorClass = getBackgroundColor();
   const svgHeight = svgWidth / 4.83;
@@ -167,11 +147,8 @@ export const WunderHeader = ({
                 src={imageSrc}
                 alt=""
                 className="w-full h-full object-cover z-0"
-                width={1920}
-                height={1080}
-                loading={loadingStrategy.loading}
-                decoding={loadingStrategy.decoding}
-                fetchPriority={loadingStrategy.fetchPriority}
+                loading="eager"
+                decoding="async"
                 sizes="100vw"
               />
             </>
@@ -200,9 +177,6 @@ export const WunderHeader = ({
                       alt=""
                       className={`w-full h-full object-contain filter ${getSwishFilter()}`}
                       aria-hidden="true"
-                      width="400"
-                      height="83"
-                      loading="lazy"
                     />
                   </div>
                   <h1

@@ -1,12 +1,11 @@
 
-import React, { useEffect } from "react";
+import React from "react";
 import WunderCard from "../components/WunderCard";
 import { Button } from "@/components/ui/button";
 import { useIsMobile } from "../hooks/use-mobile";
 import { Link } from "react-router-dom";
 import BottomBar from "@/components/BottomBar";
 import { Youtube, Instagram } from "lucide-react";
-import { getLoadingStrategy } from "@/utils/imageOptimizer";
 
 type WunderColor = "schulbau" | "schulgruendung" | "schulinnovation";
 
@@ -20,9 +19,7 @@ interface Wunder {
 
 const Index = () => {
   const isMobile = useIsMobile();
-  const heroLoadingStrategy = getLoadingStrategy(true);
 
-  // Define the wunder cards data
   const wunder: Wunder[] = [
     {
       title: "#schulgründungswunder",
@@ -48,36 +45,6 @@ const Index = () => {
       color: "schulinnovation" as WunderColor,
     },
   ];
-
-  // Preload critical images on component mount
-  useEffect(() => {
-    // LCP image should be preloaded
-    if (!document.querySelector('link[rel="preload"][href*="schulbauwunder-hero.jpg"]')) {
-      const preloadLink = document.createElement('link');
-      preloadLink.rel = 'preload';
-      preloadLink.href = '/assets/schulbauwunder-hero.jpg';
-      preloadLink.as = 'image';
-      preloadLink.fetchPriority = 'high';
-      document.head.appendChild(preloadLink);
-    }
-
-    // Improve performance by reducing layout shifts
-    const preconnectToOrigins = () => {
-      const origins = ['https://fonts.googleapis.com', 'https://fonts.gstatic.com'];
-      
-      origins.forEach(origin => {
-        if (!document.querySelector(`link[rel="preconnect"][href="${origin}"]`)) {
-          const link = document.createElement('link');
-          link.rel = 'preconnect';
-          link.href = origin;
-          link.crossOrigin = 'anonymous';
-          document.head.appendChild(link);
-        }
-      });
-    };
-    
-    preconnectToOrigins();
-  }, []);
 
   return (
     <div className="min-h-screen bg-neutral-800 relative overflow-hidden">
@@ -106,10 +73,6 @@ const Index = () => {
                     src="/assets/FSW_Logo.png"
                     alt="FSW Logo"
                     className="w-full h-auto p-2"
-                    width="100"
-                    height="100"
-                    loading="eager"
-                    fetchPriority="high"
                   />
                 </a>
               </div>
@@ -172,24 +135,18 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Decorative illustrations - lazy load these */}
+          {/* Decorative illustrations */}
           {!isMobile && (
             <div className="absolute inset-0 overflow-visible pointer-events-none z-[45]">
               <img
                 src="/assets/illustrations/illustration-lightbulb.svg"
                 alt=""
                 className="absolute top-[15%] right-[62%] w-32 h-32 opacity-70 brightness-[10]"
-                width="128"
-                height="128"
-                loading="lazy"
               />
               <img
                 src="/assets/illustrations/illustration-paper-airplane.svg"
                 alt=""
                 className="absolute top-[70%] right-[27%] w-48 h-48 opacity-70 brightness-[10]"
-                width="192"
-                height="192"
-                loading="lazy"
               />
             </div>
           )}

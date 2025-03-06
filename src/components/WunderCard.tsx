@@ -1,7 +1,6 @@
 
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import { getLoadingStrategy } from "@/utils/imageOptimizer";
 
 interface WunderCardProps {
   title: string;
@@ -13,8 +12,6 @@ interface WunderCardProps {
 
 const WunderCard = ({ title, description, image, link, color }: WunderCardProps) => {
   const h2Ref = useRef<HTMLHeadingElement>(null);
-  const isLCP = color === "schulbau"; // Schulbau is the LCP image
-  const loadingStrategy = getLoadingStrategy(isLCP);
 
   const getGradientClass = () => {
     switch (color) {
@@ -52,12 +49,6 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
           src={image}
           alt={title}
           className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
-          width={1920}
-          height={1080}
-          loading={loadingStrategy.loading}
-          decoding={loadingStrategy.decoding}
-          fetchPriority={isLCP ? "high" : "auto"}
-          sizes="(max-width: 768px) 100vw, 33vw"
         />
       </div>
       <div className={`absolute inset-0 bg-gradient-to-br from-black/80 to-black/70 group-hover:${getGradientClass()} opacity-90 transition-all duration-500`} />
@@ -81,9 +72,6 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
               alt=""
               className={`w-full h-full object-contain filter ${getSwishFilter()}`}
               aria-hidden="true"
-              width="400"
-              height="83"
-              loading="lazy"
             />
           </div>
           <h2 
