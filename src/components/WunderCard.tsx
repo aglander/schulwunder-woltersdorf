@@ -1,6 +1,6 @@
-
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import ResponsiveImage from "@/components/ResponsiveImage";
 
 interface WunderCardProps {
   title: string;
@@ -10,7 +10,13 @@ interface WunderCardProps {
   color: "schulbau" | "schulgruendung" | "schulinnovation";
 }
 
-const WunderCard = ({ title, description, image, link, color }: WunderCardProps) => {
+const WunderCard = ({
+  title,
+  description,
+  image,
+  link,
+  color,
+}: WunderCardProps) => {
   const h2Ref = useRef<HTMLHeadingElement>(null);
 
   const getGradientClass = () => {
@@ -40,18 +46,20 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
   };
 
   return (
-    <Link 
+    <Link
       to={link}
       className="group block w-full h-full relative overflow-hidden"
     >
       <div className="absolute inset-0">
-        <img
-          src={image}
+      <ResponsiveImage 
+          imageUrl={image}
           alt={title}
           className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
         />
       </div>
-      <div className={`absolute inset-0 bg-gradient-to-br from-black/80 to-black/70 group-hover:${getGradientClass()} opacity-90 transition-all duration-500`} />
+      <div
+        className={`absolute inset-0 bg-gradient-to-br from-black/80 to-black/70 group-hover:${getGradientClass()} opacity-90 transition-all duration-500`}
+      />
       <div className="relative h-full flex flex-col items-center text-center p-6 text-white">
         <div className="flex-1" />
         <div className="relative mb-8">
@@ -64,7 +72,7 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
               transform: "translateX(-50%)",
               top: "-20px",
               overflow: "hidden",
-              pointerEvents: "none"
+              pointerEvents: "none",
             }}
           >
             <img
@@ -74,9 +82,9 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
               aria-hidden="true"
             />
           </div>
-          <h2 
+          <h2
             ref={h2Ref}
-            lang="de" 
+            lang="de"
             className="text-3xl md:text-4xl font-bold mb-4 break-words hyphens-auto font-indie relative"
           >
             {title}

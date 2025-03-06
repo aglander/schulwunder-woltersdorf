@@ -1,4 +1,3 @@
-
 import React from "react";
 import WunderCard from "../components/WunderCard";
 import { Button } from "@/components/ui/button";
@@ -6,6 +5,7 @@ import { useIsMobile } from "../hooks/use-mobile";
 import { Link } from "react-router-dom";
 import BottomBar from "@/components/BottomBar";
 import { Youtube, Instagram } from "lucide-react";
+import ResponsiveImage from "@/components/ResponsiveImage";
 
 type WunderColor = "schulbau" | "schulgruendung" | "schulinnovation";
 
@@ -25,7 +25,8 @@ const Index = () => {
       title: "#schulgründungswunder",
       description:
         "Entdecken Sie unsere Vision für die neue Oberschule, die 2026 eröffnet wird.",
-      image: "/assets/schulgruendungswunder-hero.jpg?w=300;500;700&format=webp;avif;jpg&as=picture",
+      image:
+        "assets/schulgruendungswunder-hero.jpg",
       link: "/schulgruendungswunder",
       color: "schulgruendung" as WunderColor,
     },
@@ -33,14 +34,16 @@ const Index = () => {
       title: "#schulbauwunder",
       description:
         "Erfahren Sie mehr über unsere Baueinsätze und wie wir gemeinsam unsere neue Schule erschaffen.",
-      image: "/assets/schulbauwunder-hero.jpg?w=300;500;700&format=webp;avif;jpg&as=picture",
+      image:
+        "assets/schulbauwunder-hero.jpg",
       link: "/schulbauwunder",
       color: "schulbau" as WunderColor,
     },
     {
       title: "#schulinnovationswunder",
       description: "Sehen Sie unsere Zukunftspläne für das neue Schulgelände.",
-      image: "/assets/schulinnovationswunder-hero.png?w=300;500;700&format=webp;avif;jpg&as=picture",
+      image:
+        "assets/schulinnovationswunder-hero.png",
       link: "/schulinnovationswunder",
       color: "schulinnovation" as WunderColor,
     },
@@ -69,9 +72,9 @@ const Index = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src="/assets/FSW_Logo.png?w=300;500;700&format=webp;avif;jpg&as=picture"
-                    alt="FSW Logo"
+                  <ResponsiveImage
+                    imageUrl="assets/FSW_Logo.png"
+                    alt="FSW Logo2"
                     className="w-full h-auto p-2"
                   />
                 </a>
@@ -84,10 +87,20 @@ const Index = () => {
                 </div>
                 <div className="mr-[30px] flex items-center gap-4">
                   <div className="flex gap-3">
-                    <a href="https://www.youtube.com/@freieschule_woltersdorf" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <a
+                      href="https://www.youtube.com/@freieschule_woltersdorf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="YouTube"
+                    >
                       <Youtube size={24} color="white" />
                     </a>
-                    <a href="https://www.instagram.com/freieschule_woltersdorf/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <a
+                      href="https://www.instagram.com/freieschule_woltersdorf/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                    >
                       <Instagram size={24} color="white" />
                     </a>
                   </div>

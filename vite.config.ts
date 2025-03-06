@@ -31,6 +31,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     mode === 'development' && componentTagger(),
+    imagetools(),
     webfontDownload(), // Include the webfontDownload plugin
     ViteImageOptimizer({
       png: {
@@ -46,7 +47,7 @@ export default defineConfig(({ mode }) => ({
         quality: 80,
       },
     }),
-    imagetools(),
+    
   ].filter(Boolean),
   resolve: {
     alias: {
