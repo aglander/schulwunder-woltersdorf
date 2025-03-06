@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Youtube, Instagram } from "lucide-react";
@@ -152,7 +153,9 @@ export const WunderHeader = ({
                 className="w-full h-full object-cover z-0"
                 width={imageDimensions.width}
                 height={imageDimensions.height}
-                {...loadingStrategy}
+                loading={loadingStrategy.loading}
+                decoding={loadingStrategy.decoding}
+                fetchPriority={loadingStrategy.fetchPriority}
                 sizes="100vw"
               />
             </>

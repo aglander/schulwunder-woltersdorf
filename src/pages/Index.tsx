@@ -88,6 +88,7 @@ const Index = () => {
                     width="100"
                     height="100"
                     loading="eager"
+                    fetchPriority="high"
                   />
                 </a>
               </div>

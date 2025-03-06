@@ -17,8 +17,8 @@ export const imageDimensions: Record<string, { width: number, height: number }> 
 export const getLoadingStrategy = (imagePath: string, isLCP: boolean = false) => {
   return {
     loading: isLCP ? "eager" : "lazy",
-    decoding: isLCP ? "sync" : "async",
-    fetchpriority: isLCP ? "high" : "auto",
+    decoding: isLCP ? "sync" as const : "async" as const,
+    fetchPriority: isLCP ? "high" : "auto",
   };
 };
 

@@ -53,7 +53,7 @@ const WunderCard = ({ title, description, image, link, color }: WunderCardProps)
           height="600"
           loading={color === "schulbau" ? "eager" : "lazy"}
           decoding={color === "schulbau" ? "sync" : "async"}
-          fetchpriority={color === "schulbau" ? "high" : "auto"}
+          fetchPriority={color === "schulbau" ? "high" : "auto"}
         />
       </div>
       <div className={`absolute inset-0 bg-gradient-to-br from-black/80 to-black/70 group-hover:${getGradientClass()} opacity-90 transition-all duration-500`} />
