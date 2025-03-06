@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Youtube, Instagram } from "lucide-react";
+import ResponsiveImage from "./ResponsiveImage";
 
 const BottomBar = () => {
   const isMobile = useIsMobile();
@@ -40,8 +41,8 @@ const BottomBar = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img
-                    src="/assets/FSW_Logo.png?w=300;500;700&format=webp;avif;jpg&as=picture"
+                  <ResponsiveImage
+                    imageUrl="/assets/FSW_Logo.png"
                     alt="FSW Logo"
                     className="w-full h-auto p-2"
                   />
