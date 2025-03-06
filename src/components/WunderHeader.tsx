@@ -84,7 +84,11 @@ export const WunderHeader = ({
   const bgColorClass = getBackgroundColor();
   const svgHeight = svgWidth / 4.83;
   const imageDimensions = imageSrc ? getImageDimensions(imageSrc) : { width: 1920, height: 1080 };
-  const loadingStrategy = getLoadingStrategy(imageSrc || '', true);
+  const loadingStrategy = imageSrc ? getLoadingStrategy(imageSrc, true) : {
+    loading: "lazy" as const,
+    decoding: "async" as const,
+    fetchPriority: "auto" as const
+  };
 
   return (
     <>

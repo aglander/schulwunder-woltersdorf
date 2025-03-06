@@ -11,14 +11,18 @@ export const imageDimensions: Record<string, { width: number, height: number }> 
   // Add more images as needed
 };
 
+type LoadingType = "eager" | "lazy";
+type DecodingType = "sync" | "async" | "auto";
+type FetchPriorityType = "auto" | "high" | "low";
+
 /**
  * Generate appropriate loading strategy based on image importance
  */
 export const getLoadingStrategy = (imagePath: string, isLCP: boolean = false) => {
   return {
-    loading: isLCP ? "eager" : "lazy",
-    decoding: isLCP ? "sync" as const : "async" as const,
-    fetchPriority: isLCP ? "high" : "auto",
+    loading: (isLCP ? "eager" : "lazy") as LoadingType,
+    decoding: (isLCP ? "sync" : "async") as DecodingType,
+    fetchPriority: (isLCP ? "high" : "auto") as FetchPriorityType,
   };
 };
 
