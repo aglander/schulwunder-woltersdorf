@@ -14,7 +14,7 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
   const isMobile = useIsMobile();
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="min-h-screen bg-gray-50 flex flex-col overflow-hidden">
       <div className="fixed top-0 left-0 right-0 z-50">
         <div
           className="backdrop-blur-sm border-b border-black/20 w-full"
@@ -35,7 +35,7 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
         </div>
       </div>
 
-      <main className="flex-1 pt-16 pb-20">
+      <main className="flex-1 pt-16">
         <div className="container mx-auto">
           <div className="w-full max-w-[1700px] mx-auto relative">
             {children}
