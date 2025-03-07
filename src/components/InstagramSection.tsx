@@ -1,9 +1,11 @@
 
-import React from "react";
+import React, { useRef } from "react";
 import { Card } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import { getInstagramToken } from "@/utils/instagramToken";
+import { Instagram, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 interface InstagramPost {
   id: string;
@@ -44,6 +46,7 @@ export const InstagramSection: React.FC<InstagramSectionProps> = ({
   filterTag,
 }) => {
   const { toast } = useToast();
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   const {
     data: instagramPosts,
@@ -92,6 +95,18 @@ export const InstagramSection: React.FC<InstagramSectionProps> = ({
     });
   }, [instagramPosts, filterTag]);
 
+  const handleScroll = (direction: 'left' | 'right') => {
+    if (!scrollContainerRef.current) return;
+    
+    const container = scrollContainerRef.current;
+    const scrollAmount = direction === 'left' ? -400 : 400;
+    
+    container.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <section id="instagram" className="mb-16">
       <Card className="p-8">
@@ -113,7 +128,11 @@ export const InstagramSection: React.FC<InstagramSectionProps> = ({
 
         {filteredPosts && filteredPosts.length > 0 && (
           <div className="relative">
-            <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory">
+            <div 
+              ref={scrollContainerRef}
+              className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory hide-scrollbar"
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
               {filteredPosts.map((post) => (
                 <a
                   key={post.id}
@@ -152,6 +171,48 @@ export const InstagramSection: React.FC<InstagramSectionProps> = ({
                   </Card>
                 </a>
               ))}
+
+              {/* Instagram Profile Card */}
+              <a
+                href="https://www.instagram.com/freie_schule_woltersdorf/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="snap-start shrink-0 w-[280px] md:w-[320px] group"
+              >
+                <Card className="overflow-hidden h-full flex flex-col justify-center items-center p-6 text-center">
+                  <div className="mb-4 p-4 rounded-full bg-gradient-to-tr from-purple-500 via-pink-500 to-orange-400">
+                    <Instagram size={40} className="text-white" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2">Folge uns auf Instagram</h3>
+                  <p className="text-sm text-gray-600 mb-4">
+                    @freie_schule_woltersdorf
+                  </p>
+                  <p className="text-sm">
+                    Bleibe immer auf dem Laufenden mit unseren neuesten Aktivitäten und Projekten.
+                  </p>
+                </Card>
+              </a>
+            </div>
+
+            {/* Navigation controls */}
+            <div className="flex justify-center gap-4 mt-4">
+              <Button 
+                variant="outline" 
+                size="icon"
+                onClick={() => handleScroll('left')}
+                aria-label="Vorherige Beiträge"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+              
+              <Button 
+                variant="outline" 
+                size="icon"
+                onClick={() => handleScroll('right')}
+                aria-label="Nächste Beiträge"
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
             </div>
           </div>
         )}
