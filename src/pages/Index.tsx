@@ -96,7 +96,7 @@ const Index = () => {
                       <Youtube size={24} color="white" />
                     </a>
                     <a
-                      href="https://www.instagram.com/freieschule_woltersdorf/"
+                      href="https://www.instagram.com/freie_schule_woltersdorf/"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="Instagram"

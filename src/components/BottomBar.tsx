@@ -54,7 +54,7 @@ const BottomBar = () => {
                 <a href="https://www.youtube.com/@freieschule_woltersdorf" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
                   <Youtube size={22} color="white" />
                 </a>
-                <a href="https://www.instagram.com/freieschule_woltersdorf/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <a href="https://www.instagram.com/freie_schule_woltersdorf/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <Instagram size={22} color="white" />
                 </a>
               </div>

@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowLeft, Youtube, Instagram } from "lucide-react";
@@ -127,7 +128,7 @@ export const WunderHeader = ({
                     <Youtube size={24} color="white" />
                   </a>
                   <a
-                    href="https://www.instagram.com/freieschule_woltersdorf/"
+                    href="https://www.instagram.com/freie_schule_woltersdorf/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"

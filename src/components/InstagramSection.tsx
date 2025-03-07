@@ -48,6 +48,20 @@ export const InstagramSection: React.FC<InstagramSectionProps> = ({
   const { toast } = useToast();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
+  // Get button hover color based on textColor
+  const getButtonHoverClass = () => {
+    if (textColor === 'text-schulbau') {
+      return 'hover:bg-schulbau/10 hover:text-schulbau hover:border-schulbau';
+    } else if (textColor === 'text-schulgruendung') {
+      return 'hover:bg-schulgruendung/10 hover:text-schulgruendung hover:border-schulgruendung';
+    } else if (textColor === 'text-schulinnovation') {
+      return 'hover:bg-schulinnovation/10 hover:text-schulinnovation hover:border-schulinnovation';
+    }
+    return 'hover:bg-primary/10 hover:text-primary hover:border-primary';
+  };
+
+  const buttonHoverClass = getButtonHoverClass();
+
   const {
     data: instagramPosts,
     isLoading,
@@ -201,6 +215,7 @@ export const InstagramSection: React.FC<InstagramSectionProps> = ({
                 size="icon"
                 onClick={() => handleScroll('left')}
                 aria-label="Vorherige Beiträge"
+                className={buttonHoverClass}
               >
                 <ChevronLeft className="h-4 w-4" />
               </Button>
@@ -210,6 +225,7 @@ export const InstagramSection: React.FC<InstagramSectionProps> = ({
                 size="icon"
                 onClick={() => handleScroll('right')}
                 aria-label="Nächste Beiträge"
+                className={buttonHoverClass}
               >
                 <ChevronRight className="h-4 w-4" />
               </Button>

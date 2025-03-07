@@ -43,7 +43,7 @@ const Footer = () => {
                 <Youtube size={20} />
                 <span>YouTube</span>
               </a>
-              <a href="https://www.instagram.com/freieschule_woltersdorf/" target="_blank" rel="noopener noreferrer" className={`text-gray-600 transition-colors ${hoverClass} flex items-center gap-2`}>
+              <a href="https://www.instagram.com/freie_schule_woltersdorf/" target="_blank" rel="noopener noreferrer" className={`text-gray-600 transition-colors ${hoverClass} flex items-center gap-2`}>
                 <Instagram size={20} />
                 <span>Instagram</span>
               </a>
