@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Card } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
@@ -20,7 +21,7 @@ const fetchInstagramPosts = async () => {
   }
 
   const response = await fetch(
-    `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&limit=10&access_token=${token}`
+    `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&limit=20&access_token=${token}`
   );
 
   if (!response.ok) {
@@ -31,14 +32,16 @@ const fetchInstagramPosts = async () => {
   return data.data as InstagramPost[];
 };
 
-interface InstagramCarouselProps {
+interface InstagramSectionProps {
   title?: string;
   textColor?: string;
+  filterTag?: string;
 }
 
-export const InstagramSection: React.FC<InstagramCarouselProps> = ({
+export const InstagramSection: React.FC<InstagramSectionProps> = ({
   title = "Aktuelles",
   textColor = "text-primary",
+  filterTag,
 }) => {
   const { toast } = useToast();
 
@@ -66,6 +69,29 @@ export const InstagramSection: React.FC<InstagramCarouselProps> = ({
     },
   });
 
+  // Filter posts by tag if filterTag is provided
+  const filteredPosts = React.useMemo(() => {
+    if (!instagramPosts || !filterTag) return instagramPosts;
+
+    let tagsToCheck = [filterTag];
+    
+    // Special case for schulgründungswunder to also check for schulgruendungswunder
+    if (filterTag === "#schulgruendungswunder") {
+      tagsToCheck.push("#schulgründungswunder");
+    } else if (filterTag === "#schulgründungswunder") {
+      tagsToCheck.push("#schulgruendungswunder");
+    }
+
+    return instagramPosts.filter((post) => {
+      if (!post.caption) return false;
+      
+      // Check if any of the specified tags are in the caption
+      return tagsToCheck.some(tag => 
+        post.caption.toLowerCase().includes(tag.toLowerCase())
+      );
+    });
+  }, [instagramPosts, filterTag]);
+
   return (
     <section id="instagram" className="mb-16">
       <Card className="p-8">
@@ -85,10 +111,10 @@ export const InstagramSection: React.FC<InstagramCarouselProps> = ({
           </div>
         )}
 
-        {instagramPosts && instagramPosts.length > 0 && (
+        {filteredPosts && filteredPosts.length > 0 && (
           <div className="relative">
             <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory">
-              {instagramPosts.map((post) => (
+              {filteredPosts.map((post) => (
                 <a
                   key={post.id}
                   href={post.permalink}
@@ -130,9 +156,9 @@ export const InstagramSection: React.FC<InstagramCarouselProps> = ({
           </div>
         )}
 
-        {instagramPosts && instagramPosts.length === 0 && (
+        {filteredPosts && filteredPosts.length === 0 && (
           <div className="text-center text-gray-500 p-4 border border-gray-300 rounded-md">
-            Keine Instagram-Beiträge gefunden.
+            {filterTag ? `Keine Instagram-Beiträge mit dem Hashtag ${filterTag} gefunden.` : "Keine Instagram-Beiträge gefunden."}
           </div>
         )}
       </Card>

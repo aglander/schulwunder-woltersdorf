@@ -151,7 +151,7 @@ const Schulgruendungswunder = () => {
             </Card>
           </section>
 
-          <InstagramSection textColor="text-schulgruendung" />
+          <InstagramSection textColor="text-schulgruendung" filterTag="#schulgruendungswunder" />
 
           <section id="updates" className="mb-16">
             <Card className="p-8">

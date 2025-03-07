@@ -105,7 +105,7 @@ const Schulbauwunder = () => {
             </Card>
           </section>
 
-          <InstagramSection textColor="text-schulbau" />
+          <InstagramSection textColor="text-schulbau" filterTag="#schulbauwunder" />
 
           <section id="events" className="mb-16">
             <Card className="p-8">
