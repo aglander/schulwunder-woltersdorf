@@ -8,8 +8,8 @@ interface WunderLayoutProps {
 
 const WunderLayout: React.FC<WunderLayoutProps> = ({ children }) => {
     return (
-        <div className="min-h-screen bg-gray-50 flex flex-col relative overflow-hidden">
-            <div className="flex-1">
+        <div className="min-h-screen bg-gray-50 flex flex-col relative">
+            <div className="flex-1 pb-20">
                 {children}
             </div>
             <BottomBar />

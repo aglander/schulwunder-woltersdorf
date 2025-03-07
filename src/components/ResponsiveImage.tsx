@@ -1,4 +1,3 @@
-
 import React from "react";
 
 export interface ViteImageToolsImage {
@@ -77,7 +76,6 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
         alt={alt}
         className={`max-w-full h-auto ${className}`}
         style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}
-        loading="lazy"
       />
     </picture>
   );
