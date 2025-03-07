@@ -15,7 +15,7 @@ const imageModules = import.meta.glob<{ default: ViteImageToolsImage }>(
   "/src/assets/**/*",
   {
     eager: true,
-    query: "?w=300;500;700;1200;1600&format=webp;avif;jpg&as=picture",
+    query: "?w=100;300;500;700;1200;1600&format=webp;avif;jpg&as=picture",
   }
 );
 
@@ -73,6 +73,7 @@ const ResponsiveImage: React.FC<ResponsiveImageProps> = ({
       <img
         src={filteredSrcSet[0]?.src || image.img.src} // Smallest image fallback
         decoding="async"
+        loading="eager"
         alt={alt}
         className={`max-w-full h-auto ${className}`}
         style={{ display: "block", width: "100%", height: "100%", objectFit: "cover" }}
