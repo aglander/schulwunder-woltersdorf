@@ -90,7 +90,7 @@ export const InstagramSection: React.FC<InstagramSectionProps> = ({
   const filteredPosts = React.useMemo(() => {
     if (!instagramPosts || !filterTag) return instagramPosts;
 
-    let tagsToCheck = [filterTag];
+    const tagsToCheck = [filterTag];
     
     // Special case for schulgründungswunder to also check for schulgruendungswunder
     if (filterTag === "#schulgruendungswunder") {
@@ -197,12 +197,12 @@ export const InstagramSection: React.FC<InstagramSectionProps> = ({
                   <div className="mb-4 p-4 rounded-full bg-gradient-to-tr from-purple-500 via-pink-500 to-orange-400">
                     <Instagram size={40} className="text-white" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Folge uns auf Instagram</h3>
+                  <h3 className="text-lg font-semibold mb-2">Folgen Sie uns auf Instagram</h3>
                   <p className="text-sm text-gray-600 mb-4">
                     @freie_schule_woltersdorf
                   </p>
                   <p className="text-sm">
-                    Bleibe immer auf dem Laufenden mit unseren neuesten Aktivitäten und Projekten.
+                    Bleiben Sie immer auf dem Laufenden mit unseren neuesten Aktivitäten und Projekten.
                   </p>
                 </Card>
               </a>
