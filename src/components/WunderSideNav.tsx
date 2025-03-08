@@ -37,17 +37,6 @@ const WunderSideNav: React.FC<WunderSideNavProps> = ({ navLinks, textColorClass 
     return () => observer.disconnect();
   }, [navLinks]);
 
-  const getActiveClass = () => {
-    if (textColorClass === 'text-schulbau') {
-      return 'bg-schulbau/15 border-schulbau shadow-sm font-semibold';
-    } else if (textColorClass === 'text-schulgruendung') {
-      return 'bg-schulgruendung/15 border-schulgruendung shadow-sm font-semibold';
-    } else if (textColorClass === 'text-schulinnovation') {
-      return 'bg-schulinnovation/15 border-schulinnovation shadow-sm font-semibold';
-    }
-    return 'bg-primary/15 border-primary shadow-sm font-semibold';
-  };
-
   const getHoverClass = () => {
     if (textColorClass === 'text-schulbau') {
       return 'hover:bg-schulbau/10 hover:border-schulbau hover:shadow-sm';
@@ -59,8 +48,27 @@ const WunderSideNav: React.FC<WunderSideNavProps> = ({ navLinks, textColorClass 
     return 'hover:bg-primary/10 hover:border-primary hover:shadow-sm';
   };
 
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const targetElement = document.querySelector(href);
+    
+    if (targetElement) {
+      // Get the header height (assuming it's fixed at 64px, adjust if different)
+      const headerOffset = 80; // 64px header + some extra space
+      const elementPosition = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+      
+      // Update active section after scrolling
+      setActiveSection(href.substring(1));
+    }
+  };
+
   const hoverClass = getHoverClass();
-  const activeClass = getActiveClass();
 
   return (
     <nav className="bg-white rounded-lg shadow-lg p-4">
@@ -72,8 +80,9 @@ const WunderSideNav: React.FC<WunderSideNavProps> = ({ navLinks, textColorClass 
               <a
                 href={link.href}
                 className={`${textColorClass} border border-transparent rounded-md transition-all duration-200 block py-2 px-3 ${hoverClass} ${
-                  isActive ? activeClass : ''
+                  isActive ? hoverClass : ''
                 }`}
+                onClick={(e) => handleLinkClick(e, link.href)}
               >
                 {link.label}
               </a>
