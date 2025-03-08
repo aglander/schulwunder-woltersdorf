@@ -1,10 +1,10 @@
-
 import React from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Youtube, Instagram } from "lucide-react";
 import BottomBar from "./BottomBar";
+import { Button } from "./ui/button";
 
 interface SimpleLayoutProps {
   children: React.ReactNode;
@@ -19,17 +19,55 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
         <div
           className="backdrop-blur-sm border-b border-black/20 w-full"
           style={{
-            background: "linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.35) 100%)"
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
           }}
         >
           <div className="container mx-auto px-4">
-            <div className="flex items-center h-16">
-              <Link to="/" className="flex items-center gap-2 text-white hover:text-white/90 transition-colors">
-                <ArrowLeft className="w-5 h-5" />
-                <span className="font-semibold">
-                  {isMobile ? "Zurück" : "Schulwunder Woltersdorf"}
-                </span>
-              </Link>
+            <div className="flex items-center justify-between h-16">
+              <div className="ml-[30px]">
+                <Link
+                  to="/"
+                  className="flex items-center gap-2 text-white hover:text-white/90 transition-colors"
+                >
+                  <ArrowLeft className="w-5 h-5" />
+                  <span className="font-semibold">
+                    {isMobile ? "Zurück" : "Schulwunder Woltersdorf"}
+                  </span>
+                </Link>
+              </div>
+              {!isMobile && (
+                <div className="mr-[30px] flex items-center gap-4">
+                  <div className="flex gap-3">
+                    <a
+                      href="https://www.youtube.com/@freieschulewoltersdorf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="YouTube"
+                    >
+                      <Youtube size={24} color="white" />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/freie_schule_woltersdorf/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                    >
+                      <Instagram size={24} color="white" />
+                    </a>
+                  </div>
+                  <div className="flex gap-2">
+                    <Link to="/spenden">
+                      <Button
+                        variant="secondary"
+                        className="bg-white text-black hover:bg-white/90"
+                      >
+                        Jetzt spenden
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
