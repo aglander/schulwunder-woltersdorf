@@ -88,7 +88,7 @@ const Index = () => {
                 <div className="mr-[30px] flex items-center gap-4">
                   <div className="flex gap-3">
                     <a
-                      href="https://www.youtube.com/@freieschule_woltersdorf"
+                      href="https://www.youtube.com/@freieschulewoltersdorf"
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label="YouTube"

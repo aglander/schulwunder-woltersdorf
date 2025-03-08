@@ -39,7 +39,7 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Folgen Sie uns</h4>
             <div className="flex space-x-4">
-              <a href="https://www.youtube.com/@freieschule_woltersdorf" target="_blank" rel="noopener noreferrer" className={`text-gray-600 transition-colors ${hoverClass} flex items-center gap-2`}>
+              <a href="https://www.youtube.com/@freieschulewoltersdorf" target="_blank" rel="noopener noreferrer" className={`text-gray-600 transition-colors ${hoverClass} flex items-center gap-2`}>
                 <Youtube size={20} />
                 <span>YouTube</span>
               </a>
