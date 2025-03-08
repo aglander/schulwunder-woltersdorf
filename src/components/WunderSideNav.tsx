@@ -37,6 +37,17 @@ const WunderSideNav: React.FC<WunderSideNavProps> = ({ navLinks, textColorClass 
     return () => observer.disconnect();
   }, [navLinks]);
 
+  const getActiveClass = () => {
+    if (textColorClass === 'text-schulbau') {
+      return 'bg-schulbau/15 border-schulbau shadow-sm font-semibold';
+    } else if (textColorClass === 'text-schulgruendung') {
+      return 'bg-schulgruendung/15 border-schulgruendung shadow-sm font-semibold';
+    } else if (textColorClass === 'text-schulinnovation') {
+      return 'bg-schulinnovation/15 border-schulinnovation shadow-sm font-semibold';
+    }
+    return 'bg-primary/15 border-primary shadow-sm font-semibold';
+  };
+
   const getHoverClass = () => {
     if (textColorClass === 'text-schulbau') {
       return 'hover:bg-schulbau/10 hover:border-schulbau hover:shadow-sm';
@@ -49,6 +60,7 @@ const WunderSideNav: React.FC<WunderSideNavProps> = ({ navLinks, textColorClass 
   };
 
   const hoverClass = getHoverClass();
+  const activeClass = getActiveClass();
 
   return (
     <nav className="bg-white rounded-lg shadow-lg p-4">
@@ -60,7 +72,7 @@ const WunderSideNav: React.FC<WunderSideNavProps> = ({ navLinks, textColorClass 
               <a
                 href={link.href}
                 className={`${textColorClass} border border-transparent rounded-md transition-all duration-200 block py-2 px-3 ${hoverClass} ${
-                  isActive ? hoverClass.replace('hover:', '') : ''
+                  isActive ? activeClass : ''
                 }`}
               >
                 {link.label}
