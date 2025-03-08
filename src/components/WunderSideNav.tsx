@@ -37,6 +37,17 @@ const WunderSideNav: React.FC<WunderSideNavProps> = ({ navLinks, textColorClass 
     return () => observer.disconnect();
   }, [navLinks]);
 
+  const getActiveClass = () => {
+    if (textColorClass === 'text-schulbau') {
+      return 'bg-schulbau/15 border-schulbau shadow-sm font-semibold';
+    } else if (textColorClass === 'text-schulgruendung') {
+      return 'bg-schulgruendung/15 border-schulgruendung shadow-sm font-semibold';
+    } else if (textColorClass === 'text-schulinnovation') {
+      return 'bg-schulinnovation/15 border-schulinnovation shadow-sm font-semibold';
+    }
+    return 'bg-primary/15 border-primary shadow-sm font-semibold';
+  };
+
   const getHoverClass = () => {
     if (textColorClass === 'text-schulbau') {
       return 'hover:bg-schulbau/10 hover:border-schulbau hover:shadow-sm';
@@ -49,22 +60,20 @@ const WunderSideNav: React.FC<WunderSideNavProps> = ({ navLinks, textColorClass 
   };
 
   const hoverClass = getHoverClass();
+  const activeClass = getActiveClass();
 
   return (
     <nav className="bg-white rounded-lg shadow-lg p-4">
       <ul className="space-y-2">
         {navLinks.map((link) => {
           const isActive = activeSection === link.href.substring(1);
-          // Use the hover classes directly without 'hover:' prefix for active state
-          const activeClass = isActive 
-            ? hoverClass.replace(/hover:/g, '') 
-            : '';
-          
           return (
             <li key={link.href}>
               <a
                 href={link.href}
-                className={`${textColorClass} border border-transparent rounded-md transition-all duration-200 block py-2 px-3 ${hoverClass} ${activeClass}`}
+                className={`${textColorClass} border border-transparent rounded-md transition-all duration-200 block py-2 px-3 ${hoverClass} ${
+                  isActive ? activeClass : ''
+                }`}
               >
                 {link.label}
               </a>
