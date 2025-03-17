@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Youtube, Instagram } from "lucide-react";
@@ -24,8 +25,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-gray-600">
             <h4 className="font-bold text-lg mb-4">Kontakt</h4>
-            <p>Freie Schule Woltersdorf</p>
-            <p>Email: info@fsw.de</p>
+            <p>Freie Schule Woltersdorf e.V.</p>
+            <p>Vogelsdorfer Straße 106</p>
+            <p>15569 Woltersdorf</p>
+            <p>Telefon: 03362 700973</p>
+            <p>Email: info@freie-schule-woltersdorf.de</p>
           </div>
           <div>
             <h4 className="font-bold text-lg mb-4">Links</h4>
