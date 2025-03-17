@@ -17,8 +17,8 @@ const Datenschutz = () => {
             Freie Schule Woltersdorf e.V.<br />
             Vogelsdorfer Straße 106<br />
             15569 Woltersdorf<br />
-            Telefon: 03362 700973<br />
-            E-Mail: info@freie-schule-woltersdorf.de
+            Telefon: <a href="tel:+493362700973" rel="noopener noreferrer" className="text-blue-600 hover:underline">03362 700973</a><br />
+            E-Mail: <a href="mailto:info@freie-schule-woltersdorf.de" rel="noopener noreferrer" className="text-blue-600 hover:underline">info@freie-schule-woltersdorf.de</a>
           </p>
 
           <h2 className="text-2xl font-bold mt-8 mb-4">2. Hosting und Content Delivery Network (CDN)</h2>
