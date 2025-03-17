@@ -16,33 +16,34 @@ const Impressum = () => {
           <h2>Angaben gemäß § 5 TMG</h2>
           <p>
             Freie Schule Woltersdorf e.V.<br />
-            Musterstraße 1<br />
+            Vogelsdorfer Straße 106<br />
             15569 Woltersdorf
           </p>
 
           <h2>Vertreten durch</h2>
           <p>
-            Vorstandsvorsitzende/r [Name]<br />
-            Stellvertretende/r Vorsitzende/r [Name]
+            Vorstandsvorsitzende: Susann Tröger<br />
+            Geschäftsführer: Johannes Wilk
           </p>
 
           <h2>Kontakt</h2>
           <p>
-            Telefon: [Telefonnummer]<br />
+            Telefon: 03362 700973<br />
             E-Mail: info@freie-schule-woltersdorf.de
           </p>
 
           <h2>Registereintrag</h2>
           <p>
-            Eintragung im Vereinsregister<br />
-            Registergericht: Amtsgericht [Stadt]<br />
-            Registernummer: VR [Nummer]
+            Eintragung im Vereinsregister Frankfurt (Oder)<br />
+            Registergericht: Amtsgericht Frankfurt (Oder)<br />
+            Registernummer: VR 5179 FF
           </p>
 
           <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
           <p>
-            [Name]<br />
-            [Adresse]
+            Freie Schule Woltersdorf e.V.<br />
+            Vogelsdorfer Straße 106<br />
+            15569 Woltersdorf
           </p>
         </div>
       </div>
