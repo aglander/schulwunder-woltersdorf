@@ -1,4 +1,3 @@
-
 import React from "react";
 import SimpleLayout from "@/components/SimpleLayout";
 import SEO from "@/components/SEO";
@@ -15,12 +14,11 @@ const Datenschutz = () => {
         <div className="max-w-3xl mx-auto prose prose-lg">
           <h2 className="text-2xl font-bold mt-8 mb-4">1. Verantwortliche Stelle</h2>
           <p>
-            Johannes Wilk<br />
-            ATW Management Solutions GmbH<br />
-            Schleusenstr. 50<br />
+            Freie Schule Woltersdorf e.V.<br />
+            Vogelsdorfer Straße 106<br />
             15569 Woltersdorf<br />
-            Telefon: 0176 23648894<br />
-            E-Mail: j.wilk@atw-management.de
+            Telefon: 03362 700973<br />
+            E-Mail: info@freie-schule-woltersdorf.de
           </p>
 
           <h2 className="text-2xl font-bold mt-8 mb-4">2. Hosting und Content Delivery Network (CDN)</h2>
