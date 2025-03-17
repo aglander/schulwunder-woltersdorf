@@ -28,8 +28,8 @@ const Impressum = () => {
 
           <h2 className="mt-8 mb-2 text-xl">Kontakt</h2>
           <p>
-            Telefon: 03362 700973<br />
-            E-Mail: info@freie-schule-woltersdorf.de
+            Telefon: <a href="tel:+493362700973">03362 700973</a><br />
+            E-Mail: <a href="mailto:info@freie-schule-woltersdorf.de">info@freie-schule-woltersdorf.de</a>
           </p>
 
           <h2 className="mt-8 mb-2 text-xl">Registereintrag</h2>
