@@ -1,12 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
 import type { Connect } from 'vite';
 import webfontDownload from 'vite-plugin-webfont-dl';
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import { imagetools } from 'vite-imagetools'
-
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
@@ -30,7 +28,6 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' && componentTagger(),
     imagetools(),
     webfontDownload(), // Include the webfontDownload plugin
     ViteImageOptimizer({
@@ -70,7 +67,7 @@ export default defineConfig(({ mode }) => ({
           const name = assetInfo.name || '';
           const ext = name.split('.').pop() || '';
           let extType = ext;
-          
+
           if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
             extType = 'img';
           }

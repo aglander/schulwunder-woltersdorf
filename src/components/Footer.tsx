@@ -1,11 +1,10 @@
-
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Youtube, Instagram } from "lucide-react";
 
 const Footer = () => {
   const location = useLocation();
-  
+
   const getHoverColorClass = () => {
     if (location.pathname.includes('schulbau')) {
       return 'hover:text-schulbau hover:underline';
