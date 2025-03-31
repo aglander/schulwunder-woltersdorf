@@ -1,16 +1,14 @@
 import React from "react";
 import { TeamMember } from "../data/team";
 import { Section } from "./Section";
+import ResponsiveImage from "./ResponsiveImage";
 
 interface TeamSectionProps {
   members: TeamMember[];
   textColor: string;
 }
 
-export const TeamSection = ({
-  members,
-  textColor,
-}: TeamSectionProps) => {
+export const TeamSection = ({ members, textColor }: TeamSectionProps) => {
   return (
     <Section title="Unser Team" id="team" textColor={textColor}>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -18,8 +16,8 @@ export const TeamSection = ({
           <div key={member.name} className="text-center">
             <div className="w-24 h-24 lg:w-28 lg:h-28 bg-gray-200 rounded-full mx-auto mb-3 overflow-hidden">
               {member.filename ? (
-                <img
-                  src={`/assets/team/${member.filename}`}
+                <ResponsiveImage
+                  imageUrl={`assets/${member.filename}`}
                   alt={member.name}
                   className="w-full h-full object-cover rounded-full"
                 />

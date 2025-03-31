@@ -6,11 +6,12 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import ResponsiveImage from "@/components/ResponsiveImage";
 
 const Kontakt = () => {
   return (
     <SimpleLayout>
-      <SEO 
+      <SEO
         title="Kontakt"
         description="Kontaktieren Sie die Freie Schule Woltersdorf - Wir freuen uns auf Ihre Nachricht."
       />
@@ -20,11 +21,18 @@ const Kontakt = () => {
           <p className="text-lg mb-8 text-center">
             Haben Sie Fragen oder Anregungen? Wir freuen uns auf Ihre Nachricht.
           </p>
-          
+          <p>
+            <ResponsiveImage
+              imageUrl="assets/kontakt.jpg"
+              alt="Kontakt"
+              className="w-full h-auto p-2 mb-8"
+            />
+          </p>
+
           <div className="bg-white p-8 rounded-lg shadow-md">
-            <form 
-              action="https://form.taxi/s/ok36qg1u" 
-              method="POST" 
+            <form
+              action="https://form.taxi/s/ok36qg1u"
+              method="POST"
               accept-charset="utf-8"
               className="space-y-6"
             >
@@ -32,27 +40,33 @@ const Kontakt = () => {
                 <Label htmlFor="name">Name</Label>
                 <Input type="text" name="Name" id="name" required />
               </div>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="mail">E-Mail-Adresse</Label>
                 <Input type="email" name="E-Mail" id="mail" required />
               </div>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="msg">Ihre Nachricht</Label>
                 <Textarea rows={5} name="Nachricht" id="msg" required />
               </div>
-              
+
               <div className="flex items-start space-x-2">
-                <Checkbox id="datenschutz" name="Datenverarbeitung bestätigt" value="Ja" required />
-                <Label 
-                  htmlFor="datenschutz" 
+                <Checkbox
+                  id="datenschutz"
+                  name="Datenverarbeitung bestätigt"
+                  value="Ja"
+                  required
+                />
+                <Label
+                  htmlFor="datenschutz"
                   className="text-sm font-normal leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
                 >
-                  Ich bin mit der Verarbeitung meiner Eingaben zum Zwecke der Anfragebearbeitung durch{" "}
-                  <a 
-                    href="https://form.taxi/de" 
-                    target="_blank" 
+                  Ich bin mit der Verarbeitung meiner Eingaben zum Zwecke der
+                  Anfragebearbeitung durch{" "}
+                  <a
+                    href="https://form.taxi/de"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:underline"
                   >
@@ -61,25 +75,19 @@ const Kontakt = () => {
                   einverstanden.
                 </Label>
               </div>
-              
+
               {/* Honeypot field to prevent spam */}
-              <input type="text" name="_gotcha" value="" style={{ display: "none" }} />
-              
-              <Button type="submit" className="w-full">Absenden</Button>
+              <input
+                type="text"
+                name="_gotcha"
+                value=""
+                style={{ display: "none" }}
+              />
+
+              <Button type="submit" className="w-full">
+                Absenden
+              </Button>
             </form>
-          </div>
-          
-          <div className="mt-12 prose prose-lg max-w-none">
-            <h2 className="text-2xl font-bold mb-4">Weitere Kontaktmöglichkeiten</h2>
-            <p>
-              Freie Schule Woltersdorf e.V.<br />
-              Musterstraße 1<br />
-              15569 Woltersdorf
-            </p>
-            <p>
-              Telefon: [Telefonnummer]<br />
-              E-Mail: info@freie-schule-woltersdorf.de
-            </p>
           </div>
         </div>
       </div>
