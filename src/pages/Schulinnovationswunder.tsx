@@ -32,7 +32,7 @@ const Schulinnovationswunder = () => {
   const navLinks = [
     { href: "#description", label: "Über das Schulinnovationswunder" },
     { href: "#instagram", label: "Aktuelles" },
-    { href: "#events", label: "Kommende Termine" },
+    //{ href: "#events", label: "Kommende Termine" },
     { href: "#team", label: "Team" },
     { href: "#supporters", label: "Unterstützer" },
   ];
@@ -155,10 +155,10 @@ const Schulinnovationswunder = () => {
             filterTag="#schulinnovationswunder"
           />
 
-          <EventSection
+          {/*<EventSection
             textColor="text-schulinnovation"
             events={innovationswunderEvents}
-          />
+          />*/}
 
           <TeamSection
             members={innovationswunderTeam}

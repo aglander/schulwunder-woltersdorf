@@ -25,8 +25,8 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Kontakt</h4>
             <p>Freie Schule Woltersdorf e.V.</p>
-            <p>Telefon: <a href="tel:+493362700973">03362 700973</a></p>
-            <p>Email: <a href="mailto:info@freie-schule-woltersdorf.de">info@freie-schule-woltersdorf.de</a></p>
+            <p>Telefon: <a href="tel:+493362700973" rel="noopener noreferrer" className={`text-gray-600 transition-colors ${hoverClass}`}>03362 700973</a></p>
+            <p>Email: <a href="mailto:info@freie-schule-woltersdorf.de" rel="noopener noreferrer" className={`text-gray-600 transition-colors ${hoverClass}`}>info@freie-schule-woltersdorf.de</a></p>
           </div>
           <div>
             <h4 className="font-bold text-lg mb-4">Links</h4>

@@ -31,7 +31,7 @@ const Schulbauwunder = () => {
   const navLinks = [
     { href: "#description", label: "Über das Schulbauwunder" },
     { href: "#instagram", label: "Aktuelles" },
-    { href: "#events", label: "Kommende Termine" },
+    //{ href: "#events", label: "Kommende Termine" },
     { href: "#team", label: "Team" },
     { href: "#supporters", label: "Unterstützer" },
   ];
@@ -111,7 +111,7 @@ const Schulbauwunder = () => {
             filterTag="#schulbauwunder"
           />
 
-          <EventSection textColor="text-schulbau" events={bauwunderEvents} />
+         {/* <EventSection textColor="text-schulbau" events={bauwunderEvents} />*/}
 
           <TeamSection members={bauwunderTeam} textColor="text-schulbau" />
 

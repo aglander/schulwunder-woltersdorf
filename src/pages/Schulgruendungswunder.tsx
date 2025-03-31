@@ -31,7 +31,7 @@ const Schulgruendungswunder = () => {
   const navLinks = [
     { href: "#description", label: "Über das Schulgründungswunder" },
     { href: "#instagram", label: "Aktuelles" },
-    { href: "#events", label: "Kommende Termine" },
+    //{ href: "#events", label: "Kommende Termine" },
     { href: "#team", label: "Team" },
     { href: "#supporters", label: "Unterstützer" },
   ];
@@ -61,7 +61,7 @@ const Schulgruendungswunder = () => {
         <div className="lg:w-3/4">
           <Section
             title="Von Eltern für Eltern: Die neue Oberschule der Freien Schule
-                Woltersdorf"
+          Woltersdorf"
             id="description"
             textColor="text-schulgruendung"
           >
@@ -156,10 +156,10 @@ const Schulgruendungswunder = () => {
             filterTag="#schulgruendungswunder"
           />
 
-          <EventSection
+          {/*<EventSection
             textColor="text-schulgruendung"
             events={gruendungswunderEvents}
-          />
+          />*/}
 
           <TeamSection
             members={gruendungswunderTeam}
