@@ -30,6 +30,7 @@ const Schulgruendungswunder = () => {
 
   const navLinks = [
     { href: "#description", label: "Über das Schulgründungswunder" },
+    { href: "#chronik", label: "Unser Weg zur Oberschule" },
     { href: "#instagram", label: "Aktuelles" },
     //{ href: "#events", label: "Kommende Termine" },
     { href: "#team", label: "Team" },
@@ -149,6 +150,41 @@ const Schulgruendungswunder = () => {
                 </p>
               </div>
             </div>
+          </Section>
+
+          <Section title="Unser Weg zur Oberschule" id="chronik">
+            <IllustrationBox
+              title="Mit Vollgas Richtung Oberschuleröffnung"
+              illustration="/assets/illustrations/illustration-chat.svg"
+              illustrationColor="filter-schulgruendung"
+              className="mt-8"
+            >
+              <p>
+                Wir – die Mitwirkenden der Konzeptionsgruppe – arbeiten mit
+                Hochdruck an der Verwirklichung unserer Vision: die Schaffung
+                eines nachhaltigen Lernortes, an dem unsere Kinder auch nach
+                ihrer Grundschulzeit mit Freude lernen, sich ausprobieren und
+                gemeinsam wachsen können – mit einem starken Bezug zur Natur und
+                zur Lebenswelt um sie herum.
+              </p>
+              <p>
+                Dazu vernetzen wir uns mit anderen Oberschulen in freier
+                Trägerschaft sowie mit staatlichen Schulen, um von deren
+                Erfahrungswerten zu profitieren. Es sind wertvolle Kontakte
+                entstanden und wir erfahren viel Unterstützung auf unserem Weg.
+                Auch die ersten Hospitationen haben bereits stattgefunden.
+              </p>
+              <p>
+                Die pädagogische Konzeption befindet sich kurz vor der
+                Fertigstellung. Aktuell arbeiten wir an der Entwicklung eines
+                Ganztagkonzepts, eines Schutzkonzepts und schulinterner
+                Curricula. Bis zum Beginn der Sommerferien möchten wir die
+                erforderlichen Unterlagen für den Antrag auf Genehmigung zur
+                Errichtung unserer Oberschule beisammenhaben, damit wir zum
+                Schuljahr 2026/27 einen weiteren wunderbaren Ort der gelebten
+                Gemeinschaft ins Leben rufen können.
+              </p>
+            </IllustrationBox>
           </Section>
 
           <InstagramSection
