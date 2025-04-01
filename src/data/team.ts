@@ -35,7 +35,7 @@ export const team: TeamMember[] = [
     filename: "ludwig-goelling.jpg",
     name: "Ludwig Gölling",
     desc: "Bau und Infrastruktur",
-    tags: ["schulinnovationswunder"]
+    tags: ["schulinnovationswunder", "schulbauwunder"]
   },
   {
     filename: "tim-fronzek.jpg",
