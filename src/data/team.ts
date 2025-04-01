@@ -38,7 +38,7 @@ export const team: TeamMember[] = [
     tags: ["schulbauwunder"]
   },
   {
-    filename: "",
+    filename: "ludwig-goelling.jpg",
     name: "Ludwig Gölling",
     desc: "Bau und Infrastruktur",
     tags: ["schulinnovationswunder"]
@@ -46,7 +46,7 @@ export const team: TeamMember[] = [
   {
     filename: "tim-fronzek.jpg",
     name: "Tim Fronzek",
-    desc: "",
+    desc: "Finanzvorstand",
     tags: ["schulinnovationswunder"]
   }
 ];
