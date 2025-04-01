@@ -20,12 +20,6 @@ export const team: TeamMember[] = [
     tags: ["schulgruendungswunder"]
   },
   {
-    filename: "",
-    name: "Ludwig Gölling",
-    desc: "Bau und Infrastruktur",
-    tags: ["schulgruendungswunder"]
-  },
-  {
     filename: "philip-preuss.jpg",
     name: "Philip Preuß",
     desc: "Social Media",
