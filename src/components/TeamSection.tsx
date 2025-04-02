@@ -18,6 +18,7 @@ export const TeamSection = ({ members, textColor }: TeamSectionProps) => {
       .replace(/\s+/g, "")
       .replace(/\./g, "")
       .replace(/ß/g, "ss")
+      .replace(/ö/g, "oe")
       .replace(/é/g, "e")}`;
   };
 
