@@ -11,6 +11,8 @@ import Donation from "./pages/Donation";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import Kontakt from "./pages/Kontakt";
+import JohannesWilk from "./pages/team/JohannesWilk";
+import CatherineGrote from "./pages/team/CatherineGrote";
 
 const ScrollManager = () => {
   const location = useLocation();
@@ -63,6 +65,8 @@ const App = () => (
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
         <Route path="/kontakt" element={<Kontakt />} />
+        <Route path="/team/JohannesWilk" element={<JohannesWilk />} />
+        <Route path="/team/CatherineGrote" element={<CatherineGrote />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
