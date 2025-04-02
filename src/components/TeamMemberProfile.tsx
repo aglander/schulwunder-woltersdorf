@@ -1,9 +1,11 @@
+
 import React from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import ResponsiveImage from "./ResponsiveImage";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import SimpleLayout from "./SimpleLayout";
 import { TeamMember } from "../data/team";
+import { Mail, Phone } from "lucide-react";
 
 interface TeamMemberProfileProps {
   member: TeamMember;
@@ -57,7 +59,7 @@ const TeamMemberProfile: React.FC<TeamMemberProfileProps> = ({
               })}
             </div>
             
-            {/* Contact Info */}
+            {/* Contact Info with Icons */}
             {contact && (Object.keys(contact).length > 0) && (
               <Card className="w-full">
                 <CardHeader className="pb-2">
@@ -66,7 +68,7 @@ const TeamMemberProfile: React.FC<TeamMemberProfileProps> = ({
                 <CardContent>
                   {contact.email && (
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="font-medium">Email:</span>
+                      <Mail size={18} className="text-gray-600" />
                       <a href={`mailto:${contact.email}`} className="text-blue-600 hover:underline">
                         {contact.email}
                       </a>
@@ -74,7 +76,7 @@ const TeamMemberProfile: React.FC<TeamMemberProfileProps> = ({
                   )}
                   {contact.phone && (
                     <div className="flex items-center gap-2">
-                      <span className="font-medium">Telefon:</span>
+                      <Phone size={18} className="text-gray-600" />
                       <a href={`tel:${contact.phone}`} className="text-blue-600 hover:underline">
                         {contact.phone}
                       </a>
