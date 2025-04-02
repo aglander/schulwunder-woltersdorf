@@ -1,11 +1,10 @@
-
 import React from "react";
 import TeamMemberProfile from "@/components/TeamMemberProfile";
 import { team } from "@/data/team";
 import SEO from "@/components/SEO";
 
-const JohannesWilk = () => {
-  const member = team.find(m => m.name === "Johannes Wilk");
+const LudwigGoelling = () => {
+  const member = team.find(m => m.name === "Ludwig Gölling");
   
   if (!member) {
     return <div>Team member not found</div>;
@@ -22,4 +21,4 @@ const JohannesWilk = () => {
   );
 };
 
-export default JohannesWilk;
+export default LudwigGoelling;

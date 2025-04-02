@@ -1,4 +1,3 @@
-
 import React from "react";
 import { TeamMember } from "../data/team";
 import { Section } from "./Section";
@@ -13,7 +12,12 @@ interface TeamSectionProps {
 export const TeamSection = ({ members, textColor }: TeamSectionProps) => {
   // Helper function to generate URL-friendly name
   const getProfileUrl = (name: string) => {
-    return `/team/${name.replace(/\s+/g, "").replace(/\./g, "")}`;
+    // Convert to PascalCase (remove spaces and special characters)
+    return `/team/${name
+      .replace(/\s+/g, "")
+      .replace(/\./g, "")
+      .replace(/ß/g, "ss")
+      .replace(/é/g, "e")}`;
   };
 
   return (

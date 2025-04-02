@@ -13,6 +13,10 @@ import Datenschutz from "./pages/Datenschutz";
 import Kontakt from "./pages/Kontakt";
 import JohannesWilk from "./pages/team/JohannesWilk";
 import CatherineGrote from "./pages/team/CatherineGrote";
+import PhilipPreuss from "./pages/team/PhilipPreuss";
+import JohannSchindler from "./pages/team/JohannSchindler";
+import LudwigGoelling from "./pages/team/LudwigGoelling";
+import TimFronzek from "./pages/team/TimFronzek";
 
 const ScrollManager = () => {
   const location = useLocation();
@@ -67,6 +71,10 @@ const App = () => (
         <Route path="/kontakt" element={<Kontakt />} />
         <Route path="/team/JohannesWilk" element={<JohannesWilk />} />
         <Route path="/team/CatherineGrote" element={<CatherineGrote />} />
+        <Route path="/team/PhilipPreuss" element={<PhilipPreuss />} />
+        <Route path="/team/JohannSchindler" element={<JohannSchindler />} />
+        <Route path="/team/LudwigGoelling" element={<LudwigGoelling />} />
+        <Route path="/team/TimFronzek" element={<TimFronzek />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

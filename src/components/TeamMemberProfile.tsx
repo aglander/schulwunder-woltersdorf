@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import ResponsiveImage from "./ResponsiveImage";
@@ -8,24 +7,12 @@ import { TeamMember } from "../data/team";
 
 interface TeamMemberProfileProps {
   member: TeamMember;
-  additionalInfo?: {
-    bio?: string;
-    education?: string[];
-    experience?: string[];
-    projects?: string[];
-    quote?: string;
-    contact?: {
-      email?: string;
-      phone?: string;
-    };
-  };
 }
 
 const TeamMemberProfile: React.FC<TeamMemberProfileProps> = ({
   member,
-  additionalInfo = {},
 }) => {
-  const { bio, education, experience, projects, quote, contact } = additionalInfo;
+  const { bio, career, skills, quote, contact, hobbies, funFacts } = member;
 
   return (
     <SimpleLayout>
@@ -112,19 +99,27 @@ const TeamMemberProfile: React.FC<TeamMemberProfileProps> = ({
                   <h2 className="text-xl font-semibold">Über mich</h2>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-700">{bio}</p>
+                  {Array.isArray(bio) ? (
+                    <div className="space-y-4">
+                      {bio.map((paragraph, index) => (
+                        <p key={index} className="text-gray-700">{paragraph}</p>
+                      ))}
+                    </div>
+                  ) : (
+                    <p className="text-gray-700">{bio}</p>
+                  )}
                 </CardContent>
               </Card>
             )}
             
-            {education && education.length > 0 && (
+            {career && career.length > 0 && (
               <Card className="mb-6">
                 <CardHeader className="pb-2">
-                  <h2 className="text-xl font-semibold">Ausbildung</h2>
+                  <h2 className="text-xl font-semibold">Beruflicher Werdegang</h2>
                 </CardHeader>
                 <CardContent>
                   <ul className="list-disc pl-5 space-y-1">
-                    {education.map((item, index) => (
+                    {career.map((item, index) => (
                       <li key={index} className="text-gray-700">{item}</li>
                     ))}
                   </ul>
@@ -132,14 +127,14 @@ const TeamMemberProfile: React.FC<TeamMemberProfileProps> = ({
               </Card>
             )}
             
-            {experience && experience.length > 0 && (
+            {skills && skills.length > 0 && (
               <Card className="mb-6">
                 <CardHeader className="pb-2">
-                  <h2 className="text-xl font-semibold">Erfahrung</h2>
+                  <h2 className="text-xl font-semibold">Kompetenzen</h2>
                 </CardHeader>
                 <CardContent>
                   <ul className="list-disc pl-5 space-y-1">
-                    {experience.map((item, index) => (
+                    {skills.map((item, index) => (
                       <li key={index} className="text-gray-700">{item}</li>
                     ))}
                   </ul>
@@ -147,17 +142,28 @@ const TeamMemberProfile: React.FC<TeamMemberProfileProps> = ({
               </Card>
             )}
             
-            {projects && projects.length > 0 && (
+            {hobbies && hobbies.length > 0 && (
               <Card className="mb-6">
                 <CardHeader className="pb-2">
-                  <h2 className="text-xl font-semibold">Projekte</h2>
+                  <h2 className="text-xl font-semibold">Hobbys</h2>
                 </CardHeader>
                 <CardContent>
                   <ul className="list-disc pl-5 space-y-1">
-                    {projects.map((item, index) => (
+                    {hobbies.map((item, index) => (
                       <li key={index} className="text-gray-700">{item}</li>
                     ))}
                   </ul>
+                </CardContent>
+              </Card>
+            )}
+            
+            {funFacts && (
+              <Card className="mb-6">
+                <CardHeader className="pb-2">
+                  <h2 className="text-xl font-semibold">Fun Facts</h2>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">{funFacts}</p>
                 </CardContent>
               </Card>
             )}
