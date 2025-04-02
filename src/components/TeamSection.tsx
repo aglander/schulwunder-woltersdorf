@@ -14,6 +14,7 @@ export const TeamSection = ({ members, textColor }: TeamSectionProps) => {
   const getProfileUrl = (name: string) => {
     // Convert to PascalCase (remove spaces and special characters)
     return `/team/${name
+      .replace(/Dr\.\s*/g, "")  // Remove "Dr." including any following spaces
       .replace(/\s+/g, "")
       .replace(/\./g, "")
       .replace(/ß/g, "ss")

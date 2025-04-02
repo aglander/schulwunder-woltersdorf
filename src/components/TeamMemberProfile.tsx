@@ -4,6 +4,8 @@ import ResponsiveImage from "./ResponsiveImage";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import SimpleLayout from "./SimpleLayout";
 import { TeamMember } from "../data/team";
+import { Link } from "react-router-dom";
+import { Mail, Phone } from "lucide-react";
 
 interface TeamMemberProfileProps {
   member: TeamMember;
@@ -42,17 +44,29 @@ const TeamMemberProfile: React.FC<TeamMemberProfileProps> = ({
             <div className="flex flex-wrap gap-2 justify-center mb-6">
               {member.tags.map((tag) => {
                 let color = "bg-gray-200 text-gray-800";
-                if (tag === "schulgruendungswunder") color = "bg-blue-100 text-blue-800";
-                if (tag === "schulbauwunder") color = "bg-green-100 text-green-800";
-                if (tag === "schulinnovationswunder") color = "bg-purple-100 text-purple-800";
+                let link = "/";
+                
+                if (tag === "schulgruendungswunder") {
+                  color = "bg-schulgruendung/10 text-schulgruendung";
+                  link = "/schulgruendungswunder";
+                }
+                if (tag === "schulbauwunder") {
+                  color = "bg-schulbau/10 text-schulbau";
+                  link = "/schulbauwunder";
+                }
+                if (tag === "schulinnovationswunder") {
+                  color = "bg-schulinnovation/10 text-schulinnovation";
+                  link = "/schulinnovationswunder";
+                }
                 
                 return (
-                  <span 
+                  <Link 
                     key={tag} 
-                    className={`${color} px-3 py-1 rounded-full text-sm font-medium`}
+                    to={link}
+                    className={`${color} px-3 py-1 rounded-full text-sm font-medium hover:opacity-80 transition-opacity`}
                   >
                     #{tag}
-                  </span>
+                  </Link>
                 );
               })}
             </div>
@@ -66,15 +80,19 @@ const TeamMemberProfile: React.FC<TeamMemberProfileProps> = ({
                 <CardContent>
                   {contact.email && (
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="font-medium">Email:</span>
-                      <a href={`mailto:${contact.email}`} className="text-blue-600 hover:underline">
-                        {contact.email}
-                      </a>
+                      <Mail size={18} className="text-gray-600" />
+                      <a 
+                        href={`mailto:${contact.email}`} 
+                        className="text-blue-600 hover:underline"
+                        dangerouslySetInnerHTML={{ 
+                          __html: contact.email.replace('@', '<br />@') 
+                        }}
+                      />
                     </div>
                   )}
                   {contact.phone && (
                     <div className="flex items-center gap-2">
-                      <span className="font-medium">Telefon:</span>
+                      <Phone size={18} className="text-gray-600" />
                       <a href={`tel:${contact.phone}`} className="text-blue-600 hover:underline">
                         {contact.phone}
                       </a>

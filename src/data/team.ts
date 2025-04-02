@@ -2,8 +2,8 @@ export interface TeamMember {
   filename: string;
   name: string;
   contact?: {
-    email: string;
-    phone: string;
+    email?: string;
+    phone?: string;
   };
   desc: string;
   tags: (
@@ -24,13 +24,44 @@ export const team: TeamMember[] = [
     filename: "johannes-wilk.jpg",
     name: "Johannes Wilk",
     desc: "Organisation",
-    tags: ["schulgruendungswunder", "schulinnovationswunder", "schulbauwunder"],
+    tags: ["schulgruendungswunder", "schulbauwunder", "schulinnovationswunder"],
   },
   {
     filename: "catherine-grote.jpg",
     name: "Dr. Cathérine Grote",
+    contact: {
+      email: "catherine.grote@freie-schule-woltersdorf.de",
+    },
     desc: "Pädagogik",
     tags: ["schulgruendungswunder"],
+    career: [
+      "2009-2015: Studium der Agrarwissenschaften",
+      "2015-2018: Promotion (Dr. sc. agr.)",
+      "2021-2024: Lehrkraft (NAWI, Biologie, Chemie, Mathe) an zwei Berliner Gemeinschaftsschulen",
+      "seit SJ 2024/25: Mitarbeiterin der Freien Schule Woltersdorf",
+    ],
+    skills: [
+      "Mir ist persönliches Wachstum unfassbar wichtig.",
+      "Ich liebe es zu lernen und mich zu vernetzen.",
+      "Mich findet man regelmäßig auf einer Fort- oder Weiterbildung.",
+      "Und ich bin der Meinung, dass ich zu jedem Zeitpunkt alles lernen kann, was ich brauche.",
+      "Ich habe Fortbildungen im Bereich Kinderschutz besucht.",
+      "Ich habe an Seminaren zur rassismuskritischen Bildungsarbeit teilgenommen.",
+      "Ich bin Naturtrainerin.",
+      "Ich habe mehrere Jahre Erfahrungen in Schulgründungsinitiativen gesammelt. ",
+      "Aktuell befinde ich mich im Montessori-Grundlagen-Diplomkurs und die nächste Fortbildung wartet bereits auf mich.",
+    ],
+    bio: [
+      "Meine Liebe für freie Schulen habe ich während meines Masterstudiums entdeckt. Ich war auf der Suche nach einer Schule für meine Kinder und besichtigte an einem Tag der offenen Tür zum ersten Mal in meinem Leben eine reformpädagogische Bildungsstätte. Noch auf dem Schulgelände wurde mir klar: Hier gehöre ich hin und ich brauche eine Lehrgenehmigung!",
+      "Ich schloss mein Studium ab und begann eine dreijährige Promotion. Parallel beschäftigte ich mich intensiv mit Schulen in freier Trägerschaft und wurde in zwei Gründungsinitiativen aktiv.",
+      "Im Jahr 2021 nahm ich die Arbeit als Lehrkraft an einer freien Schule auf und mein Gefühl bestätigte sich: Hier gehöre ich hin.",
+    ],
+    hobbies:
+      ["Sport, Sport und Sport", "Naturpädagogik", "sowie alle Themen, die mit Nachhaltigkeit und Gerechtigkeit zu tun haben"],
+    quote:
+      "Das habe ich noch nie vorher versucht. Also bin ich völlig sicher, dass ich das schaffe. (Pippi Langstrumpf)",
+    funFacts:
+      "Ich habe noch als 24-Jährige „Die Drei ???“ zum Einschlafen gehört. Und ich finde Entenfüße richtig süß.",
   },
   {
     filename: "philip-preuss.jpg",
@@ -80,7 +111,7 @@ export const team: TeamMember[] = [
     filename: "ludwig-goelling.jpg",
     name: "Ludwig Gölling",
     desc: "Bau und Infrastruktur",
-    tags: ["schulinnovationswunder", "schulbauwunder"],
+    tags: ["schulbauwunder", "schulinnovationswunder"],
   },
   {
     filename: "tim-fronzek.jpg",
