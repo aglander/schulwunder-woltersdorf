@@ -94,8 +94,8 @@ export const WunderHeader = ({
               "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
           }}
         >
-          <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-            <div className="ml-[30px]">
+          <div className="container mx-auto h-16 flex items-center justify-between">
+            <div className="md:ml-[30px]">
               <Link
                 to="/"
                 className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"

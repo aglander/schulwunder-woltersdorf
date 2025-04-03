@@ -1,5 +1,4 @@
 import React from "react";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import ResponsiveImage from "./ResponsiveImage";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import SimpleLayout from "./SimpleLayout";
@@ -14,7 +13,7 @@ interface TeamMemberProfileProps {
 const TeamMemberProfile: React.FC<TeamMemberProfileProps> = ({
   member,
 }) => {
-  const { bio, career, skills, quote, contact, hobbies, funFacts } = member;
+  const { bio, skills, quote, quoteBy, contact, hobbies, funFacts } = member;
 
   return (
     <SimpleLayout>
@@ -106,8 +105,9 @@ const TeamMemberProfile: React.FC<TeamMemberProfileProps> = ({
           {/* Profile Details Section */}
           <div className="w-full md:w-2/3">
             {quote && (
-              <div className="bg-gray-50 border-l-4 border-gray-300 p-4 mb-6 italic">
-                <p className="text-lg">{quote}</p>
+              <div className="bg-gray-50 border-l-4 border-gray-300 p-4 mb-6 md:mt-8 md:mb-20 italic">
+                <p className="text-lg md:text-4xl">{quote}</p>
+                {quoteBy && (<p className="text-gray-600 mt-6">{quoteBy}</p>)}
               </div>
             )}
             
@@ -126,21 +126,6 @@ const TeamMemberProfile: React.FC<TeamMemberProfileProps> = ({
                   ) : (
                     <p className="text-gray-700">{bio}</p>
                   )}
-                </CardContent>
-              </Card>
-            )}
-            
-            {career && career.length > 0 && (
-              <Card className="mb-6">
-                <CardHeader className="pb-2">
-                  <h2 className="text-xl font-semibold">Beruflicher Werdegang</h2>
-                </CardHeader>
-                <CardContent>
-                  <ul className="list-disc pl-5 space-y-1">
-                    {career.map((item, index) => (
-                      <li key={index} className="text-gray-700">{item}</li>
-                    ))}
-                  </ul>
                 </CardContent>
               </Card>
             )}

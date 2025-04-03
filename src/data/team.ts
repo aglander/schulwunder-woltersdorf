@@ -11,11 +11,11 @@ export interface TeamMember {
     | "schulbauwunder"
     | "schulinnovationswunder"
   )[];
-  career?: string[];
   skills?: string[];
   bio?: string[];
   hobbies?: string[];
   quote?: string;
+  quoteBy?: string;
   funFacts?: string;
 }
 
@@ -34,12 +34,6 @@ export const team: TeamMember[] = [
     },
     desc: "Pädagogik",
     tags: ["schulgruendungswunder"],
-    career: [
-      "2009-2015: Studium der Agrarwissenschaften",
-      "2015-2018: Promotion (Dr. sc. agr.)",
-      "2021-2024: Lehrkraft (NAWI, Biologie, Chemie, Mathe) an zwei Berliner Gemeinschaftsschulen",
-      "seit SJ 2024/25: Mitarbeiterin der Freien Schule Woltersdorf",
-    ],
     skills: [
       "Mir ist persönliches Wachstum unfassbar wichtig.",
       "Ich liebe es zu lernen und mich zu vernetzen.",
@@ -56,10 +50,14 @@ export const team: TeamMember[] = [
       "Ich schloss mein Studium ab und begann eine dreijährige Promotion. Parallel beschäftigte ich mich intensiv mit Schulen in freier Trägerschaft und wurde in zwei Gründungsinitiativen aktiv.",
       "Im Jahr 2021 nahm ich die Arbeit als Lehrkraft an einer freien Schule auf und mein Gefühl bestätigte sich: Hier gehöre ich hin.",
     ],
-    hobbies:
-      ["Sport, Sport und Sport", "Naturpädagogik", "sowie alle Themen, die mit Nachhaltigkeit und Gerechtigkeit zu tun haben"],
+    hobbies: [
+      "Sport, Sport und Sport",
+      "Naturpädagogik",
+      "sowie alle Themen, die mit Nachhaltigkeit und Gerechtigkeit zu tun haben",
+    ],
     quote:
-      "Das habe ich noch nie vorher versucht. Also bin ich völlig sicher, dass ich das schaffe. (Pippi Langstrumpf)",
+      "Das habe ich noch nie vorher versucht. Also bin ich völlig sicher, dass ich das schaffe.",
+    quoteBy: "Pippi Langstrumpf",
     funFacts:
       "Ich habe noch als 24-Jährige „Die Drei ???“ zum Einschlafen gehört. Und ich finde Entenfüße richtig süß.",
   },
@@ -72,13 +70,6 @@ export const team: TeamMember[] = [
     },
     desc: "Social Media",
     tags: ["schulbauwunder"],
-    career: [
-      "Kaufmann im Einzelhandel (Möbel Kraft)",
-      "Projektkoordinator (BBQ)",
-      "Campusmanager DCI",
-      "Social-Media Beauftragter GalaBau Johann Schindler",
-      "freiberuflicher Photograph",
-    ],
     skills: [
       "Bildbearbeitung (Adobe Photosuit)",
       "Videoschnitt (FinalCut X)",
@@ -98,7 +89,8 @@ export const team: TeamMember[] = [
       "Computer allgemein",
       "Schlagzeug",
     ],
-    quote: "„Ohne Musik wäre das Leben ein Irrtum“ - Friedrich Nietzsche",
+    quote: "Ohne Musik wäre das Leben ein Irrtum",
+    quoteBy: "Friedrich Nietzsche",
     funFacts: "Ohne Kappe ohne mich! :D",
   },
   {

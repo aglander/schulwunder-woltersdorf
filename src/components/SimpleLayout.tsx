@@ -13,6 +13,15 @@ interface SimpleLayoutProps {
 const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
   const isMobile = useIsMobile();
 
+  const handleBackClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (window.history.length > 1) {
+      window.history.back();
+    } else {
+      window.location.href = "/";
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <div className="fixed top-0 left-0 right-0 z-50">
@@ -23,18 +32,17 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
               "linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.45) 100%)",
           }}
         >
-          <div className="container mx-auto px-4">
+          <div className="container mx-auto">
             <div className="flex items-center justify-between h-16">
-              <div className="ml-[30px]">
-                <Link
-                  to="/"
+              <div className="md:ml-[30px]">
+                <a
+                  href="#"
+                  onClick={handleBackClick}
                   className="flex items-center gap-2 text-white hover:text-white/90 transition-colors"
                 >
                   <ArrowLeft className="w-5 h-5" />
-                  <span className="font-semibold">
-                    {isMobile ? "Zurück" : "Schulwunder Woltersdorf"}
-                  </span>
-                </Link>
+                  <span className="font-semibold">Zurück</span>
+                </a>
               </div>
               {!isMobile && (
                 <div className="mr-[30px] flex items-center gap-4">
@@ -74,7 +82,7 @@ const SimpleLayout: React.FC<SimpleLayoutProps> = ({ children }) => {
       </div>
 
       <main className="flex-1 pt-16 pb-20">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-0">
           <div className="w-full max-w-[1700px] mx-auto relative">
             {children}
           </div>
