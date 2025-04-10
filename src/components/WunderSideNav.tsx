@@ -1,5 +1,5 @@
-
 import React, { useState, useEffect } from "react";
+import { DonationWidget } from "./DonationWidget";
 
 type NavLinkType = {
   href: string;
@@ -64,8 +64,7 @@ const WunderSideNav: React.FC<WunderSideNavProps> = ({ navLinks, textColorClass 
     const targetElement = document.querySelector(href);
     
     if (targetElement) {
-      // Get the header height (assuming it's fixed at 64px, adjust if different)
-      const headerOffset = 80; // 64px header + some extra space
+      const headerOffset = 80;
       const elementPosition = targetElement.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       
@@ -74,7 +73,6 @@ const WunderSideNav: React.FC<WunderSideNavProps> = ({ navLinks, textColorClass 
         behavior: "smooth"
       });
       
-      // Update active section after scrolling
       setActiveSection(href.substring(1));
     }
   };
@@ -105,21 +103,7 @@ const WunderSideNav: React.FC<WunderSideNavProps> = ({ navLinks, textColorClass 
         </ul>
       </nav>
       
-      {/* Donation iframe below the navigation menu */}
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-        <iframe 
-          src="https://secure.fundraisingbox.com/app/widget?hash=Z%2Ff4FgAGptA6fdXqBs3JJ2CvlkQLSe%2FIZiydlxXc4it85tAdD0i%2FrHxyipZM3%2BMmI63BHV4R5fp8JNCbUJf3J2vkzRQaFem5aTfSylHGrmdz%2Fd1dUwfo6Ddim4tCzOd%2FK6OJXUUL6%2F9%2FKcnEENCzbSry0RgME%2Fj0WHaAgF6GvnZvtYRUek3zuh4o09A8xeE6HefaSXtcqaRZPtzQJ9buc0i4miAtUbKWFiKIpCHC%2FwID%2BYw4LAC6kUVu0bM3w65UAfmMPH4d64dEMsTwdY38TxbliSMzReqDVjfH9GGQ50cT44MoOVuzkVx0wOFhha1MD6eWPzkapIRVe8qmNZSsHQ%2B2yHhuCPCUXzjKti2Nu0JD%2BeQkPlWlw01vlfkqgcYfELD0JW9NrooKP9jrMtmaUUr7oSJmYL6CRFvNuHDLmwAWqcRpdWv3mhwP1aFizKk2VfiRDXU14phVFcK4KNixLQ%3D%3D&extended=1"
-          name="fundraisingBoxWidget"
-          sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation"
-          frameBorder="0"
-          height="300"
-          width="100%"
-          scrolling="no"
-          allowTransparency
-          title="FundraisingBox Widget"
-          className="w-full"
-        ></iframe>
-      </div>
+      <DonationWidget />
     </div>
   );
 };
