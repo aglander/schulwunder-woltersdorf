@@ -1,0 +1,58 @@
+name: Update Donation Data
+
+on:
+  schedule:
+    # Läuft alle 5 Minuten
+    - cron: '*/5 * * * *'
+  # Ermöglicht manuelle Ausführung des Workflows
+  workflow_dispatch:
+
+jobs:
+  update-donation-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Fetch donation data and update file
+        run: |
+          # Daten von der FundraisingBox API abrufen
+          RESPONSE=$(curl -s "https://secure.fundraisingbox.com/app/projectItemJson?hash=Z%2Ff4DQAHzKQ4J%2ByEUM7POQ%3D%3D")
+          
+          # Prüfen, ob die Anfrage erfolgreich war
+          if [ $? -ne 0 ]; then
+            echo "Error: Failed to fetch donation data"
+            exit 1
+          fi
+          
+          # Generiere die neue donationData.ts Datei
+          cat > ./src/data/donationData.ts << EOL
+          export interface DonationData {
+            item_id: number;
+            item_name: string;
+            item_amount: number;
+            form_url: string;
+            project_donations_goal: number;
+            project_donations_amount: number;
+            project_donations_count: number;
+          }
+
+          export const donationData: DonationData = $RESPONSE;
+          EOL
+          
+          echo "Donation data updated successfully"
+
+      - name: Commit and push if changed
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          
+          git add ./src/data/donationData.ts
+          
+          # Prüfen, ob es Änderungen gibt
+          git diff --staged --quiet || (git commit -m "Update donation data [skip ci]" && git push)

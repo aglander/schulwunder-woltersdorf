@@ -77,6 +77,9 @@ const WunderSideNav: React.FC<WunderSideNavProps> = ({ navLinks, textColorClass 
     }
   };
 
+  const primaryColor = textColorClass === 'text-schulbau' ? 'bg-schulbau' : textColorClass === 'text-schulgruendung' ? 'bg-schulgruendung' : textColorClass === 'text-schulinnovation' ? 'bg-schulinnovation' : 'bg-primary';
+  const secondaryColor = textColorClass === 'text-schulbau' ? 'bg-schulbau/10' : textColorClass === 'text-schulgruendung' ? 'bg-schulgruendung/10' : textColorClass === 'text-schulinnovation' ? 'bg-schulinnovation/10' : 'bg-primary/10';
+
   const hoverClass = getHoverClass();
   const activeClass = getActiveClass();
 
@@ -103,7 +106,7 @@ const WunderSideNav: React.FC<WunderSideNavProps> = ({ navLinks, textColorClass 
         </ul>
       </nav>
       
-      <DonationWidget />
+      <DonationWidget primaryColor={primaryColor} secondaryColor={secondaryColor} />
     </div>
   );
 };
