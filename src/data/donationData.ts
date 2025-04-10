@@ -7,13 +7,4 @@ export interface DonationData {
   project_donations_amount: number;
   project_donations_count: number;
 }
-
-export const donationData: DonationData = {
-  item_id: 79748,
-  item_name: "🌿 Grünes Wunder – Schule trifft Natur! 🌿",
-  item_amount: 0,
-  form_url: "https://www.schulwunder-woltersdorf.de/spenden",
-  project_donations_goal: 10000,
-  project_donations_amount: 5.5,
-  project_donations_count: 1
-};
+export const donationData: DonationData = {"item_id":79748,"item_name":"\ud83c\udf3f Gr\u00fcnes Wunder \u2013 Schule trifft Natur! \ud83c\udf3f","item_amount":0,"form_url":"https:\/\/www.schulwunder-woltersdorf.de\/spenden","project_donations_goal":10000,"project_donations_amount":5.5,"project_donations_count":1};
