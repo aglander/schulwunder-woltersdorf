@@ -1,8 +1,8 @@
 import React from "react";
-import { Progress } from "./ui/progress";
-import { Button } from "./ui/button";
 import { Link } from "react-router-dom";
+import { Button } from "./ui/button";
 import { donationData } from "../data/donationData";
+import { CustomProgress } from "./ui/custom-progress";
 
 interface DonationWidgetProps {
   primaryColor?: string; // CSS class name for progress indicator
@@ -50,10 +50,10 @@ export const DonationWidget: React.FC<DonationWidgetProps> = ({
               {formatCurrency(donationData.project_donations_goal)}
             </span>
           </div>
-          <Progress 
+          <CustomProgress 
             value={progressPercentage} 
-            className={secondaryColor}
-            data-indicator-class={primaryColor}
+            className={secondaryColor} 
+            indicatorClassName={primaryColor}
           />
           <p className="text-xs text-gray-500 mt-1">
             {progressPercentage}% des Ziels erreicht
@@ -63,7 +63,7 @@ export const DonationWidget: React.FC<DonationWidgetProps> = ({
         <div className="pt-2">
           <Link to="/spenden">
             <Button 
-              className={`w-full ${primaryColor}`}
+              className={`w-full ${primaryColor} hover:${primaryColor}`}
             >
               <span>Jetzt spenden</span>
             </Button>
