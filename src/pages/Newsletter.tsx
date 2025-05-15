@@ -41,7 +41,7 @@ const Newsletter = () => {
               <TabsContent value="abmeldung" className="mt-4">
                 <iframe 
                   width="540" 
-                  height="305" 
+                  height="500" 
                   src="https://348013a9.sibforms.com/serve/MUIFAL4tKiS8BJ7e3rV3mwXvBk4FFM2zAkZglIXloi9jLdZZybVwudE7rHz115ppRTBMf_wIsNktzonlojqUoqiD7CzeQ5NkEzcTY4zQ5W6TonwvgP8pmvlFaNd7HB4MWMH3vRET1SVnqBckEArUyPW2CqiOjnelgVaWJmHez8mVvF1-oeIXo8nlgDCrQ6-YISkhH-nOKdftkBKY" 
                   frameBorder="0" 
                   scrolling="auto" 
