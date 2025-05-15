@@ -20,7 +20,7 @@ const Newsletter = () => {
           <div className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
             <iframe 
               width="540" 
-              height="400" 
+              height="500" 
               src="https://sibforms.com/serve/MUIFAPmsUdgORMFZlmqMEJ3NeApoChPs41GRtNaTKLT-IQymI3xtq98IGSHOjX607_IUjzc34MfhhjWd5zgIh_8Y9kYMBvqvKNXJaCwXtbfpTNTtWSu52gqCbTqq-c1gXLqLsQwjBSYgIoFTjaudhUp2jNalmfwJzNwdLeXILrfQDbGL9vSGJGZWcLhFyLkhCm5QkY5EJQJx9-wx" 
               frameBorder="0" 
               scrolling="auto" 
