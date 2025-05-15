@@ -1,11 +1,12 @@
 
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { useQuery } from "@tanstack/react-query";
 import { useToast } from "@/hooks/use-toast";
 import { getInstagramToken } from "@/utils/instagramToken";
-import { Instagram, ChevronLeft, ChevronRight } from "lucide-react";
+import { Instagram, ChevronLeft, ChevronRight, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 interface InstagramPost {
   id: string;
@@ -16,21 +17,45 @@ interface InstagramPost {
   permalink: string;
 }
 
+interface InstagramErrorResponse {
+  error: {
+    message: string;
+    type: string;
+    code: number;
+    error_subcode?: number;
+  }
+}
+
 const fetchInstagramPosts = async () => {
   const token = await getInstagramToken();
   if (!token) {
     throw new Error("Instagram token not found");
   }
 
+  console.log("Fetching Instagram posts...");
   const response = await fetch(
     `https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&limit=20&access_token=${token}`
   );
 
   if (!response.ok) {
-    throw new Error("Failed to fetch Instagram posts");
+    // Try to parse error response
+    try {
+      const errorData: InstagramErrorResponse = await response.json();
+      console.error("Instagram API error:", errorData);
+      
+      if (errorData.error?.code === 190) {
+        throw new Error("Instagram token expired or invalid");
+      }
+      
+      throw new Error(`Instagram API error: ${errorData.error?.message}`);
+    } catch (parseError) {
+      // If we can't parse the response, just throw the HTTP status
+      throw new Error(`Failed to fetch Instagram posts: ${response.status}`);
+    }
   }
 
   const data = await response.json();
+  console.log(`Fetched ${data.data?.length || 0} Instagram posts`);
   return data.data as InstagramPost[];
 };
 
@@ -66,16 +91,21 @@ export const InstagramSection: React.FC<InstagramSectionProps> = ({
     data: instagramPosts,
     isLoading,
     error,
+    refetch,
   } = useQuery({
     queryKey: ["instagram-posts"],
     queryFn: fetchInstagramPosts,
     meta: {
       onError: (error: Error) => {
         console.error("Error fetching Instagram posts:", error);
-        const errorMessage =
-          error.message === "Instagram token not found"
-            ? "Bitte Instagram Access Token in den API-Einstellungen hinterlegen."
-            : "Die Instagram Posts konnten nicht geladen werden.";
+        
+        let errorMessage = "Die Instagram Posts konnten nicht geladen werden.";
+        
+        if (error.message === "Instagram token not found") {
+          errorMessage = "Bitte Instagram Access Token in den API-Einstellungen hinterlegen.";
+        } else if (error.message.includes("token expired")) {
+          errorMessage = "Der Instagram Access Token ist abgelaufen oder ungültig. Bitte aktualisieren Sie ihn in den API-Einstellungen.";
+        }
 
         toast({
           title: "Fehler",
@@ -121,22 +151,47 @@ export const InstagramSection: React.FC<InstagramSectionProps> = ({
     });
   };
 
+  // Add utility method to retry loading
+  const handleRetry = () => {
+    console.log("Retrying Instagram posts fetch");
+    // Clear local storage token to force fresh fetch
+    localStorage.removeItem('instagram_token');
+    localStorage.removeItem('instagram_token_expiration');
+    refetch();
+  };
+
   return (
     <section id="instagram" className="mb-16">
       <Card className="p-8">
         <h2 className={`text-3xl font-bold mb-6 ${textColor}`}>{title}</h2>
 
+        {error && (
+          <Alert variant="destructive" className="mb-6">
+            <AlertCircle className="h-4 w-4" />
+            <AlertTitle>Instagram-Fehler</AlertTitle>
+            <AlertDescription className="flex flex-col gap-2">
+              <div>
+                {(error as Error).message.includes("token")
+                  ? "Der Instagram-Token ist ungültig oder abgelaufen. Bitte aktualisieren Sie den Token."
+                  : "Fehler beim Laden der Instagram-Beiträge."}
+              </div>
+              <div className="text-sm opacity-80">
+                Technische Details: {(error as Error).message}
+              </div>
+              <Button 
+                variant="outline"
+                className="mt-2 self-start"
+                onClick={handleRetry}
+              >
+                Erneut versuchen
+              </Button>
+            </AlertDescription>
+          </Alert>
+        )}
+
         {isLoading && (
           <div className="flex justify-center items-center h-48">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
-          </div>
-        )}
-
-        {error && (
-          <div className="text-center text-red-500 p-4 border border-red-300 rounded-md">
-            {(error as Error).message === "Instagram token not found"
-              ? "Kein Instagram-Token gefunden. Bitte in den API-Einstellungen hinterlegen."
-              : "Fehler beim Laden der Instagram-Beiträge. Bitte versuchen Sie es später erneut."}
           </div>
         )}
 
@@ -233,7 +288,7 @@ export const InstagramSection: React.FC<InstagramSectionProps> = ({
           </div>
         )}
 
-        {filteredPosts && filteredPosts.length === 0 && (
+        {filteredPosts && filteredPosts.length === 0 && !isLoading && !error && (
           <div className="text-center text-gray-500 p-4 border border-gray-300 rounded-md">
             {filterTag ? `Keine Instagram-Beiträge mit dem Hashtag ${filterTag} gefunden.` : "Keine Instagram-Beiträge gefunden."}
           </div>

@@ -7,3 +7,17 @@
 [build]
   command = "npm run build"
   publish = "dist"
+
+# Definiere eine Umgebungsvariable für den Entwicklungsmodus
+[context.dev]
+  environment = { NODE_ENV = "development" }
+
+# Aktiviere HTTP Security Headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' sibforms.com *.sibforms.com *.piwik.pro; connect-src 'self' graph.instagram.com *.piwik.pro; img-src 'self' data: cdninstagram.com *.cdninstagram.com; style-src 'self' 'unsafe-inline'; frame-src sibforms.com *.sibforms.com;"
