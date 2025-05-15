@@ -14,7 +14,7 @@ const Newsletter = () => {
         <div className="container mx-auto px-4 py-12">
           <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">Newsletter Anmeldung</h1>
           <p className="text-lg mb-8 text-center max-w-2xl mx-auto">
-            Bleiben Sie informiert über die neuesten Entwicklungen, Veranstaltungen und Fortschritte bei Schulwunder Woltersdorf. Melden Sie sich für unseren Newsletter an.
+            Dieser Newsletter bietet Einblicke in den Schulalltag und die verschiedenen Projekte unserer Schule. Ob Schulneubau, Gründung einer Oberschule oder die Entwicklung der ungenutzten Fläche an der Vogelsdorfer Straße – wir halten Sie auf dem Laufenden. Außerdem informieren wir regelmäßig über Veranstaltungen. Sie erhalten diese Mails 2-3 Mal im Monat.
           </p>
           
           <div className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
