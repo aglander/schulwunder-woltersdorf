@@ -19,9 +19,9 @@ const Newsletter = () => {
           
           <div className="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-md">
             <iframe 
-              width="100%" 
+              width="540" 
               height="305" 
-              src="https://sibforms.com/serve/MUIFAIroVhUe1WFQQgqj6tdU--vy6iq2uiAfohHVWjbg7bvdn3S_9ThthUKqIEGlPs5JaGw8N7zbd1IL9HvUNEQJjH_IyC3u43vrUUbL0gLyXC45Ce8oLo56FDOZmf2fLpDhS4TTtFL5bhL2yzuN5rccqqFrLGlppsM7XkCzBtIGgMsveNwVHYHiGYsAOIUtevre6cgzKPwRju5E" 
+              src="https://sibforms.com/serve/MUIFAPmsUdgORMFZlmqMEJ3NeApoChPs41GRtNaTKLT-IQymI3xtq98IGSHOjX607_IUjzc34MfhhjWd5zgIh_8Y9kYMBvqvKNXJaCwXtbfpTNTtWSu52gqCbTqq-c1gXLqLsQwjBSYgIoFTjaudhUp2jNalmfwJzNwdLeXILrfQDbGL9vSGJGZWcLhFyLkhCm5QkY5EJQJx9-wx" 
               frameBorder="0" 
               scrolling="auto" 
               allowFullScreen 
