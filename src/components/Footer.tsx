@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Youtube, Instagram } from "lucide-react";
@@ -31,6 +32,7 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-lg mb-4">Links</h4>
             <ul className="space-y-2">
+              <li><Link to="/newsletter" className={`text-gray-600 transition-colors ${hoverClass}`}>Newsletter</Link></li>
               <li><Link to="/kontakt" className={`text-gray-600 transition-colors ${hoverClass}`}>Kontakt</Link></li>
               <li><Link to="/impressum" className={`text-gray-600 transition-colors ${hoverClass}`}>Impressum</Link></li>
               <li><Link to="/datenschutz" className={`text-gray-600 transition-colors ${hoverClass}`}>Datenschutz</Link></li>

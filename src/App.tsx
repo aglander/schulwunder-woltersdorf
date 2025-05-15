@@ -1,3 +1,4 @@
+
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
@@ -11,6 +12,7 @@ import Donation from "./pages/Donation";
 import Impressum from "./pages/Impressum";
 import Datenschutz from "./pages/Datenschutz";
 import Kontakt from "./pages/Kontakt";
+import Newsletter from "./pages/Newsletter";
 import JohannesWilk from "./pages/team/JohannesWilk";
 import CatherineGrote from "./pages/team/CatherineGrote";
 import PhilipPreuss from "./pages/team/PhilipPreuss";
@@ -66,6 +68,7 @@ const App = () => (
           element={<Schulinnovationswunder />}
         />
         <Route path="/spenden" element={<Donation />} />
+        <Route path="/newsletter" element={<Newsletter />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
         <Route path="/kontakt" element={<Kontakt />} />
