@@ -19,9 +19,4 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
-    Content-Security-Policy = "default-src 'self'; \
-      script-src 'self' 'unsafe-inline' 'unsafe-eval' sibforms.com *.sibforms.com *.piwik.pro https://secure.fundraisingbox.com; \
-      connect-src 'self' graph.instagram.com *.piwik.pro; \
-      img-src 'self' data: cdninstagram.com *.cdninstagram.com https://secure.fundraisingbox.com; \
-      style-src 'self' 'unsafe-inline'; \
-      frame-src 'self' sibforms.com *.sibforms.com https://secure.fundraisingbox.com https://www.fundraisingbox.com;"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' sibforms.com *.sibforms.com *.piwik.pro https://secure.fundraisingbox.com; connect-src 'self' graph.instagram.com *.piwik.pro; img-src 'self' data: cdninstagram.com *.cdninstagram.com https://secure.fundraisingbox.com; style-src 'self' 'un
